@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>C++ Primer Plus 第七章 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="函数 —— C++的编程模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer Plus 第七章">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数 —— C++的编程模块">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-04T08:32:11.000Z">
+<meta property="article:modified_time" content="2020-03-04T09:07:51.391Z">
 <meta property="article:author" content="lllfreeman">
 <meta name="twitter:card" content="summary">
   
@@ -156,81 +160,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-C-Primer-Plus-第八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-C-Primer-Plus-第七章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/">C++ Primer Plus 第八章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数探幽"><a href="#函数探幽" class="headerlink" title="函数探幽"></a>函数探幽</h1><p>函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。</p>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第七章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/">C++ Primer Plus 第七章</a>
+    <h1 class="article-title" itemprop="name">
+      C++ Primer Plus 第七章
     </h1>
   
 
@@ -243,12 +180,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="函数-——-C-的编程模块"><a href="#函数-——-C-的编程模块" class="headerlink" title="函数 —— C++的编程模块"></a>函数 —— C++的编程模块</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/#more">more >></a>
-        
+        <h1 id="函数-——-C-的编程模块"><a href="#函数-——-C-的编程模块" class="headerlink" title="函数 —— C++的编程模块"></a>函数 —— C++的编程模块</h1><a id="more"></a>
+<h2 id="7-1函数的基本知识"><a href="#7-1函数的基本知识" class="headerlink" title="7.1函数的基本知识"></a>7.1函数的基本知识</h2><p>1.提供函数定义  2.提供函数原型    3.调用函数。</p>
+<p>函数返回值类型将被强制转换为 返回的类型</p>
+<p>C++中函数不能直接返回数组！但可以作为结构或者对象组成部分来返回。</p>
+<p>函数原型描述了函数到编译器的接口。</p>
+<p>通常 原型自动将被传递的参数强制转换为期望的类型。</p>
+<p>函数中修改形参的值不会影响调用程序中的数字。</p>
+<p>cin.get()函数读取所有的输入字符，包括空格和换行符，而cin&gt;&gt;跳过空格和换行符 ！！</p>
+<p>形参与其他局部变量的主要区别是，形参从调用的函数那里获取自己的值，而其他变量是从函数中获得自己的值。</p>
+<h2 id="7-2函数与数组"><a href="#7-2函数与数组" class="headerlink" title="7.2函数与数组"></a>7.2函数与数组</h2><p>C++将数组名视为指针</p>
+<p>对数组名使用sizeof将得到整个数组的长度（以字节为单位）。</p>
+<p>将地址运算符&amp;运用于数组名时，将返回整个数组的地址。</p>
+<p>当且仅当用于函数头或函数原型中，int*arr和int arr[]的含义才相同。</p>
+<p>将指针（包括数组名）加1，实际上是加上了一个与指针指向的类型的长度（以字节为单位）相等的值。！！</p>
+<p>将数组地址作为参数可以节省复制整个数组所需的时间和内存。</p>
+<h2 id="7-3常量-const-与指针"><a href="#7-3常量-const-与指针" class="headerlink" title="7.3常量 const 与指针"></a>7.3常量 const 与指针</h2><p>1 const *int 让指针指向一个常量对象，这样可以防止指针来修改所指向的值</p>
+<p>2第二种是将指针本身声明为常量，这样可以防止改变指针指向的位置。</p>
+<p>C++中禁止将const 的地址赋给非const指针 如果非要这样做，可以使用强制类型转换来突破这种限制 </p>
+<p>const_cast仅当只有一层间接关系时，才可以将非const地址或指针赋给const指针。</p>
+<p>通常，将指针作为函数参数来传递时，可以使用指向const的指针来保护数据</p>
+<h2 id="7-4函数与C-风格字符串"><a href="#7-4函数与C-风格字符串" class="headerlink" title="7.4函数与C-风格字符串"></a>7.4函数与C-风格字符串</h2><p>C-风格字符串由一系列字符组成，以空字符结尾。<br>字符串函数原型应将其表示字符串的形参声明为char*类型。<br>要创建包含n个字符的字符串，需要能够储存n+1个字符的空间，以便能够储存空值字符。</p>
+<h2 id="7-5函数与结构"><a href="#7-5函数与结构" class="headerlink" title="7.5函数与结构"></a>7.5函数与结构</h2><p>结构将其数据合成单个实体或数据对象，该实体被视为一个整体。</p>
+<p>如果程序在输入循环后还需要进行输入，则必须使用cin.clear()重置输入，然后还可能需要通过读取不合法的输入来丢弃他们</p>
+<h2 id="7-6函数与string对象"><a href="#7-6函数与string对象" class="headerlink" title="7.6函数与string对象"></a>7.6函数与string对象</h2><p>可以将结构作为完整的实体传递给函数，也可以将对象作为完整的实体进行传递</p>
+<h2 id="7-7函数与array对象"><a href="#7-7函数与array对象" class="headerlink" title="7.7函数与array对象"></a>7.7函数与array对象</h2><p>1 按值将对象传递给函数，函数处理的是原始对象的副本<br>2 传递指向对象的指针，函数能够直接操作原始对象<br>模板array并非只能储存基本数据类型，还能储存类对象</p>
+<h2 id="7-8递归"><a href="#7-8递归" class="headerlink" title="7.8递归"></a>7.8递归</h2><p>函数自己调用自己-&gt;称为递归</p>
+<p>递归方法有时被称为分而治之策略</p>
+<h2 id="7-9函数指针"><a href="#7-9函数指针" class="headerlink" title="7.9函数指针"></a>7.9函数指针</h2><p>如果think（）是一个函数，则think就是该函数的地址。</p>
+<p>要将函数作为参数进行传递，必须传递函数名。一定要区分传递的是函数的地址还说函数的返回值。</p>
+<p>通常，要声明指向特定类型的函数的指针，可以首先编写这种函数的原型，然后用（*pf）替换函数名。这样pf就是这类函数的指针。！！</p>
+<p>自动推断只能用于单值初始化，而不能用于初始化列表。！</p>
+<p>自动类型推断auto确保变量的类型与赋给它的初值的类型一致。</p>
+<p>创建类型别名typedef ！！ typedef double real 使real为double 的别名！！</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -257,16 +245,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++ Primer Plus 第八章
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ Primer Plus 第六章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -281,78 +337,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="6-1分支语句和逻辑运算符"><a href="#6-1分支语句和逻辑运算符" class="headerlink" title="6.1分支语句和逻辑运算符"></a>6.1分支语句和逻辑运算符</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#函数-——-C-的编程模块"><span class="toc-number">1.</span> <span class="toc-text">函数 —— C++的编程模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1函数的基本知识"><span class="toc-number">1.1.</span> <span class="toc-text">7.1函数的基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2函数与数组"><span class="toc-number">1.2.</span> <span class="toc-text">7.2函数与数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3常量-const-与指针"><span class="toc-number">1.3.</span> <span class="toc-text">7.3常量 const 与指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4函数与C-风格字符串"><span class="toc-number">1.4.</span> <span class="toc-text">7.4函数与C-风格字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5函数与结构"><span class="toc-number">1.5.</span> <span class="toc-text">7.5函数与结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6函数与string对象"><span class="toc-number">1.6.</span> <span class="toc-text">7.6函数与string对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7函数与array对象"><span class="toc-number">1.7.</span> <span class="toc-text">7.7函数与array对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-8递归"><span class="toc-number">1.8.</span> <span class="toc-text">7.8递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9函数指针"><span class="toc-number">1.9.</span> <span class="toc-text">7.9函数指针</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
+  
+
   
 
 
@@ -375,8 +385,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
