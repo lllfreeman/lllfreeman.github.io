@@ -16,7 +16,7 @@
 <meta property="og:description" content="内存模型和名称空间">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-06T11:28:24.000Z">
-<meta property="article:modified_time" content="2020-03-06T11:46:55.453Z">
+<meta property="article:modified_time" content="2020-03-08T13:33:37.777Z">
 <meta property="article:author" content="lllfreeman">
 <meta name="twitter:card" content="summary">
   
@@ -184,22 +184,7 @@
 <p>1.如果文件明包含在尖括号中，则C++编译器将在储存标准头文件的主机系统的文件系统中查找；</p>
 <p>2.但如果文件名包含在双引号中，则编译器将首先查找当前的工作目录或源代码目录。<br>避免多次包含同一个文件</p>
 <p>1.预处理编译指令</p>
-<blockquote>
-<p><code>#ifndef COORDIN_H_</code></p>
-</blockquote>
-<blockquote>
-<p><code>...</code></p>
-</blockquote>
-<blockquote>
-<p><code>#endif</code></p>
-</blockquote>
-<p>2.</p>
-<blockquote>
-<p><code>#pragma once</code> </p>
-</blockquote>
-<blockquote>
-<p><code>...</code></p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> COORDIN_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COORDIN_H_</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span>`</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="9-2储存持续性、作用域和链接性"><a href="#9-2储存持续性、作用域和链接性" class="headerlink" title="9.2储存持续性、作用域和链接性"></a>9.2储存持续性、作用域和链接性</h2><p>C++使用不同的方案来储存数据</p>
 <p>1.自动储存持续性。它们在程序开始执行其所属的函数或代码块时创建，在执行完函数或者代码块时，它们使用的内存被释放。</p>
 <p>2.静态储存持续性。在函数定义外定义的变量和使用关键字static定义的变量的储存持续性都为静态。它们在程序整个运行过程中都存在。</p>
@@ -219,12 +204,7 @@
 <h3 id="9-2-4静态持续性、外部链接性"><a href="#9-2-4静态持续性、外部链接性" class="headerlink" title="9.2.4静态持续性、外部链接性"></a>9.2.4静态持续性、外部链接性</h3><p>链接性为外部的变量通常简称为外部变量，它们的储存持续性为静态，作用域为整个文件。</p>
 <p>关键字extern引用声明，引用其他文件的声明，且不进行初始化</p>
 <p>如</p>
-<blockquote>
-<p><code>int dogs =22；//fail1</code></p>
-</blockquote>
-<blockquote>
-<p><code>extern int dog；//fail2  dog=22</code></p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dogs =<span class="number">22</span>；<span class="comment">//fail1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> dog；<span class="comment">//fail2  dog=22</span></span><br></pre></td></tr></table></figure>
 <p>作用域解析运算符（::）。放在变量名前面时，该运算符表示使用该变量的全局版本。</p>
 <h3 id="9-2-5静态持续性、内部链接性"><a href="#9-2-5静态持续性、内部链接性" class="headerlink" title="9.2.5静态持续性、内部链接性"></a>9.2.5静态持续性、内部链接性</h3><p>将static限定符用于作用域为整个文件的变量时，该变量的链接性将为内部的。</p>
 <p>链接性为内部的变量只能在其所属的文件中使用，但常规外部变量都具有外部链接性，即可以在其他文件中使用。</p>
@@ -267,19 +247,9 @@
 <p>如果使用using编译指令导入一个已经在函数中声明的名称，则局部名称将隐藏名称空间名，就像隐藏同名的全局变量一样。</p>
 <p>using编译指令是可传递的。</p>
 <p>可用给名称空间创建别名<br>如</p>
-<blockquote>
-<p><code>namespace my_very_favorite_things{...}</code></p>
-</blockquote>
-<blockquote>
-<p><code>namespace mvft=my_very_favorite_things;</code></p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> my_very_favorite_things&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> mvft=my_very_favorite_things;</span><br></pre></td></tr></table></figure>
 <p>还可用对嵌套名称空间进行简化使用</p>
-<blockquote>
-<p><code>namespace MEF=myth::elements::fire;</code></p>
-</blockquote>
-<blockquote>
-<p><code>using MEF::flame;//flame在名称空间fire内</code></p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> MEF=myth::elements::fire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> MEF::flame;<span class="comment">//flame在名称空间fire内</span></span><br></pre></td></tr></table></figure>
 <p>不能在未命名名称空间所属文件之外的其他文件中，使用该名称空间中的名称。</p>
 
       
