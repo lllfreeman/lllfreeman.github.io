@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>C-Primer-Plus-第十三章 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="类继承面向对象编程的主要目的之一是提供可重用的代码。C++提供了比修改代码更好的方法来扩展和修改类。这种方法叫作类继承，它能够从已有的类派生出新的类，而派生类继承了原有类（称为基类）的特征，包括方法。可以通过继承完成下面的一些工作：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C-Primer-Plus-第十三章">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="类继承面向对象编程的主要目的之一是提供可重用的代码。C++提供了比修改代码更好的方法来扩展和修改类。这种方法叫作类继承，它能够从已有的类派生出新的类，而派生类继承了原有类（称为基类）的特征，包括方法。可以通过继承完成下面的一些工作：">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-18T02:38:58.000Z">
+<meta property="article:modified_time" content="2020-03-18T03:16:06.294Z">
 <meta property="article:author" content="lllfreeman">
 <meta name="twitter:card" content="summary">
   
@@ -32,10 +36,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -154,15 +155,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-C-Primer-Plus-第十三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-C-Primer-Plus-第十三章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/">C-Primer-Plus-第十三章</a>
+    <h1 class="article-title" itemprop="name">
+      C-Primer-Plus-第十三章
     </h1>
   
 
@@ -176,11 +176,173 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="类继承"><a href="#类继承" class="headerlink" title="类继承"></a>类继承</h1><p>面向对象编程的主要目的之一是提供可重用的代码。C++提供了比修改代码更好的方法来扩展和修改类。这种方法叫作类继承，它能够从已有的类派生出新的类，而派生类继承了原有类（称为基类）的特征，包括方法。可以通过继承完成下面的一些工作：</p>
-        
-          <a class="article-more-a" href="/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/#more">more >></a>
-        
+<a id="more"></a>
+<p>1.可以在已有类的基础上添加功能。 </p>
+<p>2.可以给类添加数据。</p>
+<p>3.可以修改类方法的行为。</p>
+<p>当然，可以通过复制原始类的代码，并对其进行修改来完成上述工作，但继承机制只需提供新特性，甚至不需要访问源代码就可以派生出类。</p>
+<p>string类有一个将const char * 作为参数的构造函数，使用C-风格字符串初始化string对象时，将自动调用这个构造函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RatedPlayer</span> :</span> <span class="keyword">public</span> TableTennisPlayer</span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>冒号指出RatedPlayer的基类是TableTennisPlayer类。上述特殊的声明头表明TableTennisPlayer是一个公有基类，这被称为公有派生。</p>
+<p>派生类对象包含基类对象。使用公有派生，基类的公有成员将称为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。上述Ratedplayer对象将具有以下特征：</p>
+<p>1.派生类对象储存了基类的数据成员（派生类继承了基类的实现）</p>
+<p>2.派生类对象可以使用基类的方法（派生类继承了基类的接口）</p>
+<p>3.派生类需要自己的构造函数</p>
+<p>4.派生类可以根据需要添加额外的数据成员和成员函数。</p>
+<h2 id="13-1-1-构造函数：访问权限的考虑"><a href="#13-1-1-构造函数：访问权限的考虑" class="headerlink" title="13.1.1 构造函数：访问权限的考虑"></a>13.1.1 构造函数：访问权限的考虑</h2><p>派生类不能直接访问基类的私有成员，而必须通过基类方法进行访问。具体地说，派生类构造函数必须使用基类构造函数。</p>
+<p>创建派生类对象时，程序首先创建基类对象。从概念上说，这意味着基类对象应当在程序进入派生类构造函数之前被创建。C++使用成员初始化列表语法完成这种工作。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Rateplayer::RatedPlayer(<span class="keyword">unsigned</span> <span class="keyword">int</span> r,<span class="keyword">const</span> <span class="built_in">string</span> &amp; fn,<span class="keyword">const</span> <span class="built_in">string</span> &amp; ln,<span class="keyword">bool</span> ht) : TableTennisPlayer(fn,ln,ht)</span><br><span class="line">&#123;</span><br><span class="line">	rating=r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中：TableTennisPlayer(fn,ln,ht)是成员初始化列表。它是可执行的代码，调用TableTennisPlayer构造函数。</p>
+<p>有关派生类构造函数的要点如下：</p>
+<p>1.首先创建基类对象</p>
+<p>2.派生类构造函数应通过成员初始化列表将基类信息传递给基类构造函数</p>
+<p>3.派生类构造函数应初始化派生类新增的数据成员</p>
+<p>4.释放对象的顺序与创建对象的顺序相反，即首先执行派生类的析构函数，然后自动调用基类的析构函数。</p>
+<p>注意：派生类构造函数可以使用初始化器列表机制将值传递给基类构造函数。成员初始化列表只能用于构造函数。</p>
+<h2 id="13-1-2-派生类和基类之间的特殊关系"><a href="#13-1-2-派生类和基类之间的特殊关系" class="headerlink" title="13.1.2 派生类和基类之间的特殊关系"></a>13.1.2 派生类和基类之间的特殊关系</h2><p>派生类对象可以使用基类的方法，条件是方法不是私有的。</p>
+<p>基类指针可以在不进行显式类型转换的情况下指向派生类对象；基类引用可以在不进行显式类型转换的情况下引用派生类对象。</p>
+<p>基类指针或引用只能用于调用基类方法。不可以将基类对象和地址赋给派生类引用和指针。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">TableTennisPlayer <span class="title">player</span><span class="params">(<span class="string">""</span>,<span class="string">""</span>,<span class="literal">true</span>)</span></span>;</span><br><span class="line">RatedPlayer &amp;rr=player;<span class="comment">//不允许将基类对象和地址赋给派生类引用和指针</span></span><br><span class="line">RatedPlayer *pr=player;<span class="comment">//不允许将基类对象和地址赋给派生类引用和指针</span></span><br></pre></td></tr></table></figure>
+
+<p>基类引用定义的函数或指针可以用于基类对象或派生类对象！对于形参为指向基类的指针的函数，它可以使用基类对象的地址或派生类对象的地址作为实参。</p>
+<h2 id="13-2-继承：is–a关系"><a href="#13-2-继承：is–a关系" class="headerlink" title="13.2 继承：is–a关系"></a>13.2 继承：is–a关系</h2><p>C++有3种继承方式：公有继承、保护继承和私有继承。公有继承是最常用的方式，它建立一种is-a关系，即派生类对象也是一个基类对象，可以对基类对象执行的任何操作，也可以对派生类对象执行。</p>
+<p>公有继承不建立has-a关系，例如，午餐可能包含水果，但通常午餐并不是水果。所以不能从Fruit类派生出Lunch类来在午餐中添加水果。</p>
+<p>公有继承不能建立is-like-a关系，也就是说，它不采用明喻。</p>
+<p>继承可以在基类的基础上添加属性，但不能删除基类的属性。</p>
+<p>公有继承不建立uses-a关系，例如，计算机可以使用激光打印机，但从Computer类派生出Printer类（或反过来）是没有意义的。</p>
+<h2 id="13-3-多态公有继承"><a href="#13-3-多态公有继承" class="headerlink" title="13.3 多态公有继承"></a>13.3 多态公有继承</h2><p>方法的行为应取决于调用该方法的对象。这种较复杂的行为称为多态—具有多种形态，即同一个方法的行为随上下文而异。有两种重要的机制可用于实现多态公有继承：</p>
+<p>1.在派生类中重新定义基类的方法。</p>
+<p>2.使用虚方法。（关键字virtual）</p>
+<p>经常在基类中将派生类会重新定义的方法声明为虚方法。方法在基类中被声明为虚的后，它在派生类中将自动成为虚方法。</p>
+<p>注意：如果要在派生类中重新定义基类的方法，通常应将基类方法声明为虚的。这样，程序将根据对象类型而不是引用或指针的类型来选择方法版本。为虚类声明一个虚析构函数也是一种惯例。</p>
+<p>在派生类中，标准技术是使用作用域解析符来调用基类方法。</p>
+<p>虚方法是派生类想要对基类的某个函数能够重新定义的方法。</p>
+<h2 id="13-4-静态联编和动态联编"><a href="#13-4-静态联编和动态联编" class="headerlink" title="13.4 静态联编和动态联编"></a>13.4 静态联编和动态联编</h2><p>在编译过程中进行联编被称为静态联编，又称为早期联编。</p>
+<p>编译器必须生成能够在程序运行时选择正确的虚方法的代码，这被称为动态联编，又称为晚期联编。</p>
+<h3 id="13-4-1-指针和引用类型的兼容性"><a href="#13-4-1-指针和引用类型的兼容性" class="headerlink" title="13.4.1 指针和引用类型的兼容性"></a>13.4.1 指针和引用类型的兼容性</h3><p>通常C++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型。</p>
+<p>指向基类的引用或指针可以引用派生类对象，而不必进行显式类型转换。</p>
+<p>将派生类引用或指针转换为基类引用或指针被称为向上强制转换，这使公有继承不需要进行显式类型转换。</p>
+<p>将基类指针或引用转换为派生类指针或引用被称为向下强制转换。如果不使用显式类型转换，则向下强制转换是不被允许的，原因是is-a关系通常是不可逆的。</p>
+<p>隐式向上强制转换使基类指针或引用可以指向基类对象或派生类对象，因此需要动态联编。C++使用虚成员函数来满足这种要求。</p>
+<h3 id="13-4-2-虚成员函数和动态联编"><a href="#13-4-2-虚成员函数和动态联编" class="headerlink" title="13.4.2 虚成员函数和动态联编"></a>13.4.2 虚成员函数和动态联编</h3><p>在基类方法的声明中使用关键字virtual可使该方法在基类以及所有的派生类中是虚的。</p>
+<p>如果使用指向对象的引用或指针来调用虚方法，程序将使用为对象类型定义的方法，而不使用为引用或指针类型定义的方法。这称为动态联编或晚期联编。</p>
+<p>如果定义的类被用作基类，则应将那些要在派生类中重新定义的类方法声明为虚的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BrassPlus ophelia;</span><br><span class="line">Brass *bp;</span><br><span class="line">bp = &amp;ophelia;</span><br><span class="line">bp-&gt;ViewAcct();</span><br></pre></td></tr></table></figure>
+<p>如果在基类中没有将ViewAcct（）声明为虚的，则bp-&gt;ViewAcct（）将根据指针类型（Brass*）调用Brass::ViewAcct()。指针类型在编译时已知，因此编译器在编译时，可以将ViewAcct（）关联到Brass::ViewAcct()。总之，编译器对非虚方法使用静态联编。</p>
+<p>如果在基类中将ViewAcct（）声明为虚的，则bp-&gt;ViewAcct（）根据对象类型（BrassPlus）调用BrassPlus::ViewAcct()。总之，编译器对虚方法使用动态联编。</p>
+<p>如果类不会用作基类，则不需要动态联编；同样，如果派生类不重新定义基类的任何方法，也不需要使用动态联编。</p>
+<p>如果要在派生类中重新定义基类的方法，则将它设置为虚方法；否<br>则，设置为非虚方法。</p>
+<p>虚函数的工作原理：</p>
+<p>通常，编译器处理虚函数的方法是：给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。这种数组称为虚函数表。虚函数表中储存了为类对象进行声明的虚函数的地址。例如，基类对象包含一个指针，该指针指向基类中所有虚函数的地址表。派生类对象将包含一个指向独立地址表的指针。如果派生类提供了虚函数的新定义，该虚函数表将保存新函数的地址；如果派生类没有重新定义虚函数，该vtbl将保存函数原始版本的地址。如果派生类定义了新的虚函数，则该函数的地址也被添加到vtbl中。</p>
+<p>调用虚函数时，程序将查看储存在对象中的vtbl地址，然后转向相应的函数地址表。如果使用类声明中定义的第一个虚函数，则程序将使用数组中的第一个函数地址，并执行具有该地址的函数，如果使用类声明中的第三个虚函数，程序将使用地址为数组中第三个元素的函数。总之，使用虚函数时，在内存和执行速度方面有一定的成本，包括：</p>
+<p>1.每个对象都将增大，增大量为储存地址的空间；</p>
+<p>2.对于每个类，编译器都创建一个虚函数地址表（数组）；</p>
+<p>3.对于每个函数调用，都需要执行一项额外的操作，即到表中查找地址。</p>
+<p>构造函数不能是虚函数，且派生类不能继承基类的构造函数。</p>
+<p>析构函数应当是虚函数，除非类不用作基类。</p>
+<p>友元不能是虚函数，因为友元不是类成员，而只有成员才能是虚函数。</p>
+<p>如果派生类没有重新定义函数，将使用该函数的基类版本。如果派生类位于派生链中，则将使用最新的虚函数版本。</p>
+<p>如果重新定义继承的方法，应确保与原来的原型完全相同，但如果返回类型是基类引用或指针，则可以修改为指向派生类的引用或指针。这种特性被称为返回类型协变，因为允许返回类型随类类型的变化而变化。注意：这种特性只适用于返回值，而不适用于参数。</p>
+<p>如果基类声明被重载了，则应在派生类中重新定义所有的基类版本。</p>
+<h2 id="13-5-访问控制：-protected"><a href="#13-5-访问控制：-protected" class="headerlink" title="13.5 访问控制： protected"></a>13.5 访问控制： protected</h2><p>关键字protected与private相似，在类外只能用公有类成员来访问protected部分中的类成员。private和protected之间的区别只有在基类派生的类中才会表现出来。派生类的成员可以直接访问基类的保护成员，但不能直接访问基类的私有成员。因此，保护成员的行为与私有成员相似；但对于派生类来说，保护成员的行为与公有成员相似。</p>
+<p>最好对类数据成员采用私有访问控制，不要使用保护访问控制；同时通过基类方法使派生类能够访问基类数据。</p>
+<h2 id="13-6-抽象基类（abstract-base-class，ABC）"><a href="#13-6-抽象基类（abstract-base-class，ABC）" class="headerlink" title="13.6 抽象基类（abstract base class，ABC）"></a>13.6 抽象基类（abstract base class，ABC）</h2><p>在类声明中包含纯虚函数时，则不能创建该类的对象。这里的理念是，包含纯虚函数的类只用作基类。要成为真正的ABC，必须至少包含一个纯虚函数。</p>
+<p>C++通过使用纯虚函数提供未实现的函数。纯虚函数声明的结尾处为=0，参见Area（）方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseEllipse</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">Area</span><span class="params">()</span><span class="keyword">const</span></span>=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总之，在原型中使用=0指出类是一个抽象基类，在类中可以不定义该函数。</p>
+<p>在处理继承的问题上，ABC方法更具系统性、更规范。在设计ABC之前，首先应开发一个模型——指出编程问题所需的类以及它们之间的相互关系。</p>
+<p>可以将ABC看作是一种必须实施的接口。ABC要求具体派生类覆盖其纯虚函数——迫使派生类遵循ABC设置的接口规则。</p>
+<h2 id="13-7-继承和动态内存分配"><a href="#13-7-继承和动态内存分配" class="headerlink" title="13.7 继承和动态内存分配"></a>13.7 继承和动态内存分配</h2><p>第一种情况：派生类不使用new</p>
+<p>实际上，派生类的默认构造函数总是要进行一些操作：执行自身的代码后调用基类析构函数。</p>
+<p>默认复制构造函数执行成员复制，这对于动态内存分配来说是不合适的。将long复制到long中是通过使用常规赋值完成的；但复制类成员或继承的类组件时，则是使用该类的复制构造函数完成的。</p>
+<p>对于赋值来说，类的默认赋值运算符将自动使用基类的赋值运算符来对基类组件进行赋值。</p>
+<p>第二种情况：派生类使用new</p>
+<p>在这种情况下，必须为派生类定义显式析构函数、复制构造函数和赋值运算符。</p>
+<p>派生类析构函数自动调用基类的析构函数，故其自身的职责是对派生类构造函数执行工作的进行清理。</p>
+<p>成员初始化列表将派生类引用传递给基类构造函数。没有参数模型为派生类引用的基类构造函数，也不需要这样的构造函数。因为基类复制构造函数有一个基类引用参数，而基类引用可以指向派生类类型。因此，基类引用复制构造函数将使用派生类参数的基类部分来构造新对象的基类部分。</p>
+<p>派生类的显式赋值运算符必须负责所有继承的基类对象的赋值，可以通过显式调用基类赋值运算符来完成这项工作。</p>
+<p>总之，当基类和派生类都采用动态内存分配时，派生类的析构函数、复制构造函数、赋值运算符都必须使用相应的基类方法来处理基类元素。</p>
+<p>对于析构函数，这是自动完成的。</p>
+<p>对于构造函数。这是通过在初始化成员列表中调用基类的复制构造函数来完成的。如果不这样做，将自动调用基类的默认构造函数。</p>
+<p>对于赋值运算符，这是通过使用作用域解析运算符显式地调用基类的赋值运算符来完成的。</p>
+<p>派生类如何使用基类的友元：因为友元不是成员函数，所以不能使用作用域解析符来指出要使用哪个函数，解决方法是使用强制类型转换。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream &amp;os,<span class="keyword">const</span> hasDMA &amp;hs)<span class="comment">//hasDMA为baseDMA的派生类</span></span><br><span class="line">&#123;</span><br><span class="line">	os&lt;&lt;(<span class="keyword">const</span> baseDMA &amp;)hs;<span class="comment">//强制类型转换</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="13-8-类设计回顾"><a href="#13-8-类设计回顾" class="headerlink" title="13.8 类设计回顾"></a>13.8 类设计回顾</h2><h3 id="13-8-1-默认构造函数"><a href="#13-8-1-默认构造函数" class="headerlink" title="13.8.1 默认构造函数"></a>13.8.1 默认构造函数</h3><p>默认构造函数要么没有参数，要么所有的参数都有默认值。如果没有定义任何构造函数，编译器将定义默认构造函数，让您能够创建对象。</p>
+<p>自动生成的默认构造函数的另一项功能是，调用基类的默认构造函数以及调用本身是对象的成员所属类的默认构造函数。</p>
+<p>如果派生类构造函数的成员初始化列表中没有显式调用基类构造函数，则编译器将使用基类的默认构造函数来构造派生类对象的基类部分。</p>
+<p>提供构造函数的动机之一是确保对象总能被初始化。</p>
+<h3 id="13-8-2-复制构造函数"><a href="#13-8-2-复制构造函数" class="headerlink" title="13.8.2 复制构造函数"></a>13.8.2 复制构造函数</h3><p>复制构造函数接受其所属类的对象作为参数。例如Star类的复制构造函数的原型如下：</p>
+<p><code>Star（const Star &amp;）；</code></p>
+<p>在下述情况下，将使用复制构造函数：</p>
+<p>1.将新对象初始化为一个同类对象；</p>
+<p>2.按值将对象传递给函数；</p>
+<p>3.函数按值返回对象；</p>
+<p>4.编译器生成临时对象。</p>
+<p>使用new初始化的成员指针通常要求执行深复制。</p>
+<h3 id="13-8-3-赋值运算符"><a href="#13-8-3-赋值运算符" class="headerlink" title="13.8.3 赋值运算符"></a>13.8.3 赋值运算符</h3><p>默认赋值为成员赋值。如果成员为类对象，则默认构造函数将使用相应类的赋值运算符。Star类的赋值运算符的原型如下：</p>
+<p><code>Star &amp;Star::operator=(const Star &amp;);</code></p>
+<p>编译器不会生成将一种类型赋给另一种类型的赋值运算符。如果希望能够将字符串赋给Star对象，则方法之一是显式定义下面的运算符：</p>
+<p><code>Star &amp; Star::operator=(const char *);</code></p>
+<h3 id="13-8-4-其他的类方法"><a href="#13-8-4-其他的类方法" class="headerlink" title="13.8.4 其他的类方法"></a>13.8.4 其他的类方法</h3><p>构造函数不同于其他类方法，因为它创建新的对象，而其他类方法只是被现有的对象调用。这是构造函数不能被继承的原因之一。继承意味着派生类对象可以使用基类的方法，然而，构造函数在完成其工作之前，对象并不存在。</p>
+<p>一定要定义显式析构函数来释放类构造函数使用new分配的所有内存，并完成类对象所需的任何特殊的清理工作。对于基类，即使它不需要析构函数，也应提供一个虚析构函数。</p>
+<p>使用一个参数就可以调用的构造函数定义了从参数类型到类类型的转换。</p>
+<p>在带一个参数的构造函数原型中使用explicit将禁止进行隐式转换，但仍允许显式转换。</p>
+<p>通常，编写使用对象作为参数的函数时，应按引用而不是按值来传递对象。这样做的原因之一是为了提高效率。</p>
+<p>按引用传递对象的另一个原因是，在继承使用虚函数时，被定义为接受基类引用参数的函数可以接受派生类。</p>
+<p>应返回引用而不是返回对象的原因在于，返回对象涉及生成返回对象的临时副本，这是调用函数的程序可以使用的副本。因此，返回对象的时间成本包括调用复制构造函数来生成副本所需的时间和调用析构函数来删除副本所需的时间。返回引用可以节省时间和内存。直接返回对象与按值传递的对象相似：它们都生成临时副本。同样，返回引用与按引用传递对象相似：调用和被调用的函数对同一对象进行操作。</p>
+<p>函数不能返回在函数中创建的临时对象的引用，因为当函数结束时，临时对象将消失，因此这种引用将是非法的。在这种情况下，应返回对象，以生成一个调用程序可以使用的副本。</p>
+<p>如果函数返回的是通过引用或指针传递给它的对象，则应按引用返回对象。</p>
+<p>可以使用const来确保方法不修改调用它的对象：</p>
+<p><code>void Star::show()const{...}</code></p>
+<p>这里const表示const Star *this，而不是this指向调用的对象。</p>
+<p>可以使用const来确保引用或指针返回的值不能用于修改对象中的数据：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Const Stock &amp; <span class="title">Stock::topval</span><span class="params">(<span class="keyword">const</span> Stock &amp; s)</span><span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s.total_val&gt;total_val)</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该方法返回对this或s的引用。因为this和s都被声明为const，所以函数不能对它们进行修改。</p>
+<h3 id="13-8-5-公有继承的考虑因素"><a href="#13-8-5-公有继承的考虑因素" class="headerlink" title="13.8.5 公有继承的考虑因素"></a>13.8.5 公有继承的考虑因素</h3><p>要遵循is-a关系。表示is-a关系的方式之一是，无需进行显式类型转换，基类指针就可以指向派生类对象，基类引用可以引用派生类对象。</p>
+<p>在某些情况下，最好的方法可能是创建包含纯虚函数的抽样数据类，并从它派生出其他的类。</p>
+<p>1.构造函数是不能继承的。</p>
+<p>2.析构函数也是不能继承的。</p>
+<p>3.赋值运算符是不能继承的。派生类继承的方法的特征标与基类完全相同，但赋值运算符的特征标随类而异，这是因为它包含一个类型为其所属类的形参。</p>
+<p>如果对象属于派生类，编译器将使用基类赋值运算符来处理派生类对象中基类部分的赋值。</p>
+<p>如果派生类使用了new，则必须提供显式赋值运算符。</p>
+<p>可以将派生对象赋给基类对象，但这只涉及基类的成员。</p>
+<p>派生类引用不能自动引用基类对象，所以基类不能赋给派生类，除非有下面的转换构造函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BrassPlus(<span class="keyword">const</span> Brass &amp;);</span><br><span class="line"><span class="function">Brass <span class="title">gp</span><span class="params">(<span class="string">""</span>,<span class="number">21234</span>,<span class="number">1200</span>)</span></span>;</span><br><span class="line">BrassPlus temp;</span><br><span class="line">temp = gp;<span class="comment">//提供了转换函数可以赋给派生类。</span></span><br><span class="line"></span><br><span class="line">另一种方法是，定义一个用于将基类赋给派生类的赋值运算符：</span><br><span class="line">BrassPuls &amp; BrassPlus::<span class="keyword">operator</span>=(<span class="keyword">const</span> Brass &amp; )&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>对派生类而言，保护成员类型于公有成员：但对于外部而言，保护成员与私有成员类似。派生类可以直接访问基类的保护成员，但只能通过基类的成员函数来访问私有成员。</p>
+<p>如果希望派生类能够重新定义方法，则应在基类中将方法定义为虚的，这样可以启用晚期联编（动态联编）；如果不希望重新定义方法，则不必将其声明为虚的。</p>
+<p>基类的虚构函数应当是虚的。这样，当通过指向对象的基类指针或引用来删除派生对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数，而不仅仅是调用基类的析构函数。</p>
+<p>由于友元函数并非类成员，因此不能继承。然而，您可能希望派生类的友元函数能够使用基类的友元函数。为此，可以通过强制类型转换，派生类引用或指针转换为基类引用或指针，然后使用转换后的指针或引用来调用基类的友元函数。</p>
+<p>有关使用基类方法的说明：</p>
+<p>1.派生类对象自动使用继承而来的基类方法，如果派生类没有重新定义该方法。</p>
+<p>2.派生类的构造函数自动调用基类的构造函数。</p>
+<p>3.派生类的构造函数自动调用基类的默认构造函数，如果没有在成员初始化列表中指定其他构造函数。</p>
+<p>4.派生类构造函数显式地调用成员初始化列表中指定的基类构造函数。</p>
+<p>5.派生类方法可以使用作用域解析运算符来调用公有的和受保护的基类方法。</p>
+<p>6.派生类的友元函数可以通过强制类型转换，将派生类引用或指针转换为基类引用或指针，然后使用该引用或指针来调用基类的友元函数。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -189,16 +351,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C-Primer-Plus-第十二章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -213,615 +434,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第十二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">C-Primer-Plus-第十二章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-14T03:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="类和动态内存分配"><a href="#类和动态内存分配" class="headerlink" title="类和动态内存分配"></a>类和动态内存分配</h1><p>通常，最好在程序运行时（而不是编译时）确定诸如使用多少内存等问题。对于在对象中保存数据来说，通常的C++方法是，在类构造函数中使用new运算符在程序运行时分配所需的内存。</p>
-        
-          <a class="article-more-a" href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类继承"><span class="toc-number">1.</span> <span class="toc-text">类继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#13-1-1-构造函数：访问权限的考虑"><span class="toc-number">1.1.</span> <span class="toc-text">13.1.1 构造函数：访问权限的考虑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-1-2-派生类和基类之间的特殊关系"><span class="toc-number">1.2.</span> <span class="toc-text">13.1.2 派生类和基类之间的特殊关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-2-继承：is–a关系"><span class="toc-number">1.3.</span> <span class="toc-text">13.2 继承：is–a关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-3-多态公有继承"><span class="toc-number">1.4.</span> <span class="toc-text">13.3 多态公有继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-4-静态联编和动态联编"><span class="toc-number">1.5.</span> <span class="toc-text">13.4 静态联编和动态联编</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-4-1-指针和引用类型的兼容性"><span class="toc-number">1.5.1.</span> <span class="toc-text">13.4.1 指针和引用类型的兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-4-2-虚成员函数和动态联编"><span class="toc-number">1.5.2.</span> <span class="toc-text">13.4.2 虚成员函数和动态联编</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-5-访问控制：-protected"><span class="toc-number">1.6.</span> <span class="toc-text">13.5 访问控制： protected</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-6-抽象基类（abstract-base-class，ABC）"><span class="toc-number">1.7.</span> <span class="toc-text">13.6 抽象基类（abstract base class，ABC）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-7-继承和动态内存分配"><span class="toc-number">1.8.</span> <span class="toc-text">13.7 继承和动态内存分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-8-类设计回顾"><span class="toc-number">1.9.</span> <span class="toc-text">13.8 类设计回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-8-1-默认构造函数"><span class="toc-number">1.9.1.</span> <span class="toc-text">13.8.1 默认构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-8-2-复制构造函数"><span class="toc-number">1.9.2.</span> <span class="toc-text">13.8.2 复制构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-8-3-赋值运算符"><span class="toc-number">1.9.3.</span> <span class="toc-text">13.8.3 赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-8-4-其他的类方法"><span class="toc-number">1.9.4.</span> <span class="toc-text">13.8.4 其他的类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-8-5-公有继承的考虑因素"><span class="toc-number">1.9.5.</span> <span class="toc-text">13.8.5 公有继承的考虑因素</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-C++图形编程之将图片加载到窗口上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/">C++图形编程之将图片加载到窗口上</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/" class="archive-article-date">
-  	<time datetime="2020-03-12T11:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C-图形编程-EasyX，"><a href="#C-图形编程-EasyX，" class="headerlink" title="C++图形编程  EasyX，"></a>C++图形编程  EasyX，</h1><p>EasyX 是针对 C++ 的图形库。比如，可以用 VC + EasyX 很快的用几何图形画一个房子，或者一辆移动的小车，可以编写俄罗斯方块、贪吃蛇、黑白棋等小游戏，可以练习图形学的各种算法，等等。</p>
-<p>将图片加载到窗口上</p>
-<p>头文件 &lt;graphics.h&gt;</p>
-        
-          <a class="article-more-a" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第十一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/11/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">C++ Primer Plus 第十一章</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/11/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-11T04:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用类"><a href="#使用类" class="headerlink" title="使用类"></a>使用类</h1><p>C++类特性丰富、复杂、功能强大。</p>
-<h2 id="11-1-运算符重载"><a href="#11-1-运算符重载" class="headerlink" title="11.1 运算符重载"></a>11.1 运算符重载</h2>
-        
-          <a class="article-more-a" href="/2020/03/11/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/11/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第十章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/">C++ Primer Plus 第十章</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-08T12:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="对象和类"><a href="#对象和类" class="headerlink" title="对象和类"></a>对象和类</h1><p>面向对象特性（OOP）1.抽象 2.封装和数据隐藏 3.多态 4.继承 5.代码的可重用性</p>
-<p>采用OOP方法时，首先从用户的角度考虑对象—描述对象所需的数据以及描述用户与数据交互所需的操作。</p>
-        
-          <a class="article-more-a" href="/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第九章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/C-Primer-Plus-%E7%AC%AC%E4%B9%9D%E7%AB%A0/">C++ Primer Plus 第九章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/06/C-Primer-Plus-%E7%AC%AC%E4%B9%9D%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-06T11:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="内存模型和名称空间"><a href="#内存模型和名称空间" class="headerlink" title="内存模型和名称空间"></a>内存模型和名称空间</h1>
-        
-          <a class="article-more-a" href="/2020/03/06/C-Primer-Plus-%E7%AC%AC%E4%B9%9D%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/06/C-Primer-Plus-%E7%AC%AC%E4%B9%9D%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-想见你" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/">想见你</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T12:27:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div id="aplayer-WCpKvHPy" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="157276" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
-
-<p>所以暂时将你眼睛闭了起来~</p>
-        
-          <a class="article-more-a" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/">C++ Primer Plus 第八章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数探幽"><a href="#函数探幽" class="headerlink" title="函数探幽"></a>函数探幽</h1><p>函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。</p>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AB%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第七章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/">C++ Primer Plus 第七章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数-——-C-的编程模块"><a href="#函数-——-C-的编程模块" class="headerlink" title="函数 —— C++的编程模块"></a>函数 —— C++的编程模块</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E4%B8%83%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-Primer-Plus-第六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="6-1分支语句和逻辑运算符"><a href="#6-1分支语句和逻辑运算符" class="headerlink" title="6.1分支语句和逻辑运算符"></a>6.1分支语句和逻辑运算符</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C-Primer-Plus-%E7%AC%AC%E5%85%AD%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -844,8 +482,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
