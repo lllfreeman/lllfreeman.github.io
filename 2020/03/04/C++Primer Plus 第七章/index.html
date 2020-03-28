@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++ Primer Plus 第十章 | Blog-lllfreeman</title>
+  <title>C++ Primer Plus 第七章 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对象和类面向对象特性（OOP）1.抽象 2.封装和数据隐藏 3.多态 4.继承 5.代码的可重用性 采用OOP方法时，首先从用户的角度考虑对象—描述对象所需的数据以及描述用户与数据交互所需的操作。">
+  <meta name="description" content="函数 —— C++的编程模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ Primer Plus 第十章">
-<meta property="og:url" content="http://yoursite.com/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/index.html">
+<meta property="og:title" content="C++ Primer Plus 第七章">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="对象和类面向对象特性（OOP）1.抽象 2.封装和数据隐藏 3.多态 4.继承 5.代码的可重用性 采用OOP方法时，首先从用户的角度考虑对象—描述对象所需的数据以及描述用户与数据交互所需的操作。">
+<meta property="og:description" content="函数 —— C++的编程模块">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-08T12:48:29.000Z">
-<meta property="article:modified_time" content="2020-03-08T13:29:39.707Z">
+<meta property="article:published_time" content="2020-03-04T08:32:11.000Z">
+<meta property="article:modified_time" content="2020-03-04T09:07:51.391Z">
 <meta property="article:author" content="lllfreeman">
 <meta name="twitter:card" content="summary">
   
@@ -155,97 +155,59 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-C-Primer-Plus-第十章" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-C++Primer Plus 第七章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C++ Primer Plus 第十章
+      C++ Primer Plus 第七章
     </h1>
   
 
         
-        <a href="/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-08T12:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+        <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-03-04T08:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="对象和类"><a href="#对象和类" class="headerlink" title="对象和类"></a>对象和类</h1><p>面向对象特性（OOP）1.抽象 2.封装和数据隐藏 3.多态 4.继承 5.代码的可重用性</p>
-<p>采用OOP方法时，首先从用户的角度考虑对象—描述对象所需的数据以及描述用户与数据交互所需的操作。</p>
-<a id="more"></a>
-<h2 id="1-抽象和类"><a href="#1-抽象和类" class="headerlink" title="1.抽象和类"></a>1.抽象和类</h2><p>抽象指的是将问题的本质特征抽象出来，并根据特征来描述解决方案。</p>
-<p>在C++中，用户定义类型指的是实现抽象接口的类设计。<br>指定基本类型完成了三项工作：</p>
-<p>1.决定数据对象需要的内存数量；</p>
-<p>2.决定如何解释内存中的位（不同类型的内存，比如long和float在内存中占的位相同，但将它们转换为数值的方法不同）；</p>
-<p>3.决定可使用数据对象执行的操作和方法。</p>
-<h3 id="1-1-C-中的类"><a href="#1-1-C-中的类" class="headerlink" title="1.1 C++中的类"></a>1.1 C++中的类</h3><p>类是一种将抽象转换为用户定义类型的C++工具，它将数据表示和操纵数据的方法组合成一个整洁的包。</p>
-<p>一般来说，类规范由两部分组成：</p>
-<p>1.类声明：以数据成员的方式描述数据部分，以成员函数（被称为方法）的方式描述公有接口。</p>
-<p>2.类方法定义：描述如何实现类成员函数。</p>
-<p>要使用某个类，必须了解其公有接口；要编写类，必须创建其公有接口。</p>
-<p>在类定义中，成员函数可用就地定义，也可以用原型表示。一般做法是将接口（类定义）放在头文件中，并将实现（类方法的代码）放在源代码文件中。将数据和方法组合成一个单元是类最吸引人的特性。</p>
-<p>使用类对象的程序都可用直接访问公有部分，但只能通过公有成员函数或友元函数来访问对象的私有成员。公有成员函数是程序和对象的私有成员之间的桥梁，提供了对象和程序之间的接口。</p>
-<p>防止程序直接访问数据被称为数据隐藏。</p>
-<p>公有接口表示设计的抽象组件。将实现细节放在一起并将它们与抽象分开被称为封装。数据隐藏也是一种封装。将实现的细节隐藏在私有部分中也是一种封装。将类函数定义和类声明放在不同的文件中也是一种封装。</p>
-<p>由于数据隐藏是OOP主要的目标之一，因此数据通常放在私有部分，组成类接口的成员函数放在公有部分。</p>
-<h3 id="1-2-实现类成员函数"><a href="#1-2-实现类成员函数" class="headerlink" title="1.2 实现类成员函数"></a>1.2 实现类成员函数</h3><p>义成员函数时，使用作用域解析运算符（::）来标识函数所属的类；</p>
-<p>类方法可以访问类的private组件。</p>
-<p>定义位于类声明中的函数都将自动成为内联函数。可以在类声明之外定义成员函数，并使其成为内联函数：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stock</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	 ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Stock::set</span><span class="params">()</span> <span class="comment">//函数是属于类的内联函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	 ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在类声明中定义方法等同于用原型替换方法定义，然后在类声明的后面将定义改写为内联函数。</p>
-<p>同一个类的所有对象共享同一组类方法，即每种方法只有一个副本。</p>
-<h3 id="1-3-使用类"><a href="#1-3-使用类" class="headerlink" title="1.3 使用类"></a>1.3 使用类</h3><p>将修改限定在实现文件中，以免影响程序的其他方面；应重置格式信息，使其恢复到自己被调用前的状态。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::streamsize prec = <span class="built_in">std</span>::<span class="built_in">cout</span>.precision(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>.precision(prec); <span class="comment">//恢复至之前的格式</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::ios_bace::fmtflags orig = <span class="built_in">std</span>::<span class="built_in">cout</span>.setf(<span class="built_in">std</span>::ios_bace::fixed);</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>.setf(orig,<span class="built_in">std</span>::ios_bace::floatfield);</span><br></pre></td></tr></table></figure>
-
-<p>公有部分的内容构成了设计的抽象部分—公有接口。将数据封装到私有部分中可以保护数据的完整性，这被称为数据隐藏。</p>
-<h2 id="2-类的构造函数和析构函数"><a href="#2-类的构造函数和析构函数" class="headerlink" title="2.类的构造函数和析构函数"></a>2.类的构造函数和析构函数</h2><h3 id="2-1构造函数"><a href="#2-1构造函数" class="headerlink" title="2.1构造函数"></a>2.1构造函数</h3><p>类构造函数专门用于构造新对象、将值赋给它们的数据成员。如果没有明确声明构造函数，将自动使用默认构造函数来构造新对象。</p>
-<p>构造函数没有声明类型。</p>
-<p>构造函数声明的两种方法：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Stock(<span class="keyword">const</span> <span class="built_in">string</span> &amp; co,<span class="keyword">long</span> n=<span class="number">0</span>,<span class="keyword">double</span> pr =<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line">Stock::Stock(<span class="keyword">const</span> <span class="built_in">string</span> &amp; co,<span class="keyword">long</span> n,<span class="keyword">double</span> pr) <span class="comment">//和上一函数效果相同</span></span><br><span class="line">&#123;</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>构造函数的参数表示的是类成员，而不是赋给类成员的值。</p>
-<p>当且仅当没有定义任何构造函数时，编译器才会提供默认构造函数。为类定义了构造函数后，程序员就必须为它提供默认构造函数。</p>
-<p>在设计类时，通常应提供对所有类成员做隐式初始化的默认构造函数。</p>
-<p>接收一个参数的构造函数允许使用赋值语法将对象初始化为一个值。</p>
-<h3 id="2-2-析构函数"><a href="#2-2-析构函数" class="headerlink" title="2.2 析构函数"></a>2.2 析构函数</h3><p>对象过期时，程序将自动调用一个特殊的成员函数—析构函数。析构函数完成清理工作！如果构造函数使用new来分配内存，则析构函数将使用delete来释放这些内存。</p>
-<p>析构函数原型：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>：  ~Stock（）；</span><br><span class="line"><span class="number">2</span>：  Stock::~Stock()</span><br><span class="line">	 &#123;</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
-<p>如果创建的是静态储存类对象，则其析构函数将在程序结束时自动被调用。</p>
-<p>如果创建的是自动储存类对象，则其析构函数将在程序执行完代码块时自动被调用。</p>
-<p>如果对象是通过new创建的，则它将驻留在栈内存或自由储存区中，当使用delete来释放内存时，其析构函数将自动被调用。</p>
-<p>由于类对象过期时析构函数将自动被调用，因此必须有一个析构函数。如果程序员没有提供析构函数，编译器将隐式地声明一个默认析构函数，并在发现导致对象被删除的代码后，提供默认析构函数的定义。</p>
-<p>在默认情况下，将一个对象赋给同类型的另一个对象时，C++将源对象的每个数据成员的内容复制到目标对象中相应的数据成员中。</p>
-<p>const成员函数</p>
-<p>声明 : <code>void show() const;</code></p>
-<p>定义 :<code>void Stock::show() const;</code>保证函数不会修改调用对象。</p>
-<p>析构函数没有返回类型，也没有参数，其名称为类名称前加上~ </p>
-<h2 id="3-this-指针"><a href="#3-this-指针" class="headerlink" title="3 this 指针"></a>3 this 指针</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">top = stock1.topval(stock2);</span><br><span class="line"></span><br><span class="line">top = stock2.topavl(stock1);</span><br></pre></td></tr></table></figure>
-<p>第一种格式隐式地访问stock1，而显式地访问stock2；第二种格式显式地访问stock1，而隐式地访问stock2。</p>
-<p>this指针指向用来调用成员函数的对象（this被作为隐藏参数传递的方法）。</p>
-<p>函数调用stock1.topval（stock2）将this设置为stock1对象的地址，使得这个指针可用于topval（）方法。</p>
-<p>一般来说，所有的类方法都将this指针设置为调用它的对象的地址!</p>
-<p>每个成员函数（包括构造函数和析构函数）都有一个this指针，this指针指向调用对象，如果方法需要引用整个调用对象，则可以使用表达式 *this 。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> Stock &amp; <span class="title">Stock::topval</span><span class="params">(<span class="keyword">const</span> Stock &amp; s)</span><span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s.total_val&gt;total_val)</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;  <span class="comment">//this为调用函数的对象的地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-类作用域"><a href="#4-类作用域" class="headerlink" title="4.类作用域"></a>4.类作用域</h2><p>在类中定义的名称的作用域为整个类，作用域为整个类的名称只在该类中是已知的，在类外是不可知的。因此，可以在不同类中使用相同的类成员名而不会引起冲突。</p>
-<p>构造函数名称在被调用时，才能被识别，因为它的名称与类名相同。</p>
-<p>使用类成员名时，必须根据上下文使用直接成员运算符（.）、间接成员运算符（-&gt;）或作用域解析运算符（::）。</p>
-<h3 id="4-1-作用域为类的常量"><a href="#4-1-作用域为类的常量" class="headerlink" title="4.1 作用域为类的常量"></a>4.1 作用域为类的常量</h3><p>第一种方式是在类中声明一个枚举。在类声明中声明的枚举的作用域为整个类，因此可以用枚举为整型常量提供作用域为整个类的符号名称。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bakery</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">enum</span>&#123;Months=<span class="number">12</span>&#125;;</span><br><span class="line">	<span class="keyword">double</span> costs[Months];</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>另一种在类中定义常量的方式——使用关键字static：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bakery</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> Months=<span class="number">12</span>;</span><br><span class="line">	<span class="keyword">double</span> <span class="keyword">const</span>[Months];</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">//该常量将与其他静态变量储存在一起，而不是储存在对象中。</span></span><br></pre></td></tr></table></figure>
-
-<p>枚举量的作用域为类后，不同枚举定义中的枚举量就不会发生名称冲突了。</p>
-<p>在有些情况下，常规枚举将自动转换为整型，但作用域内枚举不能隐式地转换为整型。</p>
-<p>默认情况下，C++11作用域内枚举的底层类型为int。</p>
-<h2 id="5-抽象数据类型"><a href="#5-抽象数据类型" class="headerlink" title="5.抽象数据类型"></a>5.抽象数据类型</h2><p>抽象数据类型（abstract data type,ADT）</p>
-<p>C++程序使用栈来管理自动变量。当新的自动变量被生成后，它们被添加到堆顶；消亡时，从栈中删除它们。</p>
-<p>默认构造函数确保所有栈被创建时都为空。</p>
+        <h1 id="函数-——-C-的编程模块"><a href="#函数-——-C-的编程模块" class="headerlink" title="函数 —— C++的编程模块"></a>函数 —— C++的编程模块</h1><a id="more"></a>
+<h2 id="7-1函数的基本知识"><a href="#7-1函数的基本知识" class="headerlink" title="7.1函数的基本知识"></a>7.1函数的基本知识</h2><p>1.提供函数定义  2.提供函数原型    3.调用函数。</p>
+<p>函数返回值类型将被强制转换为 返回的类型</p>
+<p>C++中函数不能直接返回数组！但可以作为结构或者对象组成部分来返回。</p>
+<p>函数原型描述了函数到编译器的接口。</p>
+<p>通常 原型自动将被传递的参数强制转换为期望的类型。</p>
+<p>函数中修改形参的值不会影响调用程序中的数字。</p>
+<p>cin.get()函数读取所有的输入字符，包括空格和换行符，而cin&gt;&gt;跳过空格和换行符 ！！</p>
+<p>形参与其他局部变量的主要区别是，形参从调用的函数那里获取自己的值，而其他变量是从函数中获得自己的值。</p>
+<h2 id="7-2函数与数组"><a href="#7-2函数与数组" class="headerlink" title="7.2函数与数组"></a>7.2函数与数组</h2><p>C++将数组名视为指针</p>
+<p>对数组名使用sizeof将得到整个数组的长度（以字节为单位）。</p>
+<p>将地址运算符&amp;运用于数组名时，将返回整个数组的地址。</p>
+<p>当且仅当用于函数头或函数原型中，int*arr和int arr[]的含义才相同。</p>
+<p>将指针（包括数组名）加1，实际上是加上了一个与指针指向的类型的长度（以字节为单位）相等的值。！！</p>
+<p>将数组地址作为参数可以节省复制整个数组所需的时间和内存。</p>
+<h2 id="7-3常量-const-与指针"><a href="#7-3常量-const-与指针" class="headerlink" title="7.3常量 const 与指针"></a>7.3常量 const 与指针</h2><p>1 const *int 让指针指向一个常量对象，这样可以防止指针来修改所指向的值</p>
+<p>2第二种是将指针本身声明为常量，这样可以防止改变指针指向的位置。</p>
+<p>C++中禁止将const 的地址赋给非const指针 如果非要这样做，可以使用强制类型转换来突破这种限制 </p>
+<p>const_cast仅当只有一层间接关系时，才可以将非const地址或指针赋给const指针。</p>
+<p>通常，将指针作为函数参数来传递时，可以使用指向const的指针来保护数据</p>
+<h2 id="7-4函数与C-风格字符串"><a href="#7-4函数与C-风格字符串" class="headerlink" title="7.4函数与C-风格字符串"></a>7.4函数与C-风格字符串</h2><p>C-风格字符串由一系列字符组成，以空字符结尾。<br>字符串函数原型应将其表示字符串的形参声明为char*类型。<br>要创建包含n个字符的字符串，需要能够储存n+1个字符的空间，以便能够储存空值字符。</p>
+<h2 id="7-5函数与结构"><a href="#7-5函数与结构" class="headerlink" title="7.5函数与结构"></a>7.5函数与结构</h2><p>结构将其数据合成单个实体或数据对象，该实体被视为一个整体。</p>
+<p>如果程序在输入循环后还需要进行输入，则必须使用cin.clear()重置输入，然后还可能需要通过读取不合法的输入来丢弃他们</p>
+<h2 id="7-6函数与string对象"><a href="#7-6函数与string对象" class="headerlink" title="7.6函数与string对象"></a>7.6函数与string对象</h2><p>可以将结构作为完整的实体传递给函数，也可以将对象作为完整的实体进行传递</p>
+<h2 id="7-7函数与array对象"><a href="#7-7函数与array对象" class="headerlink" title="7.7函数与array对象"></a>7.7函数与array对象</h2><p>1 按值将对象传递给函数，函数处理的是原始对象的副本<br>2 传递指向对象的指针，函数能够直接操作原始对象<br>模板array并非只能储存基本数据类型，还能储存类对象</p>
+<h2 id="7-8递归"><a href="#7-8递归" class="headerlink" title="7.8递归"></a>7.8递归</h2><p>函数自己调用自己-&gt;称为递归</p>
+<p>递归方法有时被称为分而治之策略</p>
+<h2 id="7-9函数指针"><a href="#7-9函数指针" class="headerlink" title="7.9函数指针"></a>7.9函数指针</h2><p>如果think（）是一个函数，则think就是该函数的地址。</p>
+<p>要将函数作为参数进行传递，必须传递函数名。一定要区分传递的是函数的地址还说函数的返回值。</p>
+<p>通常，要声明指向特定类型的函数的指针，可以首先编写这种函数的原型，然后用（*pf）替换函数名。这样pf就是这类函数的指针。！！</p>
+<p>自动推断只能用于单值初始化，而不能用于初始化列表。！</p>
+<p>自动类型推断auto确保变量的类型与赋给它的初值的类型一致。</p>
+<p>创建类型别名typedef ！！ typedef double real 使real为double 的别名！！</p>
 
       
 
@@ -325,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/08/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E7%AB%A0/" alt="微信分享二维码">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -339,18 +301,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/11/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C++ Primer Plus 第十一章
+          C++ Primer Plus 第八章
         
       </div>
     </a>
   
   
-    <a href="/2020/03/06/C-Primer-Plus-%E7%AC%AC%E4%B9%9D%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++ Primer Plus 第九章</div>
+    <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ Primer Plus 第六章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -377,7 +339,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对象和类"><span class="toc-number">1.</span> <span class="toc-text">对象和类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-抽象和类"><span class="toc-number">1.1.</span> <span class="toc-text">1.抽象和类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-C-中的类"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 C++中的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-实现类成员函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 实现类成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-使用类"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 使用类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-类的构造函数和析构函数"><span class="toc-number">1.2.</span> <span class="toc-text">2.类的构造函数和析构函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1构造函数"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-析构函数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 析构函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-this-指针"><span class="toc-number">1.3.</span> <span class="toc-text">3 this 指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-类作用域"><span class="toc-number">1.4.</span> <span class="toc-text">4.类作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-作用域为类的常量"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 作用域为类的常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-抽象数据类型"><span class="toc-number">1.5.</span> <span class="toc-text">5.抽象数据类型</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#函数-——-C-的编程模块"><span class="toc-number">1.</span> <span class="toc-text">函数 —— C++的编程模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1函数的基本知识"><span class="toc-number">1.1.</span> <span class="toc-text">7.1函数的基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2函数与数组"><span class="toc-number">1.2.</span> <span class="toc-text">7.2函数与数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3常量-const-与指针"><span class="toc-number">1.3.</span> <span class="toc-text">7.3常量 const 与指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4函数与C-风格字符串"><span class="toc-number">1.4.</span> <span class="toc-text">7.4函数与C-风格字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5函数与结构"><span class="toc-number">1.5.</span> <span class="toc-text">7.5函数与结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6函数与string对象"><span class="toc-number">1.6.</span> <span class="toc-text">7.6函数与string对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7函数与array对象"><span class="toc-number">1.7.</span> <span class="toc-text">7.7函数与array对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-8递归"><span class="toc-number">1.8.</span> <span class="toc-text">7.8递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9函数指针"><span class="toc-number">1.9.</span> <span class="toc-text">7.9函数指针</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

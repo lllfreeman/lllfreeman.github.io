@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C-Primer-Plus-第十二章 | Blog-lllfreeman</title>
+  <title>C++ Primer Plus 第八章 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="类和动态内存分配通常，最好在程序运行时（而不是编译时）确定诸如使用多少内存等问题。对于在对象中保存数据来说，通常的C++方法是，在类构造函数中使用new运算符在程序运行时分配所需的内存。">
+  <meta name="description" content="函数探幽函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C-Primer-Plus-第十二章">
-<meta property="og:url" content="http://yoursite.com/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:title" content="C++ Primer Plus 第八章">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="类和动态内存分配通常，最好在程序运行时（而不是编译时）确定诸如使用多少内存等问题。对于在对象中保存数据来说，通常的C++方法是，在类构造函数中使用new运算符在程序运行时分配所需的内存。">
+<meta property="og:description" content="函数探幽函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-14T03:55:10.000Z">
-<meta property="article:modified_time" content="2020-03-14T04:09:08.112Z">
+<meta property="article:published_time" content="2020-03-04T09:11:39.000Z">
+<meta property="article:modified_time" content="2020-03-04T09:23:49.532Z">
 <meta property="article:author" content="lllfreeman">
 <meta name="twitter:card" content="summary">
   
@@ -155,110 +155,73 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-C-Primer-Plus-第十二章" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-C++Primer Plus 第八章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C-Primer-Plus-第十二章
+      C++ Primer Plus 第八章
     </h1>
   
 
         
-        <a href="/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-14T03:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
+        <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="类和动态内存分配"><a href="#类和动态内存分配" class="headerlink" title="类和动态内存分配"></a>类和动态内存分配</h1><p>通常，最好在程序运行时（而不是编译时）确定诸如使用多少内存等问题。对于在对象中保存数据来说，通常的C++方法是，在类构造函数中使用new运算符在程序运行时分配所需的内存。</p>
+        <h1 id="函数探幽"><a href="#函数探幽" class="headerlink" title="函数探幽"></a>函数探幽</h1><p>函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。</p>
 <a id="more"></a>
+<h2 id="8-1内联函数"><a href="#8-1内联函数" class="headerlink" title="8.1内联函数"></a>8.1内联函数</h2><p>内联函数的编译代码与其他程序代码“内联”起来，编译器将会使用相应的函数代码替换函数调用，减少函数调用的开销（但会占用更大的内存）</p>
+<p>使用方法：在函数声明和定义前加上关键字 inline！！（内联函数不能递归）！！</p>
+<p>内联函数与常规函数一样，也是按值来传递参数的。</p>
+<h2 id="8-2引用变量"><a href="#8-2引用变量" class="headerlink" title="8.2引用变量"></a>8.2引用变量</h2><p>引用是已定义变量的一个别名。int &amp; rodents=rats  rodents是变量rats的别名</p>
+<p>引用变量的主要用途是用作函数的形参，通过将引用作为形参，函数将使用原始数据，而不是其副本。</p>
+<p>引用看上去很像伪装表示的指针 但必须在声明引用时将引用初始化，而不像指针那样可以先声明再赋值！</p>
+<p>按引用传递允许被调用的函数能够访问调用函数中的变量。传递引用时，函数可以使用或改变原始数据！！</p>
+<p>当数据比较大（比如结构和类时）使用引用将会很有用。<br>若不想修改原数据信息又想使用引用，可以使用常量引用const！</p>
+<p>引用创建临时变量并不能修改作为参数传递的变量。</p>
+<p>使用&amp;声明的引用称为左值引用，，使用&amp;&amp;声明的引用称为右值引用！！</p>
+<h2 id="8-3将引用用于类对象"><a href="#8-3将引用用于类对象" class="headerlink" title="8.3将引用用于类对象"></a>8.3将引用用于类对象</h2><p>string类定义了一种char*到string的转换功能，这使得可以使用c-风格字符串来初始化string对象</p>
+<h3 id="8-3-1对象、继承和引用"><a href="#8-3-1对象、继承和引用" class="headerlink" title="8.3.1对象、继承和引用"></a>8.3.1对象、继承和引用</h3><p>能够将特性从一个类传递给另一个类的语言特性被称为继承。如ostream是基类，ofstream是派生类。派生类继承了基类的方法。</p>
+<p>继承的另一特征，基类引用可以指向派生类对象，而无需进行强制类型转换。</p>
+<p>每个对象都储存了自己的格式化设置</p>
+<p>方法调用setf（ios_base::fixed）将对象置于使用定点表示法的模式；</p>
+<pre><code>setf（ios_base::showpoint)将对象置于显示小数点的模式，即使小数部分为0；
 
-<h2 id="12-1-动态内存和类"><a href="#12-1-动态内存和类" class="headerlink" title="12.1 动态内存和类"></a>12.1 动态内存和类</h2><p>类中声明的静态成员有一个特点：无论创建了多少个对象，程序都只创建一个静态类变量副本！也就是说，类的所有对象共享同一个静态成员。</p>
-<p>不能在类声明中初始化静态成员变量，除非它的类型为const类型或枚举类型，这是因为声明描述了如何分配内存，但并不分配内存。对于静态类成员，可以在类声明之外使用单独的语句来进行初始化，这是因为静态类成员是单独储存的，而不是对象的组成部分。</p>
-<p>总之：静态数据成员在类声明中声明，在包含类方法的文件中初始化。初始化时使用作用域运算符来指出静态成员所属的类。但如果静态成员是const整数类型或枚举类型，则可以在声明中初始化。</p>
-<p>（len=strlen（x））返回字符串长度，但不包括末尾的空字符，因此构造函数将len加一，使分配的内存能够储存包含空字符的字符串）</p>
-<p>字符串并不保存在对象中。字符串单独保存在堆内存中，对象仅保存了指出到哪里去查找字符串的信息。</p>
-<p>在构造函数中使用new来分配内存时，必须在相应的析构函数中使用delete来释放内存。如果使用new[] 来分配内存，则应使用delete[] 来释放内存。</p>
-<p>将对象声明放在一个内部代码块中时，析构函数将在定义对象的代码块执行完毕时调用。否则将在main（）函数执行完毕时调用。</p>
-<p>当使用一个对象来初始化另一个对象时，编译器将自动生成复制构造函数，因为它创建对象的一个副本！</p>
-<h3 id="12-1-2-特殊成员函数"><a href="#12-1-2-特殊成员函数" class="headerlink" title="12.1.2 特殊成员函数"></a>12.1.2 特殊成员函数</h3><p>C++自动提供了下面这些成员函数：</p>
-<p>1.默认构造函数，如果没有定义构造函数。</p>
-<p>2.默认析构函数，如果没有定义。</p>
-<p>3.复制构造函数，如果没有定义。</p>
-<p>4.赋值运算符，如果没有定义。</p>
-<p>5.地址运算符，如果没有定义。</p>
-<p>复制构造函数用于将一个对象复制到新创建的对象中。也就是说，它用于初始化过程中（包括按值传递参数），而不是常规的赋值过程中。类的复制构造函数原型通常如下：</p>
-<p><code>Class_name(const Class_name &amp;);</code></p>
-<p>新建一个对象并将其初始化为同类现有对象时，复制构造函数都将被调用。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">StringBad <span class="title">ditto</span><span class="params">(motto)</span></span>;</span><br><span class="line">StringBad metoo=motto;</span><br><span class="line">StringBad also=StringBad(motto);</span><br><span class="line">StringBad * pStringBad=<span class="keyword">new</span> StringBad(motto);</span><br></pre></td></tr></table></figure>
-<p>其中中间的两种声明可能会使用复制构造函数直接创建metto和also，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also，这取决于具体的实现。</p>
-<p>每当程序生成了对象副本时，编译器都将使用复制构造函数。具体地说，当函数按值传递对象或函数返回对象时，都将使用复制构造函数。记住，按值传递意味着创建原始变量的一个副本。！</p>
-<p>默认的复制构造函数逐个复制非静态成员，复制的是成员的值。（成员复制也称为浅复制）</p>
-<p>如果类中包含了使用new初始化的指针成员，应当定义一个复制构造函数，以复制指向的数据，而不是指针，这被称为深度复制。</p>
-<p>复制的另一种形式（成员复制或浅复制）只是复制指针值。浅复制仅浅浅地复制指针信息，而不会深入“挖掘”以复制指针引用的结构。</p>
-<p>与复制构造函数相似，赋值运算符的隐式实现也对成员进行逐个复制。如果成员本身就是类对象，则程序将使用为这个类定义的赋值运算符来复制该成员，但静态数据成员不受影响。<br>将已有的对象赋给另一个对象时，将使用重载的赋值运算符。</p>
-<h3 id="12-1-3-静态类成员函数"><a href="#12-1-3-静态类成员函数" class="headerlink" title="12.1.3 静态类成员函数"></a>12.1.3 静态类成员函数</h3><p>可将成员函数声明为静态的（函数声明必须包含关键字static，但如果函数定义是独立的，则其中不能包含关键字static），这样做有两个重要的后果。</p>
-<p>1.不能通过对象调用静态成员函数。如果静态成员函数是在公有部分声明的，则可以使用类名和作用域解析运算符来调用它。</p>
-<p>2.由于静态成员函数不与特定的对象相关联，因此只能使用静态数据成员。</p>
-<p>3.同样，也可以使用静态成员函数设置类级（classwide）标记，以控制某些类接口的行为。</p>
-<h2 id="12-2-在构造函数中使用new时应注意的事项"><a href="#12-2-在构造函数中使用new时应注意的事项" class="headerlink" title="12.2 在构造函数中使用new时应注意的事项"></a>12.2 在构造函数中使用new时应注意的事项</h2><p>1.如果在构造函数中使用new来初始化指针成员，则应在析构函数中使用delete。</p>
-<p>2.new和delete必须相互兼容。new对应于delete，new[]对应于delete[]。</p>
-<p>3.如果有多个构造函数，则必须以相同的方式使用new，要么都带中括号，要么都不带。因为只有一个析构函数，所有的构造函数都必须与它兼容。然而，可以在一个构造函数中使用new初始化指针，而在另一个构造函数中将指针初始化为空，这是因为delete可以用于空指针。</p>
-<p>4.应定义一个复制构造函数，通过深度复制将一个对象初始化为另一个对象。这种构造函数与下面类似。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String::String(<span class="keyword">const</span> String &amp; st)</span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5.应当定义一个赋值运算符，通过深度复制将一个对象复制给另一个对象。通常，该类方法与下面类似。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String &amp; String::<span class="keyword">operator</span>=(<span class="keyword">const</span> String &amp; st)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>==&amp;st)</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;  <span class="comment">//判断是否是自己给自己赋值</span></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="12-3-有关返回对象的说明"><a href="#12-3-有关返回对象的说明" class="headerlink" title="12.3 有关返回对象的说明"></a>12.3 有关返回对象的说明</h2><p>当成员函数或独立的函数返回对象时，有几种返回方式可供选择。可以返回指向对象的引用、指向对象的const引用或const对象。</p>
-<p>返回对象将调用复制构造函数，而返回引用不会！</p>
-<p>引用指向的对象应该在调用函数执行时存在。</p>
-<p>如果被返回的对象是被调用函数中的局部变量，则不应按引用方式返回它，因为在被调用函数执行完毕时，局部对象将调用其解析函数。因此，当控制权回到调用函数时，引用指向的对象将不再存在。在这种情况下，应返回对象而不是引用。</p>
-<p>总之，如果方法或函数要返回局部对象，则应返回对象，而不是指向对象的引用。在这种情况下，将使用复制构造函数来生成返回的对象。</p>
-<h2 id="12-4-使用指向对象的指针"><a href="#12-4-使用指向对象的指针" class="headerlink" title="12.4 使用指向对象的指针"></a>12.4 使用指向对象的指针</h2><p><code>String * favorite = new String(sayings[choice])；</code></p>
-<p>这不是为要储存的字符串分配内存，而是为对象分配内存。</p>
-<p>使用对象指针时，需要注意几点：</p>
-<p>声明指向类对象的指针：String * glamout;</p>
-<p>将指针初始化为已有的对象：String *first = &amp;sayings[0];//sayings为一个对象数组</p>
-<p>使用new和默认的类构造函数对指针进行初始化：String *gleep = new String;</p>
-<p>使用new和String（const char*）类构造函数对指针进行初始化：String *glop=new String(“LLL”);</p>
-<p>使用new和String(const string &amp;)类构造函数对指针进行初始化：String *favorite= new String(sayings[choice])；</p>
-<p>使用-&gt;操作符通过指针访问类方法：favorite-&gt;lenght();</p>
-<p>使用<em>解除引用操作符从指针获得对象：</em>favorite;</p>
-<p>在下述情况下析构函数将被调用：</p>
-<p>1.如果对象是动态变量，则当执行完该对象的程序块时，将调用该对象的析构函数。</p>
-<p>2.如果对象是静态变量，则在程序结束时将调用对象的析构函数。</p>
-<p>3.如果对象是用new创建的，则仅当您显式使用delete删除对象时，其析构函数才会被调用。</p>
-<h3 id="12-4-1-再谈定位new运算符"><a href="#12-4-1-再谈定位new运算符" class="headerlink" title="12.4.1 再谈定位new运算符"></a>12.4.1 再谈定位new运算符</h3><p>使用new创建同一个地址的第二个对象时，定位new运算符使用一个新对象来覆盖用于第一个对象的内存单元。</p>
-<p>程序员必须负责管用定位new运算符用从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供两个位于缓冲区的不同地址，并确保这两个内存单元不重叠。例如，可以这样做：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pc1=<span class="keyword">new</span>(buffer)JustTesting;</span><br><span class="line">pc3=<span class="keyword">new</span>(buffer+<span class="keyword">sizeof</span>(JustTesting))JustTesting(<span class="string">"Better Idea"</span>,<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-<p>其中指针pc3相对于pc1的偏移量为JustTesting对象的大小。</p>
-<p>使用定位new运算符来为对象分配内存，必须确保其析构函数被调用，原因在于delete可与常规new运算符配合使用，但不能与定位new运算符配合使用。应当显式地为定位new运算符创建的对象调用析构函数。</p>
-<p>对于使用定位new运算符创建的对象，应以与创建顺序相反的顺序进行删除。</p>
-<h3 id="12-4-2-转换函数"><a href="#12-4-2-转换函数" class="headerlink" title="12.4.2 转换函数"></a>12.4.2 转换函数</h3><p>要将单个值转换为类类型，需要创建原型如下所示的类构造函数：</p>
-<p><code>c_name(type_name value);</code></p>
-<p>其中c_name 为类名，type_name 是要转换的类型的名称。</p>
-<p>要将类转换为其他类型，需要创建原型如下所示的类成员函数：</p>
-<p><code>operator type_name();</code></p>
-<p>虽然该函数没有声明返回类型，但应返回所需类型的值。</p>
-<p>使用转换函数时要小心，可以在声明构造函数时使用关键字explicit，以防止它被用于隐式转换。</p>
-<h2 id="12-5-队列模拟"><a href="#12-5-队列模拟" class="headerlink" title="12.5 队列模拟"></a>12.5 队列模拟</h2><p>队列是一种抽象的数据类型，可以储存有序的项目列表。新项目被添加在队尾，并可以删除队首的项目。队列有点像栈，但栈在同一端进行添加和删除。这使得栈是一种后进先出（LIFO）的结构，而队列是先进先出（FIFO）的。</p>
-<p>链表由节点序列组成。每一个节点中都包含要保存到链表中的信息以及一个指向下一个节点的指针。</p>
-<p>在类声明中声明的结构、类或枚举被称为是被嵌套在类中，其作用域是整个类。这种声明不会创建数据对象，而只是指定了可以在类中使用的类型。</p>
-<p>成员初始化列表，成员初始化列表由逗号分隔的初始化列表组成。它位于参数列表的右括号之后、函数体左括号之前。如果数据成员的名称为mdate，并需要将它初始化为val，则初始化器为mdate（val）。使用这种表示法，可以这样编写Queue的构造函数：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Queue::Queue(<span class="keyword">int</span> qs) : qsize(qs)</span><br><span class="line">&#123;</span><br><span class="line">	front = rear = nullpre;</span><br><span class="line">	items=<span class="number">0</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>成员初始化列表工作是在对象创建时完成的，此时还未执行括号中的任何代码。请注意以下几点：</p>
-<p>1.这种格式只能用于构造函数；</p>
-<p>2.必须用这种格式来初始化非静态const数据成员；</p>
-<p>3.必须用这种格式来初始化引用数据成员；</p>
-<p>4.不能将成员初始化列表语法用于构造函数之外的其他类方法。</p>
-<p>5.对于被声明为引用的类成员，也必须使用这种语法初始化。这是因为引用与const数据类似，只能在被创建时进行初始化。</p>
-<p>如果对象包含指向new分配的内存的指针成员，则将一个对象初始化为另一个对象，或将一个对象赋给另一个对象时，也会出现问题。在默认情况下，C++逐个对成员进行初始化和赋值，这意味着被初始化和被赋值的对象的成员将与原始对象完全一样。如果原始对象的成员指向一个数据块，则副本成员将指向同一个数据块。当程序最终删除这两个对象时，类的析构函数将试图删除同一个内存数据两次。</p>
-<p>解决方法是：定义一个特殊的复制构造函数来重新定义初始化，并重载赋值运算符。</p>
-<p>由于同样的原因，必须定义赋值运算符。对于每一种情况，最终目的都是执行深度复制，也就是说，复制实际的数据，而不仅仅是复制指向数据的指针。</p>
+方法precision（）指定显示多少位小数（对象需处于定点模式下）。
+
+方法width（）设置下一次输出操作使用的字符宽度。
+
+方法setf（）返回调用它之前有效的所有格式化设置。
+ios_base::fmtflags是储存这种信息所需的数据类型名称！！。类似于int double类型名用法</code></pre><h2 id="8-4默认参数"><a href="#8-4默认参数" class="headerlink" title="8.4默认参数"></a>8.4默认参数</h2><p>默认参数指的是当函数调用中省略了实参时自动使用的一个值。</p>
+<p>若要为某个参数设置默认值，则必须为它右边的所有参数提供默认值：</p>
+<h2 id="8-5函数重载（函数多态）"><a href="#8-5函数重载（函数多态）" class="headerlink" title="8.5函数重载（函数多态）"></a>8.5函数重载（函数多态）</h2><p>术语“多态”指的是有多种形式，因此，函数多态允许函数可以有多种形式</p>
+<p>类时地，属于“函数重载”指的是可以有多个同名的函数，因此对名称进行了重载。</p>
+<p>编译器在检查函数特征标时，将把类型引用和类型本身视为同一个特征标！</p>
+<p>将非const值赋给const变量是合法的，但反之则是非法的。    </p>
+<p>仅当函数基本上执行相同的任务，但使用不同形式的数据时，才应采用重载函数。！！</p>
+<p>名称修饰是指编译器将每个重载函数进行加密编码，编译编译实现。</p>
+<h2 id="8-6函数模板"><a href="#8-6函数模板" class="headerlink" title="8.6函数模板"></a>8.6函数模板</h2><p>函数模板是通用的函数描述，它们使用泛型来定义函数，其中的泛型可用具体的类型（如int double）替换。</p>
+<p>通过将类型作为参数传递给模板，可使编译器生产该类型的函数。</p>
+<p>关键字template<typename anytype>创建模板,Anytype为类型命名。其中关键字template和typename不可少，可将typename替换为class</typename></p>
+<p>函数模板不能缩短可执行程序。使用模板的好处是，它使生产多个函数定义更简单、更可靠</p>
+<p>模板一般情况下放在头文件中，并在需要使用模板的文件中包含头文件。</p>
+<p>并非所有的模板参数都必须是模板参数类型！！</p>
+<h3 id="8-6-1具体化模板函数"><a href="#8-6-1具体化模板函数" class="headerlink" title="8.6.1具体化模板函数"></a>8.6.1具体化模板函数</h3><p>1.对于给定的函数名，可以有非模板函数、模板函数、显示具体化模板函数以及它们的重载版本</p>
+<p>2.显示具体化的原型和定义应以template&lt;&gt;打头，并通过名称来指出类型</p>
+<p>3.具体化优先于常规模板，而非模板函数优先于具体化和<br>常规模板！！</p>
+<p>使用显示实例化创建特定的函数实例。template void swap<int>(int,int);该声明的意思为，使用swap（）模板生产int类型的函数定义！！</int></p>
+<p>显示具体化声明在关键字template后包含&lt;&gt;，而显示实例化没有。</p>
+<p>隐式实例化、显式实例化和显式具体化统称为具体化。<br>相同之处，它们表示的都是使用具体类型的函数定义，而不是通用描述。</p>
+<h3 id="8-6-2用于找出最具体的模板的规则被称为函数模板的部分排序规则"><a href="#8-6-2用于找出最具体的模板的规则被称为函数模板的部分排序规则" class="headerlink" title="8.6.2用于找出最具体的模板的规则被称为函数模板的部分排序规则"></a>8.6.2用于找出最具体的模板的规则被称为函数模板的部分排序规则</h3><p>1.指向非const数据的指针和引用优先与非const指针和引用参数匹配。</p>
+<p>2.非模板函数将优先于模板函数（包括显式具体化）匹配</p>
+<p>3.显式具体化将优于使用模板隐式生产的具体化。</p>
 
       
 
@@ -338,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/14/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" alt="微信分享二维码">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -352,18 +315,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/18/C-Primer-Plus-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C-Primer-Plus-第十三章
+          想见你
         
       </div>
     </a>
   
   
-    <a href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++图形编程之将图**片加**载到窗口上</div>
+    <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ Primer Plus 第七章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -390,7 +353,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类和动态内存分配"><span class="toc-number">1.</span> <span class="toc-text">类和动态内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#12-1-动态内存和类"><span class="toc-number">1.1.</span> <span class="toc-text">12.1 动态内存和类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-2-特殊成员函数"><span class="toc-number">1.1.1.</span> <span class="toc-text">12.1.2 特殊成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-3-静态类成员函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">12.1.3 静态类成员函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-2-在构造函数中使用new时应注意的事项"><span class="toc-number">1.2.</span> <span class="toc-text">12.2 在构造函数中使用new时应注意的事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-3-有关返回对象的说明"><span class="toc-number">1.3.</span> <span class="toc-text">12.3 有关返回对象的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-4-使用指向对象的指针"><span class="toc-number">1.4.</span> <span class="toc-text">12.4 使用指向对象的指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-4-1-再谈定位new运算符"><span class="toc-number">1.4.1.</span> <span class="toc-text">12.4.1 再谈定位new运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-4-2-转换函数"><span class="toc-number">1.4.2.</span> <span class="toc-text">12.4.2 转换函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-5-队列模拟"><span class="toc-number">1.5.</span> <span class="toc-text">12.5 队列模拟</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#函数探幽"><span class="toc-number">1.</span> <span class="toc-text">函数探幽</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1内联函数"><span class="toc-number">1.1.</span> <span class="toc-text">8.1内联函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2引用变量"><span class="toc-number">1.2.</span> <span class="toc-text">8.2引用变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3将引用用于类对象"><span class="toc-number">1.3.</span> <span class="toc-text">8.3将引用用于类对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-1对象、继承和引用"><span class="toc-number">1.3.1.</span> <span class="toc-text">8.3.1对象、继承和引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4默认参数"><span class="toc-number">1.4.</span> <span class="toc-text">8.4默认参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5函数重载（函数多态）"><span class="toc-number">1.5.</span> <span class="toc-text">8.5函数重载（函数多态）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-6函数模板"><span class="toc-number">1.6.</span> <span class="toc-text">8.6函数模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-1具体化模板函数"><span class="toc-number">1.6.1.</span> <span class="toc-text">8.6.1具体化模板函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-2用于找出最具体的模板的规则被称为函数模板的部分排序规则"><span class="toc-number">1.6.2.</span> <span class="toc-text">8.6.2用于找出最具体的模板的规则被称为函数模板的部分排序规则</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
