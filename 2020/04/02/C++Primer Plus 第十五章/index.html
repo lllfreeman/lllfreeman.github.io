@@ -16,7 +16,7 @@
 <meta property="og:description" content="第十五章 友元、异常和其他C++异常处理提供了处理特殊情况的机制，如果不对其进行处理，将导致程序终止。RTTI是一种确定对象类型的机制。新的类型转换运算符提高了类型转换的安全性。 15.1 友元">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-02T03:18:12.000Z">
-<meta property="article:modified_time" content="2020-04-02T04:06:16.087Z">
+<meta property="article:modified_time" content="2020-04-02T04:10:12.222Z">
 <meta property="article:author" content="lllfreeman">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -199,7 +199,35 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Analyzer</span>;</span> <span class="comment">//向前声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Probe</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">sync</span><span class="params">(Analyzer &amp;a,<span class="keyword">const</span> Probe &amp;p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">sync</span><span class="params">(Probe &amp;p,<span class="keyword">const</span> Analyzer &amp;a)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Analyzer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">sync</span><span class="params">(Analyzer &amp;a,<span class="keyword">const</span> Probe &amp;p)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">sync</span><span class="params">(Probe &amp;p,<span class="keyword">const</span> Analyzer &amp;a)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="15-2-嵌套类"><a href="#15-2-嵌套类" class="headerlink" title="15.2 嵌套类"></a>15.2 嵌套类</h2><p>在C++中，可以将类声明放在另一个类中。在另一个类中被声明的类被称为嵌套类，它通过提供新的类型类作用域来避免名称混乱。包含类的成员函数可以创建和使用被嵌套类的对象；而仅当声明位于公有部分，才能在包含类的外面使用嵌套类，而且必须使用作用域解析运算符。</p>
 <h3 id="15-2-1-嵌套类的访问权限"><a href="#15-2-1-嵌套类的访问权限" class="headerlink" title="15.2.1 嵌套类的访问权限"></a>15.2.1 嵌套类的访问权限</h3><p>1.嵌套类的声明位置决定了嵌套类的作用域，即它决定了程序的哪些部分可以创建这种类对象。<br>2.和其他类一样，嵌套类的公有部分、保护部分和私有部分控制了对类成员的访问。在哪些地方可以使用嵌套类以及如何使用嵌套类，取决于作用域和访问控制。  </p>
-<p><strong>嵌套类、结构和枚举的共同作用域特征</strong><br>|   声明位置    |   包含它的类是否可以使用它    |   从包含它的类派生而来的类是否可以使用它  |   在外部是否可以使用<br>|:——-:|:——-:|:——-:|:——–:|<br>|私有部分    |    是    |            否        |        否|<br>|保护部分    |    是    |            是        |            否|<br>|公有部分    |    是    |            是        |            是，通过类限定符来使用|</p>
+<p><strong>嵌套类、结构和枚举的共同作用域特征</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">声明位置</th>
+<th align="center">包含它的类是否可以使用它</th>
+<th align="center">从包含它的类派生而来的类是否可以使用它</th>
+<th align="center">在外部是否可以使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">私有部分</td>
+<td align="center">是</td>
+<td align="center">否</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">保护部分</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">公有部分</td>
+<td align="center">是</td>
+<td align="center">是</td>
+<td align="center">是，通过类限定符来使用</td>
+</tr>
+</tbody></table>
 <p>类可见后，起决定作用的将是访问控制。对嵌套类访问权的控制规则与常规类相同。</p>
 <p>类声明的位置决定了类的作用域或可见性。类可见后，访问控制规则（公有、私有、保护、友元）将决定程序对嵌套类成员函数的访问权限。</p>
 <h2 id="15-3-异常"><a href="#15-3-异常" class="headerlink" title="15.3 异常"></a>15.3 异常</h2><p>程序有时会遇到运行阶段错误，导致程序无法正常地运行下去，通常，程序员都会试图预防这种意外情况。C++异常为处理这种情况提供了一种功能强大而灵活的工具。</p>
