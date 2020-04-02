@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++ Primer Plus 第十一章 | Blog-lllfreeman</title>
+  <title>Tag: C++ | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用类C++类特性丰富、复杂、功能强大。 11.1 运算符重载">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++ Primer Plus 第十一章">
-<meta property="og:url" content="http://yoursite.com/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Blog-lllfreeman">
+<meta property="og:url" content="http://yoursite.com/tags/C/page/2/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="使用类C++类特性丰富、复杂、功能强大。 11.1 运算符重载">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-11T04:16:54.000Z">
-<meta property="article:modified_time" content="2020-04-02T03:21:57.287Z">
 <meta property="article:author" content="lllfreeman">
-<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -156,139 +151,35 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-C++Primer Plus 第十一章" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      C++ Primer Plus 第十一章
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
     </h1>
   
 
-        
-        <a href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-11T04:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用类"><a href="#使用类" class="headerlink" title="使用类"></a>使用类</h1><p>C++类特性丰富、复杂、功能强大。</p>
-<h2 id="11-1-运算符重载"><a href="#11-1-运算符重载" class="headerlink" title="11.1 运算符重载"></a>11.1 运算符重载</h2><a id="more"></a>
-<p>运算符重载，它允许将标准C++运算符（如=和+）用于类对象。运算符重载是一种形式的多态。</p>
-<p>用户能够定义多个名称相同但特征标不同的函数被称为函数重载或函数多态。</p>
-<p>运算符重载函数的格式如下：</p>
-<p><code>operator op（argument-list）</code></p>
-<p>例如operator+（）重载+运算符，operator<em>（）重载</em>运算符。op必须是有效的C++运算符。</p>
-<p>重载完后：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">district2=sid+sara;</span><br><span class="line">district2=sid.<span class="keyword">operator</span>+(sara);<span class="comment">//两表达式表示内容一样。</span></span><br></pre></td></tr></table></figure>
-<p>不要返回指向局部变量或临时变量的引用。函数执行完毕后，局部变量和临时变量对象将消失，引用将指向不存在的数据！</p>
-<p>将两个以上对象相加：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t4=t1+t2+t3;</span><br><span class="line">t4=t1.<span class="keyword">operator</span>+(t2.<span class="keyword">operator</span>=(t3));<span class="comment">// t1+t2+t3</span></span><br></pre></td></tr></table></figure>
-<p>重载限制：</p>
-<p>1.重载后的运算符必须至少有一个操作数是用户定义的类型，这将防止用户为标准类型重载运算符。</p>
-<p>2.使用运算符时不能违反运算符原来的语法规则。例如不能将求模运算符（%）重载成使用一个操作数。</p>
-<p>3.不能修改运算符的优先级。如果将加号运算符重载成将两个类相加，则新的运算符与原来的加号具有同样的优先级。</p>
-<p>4.不能创建新运算符。</p>
-<p>只能通过成员函数进行重载的运算符：</p>
-<p>1.=：赋值运算符；</p>
-<p>2.()：函数调用运算符；</p>
-<p>3.[]:下标运算符；</p>
-<p>4.-&gt;:通过指针访问类成员的运算符。</p>
-<h2 id="11-2-友元"><a href="#11-2-友元" class="headerlink" title="11.2 友元"></a>11.2 友元</h2><p>C++控制对类对象私有部分的访问提供了另外一种形式的访问权限：友元。友元有三种：</p>
-<p>1.友元函数</p>
-<p>2.友元类</p>
-<p>3.友元成员函数</p>
-<p>通过让函数成为类的友元，可以赋予该函数与类的成员函数相同的访问权限。</p>
-<p>非成员函数不是由对象调用的，它使用的所有值（包括对象）都是显式参数。</p>
-<h3 id="11-2-1-创建友元"><a href="#11-2-1-创建友元" class="headerlink" title="11.2.1 创建友元"></a>11.2.1 创建友元</h3><p>创建友元函数的第一步是将其原型放在类声明中，并在原型声明前加上关键字friend：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> Time <span class="keyword">operator</span>*(<span class="keyword">double</span> m,<span class="keyword">const</span> Time &amp; t);</span><br><span class="line"><span class="comment">//定义如下</span></span><br><span class="line">Time <span class="keyword">operator</span>*(<span class="keyword">double</span> m,<span class="keyword">const</span> Time &amp; t)</span><br><span class="line">&#123;</span><br><span class="line">	Time result;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>1.虽然operator*()函数是在类声明中声明的，但它不是成员函数，因此不能使用成员运算符来调用；</p>
-<p>2.虽然operator*()函数不是成员函数，但它与成员函数的访问权限相同。</p>
-<p>3.因为它不是成员函数，所以不要使用Time::限定符!另外，不需要在定义中使用关键字friend！</p>
-<p>总之，类的友元函数是非成员函数，其访问权限与成员函数相同。应将友元函数看作类的扩展接口的组成部分。</p>
-<p>只有类声明可以决定哪一个函数是友元，因此类声明仍然控制了哪些函数可以访问私有数据。总之，类方法和友元只是表达类接口的两种不同机制。</p>
-<p>如果要为类重载运算符，并将非类的项作为其第一个操作数，则可以用友元函数来反转操作数的顺序。</p>
-<h3 id="11-2-2-重载-lt-lt-运算符"><a href="#11-2-2-重载-lt-lt-运算符" class="headerlink" title="11.2.2 重载&lt;&lt;运算符"></a>11.2.2 重载&lt;&lt;运算符</h3><h4 id="11-2-2-1-lt-lt-的第一种重载版本"><a href="#11-2-2-1-lt-lt-的第一种重载版本" class="headerlink" title="11.2.2.1 &lt;&lt;的第一种重载版本"></a>11.2.2.1 &lt;&lt;的第一种重载版本</h4><p>要使类对象知道使用cout，必须使用友元函数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="keyword">operator</span>&lt;&lt;(ostream % os, <span class="keyword">const</span> Time &amp; t);<span class="comment">//原型</span></span><br><span class="line"><span class="keyword">void</span> <span class="keyword">operator</span>&lt;&lt;(ostream &amp; os,<span class="keyword">const</span> Time &amp; t)<span class="comment">//定义</span></span><br><span class="line">&#123;</span><br><span class="line">	os&lt;&lt;t.hours&lt;&lt;t.minutes;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这样可以使用下面的语句</span></span><br><span class="line">Time trip;    <span class="built_in">cout</span>&lt;&lt;trip;</span><br></pre></td></tr></table></figure>
-<h4 id="11-2-2-2-lt-lt-的第二种重载版本"><a href="#11-2-2-2-lt-lt-的第二种重载版本" class="headerlink" title="11.2.2.2 &lt;&lt;的第二种重载版本"></a>11.2.2.2 &lt;&lt;的第二种重载版本</h4><p>第一种重载版本不允许像通常那样将重新定义的&lt;&lt;运算符与cout一起使用。&lt;&lt;运算符要求左边是一个ostream对象。如：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;x&lt;&lt;y</span><br><span class="line">(<span class="built_in">cout</span>&lt;&lt;x)&lt;&lt;y  <span class="comment">//C++从左至右读取输出语句</span></span><br></pre></td></tr></table></figure>
-<p>表达式（cout&lt;&lt;x）本身就是ostream对象cout，从而可以位于&lt;&lt;运算符的左侧。</p>
-<p>可以对友元函数采用相同的做法。只需修改operator&lt;&lt;()函数，让他返回ostream对象的引用即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> ostream &amp; <span class="keyword">operator</span>&lt;&lt;(ostream &amp; os, <span class="keyword">const</span> Time &amp; t);</span><br><span class="line">ostream &amp; <span class="keyword">operator</span>&lt;&lt;(ostream &amp; os, <span class="keyword">const</span> Time &amp; t)</span><br><span class="line">&#123;</span><br><span class="line">	os&lt;&lt;t.hours&lt;&lt;t.minutes;</span><br><span class="line">	<span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：只有在类声明中的原型中才能使用friend关键字。除非函数定义也是原型，否则不能在函数定义中使用该关键字！</p>
-<h2 id="11-3-重载运算符，作为成员函数还是非成员函数。"><a href="#11-3-重载运算符，作为成员函数还是非成员函数。" class="headerlink" title="11.3 重载运算符，作为成员函数还是非成员函数。"></a>11.3 重载运算符，作为成员函数还是非成员函数。</h2><p>对于很多运算符来说，可以选择使用成员函数或非成员函数来实现运算符重载。一般来说，非成员函数应是友元函数，这样它才能直接访问类的私有成员。</p>
-<p>对于成员函数版本来说，一个操作数通过this指针隐式地传递，另一个操作数作为函数参数显式地传递；对于友元版本来说，两个操作数都作为参数来传递。</p>
-<p>在为类定义类型转换时，使用非成员函数版本会更好。</p>
-<p>类非常适于在一个对象中表示实体的不同方面。首先在一个对象中储存多种表示方式；然后，编写这样的类函数，以便给一种表示方式赋值时，将自动给其他表示方式赋值。通过在内部处理转换，类允许从本质而不是表示方式上来看待一个量。</p>
-<p>如果方法通过计算得到一个新的类对象，则应考虑是否可以使用类构造函数来完成这种工作。这样做不仅可以避免麻烦，而且可以确保新的对象是按照正确的方式创建的。</p>
-<p>因为运算符重载是通过函数来实现的，所以只要运算符函数的特征标不同，使用的运算符数量与内置C++运算符相同，就可以多次重载同一个运算符。</p>
-<p>定义运算符函数时，如果要使其第一个操作数不是类对象，则必须使用友元函数。！</p>
-<p>头文件 cstdlib包含了srand（）和rand（）的原型；头文件 ctime包含了time（）的原型。</p>
-<p>rand（）函数将返回一个从0到某个值之间的随机整数 如：rand()%360  0–360</p>
-<p>srand（）函数允许覆盖默认的种子值，重新启动另一个随机数序列。</p>
-<p>time（0）函数返回当前时间，通常为从某一个日期开始的秒数。</p>
-<h2 id="11-4-类的自动转换和强制类型转换"><a href="#11-4-类的自动转换和强制类型转换" class="headerlink" title="11.4 类的自动转换和强制类型转换"></a>11.4 类的自动转换和强制类型转换</h2><p>只有一个参数的类构造函数将隐式地把数转换为类对象。</p>
-<p>C++新增了关键字explicit用于关闭隐式转换但仍然可以显式转换。</p>
-<p><code>explicit Stonewt(double lbs);</code></p>
-<p>只接收一个参数的构造函数定义了从参数类型到类类型的转换，如果使用关键字explicit限定了这种构造函数，则它只能用于显式转换，不能用于隐式转换。</p>
-<h3 id="11-4-1-转换函数"><a href="#11-4-1-转换函数" class="headerlink" title="11.4.1 转换函数"></a>11.4.1 转换函数</h3><p>使用构造函数可以将数字转换为对象。</p>
-<p><code>Stonewt wolfe（285.7）；</code></p>
-<p>构造函数只用于从某种类型到类类型的转换，要进行相反的转换，必须使用特殊的C++运算符函数——转换函数。</p>
-<p>转换函数是用户定义的强制类型转换，可以像使用强制类型转换那样使用它们。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stonew wolfe（<span class="number">285.7</span>）；</span><br><span class="line"><span class="keyword">double</span> host = <span class="keyword">double</span> (wolfe);</span><br><span class="line"><span class="keyword">double</span> thinker = (<span class="keyword">double</span>)wolfe;</span><br></pre></td></tr></table></figure>
-<p>转换函数的定义：</p>
-<p><code>operator typeName();</code></p>
-<p>注意：</p>
-<p>1.转换函数必须是类方法。</p>
-<p>2.转换函数不能指定返回类型。</p>
-<p>3.转换函数不能有参数。</p>
-<p>4.转换函数是类方法，所以它需要通过类对象来调用，从而告知函数要转换的值。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">operator</span> <span class="title">double</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> xxx; <span class="comment">///xxx表double 类型数据成员；</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当类定义了两种或更多的转换时，仍可以用显式强制类型转换来指出要使用哪个转换函数。</p>
-<p><code>long gone = (double) poppins; //先转double再转long</code></p>
-<p>提供自动的隐式转换的函数存在一些问题，当用户不希望进行转换时，转换函数也进行转换。在C++中可以将转换运算符声明为显式的：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stonewt</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span><span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function">exolicit operatir <span class="title">double</span><span class="params">()</span><span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>有了这些声明后，需要强制转换时将调用这些运算符。</p>
-<p>另一种做法是，用一个功能相同的非转换函数替换该转换函数即可，但仅在被显式地调用时，该函数才会被执行。</p>
-<p>总之，C++类提供了下面的类型转换：</p>
-<p>1.只有一个参数的类构造函数用于将类型与该参数相同的值转换为类类型。然而，在构造函数声明中使用explicit可防止隐式转换，而只允许显式转换。</p>
-<p>2.被称为转换函数的特殊类成员运算符函数，用于将类对象转换为其他类型。转换函数是类成员，没有返回类型，没有参数、名为 operator typeName(),其中，typeName是对象将自动被转换成的类型。将类对象赋给typeName变量或将其强制转换为typeName类型时，该转换函数将自动被调用。</p>
-<p>在类中重载运算符时可以提供方法定义或友元函数定义，但不能同时提供，否则将出现二义性。</p>
-<p>将多操作数的运算符定义为友元可以让程序更容易适应自动类型变换。原因在于，两个操作数都成为函数参数，因此与函数原型匹配。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -300,127 +191,22 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++图形编程之将图片加载到窗口上
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++ Primer Plus 第十章</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用类"><span class="toc-number">1.</span> <span class="toc-text">使用类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1-运算符重载"><span class="toc-number">1.1.</span> <span class="toc-text">11.1 运算符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2-友元"><span class="toc-number">1.2.</span> <span class="toc-text">11.2 友元</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-1-创建友元"><span class="toc-number">1.2.1.</span> <span class="toc-text">11.2.1 创建友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-2-重载-lt-lt-运算符"><span class="toc-number">1.2.2.</span> <span class="toc-text">11.2.2 重载&lt;&lt;运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-2-1-lt-lt-的第一种重载版本"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">11.2.2.1 &lt;&lt;的第一种重载版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-2-2-lt-lt-的第二种重载版本"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">11.2.2.2 &lt;&lt;的第二种重载版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3-重载运算符，作为成员函数还是非成员函数。"><span class="toc-number">1.3.</span> <span class="toc-text">11.3 重载运算符，作为成员函数还是非成员函数。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4-类的自动转换和强制类型转换"><span class="toc-number">1.4.</span> <span class="toc-text">11.4 类的自动转换和强制类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-1-转换函数"><span class="toc-number">1.4.1.</span> <span class="toc-text">11.4.1 转换函数</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/C/">&amp;laquo; Prev</a><a class="page-number" href="/tags/C/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -444,9 +230,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
