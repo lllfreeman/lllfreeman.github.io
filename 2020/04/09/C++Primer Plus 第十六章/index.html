@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>想见你 | Blog-lllfreeman</title>
+  <title>C++Primer Plus 第十六章 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="所以暂时将你眼睛闭了起来~">
+  <meta name="description" content="第十六章 string类和标准模板库至此您熟悉了C++可重用代码的目标，这样做的一个很大的回报是可以重用别人编写的代码，这正是C++类库的用武之地。 16.1 string类string类是由头文件string支持的（注意，头文件string.h和cstring支持对c-风格字符串进行操纵的C库字符串函数，但不支持string类）。string实际上是模板具体化basic_string的一个typ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="想见你">
-<meta property="og:url" content="http://yoursite.com/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/index.html">
+<meta property="og:title" content="C++Primer Plus 第十六章">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="所以暂时将你眼睛闭了起来~">
+<meta property="og:description" content="第十六章 string类和标准模板库至此您熟悉了C++可重用代码的目标，这样做的一个很大的回报是可以重用别人编写的代码，这正是C++类库的用武之地。 16.1 string类string类是由头文件string支持的（注意，头文件string.h和cstring支持对c-风格字符串进行操纵的C库字符串函数，但不支持string类）。string实际上是模板具体化basic_string的一个typ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/01.JPG">
-<meta property="og:image" content="http://yoursite.com/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/02.JPG">
-<meta property="article:published_time" content="2020-03-04T12:27:46.000Z">
-<meta property="article:modified_time" content="2020-03-06T04:53:21.518Z">
+<meta property="article:published_time" content="2020-04-09T03:27:13.000Z">
+<meta property="article:modified_time" content="2020-04-09T05:22:46.263Z">
 <meta property="article:author" content="lllfreeman">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/01.JPG">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -40,10 +37,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -162,44 +156,808 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-想见你" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-C++Primer Plus 第十六章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      想见你
+      C++Primer Plus 第十六章
     </h1>
   
 
         
-        <a href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T12:27:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+        <a href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-04-09T03:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="aplayer-bDQnDtyh" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="157276" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
-
-<p>所以暂时将你眼睛闭了起来~</p>
+        <h1 id="第十六章-string类和标准模板库"><a href="#第十六章-string类和标准模板库" class="headerlink" title="第十六章 string类和标准模板库"></a>第十六章 string类和标准模板库</h1><p>至此您熟悉了C++可重用代码的目标，这样做的一个很大的回报是可以重用别人编写的代码，这正是C++类库的用武之地。</p>
+<h2 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h2><p>string类是由头文件string支持的（注意，头文件string.h和cstring支持对c-风格字符串进行操纵的C库字符串函数，但不支持string类）。<br>string实际上是模板具体化basic_string<char>的一个typedef，同时省略了与内存管理相关的参数。</char></p>
 <a id="more"></a>
-<p>花了两天时间把《想见你》看完了</p>
-<p>细节满满的《想见你》也在豆瓣赢得了9.2的高分，一部剧让观众看出了剧组的诚意和用心，当后面发现结局泄露的时候，剧组召集杀青已9个月的演员重拍彩蛋来回馈观众。</p>
-<p>这或许就是这部剧的魅力吧，看完后的几天我依然沉浸在这部剧里</p>
-<p>或是被黄雨萱和李子维的爱情所感动。</p>
-<p>或是被陈韵如最后的自我救赎所打动。</p>
-<p>而或是黄雨萱的最后一次穿越做出的选择。</p>
-<p>当看到陈韵如假装黄雨萱和李子维相处的时候，许多网友纷纷骂陈韵如自私。或许是因为观众习惯了站在主角的视角去看问题，如果说陈韵如自私，那知道李子维是王诠胜之后，就要穿越到陈韵如身体和李子维见面的黄雨萱，难道不也是一种自私吗？</p>
-<p><img src="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/01.JPG" alt></p>
-<p>原来她也在渴望爱</p>
-<p>原来她也很想努力获得爱</p>
-<p>那些没有主角光环的人，他们也有自己的人生。</p>
-<p><img src="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/02.JPG" alt></p>
-<p><strong>始于想见你，终于想见你</strong></p>
+<p><strong>string 类的构造函数</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">构造函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>string(const char *s)</code></td>
+<td align="left">将string对象初始化为s指向的NBTS（空字符结尾字符串）</td>
+</tr>
+<tr>
+<td align="left"><code>string (size_type n,char c)</code></td>
+<td align="left">创建一个包含n个元素的string对象，其中每个元素都被初始化为字符c</td>
+</tr>
+<tr>
+<td align="left"><code>string(const string &amp;str)</code></td>
+<td align="left">将一个string对象初始化为string对象str（复制构造函数）</td>
+</tr>
+<tr>
+<td align="left"><code>string()</code></td>
+<td align="left">创建一个默认的string对象，长度为0（默认构造函数）</td>
+</tr>
+<tr>
+<td align="left"><code>string(const char*s,size_type n)</code></td>
+<td align="left">将string对象初始化为s指向的NBTS的前n个字符，即使超过了NBTS结尾</td>
+</tr>
+<tr>
+<td align="left"><code>template&lt;class Iter&gt;string(Iter begin,Iter end)</code></td>
+<td align="left">将string对象初始化为区间[begin,end)内的字符，其中begin和end的行为就像指针，用于指定位置，范围包括begin在内，但不包括end</td>
+</tr>
+<tr>
+<td align="left"><code>string(const string&amp;str,string size_type pos=0,size_type n=npos)</code></td>
+<td align="left">将一个string对象初始化为对象str中从位置pos开始到结尾的字符，或从位置pos开始的第n个字符</td>
+</tr>
+<tr>
+<td align="left"><code>string(string&amp;&amp;str)noexcept</code></td>
+<td align="left">这是C++11新增的，它将一个string对象初始化为string对象str，并可能修改str（移动构造函数）</td>
+</tr>
+<tr>
+<td align="left"><code>string(initializer_list&lt;char&gt;il)</code></td>
+<td align="left">这是C++11新增的，它将一个string对象初始化为初始化列表il中的字符</td>
+</tr>
+</tbody></table>
+<p>string类中重载了+=运算符，它将一个字符串符加到另一个字符串的后面；<br>重载的=运算符用于将一个字符串赋给另一个字符串；<br>重载的&lt;&lt;运算符用于显式string对象；<br>重载的[]运算符用于访问字符串中的各个字符，使得可以使用数组表示法来访问string对象中的各个字符。</p>
+<p>构造函数string（string&amp;&amp;str）类似于复制构造函数，导致新创建的string为str的副本。但与复制构造函数不同的是，它不保证将str视为const。这种构造函数被称为移动构造函数。</p>
+<h3 id="16-1-2-string类输入"><a href="#16-1-2-string类输入" class="headerlink" title="16.1.2 string类输入"></a>16.1.2 string类输入</h3><p>对于string对象，有两种方式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> stuff;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;stuff;</span><br><span class="line">getline(<span class="built_in">cin</span>,stuff);</span><br><span class="line"></span><br><span class="line">getline（）有一个可选参数，用于指定使用哪个字符来确定输入的边界：</span><br><span class="line"></span><br><span class="line">getline(stuff,<span class="string">':'</span>);</span><br></pre></td></tr></table></figure>
+<p>string版本的getline（）将自动调整目标string对象的大小，使之刚好能够储存输入的字符。</p>
+<p>读取C-风格字符串的函数是istream类的方法，而string版本是独立的函数。这就是对于C-风格字符串输入，cin是调用对象；而对于string对象输入，cin是一个函数参数的原因。</p>
+<p>string版本的getline（）函数从输入中读取字符，并将其储存到目标string中，直到发生下列三种情况之一：</p>
+<p>1.到达文件尾，在这种情况下，输入流eofibit将被设置，这意味着方法fail（）和eof（）都将返回true；  </p>
+<p>2.遇到分界字符（默认为\n）,在这种情况下，将把分界字符从输入流中删除，但不储存它；  </p>
+<p>3.读取的字符数达到最大允许值（string::npos和可供分配的内存字节数中较小的一个），在这种情况下，将设置输入流failbit，这意味着方法fail（）将返回true。</p>
+<p>输入流对象有一个统计系统，用于跟踪流的错误状态。在这个系统中，检测到文件尾后将设置eofbit寄存器，检测到输入错误时将设置failbit寄存器，出现无法识别的故障（如硬盘故障）时将设置badbit寄存器，一切顺利时将设置goodbit寄存器。<br>由于用于string对象的输入函数使用输入流，能够识别文件尾，因此也可以使用它们来从文件中读取输入。</p>
+<h3 id="16-1-3-使用字符串"><a href="#16-1-3-使用字符串" class="headerlink" title="16.1.3 使用字符串"></a>16.1.3 使用字符串</h3><p>如果在机器排列序列中，一个对象位于另一个对象的前面，则前者被视为小于后者。如果机器排列序列为ASCII码，则数字将小于大写字符，而大写字符小于小写字符。</p>
+<p><strong>重载的find()方法</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">方法原型</th>
+<th align="left">重载的find()方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>size_type find(const string &amp;str,size_type pos=0)const</code></td>
+<td align="left">从字符串的pos位置开始，查找子字符串str。如果找到，则返回该子字符串首次出现时其首字符的索引；否则，返回string::npos</td>
+</tr>
+<tr>
+<td align="left"><code>size_type find(const char*s,size_type pos=0)const</code></td>
+<td align="left">从字符串的pos位置开始，查找子字符串s。如果找到，则返回该子字符串首次出现时其首字符的索引；否则，返回string::npos</td>
+</tr>
+<tr>
+<td align="left"><code>size_type find(const char*s,size_type pos=0,size_type n)</code></td>
+<td align="left">从字符串的pos位置开始，查找s的前n个字符组成的子字符串。如果找到，则返回该子字符串首次出现时其首字符的索引；否则，返回string::npos</td>
+</tr>
+<tr>
+<td align="left"><code>size_type find(char ch,    size_type pos=0)const</code></td>
+<td align="left">从字符串的pos位置开始，查找字符ch。如果找到，则返回该字符首次出现的位置；否则，返回string::npos</td>
+</tr>
+</tbody></table>
+<p>rfind()方法查找子字符串或字符最后一次出现的位置；<br>find_first_of()方法在字符串中查找参数中任何一个字符首次出现的位置；<br>find_last_of()方法的功能与find_first_of()的功能基本相同，只是它查找的是最后一次出现的位置；<br>find_first_not_of()方法在字符串中查找第一个不包含在参数中的字符。  </p>
+<p>C++实现分配一个比实际字符串大的内存块，为字符串提供了增大空间。然而，如果字符串不断增大，超过了内存块的大小，程序将分配一个大小为原来两倍的新内存块，以提供足够的增大空间，避免不断地分配新的内存块。方法capacity()返回当前分配给字符串的内存块的大小，而reserve()方法让您能够请求内存块的最小长度。请求的最小长度为标准容量选择16的倍数小1.</p>
+<p>c_str()方法返回一个指向C-风格字符串的指针，该C-风格字符串的内容与用于调用c_str（）方法的string对象相同。</p>
+<p>事实上，正如前面所说，string库实际上是基于一个模板类的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>,<span class="title">class</span> <span class="title">traits</span> = <span class="title">char_traits</span>&lt;charT&gt;,<span class="title">class</span> <span class="title">Allocator</span> = <span class="title">allocator</span>&lt;charT&gt;&gt;</span></span><br><span class="line"><span class="class"><span class="title">basic_string</span>&#123;</span>...&#125;;</span><br><span class="line"><span class="comment">//模板basic_string有4个具体化，每个具体化都有一个typedef名称：</span></span><br><span class="line"><span class="keyword">typedef</span> basic_string&lt;<span class="keyword">char</span>&gt;<span class="built_in">string</span>;</span><br><span class="line"><span class="keyword">typedef</span> basic_string&lt;<span class="keyword">wchar_t</span>&gt;<span class="built_in">wstring</span>;</span><br><span class="line"><span class="keyword">typedef</span> basic_string&lt;<span class="keyword">char16_t</span>&gt;u16string;</span><br><span class="line"><span class="keyword">typedef</span> basic_string&lt;<span class="keyword">char32_t</span>&gt;u32string;</span><br></pre></td></tr></table></figure>
+<p>traits类描述关于选定字符类型的特定情况，如如何对值进行比较。Allocator是一个管理内存分配的类。对于各种字符类型，都有预定义的allocator模板具体化，它们都是默认的。它们使用new和delete。</p>
+<h2 id="16-2-智能指针模板类"><a href="#16-2-智能指针模板类" class="headerlink" title="16.2 智能指针模板类"></a>16.2 智能指针模板类</h2><p>智能指针是行为类似于指针的类对象，但这种对象还有其他功能。如果指针是对象，则可以在对象过期时，让它的析构函数删除指向的内存。这正是auto_ptr、unique_ptr、和shared_ptr背后的思想。</p>
+<p>这三个智能指针模板（auto_ptr、unique_、ptr和shared_ptr）都定义了类似指针的对象，可以将new获得（直接或间接）的地址赋给这种对象。当智能指针过期时，其析构函数将使用delete来释放内存。因此，如果将new返回的地址赋给这些对象，将无需记住稍后释放这些内存：在智能指针过期时，这些内存将自动被释放。<br>要使用智能指针对象，必须包含头文件memory，该文件模板定义。然后使用通常的模板语法来实例化所需类型的指针。例如，模板auto_ptr包含如下构造函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">X</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">auto_ptr</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">auto_ptr</span><span class="params">(X* p=<span class="number">0</span>)</span> <span class="title">throw</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>throw()意味着构造函数不会引发异常；与auto_ptr一样，throw（）也被C++11摒弃。</p>
+<p>智能指针模板位于名称空间std中。如果每个智能指针都放在一个代码块内，这样离开代码块时，指针将过期，将调用析构函数。</p>
+<p>所有智能指针类都有一个explicit构造函数，该构造函数将指针作为参数。因此不需要自动将指针转换为智能指针对象。</p>
+<p>智能指针对象的很多方面都类似于常规指针。例如，如果ps是一个智能指针对象，则可以对它执行解除引用操作（*ps）、用它来访问结构成员(ps-&gt;puffindex)、将它赋给指向相同类型的常规指针。还可以将智能指针对象赋给另一个同类型的智能指针对象。</p>
+<p>全部三种智能指针都应避免的一点：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">vacation</span><span class="params">(<span class="string">"I wandered lonely as a cloud."</span>)</span></span>;</span><br><span class="line">shared_prt&lt;<span class="built_in">string</span>&gt;pvac(&amp;vacation);<span class="comment">//No</span></span><br></pre></td></tr></table></figure>
+<p>pvac过期时，程序将把delete运算符用于非堆内存，这是错误的！</p>
+<p>为何摒弃auto_ptr呢？<br>先来看下面的赋值语句：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt;ps(<span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"I reigned lonly as a cloud."</span>));</span><br><span class="line"><span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt;vocation;</span><br><span class="line">vocation=ps;</span><br></pre></td></tr></table></figure>
+<p>如果ps和vacation是常规指针，则两个指针将指向相同一个string对象。这是不能接受的，因为程序将试图删除同一个对象两次——一次是ps过期时，另一次是vacation对象过期时。要避免这种问题，方法有多种：</p>
+<p>1.定义赋值运算符，使之进行深复制。这样两个指针将指向不同的对象，其中的一个对象是另一个对象的副本。<br>2.建立所有权（ownership）概念，对于特定的对象，只能有一个智能指针可拥有它，这样只有拥有对象的智能指针的构造函数才会删除该对象。然后，让赋值操作转让所有权。这就是用于auto_ptr和unique_ptr的策略，但unique_ptr的策略更严格。<br>3.创建智能更高的指针，跟踪引用特定对象的智能指针数。这称为引用计数。例如，赋值时，计数将加1，而指针过期时，计数将减1.仅当最后一个指针过期时，才调用delete。这是shared_ptr采用的策略。</p>
+<h3 id="16-2-2-unique-ptr为何优于auto-ptr"><a href="#16-2-2-unique-ptr为何优于auto-ptr" class="headerlink" title="16.2.2 unique_ptr为何优于auto_ptr"></a>16.2.2 unique_ptr为何优于auto_ptr</h3><p>请看下面的语句：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt;p1(<span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"auto"</span>));<span class="comment">//1</span></span><br><span class="line"><span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt;p2;<span class="comment">//2</span></span><br><span class="line">p2=p1;<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>在语句3中，p2接管string对象的所有权后，p1的所有权将被剥夺。这是件好事，可防止p1和p2的析构函数试图删除同一个对象；但如果程序随后试图使用p1，这是件坏事，因为p1不再指向有效的数据。</p>
+<p>下面来看unique_ptr的情况：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;p3(<span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"auto"</span>));<span class="comment">//4</span></span><br><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;p4;<span class="comment">//5</span></span><br><span class="line">p4=p3;<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+<p>编译器认为语句6非法，避免了p3不再指向有效的数据。因此，unique_ptr比auto_ptr更安全（编译阶段错误比潜在的程序崩溃更安全）。</p>
+<p>总之，程序试图将一个unique_ptr赋给另一个时，如果源unique_ptr是一个临时右值，编译器允许这样做；如果源unique_ptr将存在一段时间，编译器将禁止这样做：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;pu1(<span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"Hi ho!"</span>));</span><br><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;pu2;</span><br><span class="line">pu2=pu1;  <span class="comment">//#1 not allowed</span></span><br><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;pu3;</span><br><span class="line">pu3=<span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;(<span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"Yo!"</span>)); <span class="comment">//#2 allowed</span></span><br></pre></td></tr></table></figure>
+<p>语句#1将留下悬挂的unique_ptr（pul）,这可能导致危害。语句#2不会留下悬挂的unique_ptr，因为它调用unique_ptr的构造函数，该构造函数创建的临时对象在其所有权转让给pu3后就会被销毁。</p>
+<p>C++有个标准库函数std::move()，让您能够将一个unique_ptr赋给另一个：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unique_ptr</span>&lt;<span class="built_in">string</span>&gt;ps1,ps2;</span><br><span class="line">ps2=move(ps1);</span><br></pre></td></tr></table></figure>
+<p>使用new分配内存时，才能使用auto_ptr和shared_ptr,使用new[]分配内存时，不能使用它们。<br>不使用new分配内存时，不能使用auto_ptr或shared_ptr；<br>不使用new或new[]分配内存时，不能使用unique_ptr。</p>
+<p>如果程序不需要指向同一个对象的指针，则可使用unqiue_ptr.<br>如果函数使用new分配内存，并返回指向该内存的指针，将其返回类型声明为unique_ptr是不错的选择。</p>
+<p>在unique_ptr为右值时，可将其赋给shared_ptr，这与将一个unique_ptr赋给另一个需要满足的条件相同。</p>
+<p>模板shared_ptr包含一个显式构造函数，可用于将右值unique_ptr转换为shared_ptr。shared_ptr将接管原来归unique_ptr所有的对象。</p>
+<h2 id="16-3-标准模板库-STL"><a href="#16-3-标准模板库-STL" class="headerlink" title="16.3 标准模板库(STL)"></a>16.3 标准模板库(STL)</h2><p>STL提供了一组表示容器、迭代器、函数对象和算法的模板。容器是一个与数组类似的单元，可以储存若干个值。STL容器是同质的，即储存的值的类型相同；算法是完成特定任务（如对数组进行排序或在链表中查找特定的值）的处方；迭代器能够用来遍历容器的对象，与能够遍历数组的指针类似，是广义指针；函数对象是类似于函数的对象，可以是类对象或函数指针（包括函数名，因为函数名被用作指针）。STL使得能够构造各种容器（包括数组、队列和链表）和执行各种操作（包括搜索、排序和随机排列）。<br>STL不是面向对象编程，而是一种不同的编程模式——泛型编程。</p>
+<h3 id="16-3-2-模板类vector"><a href="#16-3-2-模板类vector" class="headerlink" title="16.3.2 模板类vector"></a>16.3.2 模板类vector</h3><p>vector模板使用动态内存分配，因此可以用初始化参数来指出需要多少矢量。</p>
+<p>与string类相似，各种STL容器模板都接受一个可选参数，该参数指定使用哪个分配器对象来管理内存。例如，vector模板的开头与下面类似：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>,<span class="title">class</span> <span class="title">Allocator</span> = <span class="title">allocator</span>&lt;T&gt;&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">vector</span>&#123;</span>...&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果省略该模板参数的值，则容器模板将默认使用allocator<T>类。这个类使用new和delete。</T></p>
+<p>所有的STL容器都提供了一些基本方法，其中包括size()——返回容器中元素数目、swap()——交换两个容器的内容、begin()——返回一个指向容器中第一个元素的迭代器、end()——返回一个表示超过容器尾的迭代器。</p>
+<p>什么是迭代器？它是一个广义指针。事实上，也可以是一个可对其执行类似指针的操作——如接触引用（如operator*()）和新增（如operator++()）——的对象。</p>
+<p>每个容器类都定义了一个合适的迭代器，该迭代器的类型是一个名为iterator的typedef，其作用域为整个类。例如，要为vector的double类型规范声明一个迭代器，可以这样做：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;::iterator pd;</span><br><span class="line"><span class="comment">//假设scores是一个vector&lt;double&gt;对象</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;scores;</span><br><span class="line"><span class="comment">//则可以用迭代器pd执行这样的操作</span></span><br><span class="line">pd=scores.begin();</span><br><span class="line">*pd=<span class="number">22.3</span>;</span><br><span class="line">++pd;</span><br></pre></td></tr></table></figure>
+<p>什么是超尾文件呢？它是一种迭代器，指向容器最后一个元素的后面的那个元素。这与C-风格字符串后面的空字符类似，只是空字符是一个值，而”超尾文件“是一个指向元素的指针（迭代器）。end()成员函数标识超尾文件的位置。</p>
+<p>push_back()是一个方便的方法，它将元素添加到矢量末尾。这样做时，它将负责内存管理，增加矢量的长度，使之能够容纳新的成员。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;scores;</span><br><span class="line"><span class="keyword">double</span> temp;</span><br><span class="line">socres.push_back(temp);</span><br><span class="line"><span class="comment">//erase()方法删除矢量中给定区间的元素。它接受两个迭代器参数，这些参数定义了要删除的区间。</span></span><br><span class="line">scores.erase(scores.begin(),scors.begin()+<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>区间[it1，it2)由迭代器it1和it2指定，其范围为it1到it2（不包括it2）.</p>
+<p>insert()方法的功能与erase相反。它接受3个参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数指定了被插入区间，该区间通常是另一个容器对象的一部分。</p>
+<p>下面的代码将新元素插入到old.end()前面，即矢量最后一个元素的后面。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">old_v.insert(old_v.end(),new_v.begin()+<span class="number">1</span>,new_v.end());</span><br></pre></td></tr></table></figure>
+<p>STL从更广泛的角度定义了非成员函数来执行一些操作，即不是为每个容器类定义find()成员函数，而是定义了一个适用于所有容器类的非成员函数find()。这种设计理念省区了大量重复工作。<br>另一方面，即使有执行相同任务的非成员函数，STL有时也会定义一个非成员函数。这是因为对有些操作来说，类特定算法的效率比通用算法高。</p>
+<p>下面来看3个具有代表性的STL函数：for_each()、random_shuffle()和sort()。</p>
+<p>for_each()函数可用于很多容器类，它接受3个参数。前两个是定义容器中区间的迭代器，最后一个是指向函数的指针（更普遍地说，最后一个参数是一个函数的对象）。for_each()函数将被指向的函数应用于容器区间的各个元素。被指向的函数不能修改容器元素的值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;Review&gt;::iterator pr; <span class="comment">//Review是一个结构，pr是一个迭代器</span></span><br><span class="line">for_each(books.begin(),books.end(),ShowReview);<span class="comment">//books是结构中的成员，ShowReview是一个方法</span></span><br></pre></td></tr></table></figure>
+<p>Random_shuffle()函数接受两个区间指定的迭代器参数，并随机排列该区间中的元素。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random_shuffle(books.begin(),books.end());</span><br></pre></td></tr></table></figure>
+<p>与可用于任何容器类的for_each不同，该函数要求容器类允许随机访问。</p>
+<p>srot()函数也要求容器支持随机访问。该函数有两个版本.<br>第一个版本接受两个定义区间的迭代器参数，并使用为储存在容器中的类型元素定义的&lt;运算符，对区间中的元素进行操作。例如，下面的语句按升序对coolstuff的内容进行排序，排序时使用内置的&lt;运算符进行比较：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;coolstuff;</span><br><span class="line">...</span><br><span class="line">sort(coolstuff.begin(),coolstuff.end());</span><br></pre></td></tr></table></figure>
+<p>如果容器元素是用户定义的对象，则要使用sort()，必须定义能够处理该类型对象的operator&lt;()函数。</p>
+<p>第二个版本的sort()函数。它接受3个参数，前两个参数也是指定区间的迭代器，最后一个参数是指向要使用的函数的指针（函数对象），而不是用于比较的operator&lt;()。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">worsethan</span><span class="params">(<span class="keyword">const</span> Review &amp;r1,<span class="keyword">const</span> Reciew&amp;r2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(r1.rating&lt;r2.rating)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有了这个函数后，就可用使用下列的语句将包含Review对象的books矢量按rating升序排列；</span></span><br><span class="line">sort(books.begin(),books.end(),worsethan);</span><br></pre></td></tr></table></figure>
+<h3 id="16-3-3-基于范围的for循环"><a href="#16-3-3-基于范围的for循环" class="headerlink" title="16.3.3 基于范围的for循环"></a>16.3.3 基于范围的for循环</h3><p>基于范围的for循环是为用于STL而设计的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> prices[<span class="number">5</span>]=&#123;<span class="number">4.99</span>,<span class="number">10.99</span>,<span class="number">6.87</span>,<span class="number">7.99</span>,<span class="number">8.49</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">double</span> x:prices)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>在这种for循环中，括号内的代码声明一个类型与容器储存的内容相同的变量，然后指出了容器的名称。接下来，循环体使用指定的变量依次访问容器的每个元素。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for_each(books.begin(),books.end(),ShowReview);</span><br><span class="line"><span class="comment">//可将其替换为下述基于范围的for循环：</span></span><br><span class="line"><span class="keyword">for</span>（<span class="keyword">auto</span> X：books）ShowReview(X);</span><br></pre></td></tr></table></figure>
+<p>根据books的类型（vector<Review>），编译器将推断出X的类型(Review),而循环将依次将books中的每个Review对象传递给ShowReview（）.</Review></p>
+<p>不同于for_each(),基于范围的for循环可修改容器的内容，诀窍是指定一个引用参数。然后通过调用修改容器内容的方法。</p>
+<h2 id="16-4-泛型编程"><a href="#16-4-泛型编程" class="headerlink" title="16.4 泛型编程"></a>16.4 泛型编程</h2><p>面向对象编程关注的是编程的数据方面，而泛型编程关注的是算法。它们之间的共同点是抽象和创建可重用代码，但它们的理念绝然不同。<br>泛型编程旨在编写独立于数据类型的代码。C++中，完成 通用程序的工具是模板。当然，模板使得能够按泛型定义函数或类，而STL通过通用算法更进一步。模板让这一切成为可能，但必须对元素进行仔细地设计。</p>
+<h3 id="16-4-1-为何使用迭代器"><a href="#16-4-1-为何使用迭代器" class="headerlink" title="16.4.1 为何使用迭代器"></a>16.4.1 为何使用迭代器</h3><p>模板使得算法独立于储存的数据类型，而迭代器使算法独立于使用的容器类型。因此，它们都是STL通用方法的重要组成部分。</p>
+<p>泛型编程旨在使用同一个find函数来处理数组、链表或任何其他容器类型。即函数不仅独立于容器中储存的数据类型，而且独立于容器本身的数据结构。<br>要实现find函数，迭代器应具备哪些特征呢？<br>1.应能够对迭代器执行接触引用操作，以便能够访问它引用的值。即如果p是一个迭代器，则应对*p进行定义。<br>2.应能够将一个迭代器赋给另一个迭代器。即如果p和q都是迭代器，则应对表达式p=q进行定义。<br>3.应能够将一个迭代器与另一个进行比较，看它们是否相等。即如果p和q都是迭代 器，则应对p = =q和p！=q进行定义。<br>4.应能够使用迭代器遍历容器的所有元素，这可用通过为迭代器p定义++p和p++来实现。  </p>
+<p>为区分++运算符的前缀版本和后缀版本，C++将operator++作为前缀版本，将operator++（int）作为后缀版本。</p>
+<p>每个容器类（vector、list、deque等）定义了相应的迭代器类型。对于其中的某个类，迭代器可能是指针；而对于另一个类，则可能是对象。</p>
+<p>每个容器类都有一个超尾标记，当迭代器递增到超越容器的最后一个元素后，这个值被赋给迭代器。每个容器都有begin（）和end（）方法，它们分别返回一个指向容器的第一个元素和超尾位置的迭代器。每个容器类都使用++操作，让迭代器从指向第一个元素逐步指向超尾位置，从而遍历容器中的每一个元素。下面的代码行将pr的类型声明为vector<double>类的迭代器：</double></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;<span class="class"><span class="keyword">class</span>;</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;::iterator pr;</span><br></pre></td></tr></table></figure>
+<p>实际上，作为一种编程风格，最好避免直接使用迭代器，而应尽可能使用STL函数，如（for_each（））来处理细节。也可以使用C++新增的基于范围的for循环。</p>
+<h3 id="16-4-2-迭代器类型"><a href="#16-4-2-迭代器类型" class="headerlink" title="16.4.2 迭代器类型"></a>16.4.2 迭代器类型</h3><p>不同的算法对迭代器的要求也不同。例如，查找算法需要定义++运算符，以便迭代器能够遍历整个容器；它要求能够读取数据，但不要求能够写入数据。而排序算法要求能够随机访问，以便能够交换两个不相邻的元素，排序算法要求能够读写数据。<br>STL定义了5中迭代器，并根据所需的迭代器类型对算法进行了描述。这5中迭代器分别是输入迭代器、输出迭代器、正向迭代器、双向迭代器和随机访问迭代器。</p>
+<p><strong>1.输入迭代器</strong></p>
+<p>输入迭代器可被用于程序读取容器中的信息。具体地说，对输入迭代器接触引用将使程序能够读取容器中的值，但不一定能让程序修改值。<br>基于输入迭代器的任何算法都是单通行的，不依赖于前一次遍历时的迭代值，也不依赖于本次遍历中前面的迭代器值。输入迭代器是单向迭代器，可用递增，但不能倒退。</p>
+<p><strong>2.输出迭代器</strong></p>
+<p>输出迭代器于输入迭代器相似，只是接触引用让程序能够修改容器值，而不能读取。<br>简而言之，对于单通行、只读算法，则可以使用输入迭代器；而对于单通行、只写算法，则可以使用输出迭代器。</p>
+<p><strong>3.正向迭代器</strong></p>
+<p>正向迭代器只使用++运算符来遍历容器，所以它每次沿容器向前移动第一个元素。然而，于输入和输出迭代器不同的是，它总数按相同顺序遍历一系列值。另外，正向迭代器递增后，仍然可以对前面的迭代器值接触引用，并可以得到相同的值。<br>正向迭代器即可以使得读取和修改数据，也可以使得只能读取数据：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *pirw;<span class="comment">//能够读写</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *pirw;<span class="comment">//只能读，不能写</span></span><br></pre></td></tr></table></figure>
+<p><strong>4.双向迭代器</strong></p>
+<p>双向迭代器具有正向迭代器的所有特性，同时支持两种（前缀和后缀）递减运算符。</p>
+<p><strong>5.随机访问迭代器</strong></p>
+<p>随机访问迭代器具有双向迭代器的所有特性，同时添加了至此随机访问的操作（如指针增加运算）和用于对元素进行排序的关系运算符。</p>
+<h3 id="16-4-3迭代器层次结构"><a href="#16-4-3迭代器层次结构" class="headerlink" title="16.4.3迭代器层次结构"></a>16.4.3迭代器层次结构</h3><p>下表总结了主要的迭代器功能。其中，i为迭代器，n为整数。</p>
+<p><strong>迭代器性能</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">迭代器功能</th>
+<th align="center">输入</th>
+<th align="center">输出</th>
+<th align="center">正向</th>
+<th align="center">双向</th>
+<th align="center">随机访问</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">接除引用读取</td>
+<td align="center">有</td>
+<td align="center">无</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">接除引用输入</td>
+<td align="center">无</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">固定和可重复排序</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">++i i++</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">–i i–</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">i[n]</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">i+n</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">i-n</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">i+=n</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="left">i-=n</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+</tbody></table>
+<p>根据特定迭代器类型编写的算法可使用该种迭代器，也可以使用具有所需功能的任何其他迭代器。所以具有随机访问迭代器的容器可以使用为输入迭代器编写的算法。</p>
+<p>为何需要这么多迭代器呢？目的是为了在编写算法尽可能使用要求最低的迭代器，并让它适用于容器的最大区间。STL实现了一个双向链表，它使用双向迭代器，因此不能使用基于随机访问迭代器的算法，但可以使用基于要求较低的迭代器的算法。</p>
+<h3 id="16-4-4-概念、改进和模型"><a href="#16-4-4-概念、改进和模型" class="headerlink" title="16.4.4 概念、改进和模型"></a>16.4.4 概念、改进和模型</h3><p>STL有若干个用C++语言无法表达的特性，如迭代器种类。因此，虽然可以设计具有正向迭代器特征的类，但不能让编译器将算法限制为只使用这个类。原因在于，正向迭代器是一系列要求，而不是类型。所设计的迭代器类可以满足这种要求，常规指针也能满足这种要求。STL算法可以使用任何满足其要求的迭代器实现。STL文献使用属于“概念”（concept）来描述这一系列要求。</p>
+<p>概念可以类似继承的关系。然而，不能将C++继承机制用于迭代器。例如，可以将正向迭代器实现为一个类，而将双向迭代器实现为一个常规指针。因此，对C++而言，这种双向迭代器是一种内置类型，不能从类派生而来。然而，从概念上来看，它确实能够继承。有些STL文献使用术语“改进”（refinement）来表示这种概念上的继承，因此，双向迭代器是对正向迭代器概念的一种改进。</p>
+<p>概念的具体实现被称模型。因此，指向int的常规指针是一个随机访问迭代器模型，也是一个正向迭代器模型，因为它满足该概念的所有要求。</p>
+<p><strong>1.将指针用作迭代器</strong></p>
+<p>迭代器是广义指针，而指针满足所有的迭代器要求。迭代器是STL算法的接口，而指针是迭代器，因此STL算法可以使用指针来对基于指针的非STL容器进行操作。</p>
+<p>C++支持将超尾概念用于数组，使得可以将STL算法用于常规数组。</p>
+<p>有一种算法（名为copy（））可以将数据从一个容器复制到另一个容器中。copy（）的前两个迭代器参数表示要复制的范围，最后一个迭代器参数表示要将第一个元素复制到什么位置，copy（）函数将覆盖目标容器中已有的数据，同时目标容器必须足够大，以便能够容纳被复制的元素。</p>
+<p>假设要将信息复制到显示器上。如果有一个表示输出流的迭代器，则可以使用copy（）。STL为这种迭代器提供了ostream_iterator模板。用STL的话说，该模板是输出迭代器概念的一个模型，它也是一个适配器——一个类或函数，可以将一些其他接口转换为STL使用的接口。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line">...</span><br><span class="line">ostream_iterator&lt;<span class="keyword">int</span> ,<span class="keyword">char</span>&gt;out_iter(<span class="built_in">cout</span>,<span class="string">" "</span>);</span><br></pre></td></tr></table></figure>
+<p>out_iter迭代器现在是一个接口，让您能够使用cout来显式信息。第一个模板参数（这里为int）指出了被发送给输出流的数据类型；第二个模板参数（这里为char）指出了输出流使用的字符类型，构造函数的第一个参数（这里为cout）指出了要使用的输出流，它也可以是用于文件输出的流；最后一个字符串参数是在发送给输出流的每个数据项后显式的分隔符。<br>可以这样使用迭代器：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*out_iter++ =<span class="number">15</span>； <span class="comment">//cout&lt;&lt;15&lt;&lt;" ";</span></span><br></pre></td></tr></table></figure>
+<p>也可以将copy（）用于迭代器：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy（dice.begin(),dice.end(),out_iter）;</span><br></pre></td></tr></table></figure>
+<p>iterator头文件还定义了一个istream_iterator模板。使istream输入可用作迭代器接口。它是一个输入迭代器概念的模型，可以使用两个istream_iterator对象来定义copy的输入范围：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy(istream_iteratmr&lt;<span class="keyword">int</span> ,<span class="keyword">char</span>&gt;(<span class="built_in">cin</span>),istream_iterator&lt;<span class="keyword">int</span> ,<span class="keyword">char</span>&gt;(),dice.begin());</span><br></pre></td></tr></table></figure>
+<p>与ostream_iterator相似，istream_iterator也使用两个模板参数。第一个参数指出要读取的数据类型，第二个参数指出输入流使用的字符类型。使用构造函数参数cin意味着使用由cin管理的输入流，省略构造函数参数表示输入失败，因此上述代码从输入流中读取，直到文件结尾、类型不匹配或出现其他输入故障为止。</p>
+<p><strong>2.其他有用的迭代器</strong></p>
+<p>除了ostream_iterator和istream_iterator之外，头文件iterator还提供了其他一些专用的预定义迭代器类型，它们是reverse_iterator、back_insert_iterator、front_insert_iterator和insert_iterator。</p>
+<p>reverse_iterator,对reverse_iterator执行递增操作将导致它被递减，</p>
+<p>vector类有一个名为rbegin（）的成员函数和一个名为rend（）的成员函数，前者返回一个指向超尾的反向迭代器，后者返回一个指向第一个元素的反向迭代器。因为对迭代器执行递增操作将导致它被递减，所以可以使用下面的语句来反向显式内容：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy(dice.rbegin(),dice.rend(),out_iter);</span><br></pre></td></tr></table></figure>
+<p>注意：rbegin（）和end（）返回相同的值（超尾），但类型不同（reverse_iterator和iterator）。同样，rend（）和begin（）也返回相同的值（指向第一个元素的迭代器），但类型不同。</p>
+<p>反向指针通过先递减，再解除引用的方法。即<em>rp将再</em>rp的当前值之前对迭代器执行解除引用。也就是说，如果rp指向位置6，则*rp将是位置5的值。</p>
+<p>copy（）不能自动根据发送值调整目标容器的长度。三种插入迭代器通过将复制转换为插入解决了这些问题。插入将添加新的元素，而不会覆盖已有的数据，并使用自动内存分配来确保能够容纳新的信息。<br>back_insert_iterator将元素插入到容器尾部，<br>而front_insert_iterator将元素插入到容器的前端。<br>最后，insert_iterator将元素插入到insert_iterator构造函数的参数指定的位置前面。<br>这三个插入迭代器都是输出容器概念的模型。</p>
+<p>这里存在一些限制。<br>back_insert_iterator只能用于允许在尾部快速插入的容器，vector类符合这种要求。<br>front_insert_iterator只能用于允许在起始位置做时间固定插入的容器类型，vector不能满足这种要求，但queue满足。<br>insert_iterator没有这些限制，因此可以用它把信息插入到矢量的前端。<br>可以用insert_iterator将复制数据的算法转换为插入数据的算法。</p>
+<h3 id="16-4-5-容器种类"><a href="#16-4-5-容器种类" class="headerlink" title="16.4.5 容器种类"></a>16.4.5 容器种类</h3><p>STL具有容器概念和容器类型。概念是具有名称（如容器、序列容器、关联容器等）的通用类别；容器类型是用于创建具体容器对象的模板。以前的11个容器类型分别是deque 、list、 queue、 priority_queue、 stack、 vector、 map 、multimap、 set、 multiset和bitset；C++11新增了forware_list 、unordered_map、 unordered_multimap 、unordered_set和unordered_multiset，且不将bitset视为容器，而将其视为一种独立的类别。</p>
+<p><strong>1.容器概念</strong></p>
+<p>没有与基本容器概念对应的类型，但概念描述了所有容器类都通用的元素。它是一个概念化的抽象基类——说它概念化，是因为容器并不真正使用继承机制。换句话说，容器概念指定了所有STL容器类都必须满足的一系列要求。</p>
+<p>容器是储存其他对象的对象，被储存的对象必须是同一种类型的，它们可以是OOP意义上的对象，也可以是内置类型值。但不能将任何类型的对象储存在容器中，具体地说，类型必须是可复制构造的和可赋值的。</p>
+<p>所有的容器都提供了某些特征和操作，下表对一些通用特征进行了总结，其中X表示容器类型，T表示储存在容器中的对象类型；a和b表示类型为X的值；r表示类型为X&amp;的值；u表示类型为X的标识符。</p>
+<p><strong>表16.5 一些基本的容器特征</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">返回类型</th>
+<th align="center">说明</th>
+<th align="center">复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">X::iterator</td>
+<td align="center">指向T的迭代器类型</td>
+<td align="center">满足正向迭代器要求的任何迭代器</td>
+<td align="center">编译时间</td>
+</tr>
+<tr>
+<td align="center">X::value_type</td>
+<td align="center">T</td>
+<td align="center">T的类型</td>
+<td align="center">编译时间</td>
+</tr>
+<tr>
+<td align="center">X u;</td>
+<td align="center"></td>
+<td align="center">创建一个名为u的空容器</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">X();</td>
+<td align="center"></td>
+<td align="center">创建一个匿名的空容器</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">X u(a);</td>
+<td align="center"></td>
+<td align="center">调用复制构造函数后u==a</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="center">X u=a;</td>
+<td align="center"></td>
+<td align="center">作用同X u（a）</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="center">r=a;</td>
+<td align="center">X&amp;</td>
+<td align="center">调用赋值运算符后r==a</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="center">(&amp;a)-&gt;~X()</td>
+<td align="center">void</td>
+<td align="center">对容器中每个元素应用析构函数</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="center">a.begin()</td>
+<td align="center">迭代器</td>
+<td align="center">返回指向容器中第一个元素的迭代器</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">a.end()</td>
+<td align="center">迭代器</td>
+<td align="center">返回超尾值迭代器</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">a.size()</td>
+<td align="center">无符号整型</td>
+<td align="center">返回元素个数，等价于a.end()-a.begin()</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">a.swap(b)</td>
+<td align="center">void</td>
+<td align="center">交换a和b的内容</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="center">a ==b</td>
+<td align="center">可转换为bool</td>
+<td align="center">如果a和b的长度相等，且a中每个元素都等于b中相应的元素，则为真。</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="center">a!=b</td>
+<td align="center">可转换为bool</td>
+<td align="center">返回！（a==b）</td>
+<td align="center">线性</td>
+</tr>
+</tbody></table>
+<p>表中复杂度一列描述了执行操作所需的时间，这个表列出了三种可能性，从快到慢依次为：<br>编译时间；<br>固定时间；<br>线性时间。<br>如果复杂度为编译时间，则操作将在编译时执行，执行时间为0.固定复杂度意味着操作发生在运行阶段，但独立于对象中的元素数目。线性复杂度意味着时间与元素数目成正比。即如果a和b都是容器，则a==b具有线性复杂度，因为==操作必须用于容器中的每个元素。</p>
+<p><strong>2.C++11新增的容器要求</strong></p>
+<p>下表列出了C++11新增的通用容器要求。在这个表中，rv表示类型为X的非常量右值，如函数的返回值。</p>
+<p><strong>表16.6 C++11新增的基本容器要求</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">表达式</th>
+<th align="center">返回类型</th>
+<th align="left">说明</th>
+<th align="center">复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">X u(rv)；</td>
+<td align="center"></td>
+<td align="left">调用移动构造函数后，u的值与rv的原始值相同</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="left">X u=rv;</td>
+<td align="center"></td>
+<td align="left">作用同X u（rv）；</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">a=rv;</td>
+<td align="center">X&amp;</td>
+<td align="left">调用移动赋值运算符后，u的值与rv的原始值相同</td>
+<td align="center">线性</td>
+</tr>
+<tr>
+<td align="left">a.cbegin()</td>
+<td align="center">const_iterator</td>
+<td align="left">返回指向容器第一个元素的const迭代器</td>
+<td align="center">固定</td>
+</tr>
+<tr>
+<td align="left">a.cend</td>
+<td align="center">const_iterator</td>
+<td align="left">返回超尾值const迭代器</td>
+<td align="center">固定</td>
+</tr>
+</tbody></table>
+<p>复制构造和复制赋值以及移动构造和移动赋值之间的差别在于，复制操作保留源对象，而移动操作可修改源对象，还可能转让所有权，而不做任何复制。如果源对象是临时的，移动操作的效率将高于常规复制。</p>
+<p><strong>3.序列</strong></p>
+<p>可以通过添加要求来改进基本的容器概念。序列是一种重要的改进，因为7中STL容器类型（deque、C++11新增的forward_list、list、queue、priority_queue、stack和vector）都是序列。<br>序列要求其元素按严格的线性顺序排列，即存在第一个元素、最后一个元素，除第一个元素和最后一个元素外，每个元素前后都分别有一个元素。数组和链表都是序列，但分支结构（其中每个节点都指向两个子节点）不是。</p>
+<p>表16.7列出了序列的要求。该表格使用的表示法与表16.5相同，此外，t表示类型为T（储存在容器中的值的类型）的值，n表示整数，p、q、j和i表示迭代器</p>
+<p><strong>表16.7 序列的要求</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">返回类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">X a(n,t);</td>
+<td align="center"></td>
+<td align="left">声明一个名为a的由n个t值组成的序列</td>
+</tr>
+<tr>
+<td align="center">X(n,t)</td>
+<td align="center"></td>
+<td align="left">创建一个由n个t组成的匿名序列</td>
+</tr>
+<tr>
+<td align="center">X a(i,j)</td>
+<td align="center"></td>
+<td align="left">声明一个名为a的序列，并将其初始化为区间[i,j)的内容</td>
+</tr>
+<tr>
+<td align="center">X(i,j)</td>
+<td align="center"></td>
+<td align="left">创建一个匿名序列，并将其初始化为区间[i,j)的内容</td>
+</tr>
+<tr>
+<td align="center">a.insert(p,t)</td>
+<td align="center">迭代器</td>
+<td align="left">将t插入到p前面</td>
+</tr>
+<tr>
+<td align="center">a.insert(p,n,t)</td>
+<td align="center">void</td>
+<td align="left">将n个t插入到p的前面</td>
+</tr>
+<tr>
+<td align="center">a.insert(p,i,j)</td>
+<td align="center">void</td>
+<td align="left">将区间[i,j)中的元素插入到p的前面</td>
+</tr>
+<tr>
+<td align="center">a.erase(p)</td>
+<td align="center">迭代器</td>
+<td align="left">删除p指向的元素</td>
+</tr>
+<tr>
+<td align="center">a.erase(p,q)</td>
+<td align="center">迭代器</td>
+<td align="left">删除区间[p,q)中的元素</td>
+</tr>
+<tr>
+<td align="center">a.clean()</td>
+<td align="center">void</td>
+<td align="left">等价于erase（begin(),end()）</td>
+</tr>
+</tbody></table>
+<p>链表和双端队列的设计允许将元素添加到前端，而不用移动其他元素，所以它们可以以固定时间的复杂度来实现push_front().<br>下面来详细介绍这7中序列容器类型。</p>
+<p><strong>1.vector</strong></p>
+<p>vector是数组的一种类表示，它提供自动内存管理功能，可以动态地改变vector对象的长度，并随着元素的添加和删除而增大和缩小。它提供了对元素的随机访问。在尾部添加和删除元素的时间是固定的，但在头部或中间插入和删除元素的复杂度为线性时间。<br>除序列外，vector还说可反转容器概念的模型。这增加了两个类方法：rbegin（）和rend（）。前者返回一个指向反转序列的第一个元素的迭代器，后者返回反转序列的超尾迭代器。</p>
+<p><strong>2.deque</strong></p>
+<p>deque模板类（在deque头文件中声明）表示双端队列，通常被简称为deque。<br>在STL中，其实现类似于vector容器，支持随机访问。主要区别在于，从deque对象的开始位置插入和删除元素的时间是固定的，而不像vector中那样是线性时间的。</p>
+<p><strong>3.list</strong></p>
+<p>list模板类（在头文件list中声明）表示双向链表。除了第一个和最后一个元素外，每个元素都与前后的元素相链接，这意味着可以双向遍历链表。list和vector的主要区别在于，list在链表中任一位置进行插入和删除的时间是固定的（vector模板提供了除结尾处外的线性时间的插入和删除，在结尾处，它提供了固定时间的插入和删除）。因此，vector强调的是通过随机访问进行快速访问，而list强调的是元素的快速插入和删除。</p>
+<p>与vector相似，list也是可反转容器。与vector不同的是，list不支持数组表示法和随机访问。</p>
+<p>在链表中插入新元素并不会移动已有的元素，而只是修改链表信息，指向某个元素的迭代器仍然指向该元素，但它链接的元素可能与以前不同。</p>
+<p><strong>表16.9 list成员函数</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>void merge(list&lt;T,Alloc&gt;&amp;x)</code></td>
+<td align="left">将链表x与调用链表合并。两个链表必须已经排序。合并后的经过排序的链表保存在调用链表中，x为空。这个函数的复杂度为线性时间。</td>
+</tr>
+<tr>
+<td align="left"><code>void remove(const T&amp;val)</code></td>
+<td align="left">从链表中删除val的所有实例。这个函数的复杂度为线性时间</td>
+</tr>
+<tr>
+<td align="left"><code>void sort()</code></td>
+<td align="left">使用&lt;运算符对链表进行排序；N个元素的复杂度为NlogN</td>
+</tr>
+<tr>
+<td align="left"><code>void splice(iterator pos,list&lt;T,Alloc&gt;x)</code></td>
+<td align="left">将链表x内容插入到pos前面，x将为空，这个函数的复杂度为固定时间</td>
+</tr>
+<tr>
+<td align="left"><code>void unique()</code></td>
+<td align="left">将连续的相同元素压缩为单个元素，这个函数的复杂度为线性时间</td>
+</tr>
+</tbody></table>
+<p>insert()和splice()之间的主要区别在于：insert()将原始区间的副本插入到目标地址，而splice()则将原始区间移到目标地址。</p>
+<p>还有非成员函数sort()，但它需要随机访问迭代器。因为快熟插入的代价是放弃随机访问功能，所以不能将非成员函数sort（）用于链表。</p>
+<p><strong>4.forward_list</strong></p>
+<p>C++11新增了容器类forward_list，它实现了单链表，在这种链表中，每个节点都只链接到下一个节点，而没有链接到前一个节点。因此forware_list只需要正向迭代器，而不需要双向迭代器。forward_list是不可反转的容器。</p>
+<p><strong>5.queue</strong></p>
+<p>queue模板类（在头文件queue中）是一个适配器类。ostream_iterator模板就是一个适配器，让输出流能够使用迭代器接口。同样，queue模板让底层类展示典型的队列接口。<br>queue模板的限制比deque更多。它不仅不允许随机访问队列元素，甚至不允许遍历队列。</p>
+<p><strong>表16.10 queue的操作</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">queue的操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bool empty()const</td>
+<td align="left">如果队列为空，则返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="left">size_type size()const</td>
+<td align="left">返回队列中的元素数目</td>
+</tr>
+<tr>
+<td align="left">T&amp; front()</td>
+<td align="left">返回指向队首元素的引用</td>
+</tr>
+<tr>
+<td align="left">T&amp; back()</td>
+<td align="left">返回指向队尾元素的引用</td>
+</tr>
+<tr>
+<td align="left">void push(const T&amp;x)</td>
+<td align="left">在队尾插入x</td>
+</tr>
+<tr>
+<td align="left">void pop()</td>
+<td align="left">删除队首元素</td>
+</tr>
+</tbody></table>
+<p>注意，pop()是一个删除数据的方法，而不是检查数据的方法。如果要使用队列中的值，应首先使用front()来检索这个值，然后使用pop()将它从队列中删除。</p>
+<p><strong>8.priority_queue</strong></p>
+<p>priority_queue模板类（在头文件queue中声明）是另一个适配器类，它支持的操作与queue相同。两者之间的主要区别在于，在priority_queue中，最大的元素被移到队首。</p>
+<p><strong>9.stack</strong></p>
+<p>与queue相似，stack（在头文件stack中声明）也是一个适配器类，它给底层类提供了典型的栈接口。<br>stack模板的限制比vector更多。它不仅不允许随机访问栈元素，甚至不允许遍历栈。它把使用限制在定义栈的基本操作上，即可以将压入推到栈顶、从栈顶弹出元素、查看栈顶的值、检查元素数目和测试栈是否为空。</p>
+<p><strong>表16.11 stack的操作</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bool empty()const</td>
+<td align="left">如果栈为空，则返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="left">size_type size()const</td>
+<td align="left">返回栈中的元素数目</td>
+</tr>
+<tr>
+<td align="left">T&amp; top()</td>
+<td align="left">返回指向栈顶元素的引用</td>
+</tr>
+<tr>
+<td align="left">void push(const T&amp;x)</td>
+<td align="left">在栈顶部插入x</td>
+</tr>
+<tr>
+<td align="left">void pop()</td>
+<td align="left">删除栈顶元素</td>
+</tr>
+</tbody></table>
+<p>与queue相似，如果要使用栈中的值，必须首先使用top()来检索这个值，然后使用pop()将它从栈中删除。</p>
+<p><strong>10.array（C++11）</strong></p>
+<p>模板类array是在头文件array中定义的，它并非STL容器，因为其长度是固定的。因此，array没有定义调整容器大小的操作，如push_back()和insert()，但定义了对它来说有意义的成员函数，如operator<a href></a>和at()。可将很多标准STL算法用于array对象，如copy()和for_each().</p>
+<h3 id="16-4-4-关联容器"><a href="#16-4-4-关联容器" class="headerlink" title="16.4.4 关联容器"></a>16.4.4 关联容器</h3><p>关联容器是对容器概念的另一个改进。关联容器将值与键关联在一起，并使用键来查找值。对于容器X，表达式X::value_type通常指出了储存在容器中的值类型。对于关联容器来说，表达式X::key_type指出了键的类型。</p>
+<p>关联容器的优点在于，它提供了对元素的快速访问。与序列相似，关联容器也允许插入新元素，但不能指定元素的插入位置。</p>
+<p>关联容器通常是使用某种树实现的。树是一种数据结构，其根节点链接到一个或两个节点，而这些结点又链接到一个或两个节点，从而形成分支结构。像链表一样，节点使得添加和删除数据项比较简单，但相对于链表，树的查找速度更快。</p>
+<p>STL提供了4中关联容器：set、multiset、map、multimap。前两种是在头文件set中定义的，后两种的在头文件map中定义的。</p>
+<p>最简单的关联容器是set，其值类型与键相同，键是唯一的，这意味着集合中不会有多个相同的键；multiset类似于set，只是可能有多个值的键相同。<br>在map中，值与键的类型不同，键是唯一的，每个键只对应一个值，multimap与map相似，只是一个键可以与多个值相关联。</p>
+<p><strong>1.set实例</strong></p>
+<p>STLset模拟了多个概念，它是关联集合，可反转，可排序，且键是唯一的，所以不能储存多个相同的值。set也使用模板参数来指定要储存的值类型：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt;A;</span><br></pre></td></tr></table></figure>
+<p>第二个参数是可选的，可用于指示用来对键进行排序的比较函数或对象。与其他容器相似，set也有一个将迭代器区间作为参数的构造函数，这提供了一种将集合初始化为数组内容的简单方法。</p>
+<p>数学为集合定义了一些标准操作，并集、交集和两个集合的差。STL提供了支持这些操作的算法，它们是通用函数，而不是方法，因此并非只能用于set对象。然而，所有set对象都自动满足使用这些算法的先决条件，即容器是经过自动排序的。</p>
+<p>set_union()函数接收5个迭代器参数，前两个迭代器定义了第一个集合的区间，接下来的两个定义了第二个集合的区间。最后一个迭代器是输出迭代器，指出将结果迭代器复制到什么位置。例如，要显式集合A和集合B的并集：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_union(A.begin(),A.end(),B.begin(),B.end(),ostream_iterator&lt;<span class="built_in">string</span>,<span class="keyword">char</span>&gt;out(<span class="built_in">cout</span>,<span class="string">" "</span> ));</span><br></pre></td></tr></table></figure>
+<p>假设要将结果放在集合C中，而不是显式它，则最后一个参数应该是一个指向C的迭代器。这有两个问题<br>1.关键集合将键看作常量，所有C.begin（）返回的迭代器是常量迭代器，不能用作输出迭代器。<br>2.与copy()相似，set_union()将覆盖容器中已有的数据，并要求容器有足够的空间容纳新信息。C是空的，不能满足这种要求。</p>
+<p>模板insert_iterator可以解决这两个问题。前面说过，它可以将复制转换为插入，因此，可以创建一个匿名insert_iterator,将信息复制给C：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_union(A.begin(),A.end(),B.begin(),B.end(),insert_iterator&lt;<span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt;&gt;(C,C.begin()));</span><br></pre></td></tr></table></figure>
+<p>函数set_intersection()和set_difference()分别查找交集和获得两个集合的差，它们的接口与set_union相同。</p>
+<p>两个有用的set方法是lower_bound()和upper_bpund().<br>方法lower_bound()将键作为参数并返回一个迭代器，该迭代器指向集合中第一个不小于键参数的成员。<br>同样，方法upper_bpund()将键作为参数，并返回一个迭代器，该迭代器指向集合中第一个大于键参数的成员。</p>
+<p><strong>2.multimap示例</strong></p>
+<p>与set相似，multimap也是可反转的、经过排序的关联容器，但键与值的类型不同，且同一个键可能与多个值相关联。</p>
+<p>下面的声明创建一个multimap对象，其中键类型为int，储存的值类型为string：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">multimap</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt;codes;</span><br></pre></td></tr></table></figure>
+<p>第三个模板参数是可选的，指出用于对键进行排序的比较函数或对象。<br>为将信息结合在一起，实际的值类型将键类型和数据类型结合为一对。为此，STL使用模板类pair&lt;class T,class U&gt;将这两种值储存到一个对象中。<br>如果keytype是键类型，而datetype是储存的数据类型，则值类型为pair&lt;const keytype,datetype&gt;.例如，前面声明的codes对象的值类型为pair&lt;const int,string&gt;.<br>对于pair对象，可以使用first和second成员来访问其两个部分。</p>
+<p>如何获取有关multimap对象的信息呢？成员函数count()接收键为参数，并返回具有该键的元素数目。<br>成员函数lower_bound()和upper_bound()函数将键作为参数，且工作原理与处理set时相同。<br>成员函数equal_range()用键作为参数，且返回两个迭代器，它们表示的区间与该键匹配。</p>
+<h3 id="16-4-5-无序关联容器（C-11）"><a href="#16-4-5-无序关联容器（C-11）" class="headerlink" title="16.4.5 无序关联容器（C++11）"></a>16.4.5 无序关联容器（C++11）</h3><p>无序关联容器是对容器概念的另一种改进。与关联容器一样，无序关联容器也将值与键关联起来，并使用键来查找值。但底层的差别在于，关联容器是基于树结构的，而无序关联容器是基于数据结构哈希表的，这旨在提高删除和添加元素的速度以及提高查找算法的效率。有4中无序关联容器，它们是unordered_set、unordered_multiset、unordered_map和unordered_multimap.</p>
+<h2 id="16-5-函数对象"><a href="#16-5-函数对象" class="headerlink" title="16.5 函数对象"></a>16.5 函数对象</h2><p>很多STL都是用函数对象——也叫函数符(functor).函数符是可以以函数方式和()结合使用的任意对象。这包括函数名，指向函数的指针和重载了（）运算符的类对象（即定义了函数operator（）（）的类）。例如，可以定义像这样的一个类：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linerar</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">double</span> sloce;</span><br><span class="line">	<span class="keyword">double</span> y0;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Linerar(<span class="keyword">double</span> s1_=<span class="number">1</span>,<span class="keyword">double</span> y_=<span class="number">0</span>):sloce(s1_),yo(y_)&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">double</span> x)</span></span>&#123;<span class="keyword">return</span> yo+sloce*x;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样，重载的（）运算符将使得能够像函数那样使用Linerar对象：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Linerar f1;</span><br><span class="line"><span class="function">Linerar <span class="title">f2</span><span class="params">(<span class="number">2.5</span>,<span class="number">10.0</span>)</span></span>;</span><br><span class="line"><span class="keyword">double</span> y1=f1(<span class="number">12.5</span>);  <span class="comment">//0+1*12.5</span></span><br><span class="line"><span class="keyword">double</span> y2=f2(<span class="number">0.4</span>);	<span class="comment">//10.0+2.5*0.4</span></span><br><span class="line"><span class="comment">//其中y0和sloce的值来自对象的构造函数，而x的值来自operator()（）的参数。</span></span><br></pre></td></tr></table></figure>
+<p>函数符概念：<br>1.生成器是不用参数就可以调用的函数符。<br>2.一元函数是用一个参数就可以调用的函数符。<br>3.二元函数是用两个参数可以调用的函数符。<br>4.返回bool值的一元函数是谓词。<br>5.返回bool值的二元函数是二元谓词。  </p>
+<p>一些STL函数需要谓词参数或二元谓词参数，如前面使用了一个sort()的这样一个版本，即将二元谓词作为函数的第三个参数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">wrosethan</span><span class="params">(<span class="keyword">const</span> Review &amp;r1,<span class="keyword">const</span> Review &amp;r2)</span></span>; <span class="comment">//这是一个返回bool值的二元函数，称为二元谓词</span></span><br><span class="line">...</span><br><span class="line">sort(books.begin(),books.end(),wrisethan) <span class="comment">//将二元谓词作为参数</span></span><br></pre></td></tr></table></figure>
+<p>list模板有一个将一元谓词作为参数的remove_if（）成员，该函数将谓词应用于区间中的每个元素，如谓词返回true，则删除这些元素。例如，下面的代码删除链表three中所有大于100的元素：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">tooBig</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;<span class="keyword">return</span> n&gt;<span class="number">100</span>;&#125;</span><br><span class="line"><span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;scores;</span><br><span class="line">...</span><br><span class="line">scores.remove_if(tooBig);</span><br></pre></td></tr></table></figure>
+<h3 id="16-5-2-预定义的函数符"><a href="#16-5-2-预定义的函数符" class="headerlink" title="16.5.2 预定义的函数符"></a>16.5.2 预定义的函数符</h3><p>STL定义了多个基本函数符，它们执行诸如将两个值相加、比较两个值是否相等等操作。提供这些函数对象是为了支持将函数作为参数的STL函数。</p>
+<p>考虑函数transform()。它有两个版本，<br>第一个版本4个参数，前两个参数是指定容器区间的迭代器，第3个参数是指定将结果复制到哪里的迭代器，最后一个参数是一个函数符，它被应用于容器中的每个元素，生成结果中的新元素。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> arr1[<span class="number">6</span>]=&#123;<span class="number">36</span>,<span class="number">39</span>,<span class="number">42</span>,<span class="number">45</span>,<span class="number">48</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;gr8(arr1,arr1+<span class="number">6</span>);</span><br><span class="line">ostream_iterator&lt;<span class="keyword">double</span>,<span class="keyword">char</span>&gt;out(<span class="built_in">cout</span>,<span class="string">" "</span>);</span><br><span class="line">transform(gr8.begin(),gr8.end(),out,<span class="built_in">sqrt</span>);</span><br><span class="line"><span class="comment">//这里transform函数将结果复制到屏幕，计算区间内每个元素的算术平方根。</span></span><br></pre></td></tr></table></figure>
+<p>第二种版本的transform使用一个接收两个参数的函数，并将改函数用于两个区间中的元素。它用另一个参数（即第三个）标识第二个区间的起始位置。例如，如果m8是另一个vector<double>对象，mean(double,double)返回两个值的平均值，则下面的代码输出来自gr8和m8的值的平均值：</double></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform(gr8.begin(),gr8.end(),m8.begin(),mean);</span><br></pre></td></tr></table></figure>
+<p>头文件functional定义了多个模板类函数对象，其中包括plus&lt;&gt;。可以用plus&lt;&gt;类来完成常规的相加运算。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">transform(gr8.begin(),gr8.end(),m8.begin(),out,plus&lt;<span class="keyword">double</span>&gt;());</span><br><span class="line"><span class="comment">//将gr8和m8间的元素相加，然后复制到屏幕。</span></span><br></pre></td></tr></table></figure>
+<p><strong>表16.12  运算符和相应的函数符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">相应的函数符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">plus</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">minus</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">multiplies</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">divides</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">modulus</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">negate</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">equal_to</td>
+</tr>
+<tr>
+<td align="center">！=</td>
+<td align="center">not_equal_to</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">greater</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">less</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">greater_equal</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">lsee_equal</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">logical_and</td>
+</tr>
+<tr>
+<td align="center">丨丨</td>
+<td align="center">logical_or</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">logical_not</td>
+</tr>
+</tbody></table>
+<h3 id="16-5-3-自适应函数符和函数适配器"><a href="#16-5-3-自适应函数符和函数适配器" class="headerlink" title="16.5.3 自适应函数符和函数适配器"></a>16.5.3 自适应函数符和函数适配器</h3><p>表16.12列出的预定义函数符都是自适应的。实际上STL有5个相关的概念：自适应生成器、自适应一元函数、自适应二元函数、自适应谓词、自适应二元谓词。</p>
+<p>使函数称为自适应的原因是，它携带了标识参数类型和返回类型的typedef成员。这些成员分别是result_type,first_argument_type,和second_argument_type。例如，plus<int>对象的返回类型被标识为plus<int>::result_type，这是int的typedef。</int></int></p>
+<p>函数符自适应性的意义在于：函数适配器对象可以使用函数对象，并认为存在这些typedef成员。例如，接受一个自适应函数符参数的函数可以使用result_type成员来声明一个与函数的返回类型匹配的变量。</p>
+<p>STL提供了使用这些工具的函数适配器类。比如将接受两个参数的函数符转换为接受一个参数的函数符。STL使用binder1st和binder2nd类自动完成这一过程，它们将自适应二元函数转换为自适应一元函数。</p>
+<p>来看binder1st。假设有一个自适应二元函数对象f2()，则可以创建要给binder1st对象，该对象与一个将被用作f2()的第一个参数的特定值(val)相关联：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">binder1st(f2,val)f1;</span><br></pre></td></tr></table></figure>
+<p>这样，使用单个参数调用f1（X）时，返回的值将与val作为第一个参数、将f1（）的参数作为第二参数调用f2()返回的值相同，即f1（X）等价于f2（val，x），只是前者是一元函数，而不是二元函数，f2()函数被适配。同样，仅当f2（）是一个自适应函数时，这才能被实现。</p>
+<p>STL提供了函数bind1st（），以简化binder1st类的使用。可以问其提供用于构建binder1st对象的函数名称和值，它将返回一个用于这种类型的对象。例如，要将二元函数multiplies()转换为将参数乘以2.5的一元函数，则可以这样做：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind1st(multiplies&lt;<span class="keyword">double</span>&gt;(),<span class="number">2.5</span>);</span><br></pre></td></tr></table></figure>
+<p>binder2nd类与binder1st类似，只是将常数赋给第二个参数，而不是第一个参数。它有一个名为bind2nd的助手函数，该函数的工作方式类似于bind1st.</p>
+<h2 id="16-6-算法"><a href="#16-6-算法" class="headerlink" title="16.6 算法"></a>16.6 算法</h2><p>对于算法函数设计，有两个主要的通用部分。首先，它们都使用模板来提供泛型；<br>其次，它们都使用迭代器来提供访问容器中数据的通用表示。<br>因为指针是一种特殊的迭代器，所有诸如copy()等STL函数可以用于常规数组。</p>
+<h3 id="16-6-1-算法组"><a href="#16-6-1-算法组" class="headerlink" title="16.6.1 算法组"></a>16.6.1 算法组</h3><p>STL将算法库分成4组<br>1.非修改式序列操作；<br>2.修改式序列操作；<br>3.排序和相关操作；<br>4.通用数字运算。<br>前三组在头文件algorithm中描述，第四组是专用于数值数据的，有自己的头文件，称为numeric.</p>
+<p>非修改式操作对区间中的每个元素进行操作。这些操作不修改容器的内容。<br>修改式序列操作也对区间中的每个元素进行操作。然而，顾名思义，它可以修改容器的内容，可以修改值，也可以修改容器中的排列顺序。<br>排序和相关操作包括多个函数（包括sort（））和其他各种函数，包括集合操作。<br>数字操作包括将区间的内容积累、计算两个容器的内部乘积、计算小计、计算相邻对象差的函数。</p>
+<p>STL文档使用模板参数名称来表示参数模型的概念。</p>
+<p>对算法进行分类的方式之一是按结果放置的位置进行分类。有些算法就地完成工作，有些则创建拷贝。如在sort()算法中，结果被放置在原始数据的位置上，因此，sort()就是就地算法。而copy()函数将结果发送到另一个位置，所以它是复制算法。transform（）函数可以以这两种方式完成工作。</p>
+<p>有些算法有两个版本，就地版本和复制版本。STL的约定是，复制版本的名称将以_copy结尾。复制版本将接受一个额外的输出迭代器参数，该参数指定结果的放置位置。例如，函数replace()（取代函数）的原型如下:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span> , <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">replace</span>(<span class="title">ForwardIterator</span> <span class="title">first</span> , <span class="title">ForwardIterator</span> <span class="title">last</span>, <span class="title">const</span> <span class="title">T</span>&amp;<span class="title">old_value</span>,<span class="title">const</span> <span class="title">T</span>&amp; <span class="title">new_value</span>);</span></span><br></pre></td></tr></table></figure>
+<p>它将所有的old_value替换为nwe_value，这就是就地发生的。由于这种算法同时读取和写入容器元素，因此迭代器类型必须是ForwardIterator或是更高级别的。</p>
+<p>复制版本的原型如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">InputIterator</span> , <span class="title">class</span> <span class="title">OutputIterator</span> , <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">replace_copy</span>(<span class="title">InputIterator</span> <span class="title">first</span> , <span class="title">InputIterator</span> <span class="title">last</span>, <span class="title">OutputIterator</span> <span class="title">result</span> , <span class="title">const</span> <span class="title">T</span>&amp;<span class="title">old_value</span>,<span class="title">const</span> <span class="title">T</span>&amp; <span class="title">new_value</span>);</span></span><br></pre></td></tr></table></figure>
+<p>在这里，结果被复制到了result指定的新位置，因此对于指定区间而言，只读输入迭代器足够了。<br>对于复制算法，统一的约定是：返回一个迭代器，该迭代器指向复制的最后一个值后面的一个位置。</p>
+<p>另一种常见的变体是：有些函数有这样的版本，即根据将函数应用于容器元素得到的结果来执行操作。这些版本的名称通常以 _if 结尾。例如，如果将函数用于旧值时，返回的值为true，这replace_if（）将把旧值替换为新值。下面是该函数的原型：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span> , <span class="title">class</span> <span class="title">Predicate</span> <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">replace_if</span>(<span class="title">ForwardIterator</span> <span class="title">first</span> , <span class="title">ForwardIterator</span> <span class="title">last</span> , <span class="title">Predicate</span> <span class="title">pred</span> , <span class="title">const</span> <span class="title">T</span>&amp; <span class="title">new_value</span>);</span></span><br></pre></td></tr></table></figure>
+<p>（Predicate）谓词是返回bool值的一元函数。还有一个replace_if（）版本。与InputIterator一样，predicate也是模板参数的名称，可以为T或U。然而，STL选择用Predicate来提醒用户，实参应模拟Predicate概念。</p>
+<h3 id="16-6-2-STL和string类"><a href="#16-6-2-STL和string类" class="headerlink" title="16.6.2 STL和string类"></a>16.6.2 STL和string类</h3><p>string类虽然不是STL的组成部分，但设计它时考虑到了STL。例如，它包含begin（），end（），rbegin（），rend（）等成员，因此可以使用STL接口。</p>
+<p>next_permutation()算法将区间内容转换为下一种排列方式。对于字符串，排列按照字母递增的顺序进行。如果成功，则该算法返回true；如果区间已经处于最后的序列中，则该算法返回false。要得到区间内容的所有排列组合，应从最初的顺序开始，为此使用next_permutation()时最好先使用STL算法sort().</p>
+<p>有时可以选择使用STL方法或STL函数。通常方法是更好的选择。首先，它更适合于特定的容器；其次，作为成员函数，它可以使用模板类的内存管理工具，从而在需要时调整容器的长度。</p>
+<p>假如，假设有一个由数字组成的链表，并要删除链表中某个特定值的所有实例。如果la是一个list<int>对象，则可以使用链表中的remove()方法：</int></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">la.remove(<span class="number">4</span>); <span class="comment">//链表中所有值为4的值被删除，同时自动调整链表长度。</span></span><br></pre></td></tr></table></figure>
+<p>还有一个名为remove()的STL算法函数，它不是由对象调用的，而是接受区间参数。因此，如果lb是一个list<int>对象，则调用该函数的代码如下：</int></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remove(lb.begin(),lb.end(),<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<p>然而，由于该remove()函数不是成员，因此不能调整链表的长度。它将没被删除的元素放在链表的开始位置，并返回一个指向新的超尾值的迭代器。然后可以使用该迭代器使用链表的erase()方法来删除一个区间，该区间描述了链表中不再需要的部分。</p>
+<p>STL是一个库，其组成部分被设计成协同工作。STL组件是工具，但也是创建其他工具的基本组件。</p>
+<p>tolower()函数被定义为int tolower(int),而一些编译器希望函数与元素类型匹配（即char匹配）。一种方法是，自己定义一个toLower（char ch）函数，然后在函数中调用tolower函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> toLower（<span class="keyword">char</span> ch）&#123;<span class="keyword">return</span> <span class="built_in">tolower</span>（ch）；</span><br></pre></td></tr></table></figure>
+<p>要获得每个单词在输入中出现的次数，可以使用count()函数。它将一个区间和一个值作为参数，并返回这个值在这个区间中出现的次数。</p>
+<p>要将单词与其输入的次数关联起来，可将单词和计数作为pair&lt;const string,int&gt;对象储存在map对象中。单词将作为键（只出现一次），计数作为值。</p>
+<p>map类有一个有趣的特征：可以用数组表示法（将键用作索引）来访问储存的值。例如，wordmap[“the”]表示与键“the”相关联的值。</p>
+<h2 id="16-7-其他库"><a href="#16-7-其他库" class="headerlink" title="16.7 其他库"></a>16.7 其他库</h2><p>C++还提供了其他一些类库，例如，头文件complex为复数提供了类模板complex，包含用于float、long、和long double的具体化。这个类提供了标准的复数运算及能够处理符数的标准函数，C++11新增的头文件random提供了更多的随机数功能。</p>
+<h3 id="16-7-1-vector、valarray、array"><a href="#16-7-1-vector、valarray、array" class="headerlink" title="16.7.1 vector、valarray、array"></a>16.7.1 vector、valarray、array</h3><p>vector模板类是一个容器类和算法系统的组成部分，它支持面向容器的操作，如排序、插入、重新排序、搜索、将数据转移到其他容器中等。<br>而valarray类模板是面向数值计算的，不是STL的一部分。例如，它没有push_back（）和insert（）方法，但为很多数学运算提供了一个简单、直观的接口。<br>array是为替代内置数组而设计的，它通过提供更好、更安全的接口，让数组更紧凑，效率更高。array表示长度固定的数组，因此不支持push_back()和insert()，但提供了多个STL方法，包括begin（）、end（）、rbegin（）、rend（），这使得很容易将STL算法用于array对象。</p>
+<p>valarray类重载了valarray对象乘以一个值的运算符，还重载了各种组合运算符，因此可以直接将 * 用于valarray对象。</p>
+<p>valarray类还提供了方法sum(),计算valarray对象中所有元素的和、size（）返回元素数、max（）返回最大的元素值和min（）返回最小的元素值。对于数学运算而言，valarray类提供了比vector更清晰的表示方式，但通用性更低。</p>
+<p>C++11提供了接受valarray对象作为参数的模板函数begin()和end()。因此，您将使用begin(vad)而不是vad.begin()，这些函数返回的值满足STL区间需求：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">valarray&lt;<span class="keyword">double</span>&gt;vad（<span class="number">10</span>）;</span><br><span class="line">sort(begin(vad),end(vad));</span><br></pre></td></tr></table></figure>
+<p>valarray类还有很多其他特性。例如，如果numbers是一个valarray<double>对象，则下面的语句将创建一个bool数组，其中vbool[i]被设置为numbers[i]&gt;9的值，即true或false：</double></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valarray&lt;<span class="keyword">bool</span>&gt;vbool = number&gt;<span class="number">9</span>;</span><br></pre></td></tr></table></figure>
+<p>还有扩展的下表指定版本。slice类，slice类对象可用作数组索引，在这种情况下，它表的不是一个值而是一组值。slice对象被初始化为三个整数值：起始索引、索引数和跨距。起始索引是第一个被选中的元素的索引，索引数指出要选择多少个元素，跨距表示元素之间的间隔。例如，slice(1,4,3)创建的对象表示选择4个元素，它们的索引分别是1，4，7和10.也就是说，从起始索引开始，加上跨距得到下一个元素的索引，依此类推，直到选择了4个元素。<br>如果varint是一个valarray<int>对象，则下面的语句将把第1，4，7，10个元素都设置为10：</int></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">varint[slice(<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>)]=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="16-7-2-模板initializer-list"><a href="#16-7-2-模板initializer-list" class="headerlink" title="16.7.2 模板initializer_list"></a>16.7.2 模板initializer_list</h3><p>模板initializer_list是C++11新增的。您可使用初始化列表语法将STL容器初始化为一系列值：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;payments&#123;<span class="number">45.99</span>,<span class="number">39.23</span>,<span class="number">19.95</span>,<span class="number">89.01</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>这之所以可行，是因为容器类现在包含将initializer_list<T>作为参数的构造函数。例如，vector<double>包含一个将initializer_list<double>作为参数的构造函数，因此上述声明与下面的代码等价：</double></double></T></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;payments(&#123;<span class="number">45.99</span>,<span class="number">39.23</span>,<span class="number">19.95</span>,<span class="number">89.01</span>&#125;);</span><br><span class="line"><span class="comment">// 这里显式地将列表指定为构造函数参数。</span></span><br></pre></td></tr></table></figure>
+<p>通常，可使用表示法{}而不是（）来调用类构造函数。</p>
+<p>如果类有接受initializer_list作为参数的构造函数，则使用语法{}将调用该构造函数。<br>要在代码中使用initializer_list对象，必须包含头文件initializer_list，这个模板类包含成员函数begin（）和end（）和size（）。</p>
+<p>initializer_list的迭代器类型为const，因此不能修改initializer_list中的值。</p>
+<p>提供initializer_list类的初衷旨在让您能够将一系列值传递给构造函数或其他函数。</p>
 
       
 
@@ -234,7 +992,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -290,7 +1048,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" alt="微信分享二维码">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +1062,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++ Primer Plus 第九章
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++ Primer Plus 第八章</div>
+    <a href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++Primer Plus 第十五章</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +1091,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第十六章-string类和标准模板库"><span class="toc-number">1.</span> <span class="toc-text">第十六章 string类和标准模板库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#16-1-string类"><span class="toc-number">1.1.</span> <span class="toc-text">16.1 string类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-2-string类输入"><span class="toc-number">1.1.1.</span> <span class="toc-text">16.1.2 string类输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-3-使用字符串"><span class="toc-number">1.1.2.</span> <span class="toc-text">16.1.3 使用字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-2-智能指针模板类"><span class="toc-number">1.2.</span> <span class="toc-text">16.2 智能指针模板类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-2-unique-ptr为何优于auto-ptr"><span class="toc-number">1.2.1.</span> <span class="toc-text">16.2.2 unique_ptr为何优于auto_ptr</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-3-标准模板库-STL"><span class="toc-number">1.3.</span> <span class="toc-text">16.3 标准模板库(STL)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-2-模板类vector"><span class="toc-number">1.3.1.</span> <span class="toc-text">16.3.2 模板类vector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-3-基于范围的for循环"><span class="toc-number">1.3.2.</span> <span class="toc-text">16.3.3 基于范围的for循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-4-泛型编程"><span class="toc-number">1.4.</span> <span class="toc-text">16.4 泛型编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-1-为何使用迭代器"><span class="toc-number">1.4.1.</span> <span class="toc-text">16.4.1 为何使用迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-2-迭代器类型"><span class="toc-number">1.4.2.</span> <span class="toc-text">16.4.2 迭代器类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-3迭代器层次结构"><span class="toc-number">1.4.3.</span> <span class="toc-text">16.4.3迭代器层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-4-概念、改进和模型"><span class="toc-number">1.4.4.</span> <span class="toc-text">16.4.4 概念、改进和模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-5-容器种类"><span class="toc-number">1.4.5.</span> <span class="toc-text">16.4.5 容器种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-4-关联容器"><span class="toc-number">1.4.6.</span> <span class="toc-text">16.4.4 关联容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-5-无序关联容器（C-11）"><span class="toc-number">1.4.7.</span> <span class="toc-text">16.4.5 无序关联容器（C++11）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-5-函数对象"><span class="toc-number">1.5.</span> <span class="toc-text">16.5 函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-5-2-预定义的函数符"><span class="toc-number">1.5.1.</span> <span class="toc-text">16.5.2 预定义的函数符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-5-3-自适应函数符和函数适配器"><span class="toc-number">1.5.2.</span> <span class="toc-text">16.5.3 自适应函数符和函数适配器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-6-算法"><span class="toc-number">1.6.</span> <span class="toc-text">16.6 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-6-1-算法组"><span class="toc-number">1.6.1.</span> <span class="toc-text">16.6.1 算法组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-6-2-STL和string类"><span class="toc-number">1.6.2.</span> <span class="toc-text">16.6.2 STL和string类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-7-其他库"><span class="toc-number">1.7.</span> <span class="toc-text">16.7 其他库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-7-1-vector、valarray、array"><span class="toc-number">1.7.1.</span> <span class="toc-text">16.7.1 vector、valarray、array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-7-2-模板initializer-list"><span class="toc-number">1.7.2.</span> <span class="toc-text">16.7.2 模板initializer_list</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
