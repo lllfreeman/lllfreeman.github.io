@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++ Primer Plus 第九章 | Blog-lllfreeman</title>
+  <title>Tag: 数据结构 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内存模型和名称空间">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++ Primer Plus 第九章">
-<meta property="og:url" content="http://yoursite.com/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Blog-lllfreeman">
+<meta property="og:url" content="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="内存模型和名称空间">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-06T11:28:24.000Z">
-<meta property="article:modified_time" content="2020-04-02T03:20:39.765Z">
 <meta property="article:author" content="lllfreeman">
-<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -156,264 +151,59 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-C++Primer Plus 第九章" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      C++ Primer Plus 第九章
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-04-25T08:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
     </h1>
   
 
-        
-        <a href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-06T11:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="内存模型和名称空间"><a href="#内存模型和名称空间" class="headerlink" title="内存模型和名称空间"></a>内存模型和名称空间</h1><a id="more"></a>
-<h2 id="9-1单独编译"><a href="#9-1单独编译" class="headerlink" title="9.1单独编译"></a>9.1单独编译</h2><p>大型程序都由多个源代码文件组成，这些文件可能贡献一些数据。这样的程序涉及到程序文件的单独编译。</p>
-<p>如一个头文件包含了用户定义类型的定义；另外一个文件包含操纵用户定义类型的函数的代码。这两个文件组成了一个软件包，可用于各种程序中。</p>
-<p>不要将函数定义或变量声明放在头文件中，除非函数为内联函数。</p>
-<p>头文件中常包含的内容：1.函数原型。2.使用#define或const定义的符号常量。3.结构声明。4.类声明。5.模板声明。6.内联函数。</p>
-<p>包含头文件时，使用“9.1.h”而不是&lt;9.1.h&gt;</p>
-<p>1.如果文件明包含在尖括号中，则C++编译器将在储存标准头文件的主机系统的文件系统中查找；</p>
-<p>2.但如果文件名包含在双引号中，则编译器将首先查找当前的工作目录或源代码目录。<br>避免多次包含同一个文件</p>
-<p>1.预处理编译指令</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> COORDIN_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COORDIN_H_</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span>`</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="9-2储存持续性、作用域和链接性"><a href="#9-2储存持续性、作用域和链接性" class="headerlink" title="9.2储存持续性、作用域和链接性"></a>9.2储存持续性、作用域和链接性</h2><p>C++使用不同的方案来储存数据</p>
-<p>1.自动储存持续性。它们在程序开始执行其所属的函数或代码块时创建，在执行完函数或者代码块时，它们使用的内存被释放。</p>
-<p>2.静态储存持续性。在函数定义外定义的变量和使用关键字static定义的变量的储存持续性都为静态。它们在程序整个运行过程中都存在。</p>
-<p>3.线程存储持续性。让程序能够将计算机放在可并行处理的不同线程中。如果变量是使用关键字thread_local声明的，则其生命周期与所属的线程一样长。</p>
-<p>4.动态储存持续性。使用new和delete分配的内存。有时被称为自由储存或堆（heap）</p>
-<h3 id="9-2-1作用域和链接"><a href="#9-2-1作用域和链接" class="headerlink" title="9.2.1作用域和链接"></a>9.2.1作用域和链接</h3><p>作用域描述了名称在文件（翻译单元）的多大范围内可见。</p>
-<p>作用域为局部的变量只在定义它的代码块中可用</p>
-<p>作用域为全局的变量在定义位置到文件结尾之间可用。</p>
-<h3 id="9-2-2自动储存持续性"><a href="#9-2-2自动储存持续性" class="headerlink" title="9.2.2自动储存持续性"></a>9.2.2自动储存持续性</h3><p>在默认情况下，在函数中声明的函数参数和变量的储存持续性为自动，作用域为局部，没有链接性。</p>
-<p>由于自动变量的数目随函数的开始和结束增减，因此程序必须在运行时对自动变量进行管理。常用的方法是留出一段内存，并将其视为栈，以管理变量的增减。</p>
-<p>当函数被调用时，其自动变量将被加入到栈中，栈顶指针指向变量后面的下一个可用的内存单元。函数结束时，栈顶指针被重置为函数被调用前的值，从而释放新变量使用的内存。<br>栈是后进先出（LIFO）的，即最后加入到栈中的变量首先被弹出。</p>
-<h3 id="9-2-3静态持续变量"><a href="#9-2-3静态持续变量" class="headerlink" title="9.2.3静态持续变量"></a>9.2.3静态持续变量</h3><p>C++为静态储存持续性变量提供了3种链接性：外部链接性（可在其他文件中访问）、内部链接性（只能在当前文件中访问）和无连接线（只能在当前函数或代码块中访问）。</p>
-<p>编译器将分配固定的内存块来储存所有的静态变量，这些变量在整个程序执行期间一直存在。如果没有显式地初始化静态变量，编译器将把它设置为0。</p>
-<p>将限定符static用于局部声明，以指出变量是无链接性的静态变量时，static表示的是储存持续性</p>
-<p>将限定符static用于代码块外的声明时，static表示内部链接性，而变量已经是静态持续性了。</p>
-<p>关键字constexpr用来创建常量表达式！</p>
-<h3 id="9-2-4静态持续性、外部链接性"><a href="#9-2-4静态持续性、外部链接性" class="headerlink" title="9.2.4静态持续性、外部链接性"></a>9.2.4静态持续性、外部链接性</h3><p>链接性为外部的变量通常简称为外部变量，它们的储存持续性为静态，作用域为整个文件。</p>
-<p>关键字extern引用声明，引用其他文件的声明，且不进行初始化</p>
-<p>如</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dogs =<span class="number">22</span>；<span class="comment">//fail1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> dog；<span class="comment">//fail2  dog=22</span></span><br></pre></td></tr></table></figure>
-<p>作用域解析运算符（::）。放在变量名前面时，该运算符表示使用该变量的全局版本。</p>
-<h3 id="9-2-5静态持续性、内部链接性"><a href="#9-2-5静态持续性、内部链接性" class="headerlink" title="9.2.5静态持续性、内部链接性"></a>9.2.5静态持续性、内部链接性</h3><p>将static限定符用于作用域为整个文件的变量时，该变量的链接性将为内部的。</p>
-<p>链接性为内部的变量只能在其所属的文件中使用，但常规外部变量都具有外部链接性，即可以在其他文件中使用。</p>
-<p>如果文件定义了一个静态外部变量，其名称与另一个文件中声明的常规外部变量相同，则在该文件中，静态变量将隐藏常规外部变量。</p>
-<p>在多文件程序中，可以在一个文件（且只能在一个文件）中定义一个外部变量。使用该变量的其他文件必须使用关键字extern声明它。</p>
-<h3 id="9-2-6静态储存持续性、无链接性"><a href="#9-2-6静态储存持续性、无链接性" class="headerlink" title="9.2.6静态储存持续性、无链接性"></a>9.2.6静态储存持续性、无链接性</h3><p>将static限定符用于代码块时，将导致局部变量的储存持续性为静态的。</p>
-<p>使用get（char*，int）读取空行将导致cin为false。</p>
-<h3 id="9-2-7说明符和限定符"><a href="#9-2-7说明符和限定符" class="headerlink" title="9.2.7说明符和限定符"></a>9.2.7说明符和限定符</h3><p>在同个声明中不能使用多个说明符，但thread_local除外，它可与static或extern结合使用。</p>
-<p>关键字register：用于在声明中指示寄存器储存，而在C++11中，它只是显式地指出变量是自动的</p>
-<p>关键字static：用于作用域为整个文件的声明中时，表示内部链接性；被用于局部声明中，表示局部变量的储存持续性为静态的。</p>
-<p>关键字extern：表明是引用声明，即声明引用在其他地方定义的变量，</p>
-<p>关键字thread_local：指出变量的持续性与其所属线程的持续性相同。</p>
-<p>关键字mutable：可以用它来指出，即使结构（或类）变量为const，其某个成员也可以被修改。</p>
-<p>cv—限定符</p>
-<p>const：</p>
-<p>volatile：关键字volatile表明，即使程序代码没有对内存单元进行修改，其值也可能发生变化。</p>
-<p>在默认情况下全局变量的链接性为外部的，但const全局变量的链接性为内部的！！</p>
-<p>当希望某个常量的链接性为外部时，可以使用extern关键字来覆盖默认的内部链接性。<br>如</p>
-<blockquote>
-<p><code>extern const int states = 50；</code></p>
-</blockquote>
-<h3 id="9-2-8函数和链接性"><a href="#9-2-8函数和链接性" class="headerlink" title="9.2.8函数和链接性"></a>9.2.8函数和链接性</h3><p>C++不允许在一个函数中定义另外一个函数，因此所有的函数的储存持续性都为静态的，即在整个程序执行期间都一直存在。</p>
-<p>内联函数的定义能够放在头文件中，而其他函数不行。其他函数只能在一个文件中定义，在需要使用它的文件中提供原型再使用。</p>
-<h3 id="9-2-9储存方案和动态分配"><a href="#9-2-9储存方案和动态分配" class="headerlink" title="9.2.9储存方案和动态分配"></a>9.2.9储存方案和动态分配</h3><p>使用new和delete控制进行动态内存分配</p>
-<p>动态内存不是LIFO（后进先出），其分配和释放顺序要取决于new和delete在何时以何种方式被使用。</p>
-<p>new运算符有另一种变体，被称为定位new运算符，它让你能够指定要使用的位置。</p>
-<p>如</p>
-<blockquote>
-<p><code>p2=new（buffer）chaff //从buffer分配空间给chaff</code></p>
-</blockquote>
-<p>如果buffer指向的内存是静态内存，则不在delete的管辖区域之内，不能使用delete[]p2</p>
-<h2 id="9-3名称空间"><a href="#9-3名称空间" class="headerlink" title="9.3名称空间"></a>9.3名称空间</h2><p>声明区域：声明区域是可以在其中进行声明的区域。例如，可以在函数外面声明全局变量，对于这种变量，其声明区域为其声明所在的文件。</p>
-<p>潜在作用域：变量的潜在作用域从声明点开始，到其声明区域的结尾。</p>
-<p>变量对程序而言可见的范围被称为作用域。</p>
-<p>在一个函数中声明的局部变量不会与另外一个函数中声明的局部变量发生冲突。</p>
-<p>一个名称空间中的名称不会与另外一个名称空间的相同名称发生冲突，同时允许程序的其他部分使用该名称空间中声明的东西。</p>
-<p>名称空间可以是全局的，也可以位于另一个名称空间中，但不能位于代码块中。</p>
-<p>using声明使特定的标识符可用，using编译指令使整个名称空间可用。</p>
-<p>如果某个名称已经在函数中声明了，则不能用using声明导入相同的名称。</p>
-<p>如果使用using编译指令导入一个已经在函数中声明的名称，则局部名称将隐藏名称空间名，就像隐藏同名的全局变量一样。</p>
-<p>using编译指令是可传递的。</p>
-<p>可用给名称空间创建别名<br>如</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> my_very_favorite_things&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> mvft=my_very_favorite_things;</span><br></pre></td></tr></table></figure>
-<p>还可用对嵌套名称空间进行简化使用</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> MEF=myth::elements::fire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> MEF::flame;<span class="comment">//flame在名称空间fire内</span></span><br></pre></td></tr></table></figure>
-<p>不能在未命名名称空间所属文件之外的其他文件中，使用该名称空间中的名称。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++ Primer Plus 第十章
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">想见你</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内存模型和名称空间"><span class="toc-number">1.</span> <span class="toc-text">内存模型和名称空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1单独编译"><span class="toc-number">1.1.</span> <span class="toc-text">9.1单独编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2储存持续性、作用域和链接性"><span class="toc-number">1.2.</span> <span class="toc-text">9.2储存持续性、作用域和链接性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-1作用域和链接"><span class="toc-number">1.2.1.</span> <span class="toc-text">9.2.1作用域和链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-2自动储存持续性"><span class="toc-number">1.2.2.</span> <span class="toc-text">9.2.2自动储存持续性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-3静态持续变量"><span class="toc-number">1.2.3.</span> <span class="toc-text">9.2.3静态持续变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-4静态持续性、外部链接性"><span class="toc-number">1.2.4.</span> <span class="toc-text">9.2.4静态持续性、外部链接性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-5静态持续性、内部链接性"><span class="toc-number">1.2.5.</span> <span class="toc-text">9.2.5静态持续性、内部链接性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-6静态储存持续性、无链接性"><span class="toc-number">1.2.6.</span> <span class="toc-text">9.2.6静态储存持续性、无链接性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-7说明符和限定符"><span class="toc-number">1.2.7.</span> <span class="toc-text">9.2.7说明符和限定符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-8函数和链接性"><span class="toc-number">1.2.8.</span> <span class="toc-text">9.2.8函数和链接性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-9储存方案和动态分配"><span class="toc-number">1.2.9.</span> <span class="toc-text">9.2.9储存方案和动态分配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3名称空间"><span class="toc-number">1.3.</span> <span class="toc-text">9.3名称空间</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -436,9 +226,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
