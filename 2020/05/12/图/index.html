@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Blog-lllfreeman</title>
+  <title>图 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="图图是由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（V，E），其中，G表示一个图，V是图G中顶点的集合，E是图G中边的集合。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="图图是由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（V，E），其中，G表示一个图，V是图G中顶点的集合，E是图G中边的集合。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu2.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu3.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu4.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu5.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu6.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu7.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu8.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu9.jpg">
+<meta property="article:published_time" content="2020-05-12T14:49:42.000Z">
+<meta property="article:modified_time" content="2020-05-13T14:36:18.283Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/12/%E5%9B%BE/tu1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -151,15 +166,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-图" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/12/%E5%9B%BE/">图</a>
+    <h1 class="article-title" itemprop="name">
+      图
     </h1>
   
 
@@ -173,90 +187,110 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图是由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（V，E），其中，G表示一个图，V是图G中顶点的集合，E是图G中边的集合。<br><img src="/2020/05/12/%E5%9B%BE/tu1.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2020/05/12/%E5%9B%BE/#more">more >></a>
-        
-      
+<a id="more"></a>
+<p>图是一种较线性表和树更加复杂的数据结构。在图形结构中，结点之间的关系可以是任意的，图中任意两个数据元素之间都可能相关。</p>
+<p>1.在图中数据元素，我们称之为顶点（Vertex）<br>2.在图结构中，不允许没有顶点。在定义中，若V是顶点的集合，则强调了顶点集合V有穷非空。<br>3.在图中，任意两个顶点之间都可能有关系，顶点之间的逻辑关系用边来表示，边集可以是空的。  </p>
+<h2 id="各种图的定义"><a href="#各种图的定义" class="headerlink" title="各种图的定义"></a>各种图的定义</h2><p>无向边：若顶点Vi到j之间的边没有方向，则称这条边为无向边，用无序对偶（Vi，Vj）来表示。如果图中任意两个顶点之间的边都是无向边，则称该图为无向图。</p>
+<p>有向边：若从顶点Vi到Vj的边有方向，则称这条边为有向边，也称为弧，用有序偶&lt;Vi，Vj&gt;来表示，Vi称为弧尾，Vj称为弧头。如果图中任意两个顶点之间的边都是有向边，则称该图为有向图。</p>
+<p>无向边用小括号“（）”表示，而有向边则是用尖括号“&lt;&gt;”表示。</p>
+<p>在图中，若不存在顶点到其自身的边，且同一条边不重复出现，称这样的图为简单图。</p>
+<p>在无向图中，如果任意两个顶点之间都存在边，则称该图为无向完全图。含有n个顶点的无向完全图有n*(n-1)/2条边。</p>
+<p>在有向图中，如果任意两个顶点之间都存在方向互为相反的两条弧，则称该图为有向完全图。含有n个顶点的有向完全图有n*(n-1)条边。</p>
+<p>有很少条边或弧的图称为稀疏图，反之称为稠密图。</p>
+<p>与图的边或弧相关的数叫做权，这些权可以表示从一个顶点到另一个顶点的距离或耗费。这种带权的图通常称为网。</p>
+<p>假设有两个图G=（V,{E}）和G’=(V’,{E’})，如果V’属于V且E’属于E，则称G’为G的子图（Subgraph）。</p>
+<h2 id="图的顶点与边间的关系"><a href="#图的顶点与边间的关系" class="headerlink" title="图的顶点与边间的关系"></a>图的顶点与边间的关系</h2><p>对于无向图G=（V,{E}），如果边（v，v’）属于E，则称顶点v和v互为邻接点，即v和v’相邻接。边（v,v’）依附于顶点v和v’，或者说（v，v’）与顶点v和v’相关联。顶点v的度是和v相关联的边的数目，记为TD(v)。</p>
+<p>对于有向图G=（V,{E}）,如果弧&lt;v,v’&gt;属于E，则称顶点v邻接到顶点v’，顶点v’邻接自顶点v。弧&lt;v,v’&gt;和顶点v，v’相关联。以顶点v为头的弧的数目称为v的入度，记为ID（v）；以v为尾的弧的数目称为v的出度，记为OD（v）；顶点v的度为TD（v）=ID（v）+OD（v）。</p>
+<p>无向图G=（V,{E}）中从顶点v到顶点v’的路径是一个顶点序列（v=vi，0，vi，1，…，vi，m=v’），其中（vi，j-1，vi，j）属于E，1&lt;=j&lt;=m.</p>
+<p>路径的长度是路径上的边或弧的数目。</p>
+<p>第一个顶点到最后一个顶点相同的路径称为回路或环。序列中顶点不重复出现的路径称为简单路径。除了第一个顶点和最后一个顶点之外，其余顶点不重复出现的回路，称为简单回路或者简单环。</p>
+<h2 id="连通图相关术语"><a href="#连通图相关术语" class="headerlink" title="连通图相关术语"></a>连通图相关术语</h2><p>在无向图G中，如果从顶点V到顶点V’有路径，则称V和V’是连通的。如果对于图中任意两个顶点vi、vj属于V，vi和vj都是连通的，则称G是连通图。</p>
+<p>无向图中的极大连通子图称为连通分量。注意连通分量的概念，它强调：<br>1.要是子图<br>2.子图要是连通的<br>3.连通子图含有极大顶点数<br>4.具有极大顶点数的连通子图包含依附于这些顶点的所有边。  </p>
+<p>在有向图G中，如果对于每一对vi、vj属于V、vi!=vj,从vi到vj和从vj到vi都存在路径，则称G是强连通图。有向图中的极大强连通子图称做有向图的强连通分量。</p>
+<p>所谓的一个连通图的生成树是一个极小的连通子图，它含有图中全部的n个顶点，但只有足以构成一棵树的n-1条边。如果一个图有n个顶点和小于n-1条边，则是非连通图，如果它多于n-1条边，必定构成一个环。</p>
+<p>如果一个有向图恰有一个顶点的入度为0，其余顶点的入度均为1，则是一棵有向树。</p>
+<p>一个有向图的生成森林由若干棵有向树组成，含有图中全部顶点，但只有足以构成若干棵不相交的有向树的弧。</p>
+<p>无向图中连通且n个顶点n-1条边叫生成树。有向图中一顶点入度为0其余顶点入度为1的叫有向树。一个有向图由若干棵有向树构成生成森林。</p>
+<h2 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h2><p>图的邻接矩阵储存方式是用两个数组来表示图。一个一维数组储存图中顶点信息，一个二维数组（称为邻接矩阵）储存图中的边或弧的信息。设图G有n个顶点，则邻接矩阵是一个n*n的方阵，定义为：</p>
+<p>arc[i][j]={1, 若(vi,vj)属于E或&lt;vi,vj&gt;属于E<br>    0，反之<br>    }    </p>
+<p><img src="/2020/05/12/%E5%9B%BE/tu2.png" alt></p>
+<p>arc[1][3]=0是因为v1到v3的边不存在。</p>
+<p>有了这个矩阵，我们就很容易地知道图中的信息。<br>1.我们要判定任意两顶点是否有边无边就非常容易了。<br>2.我们要知道某个顶点的度，其实就是这个顶点vi在邻接矩阵中第i行(或第i列)的元素之和。比如顶点v1的度就是1+0+1+0=2.<br>3.求顶点vi的所有邻接点就是将矩阵中第i行元素扫描一遍，arc[i][j]为1就是邻接点。</p>
+<p>无向图的边数组是一个对称矩阵。所谓对称矩阵就是n阶矩阵的元满足aij=aji（0&lt;=i,j&lt;=n），即从矩阵的左上角到右下角的主对角线为轴，右上角的元与左下角相对应的元全都是相等的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图的邻接矩阵储存的结构</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">//顶点类型应由用户定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> EdgeType; <span class="comment">//边上的权值类型应该由用户定义</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXVEX = <span class="number">100</span>; <span class="comment">//最大顶点数，应该由用户定义</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INFINIT= <span class="number">65535</span>; <span class="comment">//用65535来表示∞</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	VertexType vexs[MAXVEX]; <span class="comment">//顶点表</span></span><br><span class="line">	EdgeType arc[MAXVEX][MAXVEX]; <span class="comment">//邻接矩阵，可看作边表</span></span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">//图中当前的顶点数和边数。</span></span><br><span class="line">&#125;MGraph;</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立无向网图的邻接矩阵表示</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateMGraph</span><span class="params">(MGraph* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, k, w;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入顶点数和边数："</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; G-&gt;numVertexes &gt;&gt; G-&gt;numEdges;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G-&gt;numVertexes; i++) <span class="comment">//读入顶点信息，建立顶点表</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; G-&gt;vexs[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G-&gt;numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; G-&gt;numVertexes; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			G-&gt;arc[i][j] = INFINIT;<span class="comment">//邻接矩阵初始化，全为∞</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; G-&gt;numVertexes; k++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入边（vi,vj）上的下标i，下标j和权w："</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		G-&gt;arc[i][j] = w;</span><br><span class="line">		G-&gt;arc[j][i] = G-&gt;arc[i][j]; <span class="comment">//因为是无向图，矩阵对称</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>有向图讲究入度与出度，顶点v1的入度为1，正好是第v1列各数之和。顶点v1的出度为2，即第v1行的各数之和。<br><img src="/2020/05/12/%E5%9B%BE/tu3.jpg" alt></p>
+<p>设图G是网图，有n个顶点，则邻接矩阵是一个n*n的方阵，定义为：<br>arc[i][j]={Wij,若(vi,vj)属于E或&lt;vi,vj&gt;属于E<br>    0，若i=j<br>    ∞，反之<br>    }<br>这里Wij表示(vi,vj)或&lt;vi,vj&gt;上的权值。∞表示一个计算机允许的、大于所有边上权值的值，也就是一个不可能的极限值。</p>
+<h2 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h2><p>顺序储存结构就存在预先分配内存可能造成储存空间浪费的问题，于是引出了链式储存的结构。同样的，我们也可以考虑对边或弧使用链式储存的方式来避免空间浪费的问题。我们把这种数组与链表相结合的储存方法称为邻接表。</p>
+<p><strong>邻接表的处理办法是这样的：</strong></p>
+<p>1.图中顶点用一个一维数组储存，当然，顶点也可以用单链表来储存，不过数组可以比较容易地读取顶点信息，更加方便。另外，对于顶点数组中，每个数据元素还需要储存指向第一个邻接点的指针，以便于查找该顶点的边信息。<br>2.图中每个顶点vi的所有邻接点构成一个线性表，由于邻接点的个数不定，所有用单链表储存，无向图称为顶点vi的边表，有向图则称为顶点vi作为弧尾的出边表。<br><img src="/2020/05/12/%E5%9B%BE/tu4.jpg" alt></p>
+<p>从图中我们知道，顶点表的各个结点由data和firstedge两个域表示，data是数据域，储存顶点的信息，firstedge是指针域，指向边表的第一个结点，即此结点的第一个邻接点。边表结点由adjvex和next两个域组成。adjvex是邻接点域，储存某顶点的邻接点在顶点表中的下标。next则储存指向边表中下一个结点的指针。比如v1顶点与v0、v2互为邻接点，则在v1的边表中，adjvex分别为v0的0和v2的2 .</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//邻接表</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">//顶点类型应该由用户定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> EdgeType; <span class="comment">//边上的权值类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span> //边表结点</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> adjvex;  <span class="comment">//邻接点域，储存该顶点对应的下标</span></span><br><span class="line">	EdgeType weight; <span class="comment">//用于储存权值</span></span><br><span class="line">	EdgeNode* next; <span class="comment">//链域，指向下一邻接点</span></span><br><span class="line">&#125;EdgeNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VertexNode</span> //顶点表结点</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	VertexType data; <span class="comment">//顶点域，储存顶点信息</span></span><br><span class="line">	EdgeNode* firstedge; <span class="comment">//边表头指针</span></span><br><span class="line">&#125;VertexNode,AdjList[MAXVEX];</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> //邻接表</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	AdjList adjList;</span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">//图中当前顶点数和边数</span></span><br><span class="line">&#125;GraphAdjList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立图的邻接表结构</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateALGraph</span><span class="params">(GraphAdjList* G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j, k;</span><br><span class="line">	EdgeNode* e;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入顶点数和边数："</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; G-&gt;numVertexes &gt;&gt; G-&gt;numEdges;<span class="comment">//输入顶点数和边数</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G-&gt;numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; &amp;G-&gt;adjList[i].data;<span class="comment">//输入顶点信息</span></span><br><span class="line">		G-&gt;adjList[i].firstedge = <span class="literal">nullptr</span>; <span class="comment">//将边表置为空表</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; G-&gt;numEdges; k++)<span class="comment">//建立边表</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"输入边（vi,vj）上的顶点序号："</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; i &gt;&gt; j;</span><br><span class="line">		e = (EdgeNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(EdgeNode));<span class="comment">//向内存申请空间，生成边表结点</span></span><br><span class="line">		e-&gt;adjvex = j;<span class="comment">//邻接序号为j</span></span><br><span class="line">		e-&gt;next = G-&gt;adjList[i].firstedge;<span class="comment">//将e指针指向当前顶点指向的结点</span></span><br><span class="line">		G-&gt;adjList[i].firstedge = e;<span class="comment">//将当前结点的指针指向e</span></span><br><span class="line"></span><br><span class="line">		e = (EdgeNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(EdgeNode)); <span class="comment">//向内存申请空间，生成边表结点</span></span><br><span class="line"></span><br><span class="line">		e-&gt;adjvex = i; <span class="comment">//邻接序号为i</span></span><br><span class="line">		e-&gt;next = G-&gt;adjList[j].firstedge;<span class="comment">//将e指针指向当前顶点指向的结点</span></span><br><span class="line">		G-&gt;adjList[j].firstedge = e;<span class="comment">//将当前顶点的指针指向e</span></span><br><span class="line">		<span class="comment">/*这循环里用到的方法是单链表中的头插法*/</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于有向图，我们是以顶点作为弧尾来储存边表的。我们可以建立一个有向图的逆邻接表，即对每个顶点vi都建立一个链接为vi为弧头的表。</p>
+<p>对于带权值的网图，可以在边表结点定义中再增加一个weight的数据域，储存权值信息即可。</p>
+<h2 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h2><p>把邻接表与逆邻接表结合起来的有向图的一种储存方法——十字链表。</p>
+<p>我们重新定义顶点表结构结点：<br><img src="/2020/05/12/%E5%9B%BE/tu5.png" alt><br>其中firstin表示入边表头指针，指向该顶点的入边表中第一个结点，firstout表示出边表头指针，指向该顶点的出边表中的第一个结点。</p>
+<p>重新定义的边表结点结构：<br><img src="/2020/05/12/%E5%9B%BE/tu6.jpg" alt><br>其中tailvex是指弧起点在顶点表的下标，headvex是指弧终点在顶点表中的下标，headlink是指入边表指针域，指向终点相同的下一条边，taillink是指边表指针域，指向起点相同的下一条边。如果是网，还可以增加一个weight域来储存权值。</p>
+<h2 id="邻接多重表"><a href="#邻接多重表" class="headerlink" title="邻接多重表"></a>邻接多重表</h2><p>邻接多重表是对无向图的一种优化；邻接多重表与邻接表的差别，仅仅是在于同一条边再邻接表中用两个结点表示，而在邻接多重表中只有一个结点。</p>
+<p><img src="/2020/05/12/%E5%9B%BE/tu7.jpg" alt><br>其中ivex和jvex是与某条边依附的两个顶点在顶点表中的下标。ilink指向依附顶点ivex的下一条边，jlink指向依附顶点jvex的下一条边。这就是邻接多重表结构。</p>
+<h2 id="边集数组"><a href="#边集数组" class="headerlink" title="边集数组"></a>边集数组</h2><p>边集数组是由两个一维数组构成。一个是储存顶点的信息；另一个是储存边的信息，这个边数组每个数据元素由一条边的起点下标（begin）、终点下标（end）和权（weight）组成。</p>
+<p><img src="/2020/05/12/%E5%9B%BE/tu8.jpg" alt><br>其中begin是储存起点下标，end是储存终点下标，weight是储存权值。</p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><p>我们希望从图中某一顶点出发访遍图中其余顶点，且使每一个顶点仅被访问一次，这一过程就叫做图的遍历。</p>
+<h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>深度优先遍历，也有称为深度优先搜索，简称DFS。它从图中某一顶点出发。访问此顶点，然后从V的未被访问的邻接点出发深度优先遍历图，直至图中所有和V有路劲相通的顶点都被访问到。事实上，我们这里讲的是连通图，对于非连通图，只需要对它的连通分量分别进行深度优先遍历，即在先前一个顶点进行一次深度优先遍历后，若图中尚有顶点未被访问，则另选图中一个未曾被访问的顶点作起始点，重复上述过程，直至图中所有顶点都被访问到为止。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图的深度优先遍历</span></span><br><span class="line"><span class="keyword">bool</span> visited[MAXVEX]; <span class="comment">//访问标志的数组</span></span><br><span class="line"><span class="comment">//邻接矩阵的深度优先递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(MGraph G, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	visited[i] = <span class="literal">true</span>; <span class="comment">//标志置一，说明已经访问</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; G.vexs[i];<span class="comment">//打印顶点</span></span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; G.numVertexes; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (G.arc[i][j] == <span class="number">1</span> &amp;&amp; !visited[j])</span><br><span class="line">		&#123;</span><br><span class="line">			DFS(G, j); <span class="comment">//对为访问的邻接顶点递归调用</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//邻接矩阵的深度遍历操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse</span><span class="params">(MGraph G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		visited[i] = <span class="literal">false</span>; <span class="comment">//初始化所有顶点的状态都是未访问过状态</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[i]) <span class="comment">//对未访问过的顶点调用DFS，若是连通图，只会执行一次。</span></span><br><span class="line">			DFS(G, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接表的深度优先递归算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(GraphAdjList GL, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	EdgeNode* p;</span><br><span class="line">	visited[i] = <span class="literal">true</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GL.adjList[i].data;<span class="comment">//打印顶点</span></span><br><span class="line">	p = GL.adjList[i].firstedge; <span class="comment">//p指向当前图的邻接点</span></span><br><span class="line">	<span class="keyword">while</span> (p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[p-&gt;adjvex]) <span class="comment">//邻接点没有被访问过</span></span><br><span class="line">			DFS(GL, p-&gt;adjvex); <span class="comment">//对未访问过的邻接点递归调用</span></span><br><span class="line">		p = p-&gt;next; <span class="comment">//p指向下一邻接点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接表的深度遍历操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse</span><span class="params">(GraphAdjList GL)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		visited[i] = <span class="literal">false</span>; <span class="comment">//初始化所有状态都是未访问过的</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[i])<span class="comment">//对未访问过的顶点调用DFS，若是连通图，只会执行一次</span></span><br><span class="line">			DFS(GL, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><p>广度优先遍历，又称作广度优先搜索，简称BFS。</p>
+<p>如果说图的深度优先遍历类似树的前序遍历，那么图的广度优先遍历就类似于树的层序遍历了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图的广度优先遍历</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接矩阵的广度遍历算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse</span><span class="params">(MGraph G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">queue</span> &lt;<span class="keyword">int</span>&gt;Q; <span class="comment">//初始化一辅助用的队列</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; G.numVertexes; i++) <span class="comment">//对每个顶点进行循环</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[i])<span class="comment">//若是未访问过就处理</span></span><br><span class="line">		&#123;</span><br><span class="line">			visited[i] = <span class="literal">true</span>;<span class="comment">//设置当前顶点访问过</span></span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; G.vexs[i];<span class="comment">//打印顶点</span></span><br><span class="line">			Q.push(i);<span class="comment">//将此顶点入队列</span></span><br><span class="line">			<span class="keyword">while</span> (!Q.empty()) <span class="comment">//若当前队列不为空</span></span><br><span class="line">			&#123;</span><br><span class="line">				i = Q.front();</span><br><span class="line">				Q.pop();<span class="comment">//将队中元素出队列，赋值给i</span></span><br><span class="line">				<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; G.numVertexes; j++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="comment">/*判断其他顶点若与当前顶点存在边且未被访问过*/</span></span><br><span class="line">					<span class="keyword">if</span> (G.arc[i][j] == <span class="number">1</span> &amp;&amp; !visited[j])</span><br><span class="line">					&#123;</span><br><span class="line">						visited[j] = <span class="literal">true</span>; <span class="comment">//将找到的此顶点标记为已访问</span></span><br><span class="line">						<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; G.vexs[j]; <span class="comment">//打印顶点</span></span><br><span class="line">						Q.push(j); <span class="comment">//将找到的此顶点入队列</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//邻接表的广度遍历算法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse</span><span class="params">(GraphAdjList GL)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	EdgeNode* p;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;Q;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL.numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!visited[i])</span><br><span class="line">		&#123;</span><br><span class="line">			visited[i] = <span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GL.adjList[i].data; <span class="comment">//打印顶点</span></span><br><span class="line">			Q.push(i);</span><br><span class="line">			<span class="keyword">while</span> (!Q.empty())</span><br><span class="line">			&#123;</span><br><span class="line">				i = Q.front();</span><br><span class="line">				Q.pop();</span><br><span class="line">				p = GL.adjList[i].firstedge;<span class="comment">//找到当前顶点边表链表头指针</span></span><br><span class="line">				<span class="keyword">while</span> (p) <span class="comment">//指针不为空</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (!visited[p-&gt;adjvex])<span class="comment">//若此顶点未被访问过</span></span><br><span class="line">					&#123;</span><br><span class="line">						visited[p-&gt;adjvex] = <span class="literal">true</span>;</span><br><span class="line">						<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GL.adjList[p-&gt;adjvex].data; <span class="comment">//打印顶点数据</span></span><br><span class="line">						Q.push(p-&gt;adjvex); <span class="comment">//将此顶点入队列</span></span><br><span class="line">					&#125;</span><br><span class="line">					p = p-&gt;next; <span class="comment">//指针指向下一个邻接点</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对比图的深度优先遍历和广度优先遍历算法，你会发现，它们在时间复杂度上是一样的，不同之处仅仅在于对顶点访问的顺序不同，可见两者在全图遍历上是没有优劣之分的，只是视不同的情况选择不同的算法。</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>一个连通图的生成树是一个极小的连通子图，它含有图中全部的顶点，但只有足以构成一棵树的n-1条边，我们把构造连通网的最小代价生成树称为最小生成树（Minimum Cost Spanning Tree）.</p>
+<p>找连通网的最小生成树，经典的有两种算法，普里姆算法和克鲁斯卡尔算法。</p>
+<h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><p>在网图与非网图中，最短路径的定义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。</p>
+<p>找最短路径的经典算法有两种，迪杰斯特拉算法和弗洛伊德算法。</p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>在一个表示工程的有向图中，用顶点表示活动，用弧表示活动之间的优先关系，这样的有向图为顶点表示活动的网，我们称为AOV网。</p>
+<p>设G=（V，E）是一个具有n个顶点的有向图，V中的顶点序列V1、V2、…,Vn,满足若从顶点vi到vj有一条路径，则在顶点序列中顶点vi必在顶点vj之前。则我们称这样的顶点序列为一个拓扑序列。</p>
+<p>所谓的拓扑排序，其实就是对一个有向图构造拓扑序列的过程。构造时会有两个结果，如果此网的全部顶点都被输出，则说明它是不存在环的AOV网，如果输出顶点数少了，哪怕是少了一个，也说明这个网存在环，不是AOV网。</p>
+<p><strong>拓扑排序算法</strong></p>
+<p>对AOV网进行拓扑排序的基本思路是：从AOV网中选择一个入度为0的顶点输出，然后删去此顶点，并删除以此顶点为尾的弧，继续重复此步骤，直到输出全部顶点或者AOV网中不存在入度为0的顶点为止。</p>
+<p>由于拓扑排序的过程中需要删除顶点，显然用邻接表会更见方便。我们在原来顶点表结点结构中，增加一个入度域in，其中in就是入度的数字。<br><img src="/2020/05/12/%E5%9B%BE/tu9.jpg" alt></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在拓扑排序算法中，涉及的结构代码如下：</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">EdgeNodepx</span> //边表结点</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> adjvex; <span class="comment">//邻接点域，储存该顶点对应的下标</span></span><br><span class="line">	<span class="keyword">int</span> weight;<span class="comment">//用于储存权值，对于非网图可以不需要</span></span><br><span class="line">	EdgeNodepx* next;<span class="comment">//链域，指向下一个邻接点</span></span><br><span class="line">&#125;EdgeNodepx;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VertexNodepx</span>//顶点表结点</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> in;<span class="comment">//顶点入度</span></span><br><span class="line">	<span class="keyword">int</span> data;<span class="comment">//顶点域，储存顶点信息</span></span><br><span class="line">	EdgeNodepx* firstedge;<span class="comment">//边表头指针</span></span><br><span class="line">&#125;VertexNodepx,AdjListpx[MAXVEX];</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	AdjListpx adjList;</span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">//图中当前顶点数和边数</span></span><br><span class="line">&#125;graphAdjList,*GraphAdjListpx;</span><br><span class="line"></span><br><span class="line"><span class="comment">//拓扑排序，若GL无回路，则输出拓扑排序序列并返回true，若有回路返回false。</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TopologicalSort</span><span class="params">(GraphAdjListpx GL)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	EdgeNodepx* e;</span><br><span class="line">	<span class="keyword">int</span> i, k, gettop;</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">0</span>;<span class="comment">//用于栈指针下标</span></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用于统计输出顶点个数</span></span><br><span class="line">	<span class="keyword">int</span>* <span class="built_in">stack</span>;<span class="comment">//建栈储存入度为0的顶点</span></span><br><span class="line">	<span class="built_in">stack</span> = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(GL-&gt;numVertexes * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL-&gt;numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (GL-&gt;adjList[i].in == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">stack</span>[++top] = i;<span class="comment">//将入度为0的顶点入栈</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (top != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		gettop = <span class="built_in">stack</span>[top--];<span class="comment">//出栈</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GL-&gt;adjList[gettop].data;<span class="comment">//打印此顶点</span></span><br><span class="line">		count++;<span class="comment">//统计输出顶点数</span></span><br><span class="line">		<span class="keyword">for</span> (e = GL-&gt;adjList[gettop].firstedge; e; e = e-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">/*对此顶点弧表进行遍历*/</span></span><br><span class="line">			k = e-&gt;adjvex;</span><br><span class="line">			<span class="keyword">if</span> (!(--GL-&gt;adjList[k].in))<span class="comment">//将k号顶点邻接点的入度减1</span></span><br><span class="line">				<span class="built_in">stack</span>[++top] = k;<span class="comment">//若为0则入栈，以便于下次循环输出</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (count &lt; GL-&gt;numVertexes)<span class="comment">//如果count小于顶点数，说明存在环</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h2><p>我们如果要对一个流程图获得最短时间，就必须要分析它们的拓扑关系，并且找到当中最关键的流程，这个流程的时间就是最短时间。</p>
+<p>在一个表示工程的带权有向图中。用顶点表示事件，用有向边表示活动，用边上的权值表示活动的持续时间，这种有向图的边表示活动的网，我们称之为AOE网。我们把AOE网中没有入边的顶点称为始点或源点，没有出边的顶点称为终点或汇点。</p>
+<p>既然AOE网是表示工程流程的，所以它就具有明显的工程的特性。如果在某顶点所代表的事件发生后，从该顶点出发的各活动才能开始。只有在进入某顶点的各活动都已经结束，该顶点所代表的事件才能发生。</p>
+<p>AOV网是顶点表示活动的网，它只描述活动之间的制约关系，而AOE网是用边表示活动的网，边上的权值表示活动持续的时间。AOE网是要建立在活动之间制约关系没有矛盾的基础之上，再来分析完成整个工程至少需要多少时间。</p>
+<p>我们把路径上各个活动所持续的时间之和称为路径长度，从源点到汇点具有最大长度的路径叫做关键路径，再关键路径上的活动叫做关键活动。</p>
+<p><strong>关键路径算法原理</strong></p>
+<p>我们只需要找到所有活动的最早开始时间和最晚开始时间，并且比较它们，如果相等就意味着此活动是关键活动，活动间的路径为关键路径。如果不等，则就不是。<br>为此，我们需要定义如下几个参数：<br>1.事件的最早发生时间etv：即顶点vk的最早发生时间。<br>2.事件的最晚发生时间ltv：即顶点vk的最晚发生时间，也就是每个顶点对应的事件最晚需要开始的时间，超出此时间将会延误整个工期。<br>3.活动的最早开工时间ete：即弧ak的最早发生时间。<br>4.活动的最晚开工时间lte：即弧ak的最晚发生时间，也就是不推辞工期的最晚开工时间。</p>
+<p>我们由1和2可以求得3和4，然后根据ete[k]是否与lte[k]相等来判断ak是否是关键活动。</p>
+<p><strong>关键路径算法</strong><br>求事件的最早发生时间etv的过程，就是我们从头至尾找拓扑序列的过程，因此，在求关键路径之前，需要先调用一次拓扑序列算法的代码来计算etv和拓扑序列列表。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//关键路径算法</span></span><br><span class="line"><span class="keyword">int</span>* etv, * ltv; <span class="comment">//时间最早发生时间和最晚发生时间数组</span></span><br><span class="line"><span class="keyword">int</span>* stack2;<span class="comment">//用于储存拓扑序列的栈</span></span><br><span class="line"><span class="keyword">int</span> top2;<span class="comment">//用于stack2的指针</span></span><br><span class="line"><span class="comment">//拓扑排序，用于关键路径计算</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TopologicalSort</span><span class="params">(GraphAdjListpx GL)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	EdgeNodepx* e;</span><br><span class="line">	<span class="keyword">int</span> i, k, gettop;</span><br><span class="line">	<span class="keyword">int</span> top = <span class="number">0</span>;<span class="comment">//用于栈指针下标</span></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//用于统计输出顶点个数</span></span><br><span class="line">	<span class="keyword">int</span>* <span class="built_in">stack</span>;<span class="comment">//建栈储存入度为0的顶点</span></span><br><span class="line">	<span class="built_in">stack</span> = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(GL-&gt;numVertexes * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL-&gt;numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (GL-&gt;adjList[i].in == <span class="number">0</span>)</span><br><span class="line">			<span class="built_in">stack</span>[++top] = i;<span class="comment">//将入度为0的顶点入栈</span></span><br><span class="line">		top2 = <span class="number">0</span>;</span><br><span class="line">		etv = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(GL-&gt;numVertexes * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));<span class="comment">//时间最早发生时间</span></span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL-&gt;numVertexes; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			etv[i] = <span class="number">0</span>; <span class="comment">//初始化为0</span></span><br><span class="line">		&#125;</span><br><span class="line">		stack2 = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(GL-&gt;numVertexes * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));<span class="comment">//初始化</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (top != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		gettop = <span class="built_in">stack</span>[top--];<span class="comment">//出栈</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GL-&gt;adjList[gettop].data;<span class="comment">//打印此顶点</span></span><br><span class="line">		count++;<span class="comment">//统计输出顶点数</span></span><br><span class="line">		stack2[++top2] = gettop;<span class="comment">//将弹出的顶点序号压入拓扑序列的栈</span></span><br><span class="line">		<span class="keyword">for</span> (e = GL-&gt;adjList[gettop].firstedge; e; e = e-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">/*对此顶点弧表进行遍历*/</span></span><br><span class="line">			k = e-&gt;adjvex;</span><br><span class="line">			<span class="keyword">if</span> (!(--GL-&gt;adjList[k].in))<span class="comment">//将k号顶点邻接点的入度减1</span></span><br><span class="line">				<span class="built_in">stack</span>[++top] = k;<span class="comment">//若为0则入栈，以便于下次循环输出</span></span><br><span class="line">			<span class="keyword">if</span> ((etv[gettop] + e-&gt;weight &gt; etv[k])) <span class="comment">//求各顶点事件最早发生时间值</span></span><br><span class="line">				etv[k] = etv[gettop] + e-&gt;weight;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (count &lt; GL-&gt;numVertexes)<span class="comment">//如果count小于顶点数，说明存在环</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//求关键路径，GL为有向网，输出GL的各项关键活动</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CriticalPath</span><span class="params">(GraphAdjListpx GL)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	EdgeNodepx* e;</span><br><span class="line">	<span class="keyword">int</span> i, gettop, k, j;</span><br><span class="line">	<span class="keyword">int</span> ete, lte;<span class="comment">//声明活动最早发生时间和最迟发生时间变量</span></span><br><span class="line">	TopologicalSort(GL);<span class="comment">//求拓扑序列，计算数组etv和stack2的值</span></span><br><span class="line">	ltv = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(GL-&gt;numVertexes * <span class="keyword">sizeof</span>(<span class="keyword">int</span>)); <span class="comment">//时间最晚发生时间</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; GL-&gt;numVertexes; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ltv[i] = etv[GL-&gt;numVertexes - <span class="number">1</span>];<span class="comment">//初始化ltv</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (top2 != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		gettop = stack2[top2--];<span class="comment">//将拓扑序列出栈，后进先出</span></span><br><span class="line">		<span class="keyword">for</span> (e = GL-&gt;adjList[gettop].firstedge; e; e = e-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">/*求各顶点事件的最迟发生时间ltv值*/</span></span><br><span class="line">			k = e-&gt;adjvex;</span><br><span class="line">			<span class="keyword">if</span> (ltv[k] - e-&gt;weight &lt; ltv[gettop])</span><br><span class="line">			&#123;</span><br><span class="line">				ltv[gettop] = ltv[k] - e-&gt;weight;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; GL-&gt;numVertexes; j++) <span class="comment">//求ete，lte和关键活动</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (e = GL-&gt;adjList[j].firstedge; e; e = e-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			k = e-&gt;adjvex;</span><br><span class="line">			ete = etv[j];<span class="comment">//活动最早发生时间</span></span><br><span class="line">			lte = ltv[k] - e-&gt;weight;<span class="comment">//活动最迟发生时间</span></span><br><span class="line">			<span class="keyword">if</span> (ete == lte)<span class="comment">//两者相等即在关键路径上</span></span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"&lt;v,v&gt;lenght:"</span> &lt;&lt; GL-&gt;adjList[j].data &lt;&lt; GL-&gt;adjList[k].data &lt;&lt; e-&gt;weight;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/12/%E5%9B%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-树(tree)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/08/%E6%A0%91(tree)/">树(tree)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/08/%E6%A0%91(tree)/" class="archive-article-date">
-  	<time datetime="2020-05-08T06:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="树-tree"><a href="#树-tree" class="headerlink" title="树(tree)"></a>树(tree)</h1><blockquote>
-<p>树是n（n&gt;=0）个结点的有限集。n=0时称为空树。在任意一颗非空树中：(1)有且只有一个特定的称为跟的结点；(2)当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集T1、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树。</p>
+<blockquote>
+<p>脑子是用来创造的，而不是用来计算的—————学数据结构有感</p>
 </blockquote>
-<p>n&gt;0时根节点是唯一的，不可能存在多个根节点。</p>
-        
-          <a class="article-more-a" href="/2020/05/08/%E6%A0%91(tree)/#more">more >></a>
-        
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -276,16 +310,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/08/%E6%A0%91(tree)/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/05/12/%E5%9B%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/08/%E6%A0%91(tree)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树(tree)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -300,641 +393,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/03/%E4%B8%B2/">串</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/03/%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-05-03T08:19:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><p><strong>串是由零个或多个字符组成的有限序列，又名叫字符串。</strong></p>
-<p>串中的字符数目n称为串的长度。<br>零个字符的串称为空串。</p>
-<p>子串与主串，串中任意个数的连续字符组成的子序列称为该串的子串，相应地，包含子串的串称为主串。子串在主串中的位置就是子串的第一个字符在主串中的序号。</p>
-        
-          <a class="article-more-a" href="/2020/05/03/%E4%B8%B2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/03/%E4%B8%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图"><span class="toc-number">1.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#各种图的定义"><span class="toc-number">1.1.</span> <span class="toc-text">各种图的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图的顶点与边间的关系"><span class="toc-number">1.2.</span> <span class="toc-text">图的顶点与边间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连通图相关术语"><span class="toc-number">1.3.</span> <span class="toc-text">连通图相关术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邻接矩阵"><span class="toc-number">1.4.</span> <span class="toc-text">邻接矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邻接表"><span class="toc-number">1.5.</span> <span class="toc-text">邻接表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十字链表"><span class="toc-number">1.6.</span> <span class="toc-text">十字链表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邻接多重表"><span class="toc-number">1.7.</span> <span class="toc-text">邻接多重表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边集数组"><span class="toc-number">1.8.</span> <span class="toc-text">边集数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图的遍历"><span class="toc-number">1.9.</span> <span class="toc-text">图的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#深度优先遍历"><span class="toc-number">1.9.1.</span> <span class="toc-text">深度优先遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#广度优先遍历"><span class="toc-number">1.9.2.</span> <span class="toc-text">广度优先遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小生成树"><span class="toc-number">1.10.</span> <span class="toc-text">最小生成树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最短路径"><span class="toc-number">1.11.</span> <span class="toc-text">最短路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拓扑排序"><span class="toc-number">1.12.</span> <span class="toc-text">拓扑排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键路径"><span class="toc-number">1.13.</span> <span class="toc-text">关键路径</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-栈与队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">栈与队列</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2020-04-30T06:47:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h1><p>栈是限定仅在表尾进行插入和删除操作的线性表。<br>队列(queue)是只允许在一端进行插入操作、而在另一端进行删除操作的线性表。</p>
-<h2 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h2><p>我们把允许插入和删除的一段称为栈顶（top），另一端称为栈底（bottom），不含任何数据元素的栈称为空栈。栈又称为后进先出（Last in First out）的线性表，简称LIFO结构。</p>
-        
-          <a class="article-more-a" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线性表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-04-25T08:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性表-List-零个或多个数据元素的有限序列"><a href="#线性表-List-零个或多个数据元素的有限序列" class="headerlink" title="线性表(List): 零个或多个数据元素的有限序列"></a>线性表(List): 零个或多个数据元素的有限序列</h1><p>首先它是一个序列，也就是说，元素之间是有顺序的，若元素存在多个，则第一个元素无前驱，最后一个元素无后继，其他每个元素都有且只有一个前驱和后继。<br>然后，线性表强调的是有限的，元素个数是有限的。<br>若将线性表记为（a1,…ai-1,ai,ai+1,…an），则表中ai-1领先于ai，ai领先于ai+1，称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。<br>线性表元素的个数n（n&gt;=0）定义为线性表的长度，当n=0时，称为空表。<br>在较复杂的线性表中，一个数据元素可以由若干个数据项组成。</p>
-        
-          <a class="article-more-a" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/">C++Primer Plus 第十八章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-19T03:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十八章-探讨C-新标准"><a href="#第十八章-探讨C-新标准" class="headerlink" title="第十八章  探讨C++新标准"></a>第十八章  探讨C++新标准</h1><h2 id="18-1-复习前面介绍过的C-11新功能"><a href="#18-1-复习前面介绍过的C-11新功能" class="headerlink" title="18.1 复习前面介绍过的C++11新功能"></a>18.1 复习前面介绍过的C++11新功能</h2><hr>
-<p><strong>新类型</strong></p>
-<p>C++11新增了类型long long和unsigned long long，以支持64位（或更宽）的整型；新增了类型char16_t和char32_t,以支持16位和32位的字符表示；还新增了原始字符串。</p>
-        
-          <a class="article-more-a" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-泰坦尼克号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/">泰坦尼克号</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2020-04-15T03:43:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="爱你原本只是一瞬，却不知在时间的洪流中成了永恒。"><a href="#爱你原本只是一瞬，却不知在时间的洪流中成了永恒。" class="headerlink" title="爱你原本只是一瞬，却不知在时间的洪流中成了永恒。"></a>爱你原本只是一瞬，却不知在时间的洪流中成了永恒。</h1><font size="4">
-2020/4/14号晚
-
-<hr>
-<p>今晚看完了泰坦尼克号。这部被好评淹没的经典影片一直拖到现在才看。或是因为被它的片长所劝退，或是因为里面的经典片段在其他地方已经见过太多导致观影兴趣不高。  </p>
-<p>但当你看完之后，你仍会觉得意犹未尽，不由自主地对其称赞。其中的每一帧都为电影增添了色彩，没有一帧会显的多余。经典之所以成为经典，是它优秀的内容和让人产生情感共鸣的剧情。  </p>
-<p>泰坦尼克号沉没是1912年真实发生的一件事，将这样一件历史拍成电影更能让人代入其中。  </p>
-<p>泰坦尼克号是真实的，爱情故事是虚构的。该片正是借助rose和jack的爱情故事来讲述泰坦尼克号从启航到沉没的经历。</p>
-<p><strong>处于不同阶层的Rose和Jack，却是同一种人。热爱生活，追求真实。</strong><br><img src="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/01.jpg" alt></p></font>
-        
-          <a class="article-more-a" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十七章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/">C++Primer Plus 第十七章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-14T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十七章-输入、输出和文件"><a href="#第十七章-输入、输出和文件" class="headerlink" title="第十七章 输入、输出和文件"></a>第十七章 输入、输出和文件</h1><p>C++使用了很多较为高级的语言特性来实现输入和输出，其中包括类、派生类、函数重载、虚函数、模板和多重继承。之前一直使用的是基于istream类对象cin和ostream类对象cout进行输入和输出的基本方法，同时使用ifstream和ofstream对象进行文件输入和输出。<br>用于文件输入和输出的C++工具都是基于cin和cout所基于的基本类定义，因此本章以对控制台I/O（键盘和屏幕）的讨论作为跳板，来研究文件I/O。</p>
-<h2 id="17-1-C-输入和输出概述"><a href="#17-1-C-输入和输出概述" class="headerlink" title="17.1 C++输入和输出概述"></a>17.1 C++输入和输出概述</h2>
-        
-          <a class="article-more-a" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">C++Primer Plus 第十六章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十六章-string类和标准模板库"><a href="#第十六章-string类和标准模板库" class="headerlink" title="第十六章 string类和标准模板库"></a>第十六章 string类和标准模板库</h1><p>至此您熟悉了C++可重用代码的目标，这样做的一个很大的回报是可以重用别人编写的代码，这正是C++类库的用武之地。</p>
-<h2 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h2><p>string类是由头文件string支持的（注意，头文件string.h和cstring支持对c-风格字符串进行操纵的C库字符串函数，但不支持string类）。<br>string实际上是模板具体化basic_string<char>的一个typedef，同时省略了与内存管理相关的参数。</char></p>
-        
-          <a class="article-more-a" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十五章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/">C++Primer Plus 第十五章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-02T03:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十五章-友元、异常和其他"><a href="#第十五章-友元、异常和其他" class="headerlink" title="第十五章 友元、异常和其他"></a>第十五章 友元、异常和其他</h1><p>C++异常处理提供了处理特殊情况的机制，如果不对其进行处理，将导致程序终止。RTTI是一种确定对象类型的机制。新的类型转换运算符提高了类型转换的安全性。</p>
-<h2 id="15-1-友元"><a href="#15-1-友元" class="headerlink" title="15.1 友元"></a>15.1 友元</h2>
-        
-          <a class="article-more-a" href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -957,8 +441,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
