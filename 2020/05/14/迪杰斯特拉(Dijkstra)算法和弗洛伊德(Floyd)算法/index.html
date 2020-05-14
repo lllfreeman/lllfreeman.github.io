@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/5 | Blog-lllfreeman</title>
+  <title>迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/archives/2020/05/index.html">
+  <meta name="description" content="在网图和非网图中，最短路径的含义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上的权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。两种比较经典的求最短路径的算法————迪杰斯特拉算法和弗洛伊德算法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法">
+<meta property="og:url" content="http://yoursite.com/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="在网图和非网图中，最短路径的含义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上的权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。两种比较经典的求最短路径的算法————迪杰斯特拉算法和弗洛伊德算法。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu1.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu2.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu3.png">
+<meta property="article:published_time" content="2020-05-14T07:11:21.000Z">
+<meta property="article:modified_time" content="2020-05-14T09:21:57.931Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu1.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -151,35 +160,68 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" class="archive-article-date">
+
+        
+        <a href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" class="archive-article-date">
   	<time datetime="2020-05-14T07:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在网图和非网图中，最短路径的含义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上的权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。<br>两种比较经典的求最短路径的算法————迪杰斯特拉算法和弗洛伊德算法。</p>
+<a id="more"></a>
+<h1 id="迪杰斯特拉-Dijkstra-算法"><a href="#迪杰斯特拉-Dijkstra-算法" class="headerlink" title="迪杰斯特拉(Dijkstra)算法"></a>迪杰斯特拉(Dijkstra)算法</h1><p><img src="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu1.png" alt><br>这是一个按路径长度递增的次序产生最短路径的算法。<br>比如上图中顶点v0到v1的最短距离答案是1，路径就是直接v0连线到v1.<br>由于顶点v1还与v2、v3、v4连线，所以此时我们同时求得了v0-&gt;v1-&gt;v2=1+3=4,v0-&gt;v1-&gt;v3=1+7=8,vo-&gt;v1-&gt;v4=1+5=6.<br>现在，v0到v2的最短距离，刚才已有的v0-&gt;v1-&gt;v2=1+3=4，比5还要小一个单位，它才是最短距离。</p>
+<p>迪杰斯特拉算法就是一步步求出它们之间顶点的最短路径，过程中都是基于已经求出的最短路径的基础上，求得更远顶点的最短路径，最终得到你要的结果。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">//顶点类型应由用户定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> EdgeType; <span class="comment">//边上的权值类型应该由用户定义</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXVEX = <span class="number">9</span>; <span class="comment">//最大顶点数，应该由用户定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	VertexType vexs[MAXVEX]; <span class="comment">//顶点表</span></span><br><span class="line">	EdgeType arc[MAXVEX][MAXVEX]; <span class="comment">//邻接矩阵，可看作边表</span></span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">//图中当前的顶点数和边数。</span></span><br><span class="line">&#125;MGraph;</span><br><span class="line"><span class="comment">//迪杰斯特拉算法求最短路径</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXVEX = <span class="number">9</span>;<span class="comment">//顶点数</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Patharc[MAXVEX];<span class="comment">//用于储存最大路径下标的数组</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ShortPathTable[MAXVEX];<span class="comment">//用于储存各点到最短路径的权值和</span></span><br><span class="line"><span class="comment">/*Dijkstra算法，求有向网图G的v0顶点到其余顶点V最短路径P[V]</span></span><br><span class="line"><span class="comment">及带权长度D[V]。P[V]的值为前驱顶点下标，D[V]表示v0到v的最短路径长度和。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShortestPath_Dijkstra</span><span class="params">(MGraph G, <span class="keyword">int</span> v0, Patharc* P, ShortPathTable* D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> v, w, k, min;</span><br><span class="line">	<span class="keyword">int</span> <span class="keyword">final</span>[MAXVEX];<span class="comment">//final[w]=1表示求得顶点v0至Vw的最短路径</span></span><br><span class="line">	<span class="keyword">for</span> (v = <span class="number">0</span>; v &lt; G.numVertexes; v++) <span class="comment">//初始化数据</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">final</span>[v] = <span class="number">0</span>; <span class="comment">//全部顶点初始化为未知最短路径状态</span></span><br><span class="line">		(*D)[v] = G.arc[v0][v];<span class="comment">//将与V0点有连线的顶点加上权值</span></span><br><span class="line">		(*P)[v] = <span class="number">0</span>;<span class="comment">//初始化路径数组P为0.</span></span><br><span class="line">	&#125;</span><br><span class="line">	(*D)[v0] = <span class="number">0</span>; <span class="comment">//V0到V0的路径为0</span></span><br><span class="line">	<span class="keyword">final</span>[v0] = <span class="number">1</span>; <span class="comment">//V0到V0不需要求路径</span></span><br><span class="line">	<span class="comment">/*开始主循环，每次求得V0到某个V顶点的最短路径*/</span></span><br><span class="line">	<span class="keyword">for</span> (v = <span class="number">1</span>; v &lt; G.numVertexes; v++)</span><br><span class="line">	&#123;</span><br><span class="line">		min = INFINITY;<span class="comment">//先设最近距离为∞，用INFINITY表示</span></span><br><span class="line">		<span class="keyword">for</span> (w = <span class="number">0</span>; w &lt; G.numVertexes; w++)<span class="comment">//寻找离V0最近的顶点</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (!<span class="keyword">final</span>[w] &amp;&amp; (*D)[w] &lt; min) <span class="comment">//顶点还未求得&amp;&amp;权值小于min</span></span><br><span class="line">			&#123;</span><br><span class="line">				k = w;</span><br><span class="line">				min = (*D)[w]; <span class="comment">//w顶点离v0顶点更近</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="comment">//循环结束后找到最近的顶点</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span>[k] = <span class="number">1</span>; <span class="comment">//将目前找到的最近的顶点置为1</span></span><br><span class="line">		<span class="keyword">for</span> (w = <span class="number">0</span>; w &lt; G.numVertexes; w++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (!<span class="keyword">final</span>[w] &amp;&amp; (min + G.arc[k][w] &lt; (*D)[w]))</span><br><span class="line">				<span class="comment">/*说明找到了更短的路径，修改D[w]和P[w]*/</span></span><br><span class="line">			&#123;</span><br><span class="line">				(*D)[w] = min + G.arc[k][w]; <span class="comment">//修改当前路径长度。</span></span><br><span class="line">				(*P)[w] = k;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过迪杰斯特拉(Dijkstra)算法解决了从某个源点到其余各顶点的最短路径问题，从嵌套循环可以很容易的得到此算法的时间复杂度为O(n^2).</p>
+<h1 id="弗洛伊德-Floyd-算法"><a href="#弗洛伊德-Floyd-算法" class="headerlink" title="弗洛伊德(Floyd)算法"></a>弗洛伊德(Floyd)算法</h1><p>我们现在来介绍另一个求最短路径的算法————弗洛伊德，它求所有顶点到所有顶点的时间复杂度是O（n^3）,但其算法非常简洁优雅，能让人感觉到智慧的无限魅力。<br><img src="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu2.png" alt><br>我们先定义两个二维数组D[3][3]和P[3][3],D代表顶点到顶点的最短路径权值和的矩阵。P代表对应顶点的最小路径的前驱矩阵。<br>根据上图  </p>
+<blockquote>
+<p>D1[v][w]=min{D0[v][w],D0[v][0]+D0[0][w]}.</p>
+</blockquote>
+<p><img src="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/tu3.png" alt></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType; <span class="comment">//顶点类型应由用户定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> EdgeType; <span class="comment">//边上的权值类型应该由用户定义</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXVEX = <span class="number">9</span>; <span class="comment">//最大顶点数，应该由用户定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	VertexType vexs[MAXVEX]; <span class="comment">//顶点表</span></span><br><span class="line">	EdgeType arc[MAXVEX][MAXVEX]; <span class="comment">//邻接矩阵，可看作边表</span></span><br><span class="line">	<span class="keyword">int</span> numVertexes, numEdges; <span class="comment">//图中当前的顶点数和边数。</span></span><br><span class="line">&#125;MGraph;</span><br><span class="line"><span class="comment">//求所有顶点到所有顶点的最短路径</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Pathmatirx[MAXVEX][MAXVEX];</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ShortPathTable[MAXVEX][MAXVEX];</span><br><span class="line"><span class="comment">/*Floyd算法，求网图G中各顶点v到其余顶点w最短路径P[v][w]及带权长度D[v][w]*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShortestPath_Floyd</span><span class="params">(MGraph G, Pathmatirx* P, ShortPathTable* D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> v, w, k;</span><br><span class="line">	<span class="keyword">for</span> (v = <span class="number">0</span>; v &lt; G.numVertexes; ++v)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (w = <span class="number">0</span>; w &lt; G.numVertexes; ++w) <span class="comment">//初始化D与P</span></span><br><span class="line">		&#123;</span><br><span class="line">			(*D)[v][w] = G.arc[v][w];<span class="comment">//D[v][w]值即为对应点间的权值</span></span><br><span class="line">			(*P)[v][w] = w; <span class="comment">//初始化p</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; G.numVertexes; ++k)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (v = <span class="number">0</span>; v &lt; G.numVertexes; ++v)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (w = <span class="number">0</span>; w &lt; G.numVertexes; ++w)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> ((*D)[v][w] &gt; (*D)[v][k] + (*D)[k][w])</span><br><span class="line">					<span class="comment">/*如果经过下标为k顶点路径比原两点间路径更短</span></span><br><span class="line"><span class="comment">					将当前两点间权值设为更小的一个</span></span><br><span class="line"><span class="comment">					*/</span></span><br><span class="line">				&#123;</span><br><span class="line">					(*D)[v][k] = (*D)[v][k] + (*D)[k][w];</span><br><span class="line">					(*P)[v][w] = (*P)[v][k]; <span class="comment">//路径设置经过下标为k的顶点</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求最短路径的显式代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> v, w, k;</span><br><span class="line">	MGraph G;</span><br><span class="line">	Pathmatirx P;</span><br><span class="line">	ShortPathTable D; <span class="comment">/* 求某点到其余各点的最短路径 */</span></span><br><span class="line">	ShortestPath_Floyd(G, &amp;P, &amp;D);</span><br><span class="line">	<span class="keyword">for</span> (v = <span class="number">0</span>; v &lt; G.numVertexes; ++v)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (w = v + <span class="number">1</span>; w &lt; G.numVertexes; w++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"v-v weight:"</span> &lt;&lt; v &lt;&lt; w &lt;&lt; D[v][w];</span><br><span class="line">			k = P[v][w]; <span class="comment">//获得第一个路径顶点下标</span></span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"path: "</span> &lt;&lt; v; <span class="comment">//打印源点</span></span><br><span class="line">			<span class="keyword">while</span> (k != w) <span class="comment">//如果路径顶点下标不是终点</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"-&gt; "</span> &lt;&lt; k; <span class="comment">//打印路径顶点</span></span><br><span class="line">				k = P[k][w]; <span class="comment">//获得下一个路径顶点下标</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"-&gt; "</span> &lt;&lt; w; <span class="comment">//打印终点</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>回过头来看弗洛伊德（Floyd）算法，它的代码简洁到就是一个二重循环初始化加一个三重循环权值修正，就完成了所有顶点到所有顶点的最短路径计算。也正是因为它是三重循环，所以它的时间复杂度为O（n^3）。<br>如果你面临需要求所有顶点至所有顶点的最短路径问题时，弗洛伊德算法应该是不错的选择！<br>另外，我们虽然对求最短路径的两个算法举例都是无向图，但它们对有向图依然有效，因为二者的差异仅仅是邻接矩阵是否对称而已。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,171 +233,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T01:36:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#迪杰斯特拉-Dijkstra-算法"><span class="toc-number">1.</span> <span class="toc-text">迪杰斯特拉(Dijkstra)算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#弗洛伊德-Floyd-算法"><span class="toc-number">2.</span> <span class="toc-text">弗洛伊德(Floyd)算法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/12/%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-05-12T14:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/%E5%9B%BE/">图</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/08/%E6%A0%91(tree)/" class="archive-article-date">
-  	<time datetime="2020-05-08T06:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/08/%E6%A0%91(tree)/">树(tree)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/03/%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-05-03T08:19:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/03/%E4%B8%B2/">串</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -378,8 +368,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
