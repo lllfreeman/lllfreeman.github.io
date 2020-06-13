@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: C++ | Blog-lllfreeman</title>
+  <title>Vim编辑器与Shell命令脚本 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/tags/C/index.html">
+  <meta name="description" content="Vim编辑器与Shell命令脚本Vim文本编辑器Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。 命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。输入模式：正常的文本录入。末行模式：保存或退出文档，以及设置编辑环境。 每次运行Vim编辑器时，默认进入命令模式。在Vim中，无法直接从输入模式切换到末行模式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim编辑器与Shell命令脚本">
+<meta property="og:url" content="http://yoursite.com/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="Vim编辑器与Shell命令脚本Vim文本编辑器Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。 命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。输入模式：正常的文本录入。末行模式：保存或退出文档，以及设置编辑环境。 每次运行Vim编辑器时，默认进入命令模式。在Vim中，无法直接从输入模式切换到末行模式。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-08T14:11:28.000Z">
+<meta property="article:modified_time" content="2020-06-08T15:14:09.400Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -151,404 +156,443 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Vim编辑器与Shell命令脚本" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vim编辑器与Shell命令脚本
+    </h1>
+  
+
+        
+        <a href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
+  	<time datetime="2020-06-08T14:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vim编辑器与Shell命令脚本"><a href="#Vim编辑器与Shell命令脚本" class="headerlink" title="Vim编辑器与Shell命令脚本"></a>Vim编辑器与Shell命令脚本</h1><h2 id="Vim文本编辑器"><a href="#Vim文本编辑器" class="headerlink" title="Vim文本编辑器"></a>Vim文本编辑器</h2><p>Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。</p>
+<p>命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。<br>输入模式：正常的文本录入。<br>末行模式：保存或退出文档，以及设置编辑环境。</p>
+<p>每次运行Vim编辑器时，默认进入命令模式。在Vim中，无法直接从输入模式切换到末行模式。</p>
+<a id="more"></a>
+
+<p>Vim中常用的命令  </p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dd</td>
+<td>删除（剪切）光标所在整行</td>
+</tr>
+<tr>
+<td>5dd</td>
+<td>删除（剪切）从光标处开始的5行</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在的整行</td>
+</tr>
+<tr>
+<td>5yy</td>
+<td>复制从光标处开始的5行</td>
+</tr>
+<tr>
+<td>n</td>
+<td>显示搜索命令定位到的下一个字符串</td>
+</tr>
+<tr>
+<td>N</td>
+<td>显示搜索命令定位到的上一个字符串</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销上一步的操作</td>
+</tr>
+<tr>
+<td>p</td>
+<td>将之前删除（dd）或复制（yy）过的数据粘贴到光标后面</td>
+</tr>
+</tbody></table>
+<p>末行模式中可用的命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制退出（放弃对文档的修改）</td>
+</tr>
+<tr>
+<td>:wq!</td>
+<td>强制保存退出</td>
+</tr>
+<tr>
+<td>:set nu</td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>不显示行号</td>
+</tr>
+<tr>
+<td>:命令</td>
+<td>执行该命令</td>
+</tr>
+<tr>
+<td>:整数</td>
+<td>跳转到该行</td>
+</tr>
+<tr>
+<td>:s/one/two</td>
+<td>将当前光标所在行的第一个one替换成two</td>
+</tr>
+<tr>
+<td>:s/one/two/g</td>
+<td>将当前光标所在行的所有one替换成two</td>
+</tr>
+<tr>
+<td>:%s/one/two/g</td>
+<td>将全文中的所有one替换成two</td>
+</tr>
+<tr>
+<td>?字符串</td>
+<td>在文本中从下至上搜索该字符串</td>
+</tr>
+<tr>
+<td>/字符串</td>
+<td>在文本中从上自下搜索该字符串</td>
+</tr>
+</tbody></table>
+<h2 id="编写Shell脚本"><a href="#编写Shell脚本" class="headerlink" title="编写Shell脚本"></a>编写Shell脚本</h2><p>可以将Shell终端解释器当作人与计算机硬件之间的“翻译官”，它作为用户与Linux系统内部的通信媒介，除了能够支持各种变量与参数外，还提供了诸如循环、分支等高级编程语言才有的控制结构特性。<br>Shell脚本命令的工作方式有两种：交互式和批处理。<br>交互式：用户每输入一条命令就立即执行。<br>批处理：由用户事先编写好一个完整的Shell脚本，Shell会一次性执行脚本中诸多的命令。</p>
+<p>编写一个简单的Shell脚本：<br>Vim example.sh<br>#!/bin/bash<br>#For Example By lllfreeman<br>pwd<br>ls -al</p>
+<p>文件名加上sh后缀，表示是一个脚本文件。<br>第一行的脚本声明（#！）用来告诉系统使用哪种Shell解释器来执行该脚本。<br>第二行的注释信息（#）是对脚本功能和某些命令的介绍信息。<br>第三第四行的可执行语句是平时执行的Linux命令。</p>
+<p>可以直接使用Bash解释器运行该Shell脚本：<br>Bash example.sh<br>也可以通过输入完整路径的方式来执行：<br>./example.sh</p>
+<p>Linux系统中的Shell脚本内设了用于接收参数的变量，变量之间可以使用空格隔开。例如$0对应的是当前Shell脚本程序的名称；$#对应的是总共有几个参数，$*对应的是所有位置的参数值；$?对应的是显示上一次命令的执行返回值，而$1、$2、$3、….则分别对应着第N个位置的参数值。</p>
+<p>Shell脚本中的条件测试语法可以判断表达式是否成立，若条件成立则返回数字0，否则便返回其他随机数字。</p>
+<p>条件测试语句的执行格式为“[ 条件表达式 ]”, 两边都有一个空格。</p>
+<p>按照测试对象来划分，条件测试语句分为4中：<br>1.文件测试语句。<br>2.逻辑测试语句。<br>3.整数值比较语句。<br>4.字符串比较语句。</p>
+<p>文件测试所用的参数</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>测试文件是否为目录类型</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>测试文件是否存在</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>判断是否为一般文件</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>测试当前用户是否有权限读取</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>测试当前用户是否有权限写入</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>测试当前用户是否有权限执行</td>
+</tr>
+</tbody></table>
+<p>逻辑测试语句：<br>1.与（&amp;&amp;），它表示当前面的命令执行成功后才会执行它后面的命令。<br>2.或（||），表示当前面的命令执行失败后才会执行它后面的命令。<br>3.飞（!），它表示把条件测试中的判断结果取相反值。</p>
+<p>可用的整数比较运算符</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-eq</td>
+<td>是否等于</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>是否不等于</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>是否大于</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>是否小于</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>是否等于或小于</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>是否等于或大于</td>
+</tr>
+</tbody></table>
+<p>常见的字符串比较运算符</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>比较字符串内容是否相等</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>比较字符串内容是否不相同</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>判断字符串内容是否为空</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑控制语句"><a href="#逻辑控制语句" class="headerlink" title="逻辑控制语句"></a>逻辑控制语句</h2><h3 id="if条件测试语句"><a href="#if条件测试语句" class="headerlink" title="if条件测试语句"></a>if条件测试语句</h3><p>if语句分为单分支结构、双分支结构、多分支结构。</p>
+<p>1.if 条件测试操作——then 命令序列——fi</p>
+<p>2.if 条件测试操作——then 命令序列1——else 命令序列2——fi</p>
+<p>3.if 条件测试操作1——then 命令序列1——elif 条件测试操作2——then 命令序列2——else 命令序列3——fi</p>
+<p>在Linux系统中，read是用来读取用户输入信息的命令，能够把接收到的用户输入信息赋值给后面的变量，-p参数用于向用户显示一定的提示信息。</p>
+<h3 id="for条件循环语句"><a href="#for条件循环语句" class="headerlink" title="for条件循环语句"></a>for条件循环语句</h3><p>for循环语句允许脚本一次性读入多个信息，然后逐一对信息进行操作处理，当要处理的数据有范围时，使用for循环语句再适合不过。</p>
+<p>for循环语句的语法格式如下：<br>for 变量名in取值列表——do 命令序列——done</p>
+<p>/dev/null是一个被称作Linux黑洞的文件，把输出信息重定向到这个文件等同于删除数据（类似于没有回收功能的垃圾箱），可以使用户的屏幕窗口保持简洁。</p>
+<h3 id="while条件循环语句"><a href="#while条件循环语句" class="headerlink" title="while条件循环语句"></a>while条件循环语句</h3><p>while条件循环语句是有种让脚本根据某些条件来重复执行命令的语句，它的循环结构往往在执行前并不确定最终执行的次数，完全不同于for循环语句中有目标、有范围的使用场景。</p>
+<p>while循环语句的语法格式如下：<br>while 条件测试操作——do 命令序列——done</p>
+<h3 id="case条件测试语句"><a href="#case条件测试语句" class="headerlink" title="case条件测试语句"></a>case条件测试语句</h3><p>case语句是在多个范围内匹配数据，若匹配成功则执行相关命令并结束整个条件测试；而如果数据不在所列出的范围内，则会取执行星号（*）中所定义的默认命令。</p>
+<p>case语句的语法结构如下：<br>case 变量值in<br>模式1）<br>    命令序列1<br>    ；；<br>模式2）<br>    命令序列2<br>    ；；<br>    ……<br>*)<br>默认命令序列<br>esac</p>
+<h2 id="计划任务服务程序"><a href="#计划任务服务程序" class="headerlink" title="计划任务服务程序"></a>计划任务服务程序</h2><p>计划任务分为一次性计划任务与长期性计划任务。</p>
+<p>一次性计划任务只执行一次，一般用于满足临时的工作需求。我们可以用命令at实现这种功能，只需要写成“at 时间”的形式就可以。如果想要查看已设置好但还未执行的一次性计划任务，可以使用“at -l”命令；要想将其删除，可以用“atrm 任务序号”。在使用at命令来设置一次性计划任务时，默认采用的是交互式方法。</p>
+<p>如果我们希望Linux系统能够周期性地、有规律地执行某些具体的任务，那么Linux系统中默认启用的crond服务简直再适合不过了。创建、编辑计划任务的命令为“crontab -e”，查看当前计划任务的命令为“crontab -l”，删除某条计划任务的命令为“crontab -r”。另外，如果您是以管理员的身份登陆的系统，还可以再crontab命令中加上-u参数来编辑他人的计划任务。</p>
+<p>使用crond服务设置任务的参数格式为：“分、时、日、月、星期 命令”，如果有些字段没有设置，则需要使用星号（*）占位。</p>
+<p>使用crond设置任务的参数字段说明</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分</td>
+<td>取值为0~59的整数</td>
+</tr>
+<tr>
+<td>时</td>
+<td>取值为0~23的任意整数</td>
+</tr>
+<tr>
+<td>日</td>
+<td>取值为1~31的任意整数</td>
+</tr>
+<tr>
+<td>月</td>
+<td>取值为1~12的任意整数</td>
+</tr>
+<tr>
+<td>星期</td>
+<td>取值为0~7的任意整数，其中0和7均为星期日</td>
+</tr>
+<tr>
+<td>命令</td>
+<td>要执行的命令或程序脚本</td>
+</tr>
+</tbody></table>
+<p>除了用逗号（，）来分别表示多个时间段，例如“8，9，12”表示8月、9月和12月。还可以用减号（-）来表示一段连续的时间周期（例如字段“日”的取值为“12-15”，则表示每月的12~15日）。以及用除号（/）表示执行任务的间隔时间（例如“*/2”表示每个2分钟执行一次任务）。</p>
+<p>在crond服务中需要同时包含多条计划任务的命令语句，应每行仅写一条。</p>
+<p>在crond服务的计划任务参数中，所有命令一定要用绝对路径的方式来写，如果不知道绝对路径，可以使用命令whereis来查询。</p>
+<p>注意：<br>1.在crond服务的配置参数中，可以像Shell脚本那样以#号开头写上注释信息。<br>2.计划任务中的“分”字段必须有数值，绝对不能为空或是*号，而“日”和“星期”字段不能同时使用，否则就会有冲突。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-19T03:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/">C++Primer Plus 第十八章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-14T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          用户身份与文件权限
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">管道符、重定向与环境变量</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/">C++Primer Plus 第十七章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vim编辑器与Shell命令脚本"><span class="toc-number">1.</span> <span class="toc-text">Vim编辑器与Shell命令脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim文本编辑器"><span class="toc-number">1.1.</span> <span class="toc-text">Vim文本编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写Shell脚本"><span class="toc-number">1.2.</span> <span class="toc-text">编写Shell脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑控制语句"><span class="toc-number">1.3.</span> <span class="toc-text">逻辑控制语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if条件测试语句"><span class="toc-number">1.3.1.</span> <span class="toc-text">if条件测试语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for条件循环语句"><span class="toc-number">1.3.2.</span> <span class="toc-text">for条件循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while条件循环语句"><span class="toc-number">1.3.3.</span> <span class="toc-text">while条件循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case条件测试语句"><span class="toc-number">1.3.4.</span> <span class="toc-text">case条件测试语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计划任务服务程序"><span class="toc-number">1.4.</span> <span class="toc-text">计划任务服务程序</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">C++Primer Plus 第十六章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-02T03:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/">C++Primer Plus 第十五章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/28/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-28T05:17:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/28/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/">C++ Primer Plus 第十四章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-18T02:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/">C++ Primer Plus 第十三章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-14T03:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">C++ Primer Plus 第十二章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/" class="archive-article-date">
-  	<time datetime="2020-03-12T11:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/">C++图形编程之将图片加载到窗口上</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-11T04:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">C++ Primer Plus 第十一章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-08T12:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/">C++ Primer Plus 第十章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/C/page/2/">2</a><a class="extend next" rel="next" href="/tags/C/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -572,9 +616,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
