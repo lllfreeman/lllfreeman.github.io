@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Blog-lllfreeman</title>
+  <title>储存结构与磁盘划分 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一切从“&#x2F;”开始在Linux系统中，目录，字符设备、块设备、套接字、打印机等都被抽象成了文件。“Linux系统中一切皆文件”。 Linux系统中的一切文件都是从“根（&#x2F;）”目录开始的，并按照文件系统层次化标准（FHS）采用树形结构来存放文件，以及定义了常见目录的用途。Linux系统中的文件和目录名称是严格区分大小写的。例如，root、rOOt、Root、rooT均代表不同的目录，并且文件名称中不得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="储存结构与磁盘划分">
+<meta property="og:url" content="http://yoursite.com/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="一切从“&#x2F;”开始在Linux系统中，目录，字符设备、块设备、套接字、打印机等都被抽象成了文件。“Linux系统中一切皆文件”。 Linux系统中的一切文件都是从“根（&#x2F;）”目录开始的，并按照文件系统层次化标准（FHS）采用树形结构来存放文件，以及定义了常见目录的用途。Linux系统中的文件和目录名称是严格区分大小写的。例如，root、rOOt、Root、rooT均代表不同的目录，并且文件名称中不得">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/01.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/02.jpg">
+<meta property="article:published_time" content="2020-06-28T09:36:39.000Z">
+<meta property="article:modified_time" content="2020-06-28T13:17:50.667Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -151,35 +159,340 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-储存结构与磁盘划分" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      储存结构与磁盘划分
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/" class="archive-article-date">
+
+        
+        <a href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/" class="archive-article-date">
   	<time datetime="2020-06-28T09:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/">储存结构与磁盘划分</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一切从“-”开始"><a href="#一切从“-”开始" class="headerlink" title="一切从“/”开始"></a>一切从“/”开始</h1><p>在Linux系统中，目录，字符设备、块设备、套接字、打印机等都被抽象成了文件。“Linux系统中一切皆文件”。</p>
+<p>Linux系统中的一切文件都是从“根（/）”目录开始的，并按照文件系统层次化标准（FHS）采用树形结构来存放文件，以及定义了常见目录的用途。<br>Linux系统中的文件和目录名称是严格区分大小写的。例如，root、rOOt、Root、rooT均代表不同的目录，并且文件名称中不得包含斜杆（/）。<br><img src="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/01.jpg" alt></p>
+<a id="more"></a>
+<p>Linux系统中常见的目录名称以及相应内容</p>
+<table>
+<thead>
+<tr>
+<th>目录名称</th>
+<th>应放置文件的内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/boot</td>
+<td>开机所需文件——内核、开机菜单以及所需配置文件等</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>以文件形式存放任何设备与接口</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>配置文件</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>用户家目录</td>
+</tr>
+<tr>
+<td>/bin</td>
+<td>存放单用户模式下还可以操作的命令</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>开机时用到的函数库，以及/bin与/sbin 下面的命令要调用的函数</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>开机过程中需要的命令</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>用于挂载设备文件的目录</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>放置第三方的软件</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>系统管理员的家目录</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>一些网络服务的数据文件目录</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>任何人均可使用的“共享”临时目录</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>虚拟文件系统，例如系统内核、进程、外部设备及网络状态等</td>
+</tr>
+<tr>
+<td>/usr/local</td>
+<td>用户自行安装的软件</td>
+</tr>
+<tr>
+<td>/usr/sbin</td>
+<td>Linux系统开机时不会使用到的软件/命令/脚本</td>
+</tr>
+<tr>
+<td>/usr/share</td>
+<td>帮助与说明文件，也可放置共享文件</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>主要存放经常变化的文件，如日志</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>当文件系统发生错误时，将一些丢失的文件片段存放在这里</td>
+</tr>
+</tbody></table>
+<p>在Linux系统中还有一个重要的概念——路径。路径指的是如何定位到某个文件，分为绝对路径和相对路径。绝对路径指的是从根目录（/）开始写起的文件或目录名称，而相对路径则指的是相对于当前路径的写法。</p>
+<h1 id="物理设备的命名规则"><a href="#物理设备的命名规则" class="headerlink" title="物理设备的命名规则"></a>物理设备的命名规则</h1><p>Linux系统内核中的udev设备管理器会自动把硬件名称规范起来，目的是让用户通过设备文件的名称可以猜出设备大致的属性以及分区信息等；另外，udev设备管理器的服务会一直以守护进程的形式运行并侦听内核发出的信号来管理/dev目录下的设备文件。</p>
+<p>常见的硬件设备及其文件名称</p>
+<table>
+<thead>
+<tr>
+<th>硬件设备</th>
+<th>文件名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDE设备</td>
+<td>/dev/hd[a-d]</td>
+</tr>
+<tr>
+<td>SCSI/SATA/U盘</td>
+<td>/dev/sd[a-p]</td>
+</tr>
+<tr>
+<td>软驱</td>
+<td>/dev/fd[0-1]</td>
+</tr>
+<tr>
+<td>打印机</td>
+<td>/dev/lp[0-15]</td>
+</tr>
+<tr>
+<td>光驱</td>
+<td>/dev/cdrom</td>
+</tr>
+<tr>
+<td>鼠标</td>
+<td>/dev/mouse</td>
+</tr>
+<tr>
+<td>磁带机</td>
+<td>/dev/st0或/dev/ht0</td>
+</tr>
+</tbody></table>
+<p>例如 /dev/sda5<br>a表示系统中同类接口中第一个被识别到的设备，最后，5表示这个设备是一个逻辑分区。/dev/sda5表示的是：这是系统中第一块被识别到的硬件设备中分区编号为5的逻辑分区的设备文件。</p>
+<p>所谓扩展分区，严格地讲它不是一个实际意义的分区，它仅仅是一个指向下一个分区的指针，这种指针结构将形成一个单向链表。</p>
+<h1 id="文件系统与数据资料"><a href="#文件系统与数据资料" class="headerlink" title="文件系统与数据资料"></a>文件系统与数据资料</h1><p>用户在硬件设备中执行的文件建立、写入、读取、修改、转存与控制等操作都是依靠文件系统来完成的。文件系统的作用是合理规划硬盘，以保证用户正常的使用需求。</p>
+<p>（1）Ext3：是一款日志文件系统，能够在系统异常宕机时避免文件系统资料丢失，并能够自动修复数据的不一致与错误。<br>（2）Ext4：Ext3的改进版本，它支持的储存容量高达1EB（1EB=1073741824GB），且能够有无限多的子目录。另外，Ext4文件系统能够批量分配block块，从而极大地提高了读写效率。<br>（3）XFS：是一种高性能的日志文件系统。它的优势在发生意外宕机后尤其明显，即可以快速地恢复可能被破坏的文件，而且强大的日志功能只用花费极低的计算和储存性能。并且最大可支持的储存容量为18EB。</p>
+<p>在拿到一块新的硬盘储存设备后，需要先分区，然后再格式化文件系统，最后才能挂载并正常使用。</p>
+<p>在Linux系统中有一个名为super block的“硬盘地图”。Linux系统并不是把文件内容直接写入到这个“硬盘地图”里面，而是在里面记录着整个文件系统的信息。Linux只是把每个文件的权限和属性记录在inode中，而且每个文件占用一个独立的inode表格，该表格的大小默认为128字节，里面记录着如下信息：<br>1.该文件的访问权限（read、write、execute）<br>2.该文件的所有者与所属组（owner、group）<br>3.该文件的大小（size）<br>4.该文件的创建或内容修改时间（ctime）<br>5.该文件的最后一次访问时间（atime）<br>6.该文件的修改时间（mtime）<br>7.文件的特殊权限（SUID、SGID、SBIT）<br>8.该文件的真实数据地址</p>
+<p>而文件的实际内容则保存在block块中（大小可以是1kb、2kb或者4kb），一个inode的默认大小仅为129B（Ext3）,记录一个block则消耗4B。当文件的inode被写满后，Linux系统会自动分配出一个block块，专门用于像inode那样记录其他block的信息，这样把各个block块的内容串在一起，就能够让用户读到完整的文件内容了。对于储存文件内容的block块，有下面两种常见的情况（以4kb的block大小为例）<br>情况1：文件很小（1KB），但仍然会占用一个block，因此会浪费3KB。<br>情况2：文件很大（5KB），那么会占用两个block（5KB-4KB后剩下的1KB也要占用一个block）</p>
+<p>Linux系统内核中的软件层为用户程序提供了一个VFS（Virtual File System,虚拟文件系统）接口，这样用户实际上在操作文件时就是统一对这个虚拟文件系统进行操作了。<br><img src="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/02.jpg" alt></p>
+<h1 id="挂载硬件设备"><a href="#挂载硬件设备" class="headerlink" title="挂载硬件设备"></a>挂载硬件设备</h1><p>挂载——当用户需要使用硬盘设备或分区中的数据时，需要先将其与一个已存在的目录文件进行关联，而这个关联的动作就是“挂载”。</p>
+<h2 id="mount命令"><a href="#mount命令" class="headerlink" title="mount命令"></a>mount命令</h2><p>mount命令用于挂载文件系统，格式为“mount 文件系统 挂载目录”。</p>
+<p>挂载是在使用硬件设备前所执行的最后一步操作。只需使用mount命令把硬盘设备或分区与一个目录文件进行关联，然后就能够在这个目录中看到硬件设备中的数据了。</p>
+<p>mount命令中的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>挂载所有在/etc/fstab 中定义的文件系统</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>指定文件系统的类型</td>
+</tr>
+</tbody></table>
+<p>例如，要把设备/dev/sdb2 挂载到/backup目录，只需要在mount命令中填写设备与挂载目录参数就行，系统会自动去判断要挂载文件的类型：  </p>
+<blockquote>
+<p>mount /dev/sdb2 /backup</p>
+</blockquote>
+<p>如果想让硬件设备和目录永久地进行自动关联，就必须把挂载信息按照指定的填写格式“设备文件 挂载目录 格式类型 权限选项 是否备份 是否自检”写入到/etc/fstab 文件中。这个文件中包含着挂载所需的诸多信息项目。</p>
+<p>用于挂载信息的指定填写格式中，各字段所表示的意义</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>设备文件</td>
+<td>一般为设备的路径+设备名称，也可以写唯一识别码（UUID）</td>
+</tr>
+<tr>
+<td>挂载目录</td>
+<td>指定要挂载到的目录，需在挂载前创建好</td>
+</tr>
+<tr>
+<td>格式类型</td>
+<td>指定文件系统的格式，比如Ext3、Ext4、XFS、SWAP、iso9660（此为光盘设备）等</td>
+</tr>
+<tr>
+<td>权限选项</td>
+<td>若设置为default，则默认权限为：rw，suid，dev，exec，auto，nouser，async</td>
+</tr>
+<tr>
+<td>是否备份</td>
+<td>若为1则开机后使用dnmp进行磁盘备份，为0则不备份</td>
+</tr>
+<tr>
+<td>是否自检</td>
+<td>若为1则开机后进行磁盘自检，为0则不自检</td>
+</tr>
+</tbody></table>
+<h2 id="umount命令"><a href="#umount命令" class="headerlink" title="umount命令"></a>umount命令</h2><p>umount命令用于取消已经挂载的设备文件，格式为“umount[挂载点/设备文件]”。<br>我们挂载文件系统的目的是为了使用硬件资源，而卸载文件系统就意味着不再使用硬件的设备资源。卸载操作只需要说明想要取消关联的设备文件或挂载目录的其中一项即可，一半不需要加其他额外的参数。</p>
+<p>例如：手动卸载掉/dev/sdb2设备文件：  </p>
+<blockquote>
+<p>umount /dev/sdb2</p>
+</blockquote>
+<h1 id="添加硬盘设备"><a href="#添加硬盘设备" class="headerlink" title="添加硬盘设备"></a>添加硬盘设备</h1><h2 id="fdisk命令"><a href="#fdisk命令" class="headerlink" title="fdisk命令"></a>fdisk命令</h2><p>在Linux系统中，管理硬盘设备最常用的方法就当属fdisk命令了。fdisk命令用于管理磁盘分区，格式为“fdisk [磁盘名称]”，它提供了集添加、删除、转换分区等功能于一身的“一站式分区服务”。<br>该条命令的参数是交互式的，可以根据需求动态调整。</p>
+<p>fdisk命令中的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>m</td>
+<td>查看全部可用的参数</td>
+</tr>
+<tr>
+<td>n</td>
+<td>添加新的分区</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除某个分区信息</td>
+</tr>
+<tr>
+<td>l</td>
+<td>列出所有可用的分区类型</td>
+</tr>
+<tr>
+<td>t</td>
+<td>改变某个分区的类型</td>
+</tr>
+<tr>
+<td>p</td>
+<td>查看分区信息</td>
+</tr>
+<tr>
+<td>w</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>q</td>
+<td>不保存直接退出</td>
+</tr>
+</tbody></table>
+<p>执行相关fdisk操作后，可用输入partprobe命令手动将分区信息同步到内核，一般推荐连续两次执行该命令，效果会更好。如果该命令无法解决问题，在配置完后重启计算机是最好的办法。</p>
+<p>如果硬件储存设备没有进行格式化，则Linux系统无法得知怎么在其上写入数据。因此，在对储存设备进行分区后还需要进行格式化操作。在Linux系统中用于格式化操作的命令是 mkfs 。在Shell终端中输入mkfs名后敲击两下Tab键将会出现格式化文件系统的命令。</p>
+<p>mkfs命令把常用的文件系统名称用后缀的方式保存成了多个命令文件，用起来也非常简单——mkffs.文件类型名称。例如要格式化分区XFS的文件系统，则命令应为   </p>
+<blockquote>
+<p>mkfs.xfs /dev/sdb1 .</p>
+</blockquote>
+<p>在完成储存设备的分区和格式化操作后，再进行挂载就能使用了。</p>
+<p>最后可用使用 df -h 命令来查看挂载状态和硬盘使用量信息。</p>
+<h2 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h2><p>du命令用于查看文件数据占用量，其格式为“du [选项] [文件]”。<br>该命令就是用来查看一个或多个文件占用了多大的硬盘空间。我们还可以使用du -sh /* 命令来查看在Linux系统根目录下所有一级目录分别占用的空间大小。</p>
+<h1 id="添加交换分区"><a href="#添加交换分区" class="headerlink" title="添加交换分区"></a>添加交换分区</h1><p>SWAP（交换）分区是一种通过在硬盘中预先划分一定的空间，然后将把内存中暂时不常用的数据临时存放到硬盘中，以便腾出物理内存空间让更活跃的程序服务来使用的技术，其设计目的是为了解决真实物理内存不足的问题。</p>
+<p>在生产环境中，交换分区的大小一般为真实物理内存的1.5~2倍。</p>
+<p>使用SWAP分区专用的格式化命令为 mkswap。</p>
+<p>使用swapon命令把准备好的SWAP分区设备正式挂载到系统中。我们还可以使用free -m命令查看交换分区的大小变化。</p>
+<p>为了能够让新的交换分区设备在重启后依然有效，需要将交换分区设备的信息写入到 /etc/fstab 文件中。</p>
+<h1 id="磁盘容量配额"><a href="#磁盘容量配额" class="headerlink" title="磁盘容量配额"></a>磁盘容量配额</h1><p>root管理员可以使用磁盘容量配额服务来限制某位用户或某个用户组针对特定文件夹可以使用的最大硬盘空间或最大文件个数，一旦达到这个最大值就不再允许继续使用。可以使用quota命令进行磁盘容量配额管理，从而限制用户的磁盘可用容量或所能创建的最大文件个数。quota命令还有软限制和硬限制的功能。<br>软限制：当达到软限制时会提示用户，但仍然允许用户在限定的额度内继续使用。<br>硬限制：当达到硬限制时会提示用户，且强制终止用户操作。</p>
+<h2 id="xfs-quota命令"><a href="#xfs-quota命令" class="headerlink" title="xfs_quota命令"></a>xfs_quota命令</h2><p>xfs_quota命令是一个专门针对XFS文件系统来管理quota磁盘容量配额服务而设计的命令，格式为“xfs_quota[参数] 配额 文件系统”。其中-c参数用于以参数的形式设置要执行的命令；-x参数是专家模式，让运维人员能够对quota服务进行更多复杂的配置。</p>
+<p>例：使用xfs_quota命令来设置用户tom对/boot目录的quota磁盘容量配额。具体的限额控制包括：磁盘使用量的软限制和硬限制分别为3MB和6MB；创建文件数量的软限制和硬限制分别为3个和6个。  </p>
+<blockquote>
+<p>xfs_quota -x -c ‘limit bsoft=3m bhard=6m isoft=3 ihard=6 tom’ /boot</p>
+</blockquote>
+<p>可用使用命令：<br>xfs_quota -x -c report /boot<br>来查看磁盘配额配置的信息。</p>
+<h2 id="edquota命令"><a href="#edquota命令" class="headerlink" title="edquota命令"></a>edquota命令</h2><p>edquota命令用于编辑用户的quota配额限制，格式为“dequota[参数][用户] ”。在为用户设置了quota磁盘容量配额限制后，可用使用edquota命令按需修改限制的数值。其中，-u参数表示要针对哪个用户进行设置；-g参数表示要针对哪个用户组进行设置。edquota命令会调用Vi或Vim编辑器来让root管理员修改要限制的具体细节。</p>
+<h1 id="软硬方式链接"><a href="#软硬方式链接" class="headerlink" title="软硬方式链接"></a>软硬方式链接</h1><p>在Linux系统中存在硬链接和软链接两种文件。<br>硬链接（hard lind）：可以将它理解为一个“指向原始文件inode的指针”，系统不为它分配独立的inode和文件。所以，硬链接文件与原始文件其实是同一个文件，只是名字不同。我们每添加一个硬链接，该文件的inode连接数就会增加1；而且只有当该文件的inode连接数为0时，才算彻底将它删除。换言之，由于硬链接实际上是指向原文件inode的指针，因此即便原始文件被删除，依然可以通过硬链接文件来访问。需要注意的是:我们不能跨分区对目录文件进行链接。<br>软链接（也称为符号链接（symbolic link））:仅仅包含所链接文件的路径名，因此能链接目录文件，也可以跨越文件系统进行链接。但是，当原始文件被删除之后，链接文件也将失效，从这一点上来说与Windows系统中的“快捷方式”具有一样的性质。</p>
+<h2 id="ln命令"><a href="#ln命令" class="headerlink" title="ln命令"></a>ln命令</h2><p>ln命令用于创建链接文件，格式为“ln[选项] 目标”</p>
+<p>ln命令中可用的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-s</td>
+<td>创建“符号链接”（如果不带-s参数，则默认创建硬链接）</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制创建文件或目录的链接</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖前先询问</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示创建链接的过程</td>
+</tr>
+</tbody></table>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,364 +504,118 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" class="archive-article-date">
-  	<time datetime="2020-06-13T07:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用户身份与文件权限</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">用户身份与文件权限</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一切从“-”开始"><span class="toc-number">1.</span> <span class="toc-text">一切从“&#x2F;”开始</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#物理设备的命名规则"><span class="toc-number">2.</span> <span class="toc-text">物理设备的命名规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件系统与数据资料"><span class="toc-number">3.</span> <span class="toc-text">文件系统与数据资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#挂载硬件设备"><span class="toc-number">4.</span> <span class="toc-text">挂载硬件设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mount命令"><span class="toc-number">4.1.</span> <span class="toc-text">mount命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#umount命令"><span class="toc-number">4.2.</span> <span class="toc-text">umount命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加硬盘设备"><span class="toc-number">5.</span> <span class="toc-text">添加硬盘设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#fdisk命令"><span class="toc-number">5.1.</span> <span class="toc-text">fdisk命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du命令"><span class="toc-number">5.2.</span> <span class="toc-text">du命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加交换分区"><span class="toc-number">6.</span> <span class="toc-text">添加交换分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#磁盘容量配额"><span class="toc-number">7.</span> <span class="toc-text">磁盘容量配额</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xfs-quota命令"><span class="toc-number">7.1.</span> <span class="toc-text">xfs_quota命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#edquota命令"><span class="toc-number">7.2.</span> <span class="toc-text">edquota命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软硬方式链接"><span class="toc-number">8.</span> <span class="toc-text">软硬方式链接</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ln命令"><span class="toc-number">8.1.</span> <span class="toc-text">ln命令</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  	<time datetime="2020-06-08T14:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/">Vim编辑器与Shell命令脚本</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2020-06-08T12:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">管道符、重定向与环境变量</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-06-04T08:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/">新手必须掌握的Linux命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/20/%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-05-20T08:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/20/%E6%8E%92%E5%BA%8F/">排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/17/%E6%9F%A5%E6%89%BE/" class="archive-article-date">
-  	<time datetime="2020-05-17T02:49:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/17/%E6%9F%A5%E6%89%BE/">查找</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T07:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T01:36:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/12/%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-05-12T14:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/%E5%9B%BE/">图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -572,8 +639,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
