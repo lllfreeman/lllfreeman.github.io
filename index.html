@@ -152,6 +152,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-iptables与firewalld防火墙" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/">iptables与firewalld防火墙</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/" class="archive-article-date">
+  	<time datetime="2020-07-15T03:51:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>保障数据的安全性是继保障数据的可用性之后最为重要的一项工作。防火墙作为公网与内网之间的保障屏障，在保障数据的安全性方面起着至关重要的工作。</p>
+<h1 id="防火墙管理工具"><a href="#防火墙管理工具" class="headerlink" title="防火墙管理工具"></a>防火墙管理工具</h1><p>在公网与内网之间充当保护屏障的防火墙虽然有硬件或软件之分，但主要的功能都是依据策略对穿越防火墙自身的流量进行过滤。防火墙策略可以基于流量的源目标地址、端口号、协议、应用等信息来定制，然后防火墙使用预先定制的策略规则监控出入的流量，若流量与某一条策略规则相匹配，则执行相应的处理，反之则丢弃。</p>
+<p>在RHEL7系统中，firewalld防火墙取代了iptables防火墙。其实iptables与firewalld都不是真正的防火墙，它们都只是用来定义防火墙策略的防火墙管理工具而已，或者说，它们只是一种服务。iptables服务会把配置好的防火墙策略交由内核层面的netfilter网络过滤器来处理，而firewalld服务则是把配置好的防护墙策略交由内核层面的nftables包过滤框架来处理。</p>
+        
+          <a class="article-more-a" href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-使用RAID与LVM磁盘阵列技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/">使用RAID与LVM磁盘阵列技术</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" class="archive-article-date">
+  	<time datetime="2020-06-30T05:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RAID（独立冗余磁盘阵列）"><a href="#RAID（独立冗余磁盘阵列）" class="headerlink" title="RAID（独立冗余磁盘阵列）"></a>RAID（独立冗余磁盘阵列）</h1><p>RAID技术通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据切割成多个区段后分别存放在各个不同的物理硬盘设备上，然后利用分散读写技术来提升磁盘阵列整体的性能，同时把多个重要数据的副本同步到不同的物理硬盘设备上，从而起到了非常好的数据冗余备份效果。<br>RAID不仅降低了硬盘设备损坏后丢失数据的几率，还提升了硬盘设备的读写速度。</p>
+        
+          <a class="article-more-a" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-储存结构与磁盘划分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -739,159 +893,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T01:36:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>找连通图的最小生成树，经典的有两种算法，普里姆算法和克鲁斯卡尔算法。我们就分别来介绍一下。</strong></p>
-<h1 id="普里姆-Prim-算法"><a href="#普里姆-Prim-算法" class="headerlink" title="普里姆(Prim)算法"></a>普里姆(Prim)算法</h1><p>假设N=（V，{E}）是连通网，TE是N上最小生成树中边的集合。算法从U={u0}(Uo∈V)，TE={}开始。重复执行下述操作：在所有u∈U，v∈V-U的边（u，v）∈E中找一条代价最小的边（u0，v0）并入集合TE，同时v0并入U，直至U=V为止。此时TE中必有n-1条边，则T=（V，{TE}）为N的最小生成树。</p>
-        
-          <a class="article-more-a" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/12/%E5%9B%BE/">图</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/12/%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-05-12T14:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图是由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（V，E），其中，G表示一个图，V是图G中顶点的集合，E是图G中边的集合。<br><img src="/2020/05/12/%E5%9B%BE/tu1.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2020/05/12/%E5%9B%BE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/12/%E5%9B%BE/">展开全文 >></a>
         </p>
       
 

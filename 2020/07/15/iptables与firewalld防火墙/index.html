@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Blog-lllfreeman</title>
+  <title>iptables与firewalld防火墙 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/4/index.html">
+  <meta name="description" content="保障数据的安全性是继保障数据的可用性之后最为重要的一项工作。防火墙作为公网与内网之间的保障屏障，在保障数据的安全性方面起着至关重要的工作。 防火墙管理工具在公网与内网之间充当保护屏障的防火墙虽然有硬件或软件之分，但主要的功能都是依据策略对穿越防火墙自身的流量进行过滤。防火墙策略可以基于流量的源目标地址、端口号、协议、应用等信息来定制，然后防火墙使用预先定制的策略规则监控出入的流量，若流量与某一条策">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iptables与firewalld防火墙">
+<meta property="og:url" content="http://yoursite.com/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="保障数据的安全性是继保障数据的可用性之后最为重要的一项工作。防火墙作为公网与内网之间的保障屏障，在保障数据的安全性方面起着至关重要的工作。 防火墙管理工具在公网与内网之间充当保护屏障的防火墙虽然有硬件或软件之分，但主要的功能都是依据策略对穿越防火墙自身的流量进行过滤。防火墙策略可以基于流量的源目标地址、端口号、协议、应用等信息来定制，然后防火墙使用预先定制的策略规则监控出入的流量，若流量与某一条策">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/01.png">
+<meta property="article:published_time" content="2020-07-15T03:51:30.000Z">
+<meta property="article:modified_time" content="2020-07-15T06:18:44.809Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -151,138 +158,430 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-iptables与firewalld防火墙" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iptables与firewalld防火墙
+    </h1>
+  
+
+        
+        <a href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/" class="archive-article-date">
+  	<time datetime="2020-07-15T03:51:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>保障数据的安全性是继保障数据的可用性之后最为重要的一项工作。防火墙作为公网与内网之间的保障屏障，在保障数据的安全性方面起着至关重要的工作。</p>
+<h1 id="防火墙管理工具"><a href="#防火墙管理工具" class="headerlink" title="防火墙管理工具"></a>防火墙管理工具</h1><p>在公网与内网之间充当保护屏障的防火墙虽然有硬件或软件之分，但主要的功能都是依据策略对穿越防火墙自身的流量进行过滤。防火墙策略可以基于流量的源目标地址、端口号、协议、应用等信息来定制，然后防火墙使用预先定制的策略规则监控出入的流量，若流量与某一条策略规则相匹配，则执行相应的处理，反之则丢弃。</p>
+<p>在RHEL7系统中，firewalld防火墙取代了iptables防火墙。其实iptables与firewalld都不是真正的防火墙，它们都只是用来定义防火墙策略的防火墙管理工具而已，或者说，它们只是一种服务。iptables服务会把配置好的防火墙策略交由内核层面的netfilter网络过滤器来处理，而firewalld服务则是把配置好的防护墙策略交由内核层面的nftables包过滤框架来处理。</p>
+<a id="more"></a>
+<h1 id="iptables"><a href="#iptables" class="headerlink" title="iptables"></a>iptables</h1><h2 id="策略与规则链"><a href="#策略与规则链" class="headerlink" title="策略与规则链"></a>策略与规则链</h2><p>防火墙会从上至下的顺序来读取配置的策略规则，在找到匹配项后就立即结束匹配工作并去执行匹配项中定义的行为（即阻止或放行）。</p>
+<p>iptables服务把用于处理或过滤流量的策略条目称之为规则，多条规则可以组成一个规则链，而规则链则依据数据包处理位置的不同进行分类，具体如下：<br>在进行路由选择前处理数据包（PREROUTING）<br>处理流入的数据包（INPUT）<br>处理流出的数据包（OUTPUNT）<br>处理转发的数据包（FORWARD）<br>在进行路由选择后处理数据包（POSTROUTING）<br>一般来说，从内网向外网发送的流量一般都是可控且良性的，因此我们使用最多的就是INPUT规则链。</p>
+<p>仅有策略还不能保证社区的安全，保安还应该知道采取什么样的动作来处理这些匹配的流量，比如允许、拒绝、登记、不理它。这些动作对应到iptables服务的术语中分别是ACCEPT（允许流量通过）、REJECT（拒绝流量通过）、LOG（记录日志信息）、DROP（拒绝流量通过）。就DROP来说，它是直接将流量丢弃而且不响应；REJECT则会在拒绝流量后再回复一条“您的信息已收到，但是被扔掉了”信息，从而让流量发送方清晰地看到数据被拒绝的相应信息。</p>
+<p>当把Linux系统中的防火墙策略设置为REJECT拒绝动作后，流量发送方会看到端口不可达的相应。<br>而把Linux系统中的防火墙策略修改成DROP拒绝动作后，流量发送方会看到响应超时的提醒。但是流量发送方无法判断流量是被拒绝，还是接收方主机当前不在线。</p>
+<h2 id="iptables中基本的命令参数"><a href="#iptables中基本的命令参数" class="headerlink" title="iptables中基本的命令参数"></a>iptables中基本的命令参数</h2><p>iptables命令可以根据流量的源地址、目的地址、传输协议、服务类型等信息进行匹配，一旦匹配成功，iptables就会根据策略规则所预设的动作来处理这些流量。防火墙策略规则的匹配顺序是从上至下的，因此要把较为严格、优先级高的策略规则放到前面，以免发生错误。</p>
+<p>iptables中常用的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-P</td>
+<td>设置默认策略</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>清空规则链</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>查看规则链</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>在规则链的末尾加入新规则</td>
+</tr>
+<tr>
+<td>-I num</td>
+<td>在规则链的头部加入新规则</td>
+</tr>
+<tr>
+<td>-D num</td>
+<td>删除某一条规则</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>匹配来源地址IP/MASK，加叹号“!”表示除这个IP外</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>匹配目标地址</td>
+</tr>
+<tr>
+<td>-i 网卡名称</td>
+<td>匹配从这块网卡流入的数据</td>
+</tr>
+<tr>
+<td>-o 网卡名称</td>
+<td>匹配从这块网卡流出的数据</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>匹配协议，如TCP、UDP、ICMP</td>
+</tr>
+<tr>
+<td>–dport num</td>
+<td>匹配目标端口号</td>
+</tr>
+<tr>
+<td>–sport num</td>
+<td>匹配来源端口号</td>
+</tr>
+</tbody></table>
+<p>当把INPUT链设置为默认拒绝后，就要在防火墙策略中写人允许策略了，否则所有到来的流量都会被拒绝掉。另外，需要注意的是，规则链的默认拒绝动作只能是DROP，而不能是REJECT。</p>
+<p>使用iptables命令配置的防火墙规则默认会在系统下一次重启时失效，如果想要让配置的防火墙策略永久有效，还需要执行保存命令：  </p>
+<blockquote>
+<p>service iptables save</p>
+</blockquote>
+<h1 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h1><p>firewalld（Dynamic Firewall Manager of Linux systems,Linux系统的动态防火墙管理器）服务是RHEL7默认的防火墙配置管理工具，它拥有基于CLI（命令行界面）和基于GUI（图形用户界面）的两种管理方式。</p>
+<p>相较于传统的防火墙管理工具，firewalld支持动态更新技术并加入了区域（zone）的概念。简单来说，区域就是firewalld预先准备了几套防火墙策略集合（策略模板），用户可以根据生产场景的不同而选择合适的策略集合，从而实现防火墙策略之间的快速切换。</p>
+<p>firewalld中常用的区域名称及策略规则</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>默认策略规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>trusted</td>
+<td>允许所有的数据包</td>
+</tr>
+<tr>
+<td>home</td>
+<td>拒绝流入的流量，除非与流出的流量相关；而如果流量与ssh、mdns、ipp-client、amba-client与dhcpv6-client服务相关，则允许流量</td>
+</tr>
+<tr>
+<td>internal</td>
+<td>等同于home区域</td>
+</tr>
+<tr>
+<td>work</td>
+<td>拒绝流入的流量，除非与流出的流量相关；而如果流量与ssh、ipp-client与dhcpv6-client服务相关，则允许流量</td>
+</tr>
+<tr>
+<td>public</td>
+<td>拒绝流入的流量，除非与流出的流量相关；而如果流量与ssh、dhcpv6-client服务相关，则允许流量</td>
+</tr>
+<tr>
+<td>external</td>
+<td>拒绝流入的流量，除非与流出的流量相关；而如果流量与ssh服务相关，则允许流量</td>
+</tr>
+<tr>
+<td>dmz</td>
+<td>拒绝流入的流量，除非与流出的流量相关；而如果流量与ssh服务相关，则允许流量</td>
+</tr>
+<tr>
+<td>block</td>
+<td>拒绝流入的流量，除非与流出的流量相关</td>
+</tr>
+<tr>
+<td>drop</td>
+<td>拒绝流入的流量，除非与流出的流量相关</td>
+</tr>
+</tbody></table>
+<p>firewall-cmd是firewalld防护墙配置管理工具的CLI（命令行界面）版本。它的参数一般都是“长格式”来提供的。</p>
+<p>firewall-cmd命令中使用的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>–get-default-zone</td>
+<td>查询默认的区域名称</td>
+</tr>
+<tr>
+<td>–set-default-zone=&lt;区域名称&gt;</td>
+<td>设置默认的区域，使其永久生效</td>
+</tr>
+<tr>
+<td>–get-zones</td>
+<td>显示可用的区域</td>
+</tr>
+<tr>
+<td>–get-services</td>
+<td>显示预先定义的服务</td>
+</tr>
+<tr>
+<td>–get-active-zones</td>
+<td>显示当前正在使用的区域与网卡名称</td>
+</tr>
+<tr>
+<td>–add-source=</td>
+<td>将源自此IP或子网的流量导向指定的区域</td>
+</tr>
+<tr>
+<td>–remove-source=</td>
+<td>不再将源自此IP或子网的流量导向某个指定区域</td>
+</tr>
+<tr>
+<td>–add-interface=&lt;网卡名称&gt;</td>
+<td>将源自该网卡的所有流量都导向某个指定区域</td>
+</tr>
+<tr>
+<td>–change-interface=&lt;网卡名称&gt;</td>
+<td>将某个网卡与区域相关联</td>
+</tr>
+<tr>
+<td>–list-all</td>
+<td>显示当前区域的网卡配置参数、资源、端口以及服务等信息</td>
+</tr>
+<tr>
+<td>–list-all-zones</td>
+<td>显示当前区域的网卡配置参数、资源、端口以及服务等信息</td>
+</tr>
+<tr>
+<td>–add-serviec=&lt;服务名&gt;</td>
+<td>设置默认区域允许该服务的流量</td>
+</tr>
+<tr>
+<td>–add-port=&lt;端口号/协议&gt;</td>
+<td>设置默认区域允许该端口的流量</td>
+</tr>
+<tr>
+<td>–remove-service=&lt;服务名&gt;</td>
+<td>设置默认区域不再允许该服务的流量</td>
+</tr>
+<tr>
+<td>–remove-port=&lt;端口号/协议&gt;</td>
+<td>设置默认区域不再允许该端口的流量</td>
+</tr>
+<tr>
+<td>–reload</td>
+<td>让“永久生效”的配置规则立即生效，并覆盖当前的配置规则</td>
+</tr>
+<tr>
+<td>–panic-on</td>
+<td>开启应急状况模式</td>
+</tr>
+<tr>
+<td>–panic-of</td>
+<td>关闭应急状况模式</td>
+</tr>
+</tbody></table>
+<p>使用firewalld配置的防火墙策略默认为运行时（runtime）模式，又称为当前生效模式，而且随着系统的重启会失效，如果想让配置策略一直存在，就需要使用永久（Permanent）模式了，方法就是在用firewall-cmd命令正常设置防火墙策略时添加–permanent参数，这样配置的防火墙策略就可以永久生效了。但是它设置的策略只有在系统重启之后才能生效。如果想让配置的策略立即生效，就需要手动执行firewall-cmd –reload命令。</p>
+<p>流量转发命令格式为firewall-cmd –permanent –zone=&lt;区域&gt; –add-forward-port=port=&lt;源端口号&gt;:proto=&lt;协议&gt;:toport=&lt;目标端口号&gt;:toaddr=&lt;目标IP地址&gt;</p>
+<h2 id="图形管理工具"><a href="#图形管理工具" class="headerlink" title="图形管理工具"></a>图形管理工具</h2><p>firewall-config是firewalld防火墙配置管理工具的GUI（图形用户界面版本），几乎可以实现所有以命令行来执行的操作。<br><img src="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/01.png" alt><br>其功能具体如下:<br>1.选择运行时（Runtime）模式或永久（Permanent）模式的配置。<br>2.可选的策略集合区域列表。<br>3.常用的系统服务列表。<br>4.当前正在使用的区域。<br>5.管理当前被选中区域中的服务。<br>6.管理当前被选中区域中的端口。<br>7.开启或关闭SNAT（源地址转换）技术。<br>8.设置端口转发策略。<br>9.控制请求icmp服务的流量。<br>10.管理防护墙的富规则。<br>11.管理网卡设备。<br>12.被选中区域的服务，若勾选了相应服务前面的复选框，则表示允许与之相关的流量。<br>13.firewall-config工具的运行状态。</p>
+<p>在使用firewall-config工具配置完防火墙策略之后，无须进行二次确认，因为只要有修改内容，它就自动进行保存。</p>
+<p>SANT（Source NetWork Address Translation，源网络地址转换）技术。SNAT是一种为了解决IP地址匮乏而设计的技术，它可以使得多个内网中的用户通过同一个外网IP接入Internet。</p>
+<h1 id="服务的访问控制列表"><a href="#服务的访问控制列表" class="headerlink" title="服务的访问控制列表"></a>服务的访问控制列表</h1><p>TCP Wrappers是RHEL7系统中默认启用的一款流量监控程序，它能够根据来访主机的地址与本机的目标服务程序作出允许或拒绝的操作。换句话说，Linux系统中其实有两个层面的防火墙，第一种是前面讲到的基于TCP/IP协议的流量过滤工具，而TCP Wrappers服务则是能允许或禁止Linux系统提供服务的防火墙，从而在更高层面保护了Linux系统的安全运行。</p>
+<p>TCP Wrappers服务的防火墙策略由两个控制列表文件所控制，用户可以编辑允许控制列表文件来放行对服务的请求流量，也可以编辑拒绝控制列表文件来阻止对服务的请求流量。控制列表文件修改后会立即生效，系统将会先检查允许控制列表文件（/etc/hosts.allow）,如果匹配到相应的允许策略<br>则放行流量；如果没有匹配，则去进一步匹配拒绝控制列表文件（/etc/hosts.deny），若找到匹配项则拒绝该流量。如果两个文件全部没有匹配到，则默认放行流量。</p>
+<p>TCP Wrappers服务的控制列表文件中常用的参数</p>
+<table>
+<thead>
+<tr>
+<th>客户端类型</th>
+<th>示例</th>
+<th>满足示例的客户端列表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单一主机</td>
+<td>192.168.10.10</td>
+<td>IP地址为192.168.10.10的主机</td>
+</tr>
+<tr>
+<td>指定网段</td>
+<td>192.168.10.</td>
+<td>IP段为192.168.10.0/24的主机</td>
+</tr>
+<tr>
+<td>指定网段</td>
+<td>192.168.10.0/255.255.255.0</td>
+<td>IP段为192.168.10.0/24的主机</td>
+</tr>
+<tr>
+<td>指定DNS后缀</td>
+<td>.linuxprobe.com</td>
+<td>所有DNS后缀为.linuxprobe.com的主机</td>
+</tr>
+<tr>
+<td>指定主机名称</td>
+<td><a href="http://www.linuxprobe.com" target="_blank" rel="noopener">www.linuxprobe.com</a></td>
+<td>主机名称为<a href="http://www.linuxprobe.com的主机" target="_blank" rel="noopener">www.linuxprobe.com的主机</a></td>
+</tr>
+<tr>
+<td>指定所有客户端</td>
+<td>ALL</td>
+<td>所有主机全部包括在内</td>
+</tr>
+</tbody></table>
+<p>在配置TCP Wrappers服务时需要遵循两个原则：<br>1.编写拒绝策略规则时，填写的是服务名称，而非协议名称。<br>2.建议先编写拒绝策略规则，再编写允许策略规则，以便直观地看到相应的效果。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/">C++ Primer Plus 第八章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用RAID与LVM磁盘阵列技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/">C++ Primer Plus 第七章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#防火墙管理工具"><span class="toc-number">1.</span> <span class="toc-text">防火墙管理工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iptables"><span class="toc-number">2.</span> <span class="toc-text">iptables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#策略与规则链"><span class="toc-number">2.1.</span> <span class="toc-text">策略与规则链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iptables中基本的命令参数"><span class="toc-number">2.2.</span> <span class="toc-text">iptables中基本的命令参数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#firewalld"><span class="toc-number">3.</span> <span class="toc-text">firewalld</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图形管理工具"><span class="toc-number">3.1.</span> <span class="toc-text">图形管理工具</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#服务的访问控制列表"><span class="toc-number">4.</span> <span class="toc-text">服务的访问控制列表</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
   
 
 
@@ -306,8 +605,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

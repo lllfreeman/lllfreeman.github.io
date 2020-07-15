@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Blog-lllfreeman</title>
+  <title>使用RAID与LVM磁盘阵列技术 | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/4/index.html">
+  <meta name="description" content="RAID（独立冗余磁盘阵列）RAID技术通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据切割成多个区段后分别存放在各个不同的物理硬盘设备上，然后利用分散读写技术来提升磁盘阵列整体的性能，同时把多个重要数据的副本同步到不同的物理硬盘设备上，从而起到了非常好的数据冗余备份效果。RAID不仅降低了硬盘设备损坏后丢失数据的几率，还提升了硬盘设备的读写速度。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用RAID与LVM磁盘阵列技术">
+<meta property="og:url" content="http://yoursite.com/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="RAID（独立冗余磁盘阵列）RAID技术通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据切割成多个区段后分别存放在各个不同的物理硬盘设备上，然后利用分散读写技术来提升磁盘阵列整体的性能，同时把多个重要数据的副本同步到不同的物理硬盘设备上，从而起到了非常好的数据冗余备份效果。RAID不仅降低了硬盘设备损坏后丢失数据的几率，还提升了硬盘设备的读写速度。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-30T05:07:02.000Z">
+<meta property="article:modified_time" content="2020-06-30T08:21:32.439Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -151,138 +156,331 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-使用RAID与LVM磁盘阵列技术" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用RAID与LVM磁盘阵列技术
+    </h1>
+  
+
+        
+        <a href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" class="archive-article-date">
+  	<time datetime="2020-06-30T05:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RAID（独立冗余磁盘阵列）"><a href="#RAID（独立冗余磁盘阵列）" class="headerlink" title="RAID（独立冗余磁盘阵列）"></a>RAID（独立冗余磁盘阵列）</h1><p>RAID技术通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据切割成多个区段后分别存放在各个不同的物理硬盘设备上，然后利用分散读写技术来提升磁盘阵列整体的性能，同时把多个重要数据的副本同步到不同的物理硬盘设备上，从而起到了非常好的数据冗余备份效果。<br>RAID不仅降低了硬盘设备损坏后丢失数据的几率，还提升了硬盘设备的读写速度。</p>
+<a id="more"></a>
+<h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>RAID 0技术把多块物理硬盘设备（至少两块）通过硬件或软件的方式串联在一起，组成一个大的卷组，并将数据依次写入到各个物理硬盘中。这样一来，在最理想的状态下，硬盘设备的读写性能会提升数倍，但是若任意一块硬盘发生故障将导致整个系统的数据都收到破坏。通俗来说，RAID 0技术能够有效地提升硬盘数据的吞吐速度，但是不具备数据备份和错误修复的能力。</p>
+<h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>RAID 1技术是把两块以上的硬盘设备进行绑定，在写入数据的时候，是将数据同时写入到多块硬盘设备上的（可以将其视为数据的镜像或备份）。当其中某一块硬盘发生故障后，一般会立即自动以热交换的方式来恢复数据的正常使用。</p>
+<p>RAID 1技术虽然十分注重数据的安全性，但是因为是在多块硬盘设备中写入相同的数据，因此硬盘设备的利用率得以下降。</p>
+<h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>RAID 5 技术是把硬盘设备的数据奇偶校验信息保存到其他硬盘设备中。</p>
+<p>RAID 5磁盘阵列组中数据的奇偶校验信息并不是单独保存到某一块硬盘设备中，而是储存到除自身以外的其他每一块硬盘设备上，这样的好处是其中任何一块设备损坏后不至于出现致命缺陷。RAID 5技术实际上没有备份硬盘中的真实数据信息，而是当硬盘设备出现问题后通过奇偶校验信息来尝试重建损坏的数据。RAID这样的技术特性“妥协”地兼顾了硬盘设备的读写速度、数据安全性与储存成本问题。</p>
+<h2 id="RAID-10"><a href="#RAID-10" class="headerlink" title="RAID 10"></a>RAID 10</h2><p>RAID 10技术是RAID 1+RAID 0技术的一个“组合体”。RAID 10技术需要至少4块硬盘来组建，其中先分别两两制作RAID 1磁盘阵列，以保证数据的安全性；然后再对两个RAID 1磁盘阵列实施RAID 0技术，进一步提高硬盘设备的读写速度。</p>
+<h2 id="部署磁盘阵列"><a href="#部署磁盘阵列" class="headerlink" title="部署磁盘阵列"></a>部署磁盘阵列</h2><p>mdadm命令用于管理Linux系统中的软件RAID磁盘阵列，格式为“mdadm[模式]&lt;RAID 设备名称&gt;[选项][成员设备名称]”</p>
+<p>mdadm命令的常用参数和作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>检测设备名称</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>指定设备数量</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>指定RAID级别</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>创建</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示过程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>模拟设备损坏</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>移除设备</td>
+</tr>
+<tr>
+<td>-Q</td>
+<td>查看摘要信息</td>
+</tr>
+<tr>
+<td>-D</td>
+<td>查看详细信息</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>停止RAID磁盘阵列</td>
+</tr>
+</tbody></table>
+<p>例如：  </p>
+<blockquote>
+<p>mdadm -Cv /dev/md0 -a yes -n 4 -l 10 /dev/sdb /dev/sdc /dev/sdd /dev/sde</p>
+</blockquote>
+<p>其中，-C参数代表创建一个RAID阵列卡；-v参数显示创建的过程，同时在后面追加一个设备名称/dev/md0，这样/dev/md0就是创建后的RAID磁盘阵列的名称；-a yes参数代表自动创建设备文件；-n 4 参数代表使用4块硬盘来部署这个RAID磁盘阵列；而-l 10 参数则代表RAID 10方案；最后再加上4块硬盘设备的名称。</p>
+<p>再确认有一块物理硬盘设备出现损坏而不能继续正常使用后，应该使用mdadm命令将其移除，然后查看RAID磁盘阵列的状态。<br>例如：  </p>
+<blockquote>
+<p>mdadm /dev/md0 -f /dev/sdb</p>
+</blockquote>
+<p>-f参数模拟设备损坏</p>
+<p>RAID 10磁盘阵列中最多允许50%的硬盘设备发生故障，但是存在这样一种极端情况，即同一RAID 1磁盘阵列中的硬盘设备若全部损坏，也会导致数据丢失。</p>
+<h1 id="LVM（逻辑卷管理器）"><a href="#LVM（逻辑卷管理器）" class="headerlink" title="LVM（逻辑卷管理器）"></a>LVM（逻辑卷管理器）</h1><p>当用户想要随着实际需求的变化调整硬盘分区的大小时，会受到硬盘“灵活性”的限制。这时就需要用到另外一项非常普及的硬盘设备资源管理技术了——LVM（逻辑卷管理器）。LVM可以允许用户对磁盘资源进行动态调整。</p>
+<p>逻辑卷管理器是Linux系统用于对硬盘分区进行管理的一种机制，理论性较强，其创建初衷是为了解决硬盘设备在创建分区后不易修改分区大小的缺陷。尽管对传统的硬盘分区进行强制扩容或缩容从理论上来讲是可行的，但是却可能造成数据的丢失。而LVM技术是在硬盘分区和文件系统之间添加了一个逻辑层，它提供了一个抽象的卷组，可以把多块硬盘进行卷组合并。</p>
+<p>物理卷处于LVM中的最底层，可以将其理解为物理硬盘、硬盘分区或者RAID磁盘阵列。卷组建立在物理卷之上，一个卷组可以包含多个物理卷，而且在卷组创建之后也可以继续向其中添加新的物理卷。逻辑卷是用卷组中空闲的资源建立的，并且逻辑卷在建立后可以动态地扩展或缩小空间。</p>
+<p>部署LVM时，需要逐个配置物理卷、卷组和逻辑卷。</p>
+<p>常用的LVM部署命令</p>
+<table>
+<thead>
+<tr>
+<th>功能/命令</th>
+<th>物理卷管理</th>
+<th>卷组管理</th>
+<th>逻辑卷管理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>扫描</td>
+<td>pvscan</td>
+<td>vgscan</td>
+<td>lvscan</td>
+</tr>
+<tr>
+<td>建立</td>
+<td>pvcreate</td>
+<td>vgcreate</td>
+<td>lvcreate</td>
+</tr>
+<tr>
+<td>显示</td>
+<td>pvdisplay</td>
+<td>vgdisplay</td>
+<td>lvdisplay</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>pvremove</td>
+<td>vgremove</td>
+<td>lvremove</td>
+</tr>
+<tr>
+<td>扩展</td>
+<td></td>
+<td>vgextend</td>
+<td>lvextend</td>
+</tr>
+<tr>
+<td>缩小</td>
+<td></td>
+<td>vgreduce</td>
+<td>lvreduce</td>
+</tr>
+</tbody></table>
+<p>Linux系统会把LVM中的逻辑卷设备存放在/dev设备目录中（实际上是做了一个符号链接），同时会以卷组的名称来建立一个目录，其中保存了逻辑卷的设备映射文件（即/dev/卷组名称/逻辑卷名称）</p>
+<p>扩容逻辑卷前一定要记得卸载设备和挂载点的关联。</p>
+<p>命令e2fsck用于检查硬盘完整性<br>例如：  </p>
+<blockquote>
+<p>e2fsck -f /dev/storage/vo</p>
+</blockquote>
+<p>命令resize2fs用于重置硬盘容量<br>例如：  </p>
+<blockquote>
+<p>resize2fs /dev/storage/vo</p>
+</blockquote>
+<p>在扩容逻辑卷时，可以先扩容再检查文件系统的完整性。再进行缩容逻辑卷时，要先检查文件系统的完整性，再进行缩容操作。</p>
+<h2 id="逻辑卷快照"><a href="#逻辑卷快照" class="headerlink" title="逻辑卷快照"></a>逻辑卷快照</h2><p>LVM还具备有“快照卷”功能，该功能类似于虚拟机软件的还原时间点功能。例如，可以对某一个逻辑卷设备做一次快照，如果日后发现数据被改错了，就可以利用之前做好的快照卷进行覆盖还原。LVM快照卷功能有两个特点：<br>1.快照卷的容量必须等同于逻辑卷的容量。<br>2.快照卷仅一次有效，一旦执行还原操作后则会被立即自动删除。</p>
+<p>例如：  </p>
+<blockquote>
+<p>lvcreate -L 120M -s -n SNAP /dev/storage/vo</p>
+</blockquote>
+<p>使用-s参数生成一个快照卷，使用-L参数指定切割的大小。上例中SNAP为快照卷的名称。</p>
+<p>使用命令lvconvert可以对逻辑卷进行快照还原操作。<br>例如：  </p>
+<blockquote>
+<p>lvconvert –merge /dev/storage/SNAP</p>
+</blockquote>
+<p>在此之前必须先卸载掉逻辑卷设备与目录的挂载。</p>
+<p>LVM的删除操作，依次删除逻辑卷、卷组、物理卷设备，这个顺序不可颠倒。<br>第一步：取消逻辑卷与目录的挂载关联，删除配置文件中永久生效的设备参数。<br>第二步：删除逻辑卷设备，需要输入y来确认操作。<br>第三步：删除卷组，此处只写卷组名称即可，不需要设备的绝对路径。<br>第四步：删除物理卷设备。</p>
+<p>在执行完上述操作之后，可以执行lvdisplay、vgdisplay、pvdisplay命令来查看LVM的信息时就不会再看到信息了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/">C++ Primer Plus 第八章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/15/iptables%E4%B8%8Efirewalld%E9%98%B2%E7%81%AB%E5%A2%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          iptables与firewalld防火墙
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">储存结构与磁盘划分</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/">C++ Primer Plus 第七章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RAID（独立冗余磁盘阵列）"><span class="toc-number">1.</span> <span class="toc-text">RAID（独立冗余磁盘阵列）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RAID-0"><span class="toc-number">1.1.</span> <span class="toc-text">RAID 0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RAID-1"><span class="toc-number">1.2.</span> <span class="toc-text">RAID 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RAID-5"><span class="toc-number">1.3.</span> <span class="toc-text">RAID 5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RAID-10"><span class="toc-number">1.4.</span> <span class="toc-text">RAID 10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署磁盘阵列"><span class="toc-number">1.5.</span> <span class="toc-text">部署磁盘阵列</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LVM（逻辑卷管理器）"><span class="toc-number">2.</span> <span class="toc-text">LVM（逻辑卷管理器）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑卷快照"><span class="toc-number">2.1.</span> <span class="toc-text">逻辑卷快照</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
   
 
 
@@ -306,8 +504,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
