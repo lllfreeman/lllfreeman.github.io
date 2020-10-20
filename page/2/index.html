@@ -152,6 +152,468 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vim编辑器与Shell命令脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/">Vim编辑器与Shell命令脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
+  	<time datetime="2020-06-08T14:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vim编辑器与Shell命令脚本"><a href="#Vim编辑器与Shell命令脚本" class="headerlink" title="Vim编辑器与Shell命令脚本"></a>Vim编辑器与Shell命令脚本</h1><h2 id="Vim文本编辑器"><a href="#Vim文本编辑器" class="headerlink" title="Vim文本编辑器"></a>Vim文本编辑器</h2><p>Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。</p>
+<p>命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。<br>输入模式：正常的文本录入。<br>末行模式：保存或退出文档，以及设置编辑环境。</p>
+<p>每次运行Vim编辑器时，默认进入命令模式。在Vim中，无法直接从输入模式切换到末行模式。</p>
+        
+          <a class="article-more-a" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-管道符、重定向与环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">管道符、重定向与环境变量</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="archive-article-date">
+  	<time datetime="2020-06-08T12:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="管道符、重定向与环境变量"><a href="#管道符、重定向与环境变量" class="headerlink" title="管道符、重定向与环境变量"></a>管道符、重定向与环境变量</h1><p>文件读写操作有关的重定向技术的5种模式——标准覆盖输出重定向、标准追加输出重定向、错误覆盖输出重定向、错误追加输出重定向以及输入重定向。</p>
+<h2 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h2><p>输入重定向是指把文件导入到命令中，而输出重定向则是指把原本要输出到屏幕的数据信息写入到文件中。</p>
+<p>标准输入重定向（STDIN，文件描述符为0）：默认从键盘输入，也可以从其他文件或命令中输入。<br>标准输出重定向（STDOUT，文件描述符为1）：默认输出到屏幕。<br>错误输出重定向（STDERR，文件描述符为2）：默认输出到屏幕。</p>
+        
+          <a class="article-more-a" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-新手必须掌握的Linuxm命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/">新手必须掌握的Linux命令</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-06-04T08:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="新手必须掌握的Linux命令"><a href="#新手必须掌握的Linux命令" class="headerlink" title="新手必须掌握的Linux命令"></a>新手必须掌握的Linux命令</h1><h2 id="强大好用的Shell"><a href="#强大好用的Shell" class="headerlink" title="强大好用的Shell"></a>强大好用的Shell</h2><p>通常来讲，计算机硬件是由运算器、控制器、储存器、输入/输出设备等共同组成的。而让各种硬件设备各司其职且又能协同运行的东西就是系统内核。Linux系统的内核负责完成对硬件资源的分配、调度等管理任务。</p>
+<p>Shell是一个命令行工具，Shell（也称为终端或壳）充当的是人与内核（硬件）之间的翻译官，用户把一些命令“告诉”终端，它就会调用相应的程序服务去完成某些工作。</p>
+        
+          <a class="article-more-a" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linuxm%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/20/%E6%8E%92%E5%BA%8F/">排序</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/20/%E6%8E%92%E5%BA%8F/" class="archive-article-date">
+  	<time datetime="2020-05-20T08:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="排序的基本概念与分类"><a href="#排序的基本概念与分类" class="headerlink" title="排序的基本概念与分类"></a>排序的基本概念与分类</h2><p>假设含有n个记录的序列为{r1,r2,…,rn},其相应的关键字分别为{k1,k2,…,kn}，需确定1，2，…,n的一种排列p1,p2,…pn，使其相应的关键字满足kp1&lt;=kp2&lt;=……&lt;=kpn非递减（或非递增关系），即使得序列成为一个按关键字有序的序列{rp1,rp2,…rpn}，这样的操作就称为排序。<br>我们在排序问题中，通常将数据元素称为记录。排序的依据是关键字之间的大小关系，那么，对同一个记录集合，针对不同的关键字进行排序，可以得到不同的序列。</p>
+        
+          <a class="article-more-a" href="/2020/05/20/%E6%8E%92%E5%BA%8F/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/20/%E6%8E%92%E5%BA%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/17/%E6%9F%A5%E6%89%BE/">查找</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/17/%E6%9F%A5%E6%89%BE/" class="archive-article-date">
+  	<time datetime="2020-05-17T02:49:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="查找概论"><a href="#查找概论" class="headerlink" title="查找概论"></a>查找概论</h2><p>查找表是由同一类型的数据元素（或记录）构成的集合。<br>关键字是数据元素中某个数据项的值。<br>若此关键字可以唯一地标识一个记录，则称此关键字为主关键字。<br>那么对于哪些可以标识多个数据元素（或记录）的关键字，我们称为次关键字。  </p>
+<p>查找就是根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。  </p>
+        
+          <a class="article-more-a" href="/2020/05/17/%E6%9F%A5%E6%89%BE/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/17/%E6%9F%A5%E6%89%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-05-14T07:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在网图和非网图中，最短路径的含义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上的权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。<br>两种比较经典的求最短路径的算法————迪杰斯特拉算法和弗洛伊德算法。</p>
+        
+          <a class="article-more-a" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -462,475 +924,6 @@
 
 
   
-    <article id="post-栈与队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">栈与队列</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2020-04-30T06:47:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h1><p>栈是限定仅在表尾进行插入和删除操作的线性表。<br>队列(queue)是只允许在一端进行插入操作、而在另一端进行删除操作的线性表。</p>
-<h2 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h2><p>我们把允许插入和删除的一段称为栈顶（top），另一端称为栈底（bottom），不含任何数据元素的栈称为空栈。栈又称为后进先出（Last in First out）的线性表，简称LIFO结构。</p>
-        
-          <a class="article-more-a" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/30/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线性表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-04-25T08:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性表-List-零个或多个数据元素的有限序列"><a href="#线性表-List-零个或多个数据元素的有限序列" class="headerlink" title="线性表(List): 零个或多个数据元素的有限序列"></a>线性表(List): 零个或多个数据元素的有限序列</h1><p>首先它是一个序列，也就是说，元素之间是有顺序的，若元素存在多个，则第一个元素无前驱，最后一个元素无后继，其他每个元素都有且只有一个前驱和后继。<br>然后，线性表强调的是有限的，元素个数是有限的。<br>若将线性表记为（a1,…ai-1,ai,ai+1,…an），则表中ai-1领先于ai，ai领先于ai+1，称ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。<br>线性表元素的个数n（n&gt;=0）定义为线性表的长度，当n=0时，称为空表。<br>在较复杂的线性表中，一个数据元素可以由若干个数据项组成。</p>
-        
-          <a class="article-more-a" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/">C++Primer Plus 第十八章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-19T03:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十八章-探讨C-新标准"><a href="#第十八章-探讨C-新标准" class="headerlink" title="第十八章  探讨C++新标准"></a>第十八章  探讨C++新标准</h1><h2 id="18-1-复习前面介绍过的C-11新功能"><a href="#18-1-复习前面介绍过的C-11新功能" class="headerlink" title="18.1 复习前面介绍过的C++11新功能"></a>18.1 复习前面介绍过的C++11新功能</h2><hr>
-<p><strong>新类型</strong></p>
-<p>C++11新增了类型long long和unsigned long long，以支持64位（或更宽）的整型；新增了类型char16_t和char32_t,以支持16位和32位的字符表示；还新增了原始字符串。</p>
-        
-          <a class="article-more-a" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/19/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-泰坦尼克号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/">泰坦尼克号</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/" class="archive-article-date">
-  	<time datetime="2020-04-15T03:43:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="爱你原本只是一瞬，却不知在时间的洪流中成了永恒。"><a href="#爱你原本只是一瞬，却不知在时间的洪流中成了永恒。" class="headerlink" title="爱你原本只是一瞬，却不知在时间的洪流中成了永恒。"></a>爱你原本只是一瞬，却不知在时间的洪流中成了永恒。</h1><font size="4">
-2020/4/14号晚
-
-<hr>
-<p>今晚看完了泰坦尼克号。这部被好评淹没的经典影片一直拖到现在才看。或是因为被它的片长所劝退，或是因为里面的经典片段在其他地方已经见过太多导致观影兴趣不高。  </p>
-<p>但当你看完之后，你仍会觉得意犹未尽，不由自主地对其称赞。其中的每一帧都为电影增添了色彩，没有一帧会显的多余。经典之所以成为经典，是它优秀的内容和让人产生情感共鸣的剧情。  </p>
-<p>泰坦尼克号沉没是1912年真实发生的一件事，将这样一件历史拍成电影更能让人代入其中。  </p>
-<p>泰坦尼克号是真实的，爱情故事是虚构的。该片正是借助rose和jack的爱情故事来讲述泰坦尼克号从启航到沉没的经历。</p>
-<p><strong>处于不同阶层的Rose和Jack，却是同一种人。热爱生活，追求真实。</strong><br><img src="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/01.jpg" alt></p></font>
-        
-          <a class="article-more-a" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E5%8F%B7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十七章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/">C++Primer Plus 第十七章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-14T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十七章-输入、输出和文件"><a href="#第十七章-输入、输出和文件" class="headerlink" title="第十七章 输入、输出和文件"></a>第十七章 输入、输出和文件</h1><p>C++使用了很多较为高级的语言特性来实现输入和输出，其中包括类、派生类、函数重载、虚函数、模板和多重继承。之前一直使用的是基于istream类对象cin和ostream类对象cout进行输入和输出的基本方法，同时使用ifstream和ofstream对象进行文件输入和输出。<br>用于文件输入和输出的C++工具都是基于cin和cout所基于的基本类定义，因此本章以对控制台I/O（键盘和屏幕）的讨论作为跳板，来研究文件I/O。</p>
-<h2 id="17-1-C-输入和输出概述"><a href="#17-1-C-输入和输出概述" class="headerlink" title="17.1 C++输入和输出概述"></a>17.1 C++输入和输出概述</h2>
-        
-          <a class="article-more-a" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">C++Primer Plus 第十六章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第十六章-string类和标准模板库"><a href="#第十六章-string类和标准模板库" class="headerlink" title="第十六章 string类和标准模板库"></a>第十六章 string类和标准模板库</h1><p>至此您熟悉了C++可重用代码的目标，这样做的一个很大的回报是可以重用别人编写的代码，这正是C++类库的用武之地。</p>
-<h2 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h2><p>string类是由头文件string支持的（注意，头文件string.h和cstring支持对c-风格字符串进行操纵的C库字符串函数，但不支持string类）。<br>string实际上是模板具体化basic_string<char>的一个typedef，同时省略了与内存管理相关的参数。</char></p>
-        
-          <a class="article-more-a" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1032,11 +1025,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
