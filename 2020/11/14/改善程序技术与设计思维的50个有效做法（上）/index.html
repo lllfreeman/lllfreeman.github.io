@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Blog-lllfreeman</title>
+  <title>改善程序技术与设计思维的50个有效做法（上） | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+  <meta name="description" content="改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inline函数，也可以获得宏带来的高效率以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改善程序技术与设计思维的50个有效做法（上）">
+<meta property="og:url" content="http://yoursite.com/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inline函数，也可以获得宏带来的高效率以">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-14T01:55:16.000Z">
+<meta property="article:modified_time" content="2020-11-16T13:56:21.396Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -32,10 +37,7 @@
 
   
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -154,33 +156,238 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-C++Primer Plus 第十三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-改善程序技术与设计思维的50个有效做法（上）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/">C++ Primer Plus 第十三章</a>
+    <h1 class="article-title" itemprop="name">
+      改善程序技术与设计思维的50个有效做法（上）
     </h1>
   
 
         
-        <a href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-18T02:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
+        <a href="/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-11-14T01:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="类继承"><a href="#类继承" class="headerlink" title="类继承"></a>类继承</h1><p>面向对象编程的主要目的之一是提供可重用的代码。C++提供了比修改代码更好的方法来扩展和修改类。这种方法叫作类继承，它能够从已有的类派生出新的类，而派生类继承了原有类（称为基类）的特征，包括方法。可以通过继承完成下面的一些工作：</p>
-        
-          <a class="article-more-a" href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/#more">more >></a>
-        
+        <h1 id="改变旧有的C习惯"><a href="#改变旧有的C习惯" class="headerlink" title="改变旧有的C习惯"></a>改变旧有的C习惯</h1><h2 id="条款1-尽量以const和inline取代-define"><a href="#条款1-尽量以const和inline取代-define" class="headerlink" title="条款1 : 尽量以const和inline取代 #define"></a>条款1 : 尽量以const和inline取代 #define</h2><p>这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。</p>
+<p>使用inline函数，也可以获得宏带来的高效率以及函数带来的可预期行为和引数型别检验：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;<span class="keyword">return</span> a&gt;b?a:b&#125;;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="条款2-：尽量以取代-lt-stdio-h-gt"><a href="#条款2-：尽量以取代-lt-stdio-h-gt" class="headerlink" title="条款2 ：尽量以取代&lt;stdio.h&gt;"></a>条款2 ：尽量以<iostream>取代&lt;stdio.h&gt;</iostream></h2><p>是的，它们是可移植的。是的，它们是高效率的。尽管如此，scanf和printf及其家族都还不够完美。尤其是它们都不具型别安全（type-safe）性质，也都不可扩充。由于型别安全性和扩充性正是C++的基石之一，恐怕你最好是在此刻选择舍弃scanf和printf。</p>
+<p>iostream程序库中的各个classes和各个函数所提供的型别安全性和扩充性，比你最初想想的还要有用，所以不要只因为你目前还在使用&lt;stdio.h&gt;，就将iostream视而不见。</p>
+<p>从技术上来说，已经没有所谓的&lt;iostream.h&gt;。当标准委员会删除其他 non-C标准头文件的扩展名时，就消灭了它。</p>
+<h2 id="条款3-：尽量以new和delete取代malloc和free"><a href="#条款3-：尽量以new和delete取代malloc和free" class="headerlink" title="条款3 ：尽量以new和delete取代malloc和free"></a>条款3 ：尽量以new和delete取代malloc和free</h2><p>malloc和free（以及它们的各式变形）带来的问题很简单：它们对constructors（构造函数）和destructors（析构函数）一无所知。<br>由于new和delete能够与constructors和destructors有适当的互动，所以它们是比较好的选择。</p>
+<p>当你企图对着一个“从new而得的指针”调用free时，或是对着一个“从malloc而得的指针”调用delete时，其结果都未有定义。只要你确定以malloc获得的指针总是以free释放之，以new获得的指针总是以delete释放之即可。</p>
+<h2 id="条款4-尽量使用C-风格的注释形式。"><a href="#条款4-尽量使用C-风格的注释形式。" class="headerlink" title="条款4 : 尽量使用C++风格的注释形式。"></a>条款4 : 尽量使用C++风格的注释形式。</h2><p>旧有（而且表现良好）的C注释语法，在C++中依然有效，但是新式的C++单行注释另外提供了一些不同的优点。 考虑以下情况：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a&gt;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// int temp = a; //swap a and b</span></span><br><span class="line">    <span class="comment">// a = b;</span></span><br><span class="line">    <span class="comment">//b = temp;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里本来有一段程序代码，因为某种理由被注释起来。最初写这这段代码的程序员原本也写了一段注释，用来说明这段代码的动作。当我们以C++注释形式来注释这个区块时，内嵌的注释没有带来任何影响，如果使用C风格的注释，就不一样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a&gt;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* int temp = a; /*swap a and b*/</span></span><br><span class="line">     a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">    */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，内嵌注释不经意地放置了一个过早出现的注释结束符号，导致程序区块的注释过早结束，这种嵌套式注释无法通过编译！</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="条款5-：使用相同形式的new和delete"><a href="#条款5-：使用相同形式的new和delete" class="headerlink" title="条款5 ：使用相同形式的new和delete"></a>条款5 ：使用相同形式的new和delete</h2><p>以下动作有什么错？  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> *stringArray = <span class="keyword">new</span> <span class="built_in">string</span>[<span class="number">100</span>];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">delete</span> stringArray;</span><br></pre></td></tr></table></figure>
+<p>每件事情看起来都井然有序。使用了new，也搭配了对应的delete。但还是有某样东西完全错误了：你的程序行为未定义。由stringArray所指的100个string对象中的99个未必能够被适当地删除，因为它们的destructors没有被调用。</p>
+<p>游戏规则很简单：如果你在调用new时使用了[]，则你必须在调用delete时也使用[]。如果你在调用new的时候没有使用[]，那么你也不应该在调用delete时使用[]。</p>
+<h2 id="条款6-记得在destructor中以delete对付pointer-members"><a href="#条款6-记得在destructor中以delete对付pointer-members" class="headerlink" title="条款6 : 记得在destructor中以delete对付pointer members"></a>条款6 : 记得在destructor中以delete对付pointer members</h2><p>大部分时候，classes如果要动态分配内存，会在constructors中以new配置内存，并于稍后在destructor中以delete释放内存，当你初次写这个class时，要做这些动作并不难，当然，前提是你必须记得对所有“在constructor中被分配以内存”的members使用delete。</p>
+<p>每在classes中加上一个pointer member时，几乎总是需要配合的以下没意见事情：  </p>
+<ul>
+<li>在每一个constructors中将该指针初始化。如果没有任何一个constructor会将内存配置给该指针，那么指针应该初始化为0.  </li>
+<li>在assignment运算符中将指针原有的内存删除，重新配置一块。  </li>
+<li>在destructor中删除（delete）这个指针。删除一个null指针是安全的（什么也没做）。</li>
+</ul>
+<h2 id="条款7-：为内存不足的状况预做准备"><a href="#条款7-：为内存不足的状况预做准备" class="headerlink" title="条款7 ：为内存不足的状况预做准备"></a>条款7 ：为内存不足的状况预做准备</h2><p>当operator new没有能力配置出你所需要的内存时，会丢一个exception给你。</p>
+<p>那么如何处理呢？如果你打算建立一个简易的错误处理策略，你可以要求当内存需求无法获得满足时，让系统调用你所指定的一个函数。这样的策略依赖一个公约：当operator new无法满足需求时，它会在抛出exception之前调用一个client专属的错误处理函数，此函数通常称为 new-handler。</p>
+<p>一个良好的new-handler函数必须完成以下事情之一：  </p>
+<ul>
+<li><p>让更多内存可用。这或许能够让operator new的下一次内存配置行为成功。实现此策略的方法之一就是在程序起始时配置一大块内存，然后在new-handler第一次被调用时释放之。    </p>
+</li>
+<li><p>安装一个不同的new-handler。如果目前的new-handler无法让更多内存可用，或许它知道另一个new-handler手上握有比较多的资源。  </p>
+</li>
+<li><p>卸除这个new-handler，也就是说，将null指针传给set_new_handler.一旦没有安装任何new-handler，operator new就会在内存配置失败时抛出一个型别为std::bad_alloc的exception。  </p>
+</li>
+<li><p>抛出一个exception，型别为std::bad_alloc（或其派生型别）。这样的exception不会被operator new 捕捉，所以它们会传送到最初提出内存需求的那个点上。  </p>
+</li>
+<li><p>不返回，直接调用abort或exit，这两者都是C标准函数库提供的函数。</p>
+</li>
+</ul>
+<p>这些选择让你在实现new-handler函数时握有极大的弹性。</p>
+<p>C++并不支持“class专属的new-handler”，但其实我们也不需要它的支持；是的，我们可以自己完成这种行为。你只需要让每一个class供应自己的set_new_handler和operator new 即可。</p>
+<p>不论你使用正常形式（也就是会抛出exception）的new，或是“nothrow”形式的new，重要的是你已经准备好处理内存配置失败的情况了，最简单的方法就是利用set_new_handler，因为它在两种形式中都可用。</p>
+<h2 id="条款8-：撰写operator-new-和operator-delete时应遵行的公约。"><a href="#条款8-：撰写operator-new-和operator-delete时应遵行的公约。" class="headerlink" title="条款8 ：撰写operator new 和operator delete时应遵行的公约。"></a>条款8 ：撰写operator new 和operator delete时应遵行的公约。</h2><p>当你决定撰写自己的operator new时，有一点相当重要：你的函数行为应该与缺省的operator new保持一致性。实际一点说，这意味着你的函数应该有正确的返回值，内存不足时调用一个错误处理函数，并准备应付“no memory”（不索求任何内存）的需求。你还得避免不经意间遮掩了“正常形式”的new。</p>
+<p>传回值的部分很简单，如果你能够供应足够的内存，就传回一个指针指向它。如果你不够，则抛出一个型别为std::bad_alloc的exception。</p>
+<p>此外，C++ standard要求，即使用户要求的是0 bytes内存，operator new也应该传回一个合法指针。</p>
+<p>如果你的内存配置函数支持new-handler并正确处理了0sized申请动作，你就几乎完成了所有工作。至于你的内存释放函数，除了处理null指针外，还有另外一点点事要做。只要为这些函数的member版本再加上继承能力，像变魔术似的，你便完成了全部工作。</p>
+<h2 id="条款9-：避免遮掩了new的正规形式"><a href="#条款9-：避免遮掩了new的正规形式" class="headerlink" title="条款9 ：避免遮掩了new的正规形式"></a>条款9 ：避免遮掩了new的正规形式</h2><p>内部scope内的一个声明名称，会遮掩外部scope的相同名称，所以如果global scope和class scope内部都有函数f，那么member function f会遮掩掉global function f :  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>; <span class="comment">//global function</span></span><br><span class="line">calss X</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>; <span class="comment">//member function</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">X x;</span><br><span class="line">f();<span class="comment">//调用的是 global f</span></span><br><span class="line">x.f();<span class="comment">//调用的是X::f</span></span><br></pre></td></tr></table></figure>
+<p>这并不让人惊讶，而且也不至于困惑，因为global function和member function总是以不同的语法形式被调用。</p>
+<p>如果在class内声明一个operator new函数，你将因而不经意地妨碍程序调用new“正规”形式的能力。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//下面是个 operator new，允许指定一个new-handler</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> size,new_handler p)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">specialErrorHandler</span><span class="params">()</span></span>; <span class="comment">//定义于他处</span></span><br><span class="line"></span><br><span class="line">X *px1=<span class="keyword">new</span>(specialErrorHandler) X;<span class="comment">//调用X::operator new</span></span><br><span class="line"></span><br><span class="line">X *px2=<span class="keyword">new</span> X;<span class="comment">//错误，想调用global版本，却不行</span></span><br></pre></td></tr></table></figure>
+<p>解决方法之一是写一个class专属的operator new，并令他支持正规调用形式。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> size,new_handler p)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function">    </span>&#123; <span class="keyword">return</span> ::<span class="keyword">operator</span> <span class="keyword">new</span>(size); &#125;</span><br><span class="line">&#125;;</span><br><span class="line">X *px1=<span class="keyword">new</span>(specialErrorHandler) X;<span class="comment">//调用X::operator new(size_t,new_handler)</span></span><br><span class="line">X *px2=<span class="keyword">new</span> X;<span class="comment">//调用 X::operator new(size_t)</span></span><br></pre></td></tr></table></figure>
+<p>另一种做法是为operator new的每一个额外参数提供默认参数值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> size,new_handler p = <span class="number">0</span>)</span></span>; <span class="comment">//注意p的默认值</span></span><br><span class="line">&#125;;</span><br><span class="line">X *px1=<span class="keyword">new</span>(specialErrorHandler) X;<span class="comment">//没问题</span></span><br><span class="line">X *px2=<span class="keyword">new</span> X;<span class="comment">//也没问题</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="条款10-：如果你写了一个operator-new，请对应写一个operator-delete"><a href="#条款10-：如果你写了一个operator-new，请对应写一个operator-delete" class="headerlink" title="条款10 ：如果你写了一个operator new，请对应写一个operator delete"></a>条款10 ：如果你写了一个operator new，请对应写一个operator delete</h2><p>为什么会有人想要撰写自己的一份operator new或operator delete呢？答案多半是为了效率。缺省版的operator new和operator delete对于一般目的而言，已是十分适当而足够，但它们的巨大弹性导致无可避免地需要在较为受限的环境下花费一些内存空间，以便提高效率。</p>
+<p>由于缺省版的operator new是一个泛用型内存配置器，它必须能够配置任意大小的区块。同样道理，缺省版的operator delete必须能够释放由operator new所配置的任意大小的区块。为了让operator delete 知道需要释放多少内存，必须有某种办法让它知道operator new配置了多少内存。让operator new得以告诉operator delete说“它究竟配置了多少内存”的一个常见的办法就是，在它所传回的内存前端“加挂”一些额外数据，说明配置的区块大小。</p>
+<p>重点在于operator new和operator delete需要一起合作，所以如果你写出了一个operator new，请确定也写了一个对应的operator delete。</p>
+<h1 id="构造函数、析构函数和Assignment运算符"><a href="#构造函数、析构函数和Assignment运算符" class="headerlink" title="构造函数、析构函数和Assignment运算符"></a>构造函数、析构函数和Assignment运算符</h1><h2 id="条款11-：如果class内动态配置有内存，请为此class声明一个copy-constructor和一个assignment运算符"><a href="#条款11-：如果class内动态配置有内存，请为此class声明一个copy-constructor和一个assignment运算符" class="headerlink" title="条款11 ：如果class内动态配置有内存，请为此class声明一个copy constructor和一个assignment运算符"></a>条款11 ：如果class内动态配置有内存，请为此class声明一个copy constructor和一个assignment运算符</h2><p>当你没有自声明assignment运算符时，C++产生一个默认的assignment运算符并调用之。这个默认的assignment运算符执行memberwise assignment动作（亦即一个member一个member地逐次设值），其实就是一个bitwise copy（一个位一个位的逐次拷贝）动作。当两个没有定义assignment运算符的类对象赋值时，该对象包含一个指针，指向数据成员：<br>b=a；<br>这样的状况至少存在两个问题，第一，b原先所指的内存没有被释放掉；它永远遗失了。这是一个典型的内存泄露问题。第二，a和b内含的指针如今都指向相同的字符串，因此，当其中一个离开生存空间时，其destructor会删除内存，而此内存目前仍然被另一个内存所指。</p>
+<p>copy constructor的情况和assignment运算符的情况有一点不同，因为只要程序中有pass-by-value的动作，就会调用copy constructor。</p>
+<p>如果你的class拥有任何指针，那么请撰写你自己的copy constructor和一个assignment运算符。</p>
+<p>对于某些class二元，实现copy constructor和assignment运算符会有点得不偿失，特别是当你有理由相信你的clents不会执行copy或assignment动作时。将这些函数声明位private，并且不要定义（实现）它们。这可阻止clients调用它们，也可以避免编译器产生它们。</p>
+<h2 id="条款12-：在constructor中尽量以initialization动作取代assignment动作"><a href="#条款12-：在constructor中尽量以initialization动作取代assignment动作" class="headerlink" title="条款12 ：在constructor中尽量以initialization动作取代assignment动作"></a>条款12 ：在constructor中尽量以initialization动作取代assignment动作</h2><p>亦尽量运用constructor的member initialization list</p>
+<p>在构造函数中，你必须将参数值转设给对应的data members。有两种做法，第一种是使用所谓的member initialization list（成员初始化列表）。<br>第二种做法是在constructor函数内进行assignment动作。</p>
+<p>从纯粹的程序眼光而言，许多时候一定得使用initialization list。事实上const members和reference members只能够被初始化，不能够被赋值。</p>
+<p>在效率上来说，如果使用member initialization list，只有一个member function会被调用；如果在constructor内使用assignment动作，会调用两个member functions。经由member initialization list来进行初始化工作，绝不会比在constructor函数本体内使用assignment来的没效率；事实上通常是比较有效率的！</p>
+<p>然而在一种情况下，以assignment取代initialization是合理的，那是“当你有一大堆内建型别之data members，而你希望在每一个constructor中以相同方式将它们初始化”的情况。</p>
+<p>内建型别之non-const和non-reference对象，其initialization和assignment之间并没有任何操作上的差异。</p>
+<p>注意：static class members绝不应该在一个class’s constructor中被初始化。static members在每一个程序执行过程中只应该初始化一次，所以企图在每次class object产生之际就为它们初始化一次是不合理的。</p>
+<h2 id="条款13-：initialization-list中的members初始化顺序应该和其在class内的声明次序相同"><a href="#条款13-：initialization-list中的members初始化顺序应该和其在class内的声明次序相同" class="headerlink" title="条款13 ：initialization list中的members初始化顺序应该和其在class内的声明次序相同"></a>条款13 ：initialization list中的members初始化顺序应该和其在class内的声明次序相同</h2><p>class members系以它们在class内的声明次序来初始化；和它们子member initialization list中出现的次序无关。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wacko</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Wacko(<span class="keyword">const</span> <span class="keyword">char</span> *s):s1(s),s2(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">    Wacko(<span class="keyword">const</span> Wacko &amp;rhs): s2(rhs.s1),s1(<span class="number">0</span>)&#123;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">string</span> s1,s2;</span><br><span class="line">&#125;;</span><br><span class="line">Wacko w1 = <span class="string">"hello world!"</span>;</span><br><span class="line">Wacko w2 = w1;</span><br></pre></td></tr></table></figure>
+<p>如果members系以它们出现在initialization list的次序来初始化，那么w1和w2的data members将以不同的次序来进行构造。对象的data members的destructor总是以“和其constructors相反的次序”被调用，因此，如果本段一开始的叙述为真，编译器就必须追踪记录每一个对象内的members的初始化顺序，以便确保能够以正确次序调用destructor。这将带来昂贵的成本。为了避免这样的额外负担，任何型别的所有对象，其构造和析构次序都相同，而members出现在initialization list中的次序将不予计较。</p>
+<p>结论是：对象被初始化时，如果你希望确实掌握真正发生了些什么事，请以class内的members声明次序，将各个members列于initialization list中。</p>
+<h2 id="条款14-：总是让base-class拥有virtual-destructor"><a href="#条款14-：总是让base-class拥有virtual-destructor" class="headerlink" title="条款14 ：总是让base class拥有virtual destructor"></a>条款14 ：总是让base class拥有virtual destructor</h2><p>将destructor声明为virtual可以确保其行为有良好定义，派生类的析构函数和基类的析构函数会良好的被调用。</p>
+<p>如果class并未含有任何虚拟函数，往往意味着它其实并不是要被当作base class 使用。当class不企图成为一个base class时，令其destructor为virtual通常是个坏主意。</p>
+<p>无条件地将所有destructors都声明为virtual，和从不把它们声明为virtual一样不智。事实上许多人这样总结这一情况：只有当class内含至少一个虚拟函数时，我们才将其destructor声明为virtual.</p>
+<p>最后一点值得提及:在某些classes内声明一个pure virtual destructors会带来不少方便。纯虚拟函数导致抽象类————一种无法被实体化的classes（也就是说，你不能以这种型别来产生对象）。下面是个例子：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AWOV</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~AWOV() = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个class有一个pure virtual function，所以它是抽象类；它有一个virtual destructor，所以你可以信心十足地不必担心destructor的问题。不过，你必须为此pure virtual destructor提供一个定义式：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AWOV::~AWOV()&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>是的，你需要这份定义，因为virtual destructors的运作方式是：派生程度最深的class，其destructor最先被调用，然后才是vase class的destructor被调用。</p>
+<h2 id="条款15-：令operator-传回“-this的reference”"><a href="#条款15-：令operator-传回“-this的reference”" class="headerlink" title="条款15 ：令operator=传回“*this的reference”"></a>条款15 ：令operator=传回“*this的reference”</h2><p>面对内建型别，你可以将assignment动作串链在一起，像这样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> w,x,y,z;</span><br><span class="line">w=x=y=z=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>所以，你应该也能够将用户自定义型别的assignment动作串链在一起，像这样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> w,x,y,z;</span><br><span class="line">w=x=y=z=<span class="string">"Hello"</span>;</span><br></pre></td></tr></table></figure>
+<p>assignment运算符适用右结合律，所以上述这个assignment行动串链会被解析成这样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w=(x=(y=(z=<span class="string">"Hello"</span>)));</span><br></pre></td></tr></table></figure>
+<p>现在让我们把它写成对等的函数形式。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w.<span class="keyword">operator</span>=(x.<span class="keyword">operator</span>=(y.<span class="keyword">operator</span>=(z.<span class="keyword">operator</span>=(<span class="string">"Hello"</span>))));</span><br></pre></td></tr></table></figure>
+<p>这个形式有很好的说明能力，因为它强调w.operator=,x.operator=,和y.operator=的引数就是前次调用operator=后的传回值。因此，operator=的传回型别必须能够被它自己这种函数接受，成为一个输入。因此，class C缺省版的operator=函数，形式如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C&amp; C::<span class="keyword">operator</span>=(<span class="keyword">const</span> C&amp;);</span><br></pre></td></tr></table></figure>
+<p>你应该尽量奉行这个规矩，令operator=接收（以及传回）一个“代表某class object”的reference。</p>
+<p>C++新手常犯的一个错误是，令operator=传回void。看似合理，但它会妨碍assignment动作串链的形成，所以不要这么做。<br>另一个常见错误是，令operator=传回一个“代表某const object”的reference。</p>
+<p>assignment运算符总是必须传回一个reference，指向其左侧引数，也就是 *this。如果不这么做，就会妨碍assignment串链，或是会妨碍调用端的隐式型别转换，或是两者都妨碍。</p>
+<h2 id="条款16-：在operator-中为所有的data-members设定（赋值）内容"><a href="#条款16-：在operator-中为所有的data-members设定（赋值）内容" class="headerlink" title="条款16 ：在operator=中为所有的data members设定（赋值）内容"></a>条款16 ：在operator=中为所有的data members设定（赋值）内容</h2><p>在最初设计class的时候，这一点很容易被记住并奉行。重要的是，当新的data members加入这个class时，assignment运算符亦应同步修改。</p>
+<p>真正有趣的事情发生在继承机制进来插一脚时，因为一个derived class的assignment运算符也有义务处理其base class members的assignment动作。考虑这种情况：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        base(<span class="keyword">int</span> iv=<span class="number">0</span>): x(iv)&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span>:</span><span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        Derived(<span class="keyword">int</span> iv): Base(iv),y(iv)&#123;&#125;</span><br><span class="line">        Derived&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> Derived&amp; rhs);</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>下面是撰写Derived的assignment运算符时，一个颇合逻辑的做法：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误的assignment运算符</span></span><br><span class="line">Derived&amp; Derived::<span class="keyword">operator</span>=(<span class="keyword">const</span> Derived&amp; rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(*<span class="keyword">this</span>==&amp;rhs) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    y=rhs.y;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不幸的是这并不正确，因为Derived object的“base成分内的data member x”并未被此assignment运算符影响到。</p>
+<p>修改此错误的最直接办法就是在Derived::operator=中对x做赋值动作。不幸的是这并不合法，因为x是Base的一个private member。因此，你必须在Derived的assignment运算符内对Derived的“Base成分”做一个明白的assignment动作。是的，你应该这么做：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正确的assignment运算符</span></span><br><span class="line">Derived&amp; Derived::<span class="keyword">operator</span>=(<span class="keyword">const</span> Derived&amp; rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(*<span class="keyword">this</span>==&amp;rhs) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    Base::<span class="keyword">operator</span>=(rhs);<span class="comment">//调用this-&gt;Base::operator=</span></span><br><span class="line">    y=rhs.y;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里只是多做了一个明显的调用动作，调用Base::operator=.此一调用就像所有“在member functions内调用其他member functs”的情况一样，会以*this作为其隐式的左侧对象。于是，Base::operator=会施行于 *this的“Base 成分”上————正是你要的结果。</p>
+<p>Class Derived示范了C++领域一个最难缠的“臭虫”：当Derived object以copy方式被构造出来时，并没有连带复制base class成分。<br>为了避免这一问题，Derived的copy constructor必须确保调用Base的copy constructor而不是Base的default constructor。这很容易，只要在Derived copy constructor的成员初始化列表（member initialization list）中未Base指定初值即可。</p>
+<h2 id="条款17-：在operator-中检查是否“自己赋值给自己”"><a href="#条款17-：在operator-中检查是否“自己赋值给自己”" class="headerlink" title="条款17 ：在operator=中检查是否“自己赋值给自己”"></a>条款17 ：在operator=中检查是否“自己赋值给自己”</h2><p>“自己赋值给自己”可以发生在看起来比较良性的形式中：<br>a=b；<br>如果b是a的一个别名（例如b是一个reference，初值为a），那么这也是“自己赋值给自己”，虽然表面上看起来不像！这是aliasing（别名，同一对象拥有两个或更多个名称）的例子。</p>
+<p>两个理由促使我们在assignment运算符中特别谨慎地处理可能发生的别名问题。比较次要的理由是为了效率。如果你能够在assignment运算符中一开始就侦测到“自己赋值给自己”的行为，你可以立刻返回，这或许能节省许多不必要的工作。</p>
+<p>不过，侦测“自己赋值给自己”行为，更重要的理由是要确保正确性。记住，assignment运算符在为其左侧对象配置新资源之前，通常必须先将原有配置给左侧对象的所有资源释放掉。然而如果是“自己赋值给自己”，这个资源释放动作可能会造成惨重的灾情，因为旧资源可能在配置新资源的过程中派上用场。</p>
+<p>辨识两个对象是否为同一个（也就是有相同的身份），方法之一就是看看它们是否有相同的值。<br>另一个“对象等同”的定义是，看看它们的内存地址是否相同。<br>这对许多程序而言已经足够。</p>
+<p>如果你需要一个更精巧的机制用以判断两个对象是否相同，你就得自己实现。</p>
+<p>别名（aliasing）问题和对象等同（object identity）问题并不限于只在operator=函数内出现。那只是你可能遭遇这类问题的一个场所而已。只要出现references和pointers，任何两个代表兼容型别的对象名称都可能实际上指向同一对象。</p>
+<h1 id="类与函数之设计和声明"><a href="#类与函数之设计和声明" class="headerlink" title="类与函数之设计和声明"></a>类与函数之设计和声明</h1><p>只要在程序中声明一个新的class，便是产生一个新的型别（type）。所以class的设计就是一种型别设计。</p>
+<h2 id="条款18-：努力让接口完满-complete-且最小化"><a href="#条款18-：努力让接口完满-complete-且最小化" class="headerlink" title="条款18 ：努力让接口完满(complete)且最小化"></a>条款18 ：努力让接口完满(complete)且最小化</h2><p>class的所谓客户端接口，是一个开放给class用户并为他们所接收的接口。一般而言，接口之中只有函数，因为如果其中也有数据，会导致许多缺点。</p>
+<p>所谓”完满”接口，即允许clients做他们可以合理要求的任何事情。也就是说，对于client可能希望完成的任何合理工作，class都应该提供一个合理的方法来完成，即使不像clients所喜欢的那么方便。至于一个“最小化”接口，则是尽可能让函数个数最少，不至于有任何两个member functions功能重叠。</p>
+<p>大型接口容易令人迷失。<br>大型class接口的第二个缺点是可维护性较差，class内含的函数愈多，维护和强化的难度愈高，反之则愈低。<br>最后一点，长长的class定义，会导致长长的头文件。由于头文件往往必须在程序每次编译的时候被读入，如果class定义式比必要的长度还长，会导致编译时间过长，影响整个程序的开发。</p>
+<p>无条件地为接口增加函数，并非不需要成本。所以你得谨慎思考，是否一个新函数的便利性可以平衡其额外的复杂性、可理解性、可维护性，以及编译速度所带来的成本。</p>
+<h2 id="条款19-：区分member-functions，non-member-functions和friend-functions三者"><a href="#条款19-：区分member-functions，non-member-functions和friend-functions三者" class="headerlink" title="条款19 ：区分member functions，non-member functions和friend functions三者"></a>条款19 ：区分member functions，non-member functions和friend functions三者</h2><p>member functions和non-member functions之间的最大差异是，member functions可以是虚拟函数而non-member functions不可以。所以如果你有一个函数必须动态绑定，你必须对它动用虚拟函数，而此虚拟函数必须是个class member。</p>
+<p>假设f是你企图声明的一个函数，C是个class，与f有观念上的关联：  </p>
+<ul>
+<li>虚拟函数必须是class members。如果f必须是虚拟函数，那么就让它成为C的一个member function。  </li>
+<li>绝不要让operator&gt;&gt;和operator&lt;&lt;成为members。如果f是operator&gt;&gt;或operator&lt;&lt;，请让f成为一个non-member function；如果f同时还必须取用C的non-public members，请让f成为C的一个friend。  </li>
+<li>只有non-member functions 才能在其最左端引数身上实施型别转换。如果f需要在其最左端引数身上施行型别转换，请让f成为一个non-member function；如果f同时还必须取用C的non-public members，请让f成为C的一个friend。  </li>
+<li>上述之外的每一种情况，都应该设计成member function。如果不适用其他情况，就让f成为C的一个member function吧。</li>
+</ul>
+<h2 id="条款20-：避免将data-members-放在公开接口中"><a href="#条款20-：避免将data-members-放在公开接口中" class="headerlink" title="条款20 ：避免将data members 放在公开接口中"></a>条款20 ：避免将data members 放在公开接口中</h2><p>首先，让我们从“一致性”的角度来看这个题目。如果公开接口中的每样东西都是函数，clients就不需要搔首晃脑地试图记住“存取你的class的某个member时”是否需要使用小括号。</p>
+<p>使用函数，可以使你更精确地掌控data members的可存取性。如果你让一个data member成为public，则每个人都可以直接读写它。但如果你通过函数存取其值，你可以实现出“不处理”、“只读处理”、“可读可写”三种形式。</p>
+<p>结论就是，把data members置于公开接口，等于是自找麻烦。为了安全起见，请将你的所有data members隐藏在函数抽象性质所形成的一道保护墙后面。如果你现在就这么做，便可以获得“一致性”，以及优良的存取控制，不需要耗费额外的成本！</p>
+<h2 id="条款21-：尽可能使用const"><a href="#条款21-：尽可能使用const" class="headerlink" title="条款21 ：尽可能使用const"></a>条款21 ：尽可能使用const</h2><p>const所带来的曼妙事情是，它允许你以某种语意上的规范表示“某个对象不应该被修改”，而编译器将严格奉行这个规范。</p>
+<p>关键词const的用途很广。在class之外，你可以用它来定义global常量或namespace常量以及static对象。而在classes内，你可以将它使用于static/nonstatic data members身上。</p>
+<p>面对指针，你可以明确指定指针本身为const，或是指针所指的资料为const，或是两者皆为const，或是两者皆否：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *p =<span class="string">"hello"</span>; <span class="comment">//两者皆否</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p = <span class="string">"hello"</span>;<span class="comment">//常量指针，所指资料为常量</span></span><br><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> p = <span class="string">"hello"</span>;<span class="comment">//指针常量，指针本身为常量</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">const</span> p = <span class="string">"hello"</span>;<span class="comment">//两者皆是常量</span></span><br></pre></td></tr></table></figure>
+
+<p>const最具威力的用途是在函数声明时派上用场。在一个函数声明式中，const可以用来修饰函数的传回值、个别参数，以及整个函数。最后一项只对member functions才成立。</p>
+<p>member functions即使只是常量性有所不同，也可以重载，这是C++的一个重要特性。</p>
+<p>将一个member function声明为const，真正的意义到底是什么呢？有两个流行的论点：bitwise constness（位常量论）和conceptual constness（概念常量论）。</p>
+<p>bitwise constness（位常量论）阵营认为，如果一个member function不修改对象任何data members，它便是一个const member function。事实上，bitwise constness（位常量论）正是C++对于所谓“常量”的定义，因此一个const member function不允许修改其调用者的任何data members。</p>
+<p>conceptual constness（概念常量论），这个观念主张const member function可以更改其调用者（某个对象）内的某些位，但是只能在不被clients侦测到的情况下为止。</p>
+<p>关键字mutable，这是C++标准委员会深思熟虑后推出的一个解答，施行于nonstatic data members身上，可以有效解放它们在bitwise constness方面的束缚。将data members成为mutable时，data members可在任何地点被更改，甚至即使在一个const member functions内。</p>
+<p>还有一种情况，常量转型可能有用而且安全，那就是当你有一个const对象时，想要传递给一个接收non-const参数的函数，而你知道这个参数在函数中并不会被更改。第二个条件很重要，因为将一个只读对象的常量性转换掉，永远是安全的，纵使该对象最初定义为const。</p>
+<h2 id="条款22-：尽量使用pass-by-reference，少用pass-by-value"><a href="#条款22-：尽量使用pass-by-reference，少用pass-by-value" class="headerlink" title="条款22 ：尽量使用pass-by-reference，少用pass-by-value"></a>条款22 ：尽量使用pass-by-reference，少用pass-by-value</h2><p>C语言中的每样东西都是passed by value，C++承担这项传统的做法是：把pass-by-value当作缺省行为。除非你另外指定，否则函数参数都是以实参的副本作为初值，而调用端所获得的亦是函数传回值的一个副本。</p>
+<p>对象以by value的方式传递，其实际意义是由该对象的copy constructor决定的。这可能会使pass-by-value成为成本很高的动作。</p>
+<p>当对象里的函数传值两次时，一次用于参数，一次用于传回值，当调用此函数一次，全部的成本是12个constructor和12个destructor！</p>
+<p>当以by reference方式传递时，这种做法的效率就高多了：没有任何constructor或destructor会被调用，因为没有必要产生任何新对象。</p>
+<p>以by reference的方式传递参数，有另一个优点：可避免所谓的“切割(slicing)”问题。当一个derived class object被交出去当作一个base class object时，它原本所以“成为一个derived class object”的所有特征，都会被切割掉，只留下内部一个base class object。</p>
+<p>解决切割问题的方法，就是以by reference方式传递参数。</p>
+<p>references的底层几乎都是以指针完成，所以passing by reference通常意味着传递的是指针。如果你有个小对象，例如一个int，那么pass by value可能比pass by reference的效率更高一些。</p>
+<h2 id="条款23-：当你必须传回object时，不要尝试传回reference"><a href="#条款23-：当你必须传回object时，不要尝试传回reference" class="headerlink" title="条款23 ：当你必须传回object时，不要尝试传回reference"></a>条款23 ：当你必须传回object时，不要尝试传回reference</h2><p>在坚定追求pass-by-reference的纯度中，常常犯下一个致命错误：它们开始传递一些reference，指向其实并不存在的对象。这不算好事情。</p>
+<p>所谓reference只是一个名称，一个既有对象的名称。任何时候看到一个reference，你都应该立刻问自己，它的另一个名称是什么，因为它一定是某物的另一个名称。</p>
+<p>像operator*这样的函数传回一个reference只是在浪费时间。</p>
+<p>绝不要返回指向本地栈对象的指针或者引用，指向堆对象的引用，或者在有可能需要多个对象的时候返回指向本地静态对象的指针或者引用。</p>
+<h2 id="条款24-：在函数重载和参数缺省化之间，谨慎选择"><a href="#条款24-：在函数重载和参数缺省化之间，谨慎选择" class="headerlink" title="条款24 ：在函数重载和参数缺省化之间，谨慎选择"></a>条款24 ：在函数重载和参数缺省化之间，谨慎选择</h2><p>函数重载和参数缺省化之间所引起的混淆，系基于一个事实：它们都允许以不同的形式调用同一个函数名称：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>; <span class="comment">//f被重载了</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line">f();<span class="comment">//调用f()</span></span><br><span class="line">f(<span class="number">10</span>);<span class="comment">//调用f(int)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(<span class="keyword">int</span> x = <span class="number">0</span>)</span></span>;<span class="comment">//g有一个缺省参数值</span></span><br><span class="line">g();<span class="comment">//调用g(0)</span></span><br><span class="line">g(<span class="number">10</span>);<span class="comment">//调用g(10)</span></span><br></pre></td></tr></table></figure>
+<p>我们应该使用哪一种做法呢？</p>
+<p>答案视另外两个问题而定。第一，是否有适当的值可以用来当作缺省参数？第二，你希望使用多少个算法？一般而言，如果你可以选择一个合理的默认值，而且你只需要一个算法，那么最好是使用缺省参数法。否则你可以使用重载函数。</p>
+<p>假设你要写一个函数，计算最多5个整数的平均值。你不应该使用缺省参数值，因为函数的结果视参数个数而定。</p>
+<p>另一种必须使用重载函数的情况是：你得完成一项特别任务，而采用的算法视输入而定。这种情况常常发生在constructors身上：default constructor可以无中生有地构造出一个对象，copy constructor则从既有对象身上构造出另一个对象。</p>
+<h2 id="条款25-：避免对指针型别和数值型别进行重载"><a href="#条款25-：避免对指针型别和数值型别进行重载" class="headerlink" title="条款25 ：避免对指针型别和数值型别进行重载"></a>条款25 ：避免对指针型别和数值型别进行重载</h2><p>先看一个例子：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="built_in">string</span> *ps)</span></span>;</span><br><span class="line">f(<span class="number">0</span>);<span class="comment">//调用哪个？</span></span><br></pre></td></tr></table></figure>
+<p>编译器选择f(int)。<br>很多情况下，存在模棱两可的情况。 </p>
+<p>为此，我们尝试定义一个常量，使其可以转换为指针型别和数值型别，则当函数参数为此常量时，即可表现出二义性。</p>
+<p>1.如下，NULL可以转换为指针型别，然而需要显示类型转换，即调用类型转换操作符实现。而且调用数值型别的重载函数失败。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> * <span class="keyword">const</span> <span class="literal">NULL</span> = <span class="number">0</span>;<span class="comment">//void*指针可以转换为各类型指针，其本身定义为0</span></span><br><span class="line">f(<span class="literal">NULL</span>);<span class="comment">//错误，型别不符</span></span><br><span class="line">f(<span class="keyword">static_cast</span>&lt;<span class="built_in">string</span> *&gt;(<span class="literal">NULL</span>);<span class="comment">//成功，调用f(string *);</span></span><br></pre></td></tr></table></figure>
+<p>2.尝试用宏定义。在调用指针型别的重载函数时仍需要显示类型转换。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL ((void*) 0)</span></span><br><span class="line">f(<span class="literal">NULL</span>);<span class="comment">//成功，调用f(int);</span></span><br><span class="line">f(<span class="keyword">static_cast</span>&lt;<span class="built_in">string</span> *&gt;(<span class="literal">NULL</span>));<span class="comment">//成功，调用f(string *)；</span></span><br></pre></td></tr></table></figure>
+<p>3.一个临时的解决办法。long int 0转换为int与null指针是相同的，不分优先、好坏。此时似乎可以实现让编译器编译错误。然而，当有一个f(long int)与f(string *)重载函数时，此方法就失效了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL 0L</span></span><br><span class="line">f(<span class="literal">NULL</span>);<span class="comment">//错误，二义性</span></span><br></pre></td></tr></table></figure>
+<p>4.为此，我们希望定义这样一个类，其可以实现将对象隐式转换为所有类型指针，则当调用函数f传入该类对象时，可以将对象隐式转换为任意类型的指针，即解决了上述1、2中需要进行显示类型转换的问题。此时，引入成员函数模板，产生该class的一些成员函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NullClass</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">operator</span> <span class="title">T</span>*() <span class="title">const</span> &#123;</span> <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> NullClass <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>优化一下，没必要给出class名称，不需要一个以上的类对象；添加可使其隐式转换为指向类成员的指针的成员函数模板；最后，NULL是指针值，不允许取地址。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">operator</span> <span class="title">T</span>*() <span class="title">const</span></span></span><br><span class="line"><span class="class">    &#123;</span> <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">C</span>, <span class="title">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">operator</span> <span class="title">T</span> <span class="title">C</span>:</span>:*() <span class="keyword">const</span></span><br><span class="line">    &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">void</span> <span class="keyword">operator</span>&amp;() <span class="keyword">const</span>;</span><br><span class="line">&#125; <span class="literal">NULL</span>;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">以上，我们定义了<span class="literal">NULL</span>来实现传入<span class="literal">NULL</span>时隐式类型转换为指针型别，来让编译器实现入参的二义性而编译错误。然而，回到最初的问题，若传入<span class="number">0</span>，编译器仍然认为他是数值型别。</span><br><span class="line"></span><br><span class="line">因此，最好的办法就是避免对指针型别和数值型别进行重载。</span><br><span class="line"></span><br><span class="line">## 条款<span class="number">26</span> ：防卫潜伏的ambiguity（模棱两可）状态</span><br><span class="line">C++也有一个哲学信仰：它相信潜在的模棱两可状态不是一种错误。  </span><br><span class="line">下面是个例子，潜伏着模棱两可的状态：  </span><br><span class="line">```cpp</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>;</span><span class="comment">//前置声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> B&amp;);<span class="comment">//A可以根据B构造出来</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">A</span><span class="params">()</span><span class="keyword">const</span></span>;<span class="comment">//B可以被转换为A</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这些class声明式没有任何错误，它们是可以共存在于同一个程序中，不会招惹任何麻烦。然而当某个函数需要A object作为参数，而实际传过去的却是个B object时，会发生什么事？  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> A&amp;)</span></span>;</span><br><span class="line">B b;</span><br><span class="line">f(b);<span class="comment">//错误！模棱两可</span></span><br></pre></td></tr></table></figure>
+<p>编译器看到对f的调用动作，于是知道必须接获一个A object，即使它实际到手的是个B object。有两个一样好的办法可以完成这件事，其中之一是调用class A constructor,以b为引数构造出一个新的A object。另一个方法是调用class B的转换函数，将b转换为一个A object。这两个方法一样好，编译器会拒绝在它们之间表态，于是造成模凌两可的现象。</p>
+<p>多继承是“潜伏期模凌两可”的好发因子。最直接易懂的情况就是“derived class由一个以上的base class出继承获得相同的member名称”。</p>
+<p>既然写程序和函数库时有这么多不同的情况会产生潜在的二义性，那么，一个好的软件开发者该怎么做呢？最根本的是，一定要时时小心它。想找出所有潜在的二义性的根源几乎是不可能的，特别是当程序员将不同的独立开发的库结合起来使用时，但在了解了导致经常产生潜在二义性的那些情况后，你就可以在软件设计和开发中将它出现的可能性降到最低。</p>
+<h2 id="条款27-：如果不想使用编译器暗自产生的member-functions，就应该明白拒绝它"><a href="#条款27-：如果不想使用编译器暗自产生的member-functions，就应该明白拒绝它" class="headerlink" title="条款27 ：如果不想使用编译器暗自产生的member functions，就应该明白拒绝它"></a>条款27 ：如果不想使用编译器暗自产生的member functions，就应该明白拒绝它</h2><p>对类中如果不自己定义编译器会为你自动生成的函数，解决之道是将它们声明为private。是的，只要明白声明这个函数，你就可以阻止编译器自动生成一个版本；而只要让此函数成为private，你就可以不让别人调用它。</p>
+<p>然而这个办法并不安全，因为member functions和friend functions还是可以调用你的private函数。除非你心里头明白，压根就不要定义它，那么一来如果你不经意调用这个函数，连接时便会出错。</p>
+<h2 id="条款28-：尝试切割global-namespace（全局命名空间）"><a href="#条款28-：尝试切割global-namespace（全局命名空间）" class="headerlink" title="条款28 ：尝试切割global namespace（全局命名空间）"></a>条款28 ：尝试切割global namespace（全局命名空间）</h2><p>global scope的最大问题就是，这家伙是唯一的。在一个大型软件项目中，常会有一群人在此唯一的scope中放置各种符号名称，而这往往导致名称的冲突。</p>
+<p>一个较好的解决办法是使用C++ namespace。所谓namespace（名称空间），其本质其实只是一个比较漂亮的方法，让你使用你所知道的前导词而又不需要老是出现那么又臭又长的名称。</p>
+<p>clients可以以三种方式取用你的namespace内的符号：一是将namespace内的所有符号汇入一个scope内  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
+<p>二是将个别符号汇入一个scope内。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>三是每次使用符号时明确地加以资格修饰。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"hello"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>namespace有一件最棒的事情就是，潜伏的模凌两可问题不会爆发。因此你可以无忧无虑地从不同的namespaces汇入相同的符号（前提是你从未真正使用这个符号）。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -200,16 +407,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/18/%E4%BD%BF%E7%94%A8DHCP%E5%8A%A8%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用DHCP动态管理主机地址</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,707 +490,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十二章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">C++ Primer Plus 第十二章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-14T03:55:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="类和动态内存分配"><a href="#类和动态内存分配" class="headerlink" title="类和动态内存分配"></a>类和动态内存分配</h1><p>通常，最好在程序运行时（而不是编译时）确定诸如使用多少内存等问题。对于在对象中保存数据来说，通常的C++方法是，在类构造函数中使用new运算符在程序运行时分配所需的内存。</p>
-        
-          <a class="article-more-a" href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/14/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#改变旧有的C习惯"><span class="toc-number">1.</span> <span class="toc-text">改变旧有的C习惯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款1-尽量以const和inline取代-define"><span class="toc-number">1.1.</span> <span class="toc-text">条款1 : 尽量以const和inline取代 #define</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款2-：尽量以取代-lt-stdio-h-gt"><span class="toc-number">1.2.</span> <span class="toc-text">条款2 ：尽量以取代&lt;stdio.h&gt;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款3-：尽量以new和delete取代malloc和free"><span class="toc-number">1.3.</span> <span class="toc-text">条款3 ：尽量以new和delete取代malloc和free</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款4-尽量使用C-风格的注释形式。"><span class="toc-number">1.4.</span> <span class="toc-text">条款4 : 尽量使用C++风格的注释形式。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存管理"><span class="toc-number">2.</span> <span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款5-：使用相同形式的new和delete"><span class="toc-number">2.1.</span> <span class="toc-text">条款5 ：使用相同形式的new和delete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款6-记得在destructor中以delete对付pointer-members"><span class="toc-number">2.2.</span> <span class="toc-text">条款6 : 记得在destructor中以delete对付pointer members</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款7-：为内存不足的状况预做准备"><span class="toc-number">2.3.</span> <span class="toc-text">条款7 ：为内存不足的状况预做准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款8-：撰写operator-new-和operator-delete时应遵行的公约。"><span class="toc-number">2.4.</span> <span class="toc-text">条款8 ：撰写operator new 和operator delete时应遵行的公约。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款9-：避免遮掩了new的正规形式"><span class="toc-number">2.5.</span> <span class="toc-text">条款9 ：避免遮掩了new的正规形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款10-：如果你写了一个operator-new，请对应写一个operator-delete"><span class="toc-number">2.6.</span> <span class="toc-text">条款10 ：如果你写了一个operator new，请对应写一个operator delete</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构造函数、析构函数和Assignment运算符"><span class="toc-number">3.</span> <span class="toc-text">构造函数、析构函数和Assignment运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款11-：如果class内动态配置有内存，请为此class声明一个copy-constructor和一个assignment运算符"><span class="toc-number">3.1.</span> <span class="toc-text">条款11 ：如果class内动态配置有内存，请为此class声明一个copy constructor和一个assignment运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款12-：在constructor中尽量以initialization动作取代assignment动作"><span class="toc-number">3.2.</span> <span class="toc-text">条款12 ：在constructor中尽量以initialization动作取代assignment动作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款13-：initialization-list中的members初始化顺序应该和其在class内的声明次序相同"><span class="toc-number">3.3.</span> <span class="toc-text">条款13 ：initialization list中的members初始化顺序应该和其在class内的声明次序相同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款14-：总是让base-class拥有virtual-destructor"><span class="toc-number">3.4.</span> <span class="toc-text">条款14 ：总是让base class拥有virtual destructor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款15-：令operator-传回“-this的reference”"><span class="toc-number">3.5.</span> <span class="toc-text">条款15 ：令operator&#x3D;传回“*this的reference”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款16-：在operator-中为所有的data-members设定（赋值）内容"><span class="toc-number">3.6.</span> <span class="toc-text">条款16 ：在operator&#x3D;中为所有的data members设定（赋值）内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款17-：在operator-中检查是否“自己赋值给自己”"><span class="toc-number">3.7.</span> <span class="toc-text">条款17 ：在operator&#x3D;中检查是否“自己赋值给自己”</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类与函数之设计和声明"><span class="toc-number">4.</span> <span class="toc-text">类与函数之设计和声明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款18-：努力让接口完满-complete-且最小化"><span class="toc-number">4.1.</span> <span class="toc-text">条款18 ：努力让接口完满(complete)且最小化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款19-：区分member-functions，non-member-functions和friend-functions三者"><span class="toc-number">4.2.</span> <span class="toc-text">条款19 ：区分member functions，non-member functions和friend functions三者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款20-：避免将data-members-放在公开接口中"><span class="toc-number">4.3.</span> <span class="toc-text">条款20 ：避免将data members 放在公开接口中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款21-：尽可能使用const"><span class="toc-number">4.4.</span> <span class="toc-text">条款21 ：尽可能使用const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款22-：尽量使用pass-by-reference，少用pass-by-value"><span class="toc-number">4.5.</span> <span class="toc-text">条款22 ：尽量使用pass-by-reference，少用pass-by-value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款23-：当你必须传回object时，不要尝试传回reference"><span class="toc-number">4.6.</span> <span class="toc-text">条款23 ：当你必须传回object时，不要尝试传回reference</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款24-：在函数重载和参数缺省化之间，谨慎选择"><span class="toc-number">4.7.</span> <span class="toc-text">条款24 ：在函数重载和参数缺省化之间，谨慎选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款25-：避免对指针型别和数值型别进行重载"><span class="toc-number">4.8.</span> <span class="toc-text">条款25 ：避免对指针型别和数值型别进行重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款27-：如果不想使用编译器暗自产生的member-functions，就应该明白拒绝它"><span class="toc-number">4.9.</span> <span class="toc-text">条款27 ：如果不想使用编译器暗自产生的member functions，就应该明白拒绝它</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款28-：尝试切割global-namespace（全局命名空间）"><span class="toc-number">4.10.</span> <span class="toc-text">条款28 ：尝试切割global namespace（全局命名空间）</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-C++图形编程之将图片加载到窗口上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/">C++图形编程之将图片加载到窗口上</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/" class="archive-article-date">
-  	<time datetime="2020-03-12T11:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C-图形编程-EasyX，"><a href="#C-图形编程-EasyX，" class="headerlink" title="C++图形编程  EasyX，"></a>C++图形编程  EasyX，</h1><p>EasyX 是针对 C++ 的图形库。比如，可以用 VC + EasyX 很快的用几何图形画一个房子，或者一辆移动的小车，可以编写俄罗斯方块、贪吃蛇、黑白棋等小游戏，可以练习图形学的各种算法，等等。</p>
-<p>将图片加载到窗口上</p>
-<p>头文件 &lt;graphics.h&gt;</p>
-        
-          <a class="article-more-a" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/12/C++%E5%9B%BE%E5%BD%A2%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%B0%86%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">C++ Primer Plus 第十一章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-11T04:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用类"><a href="#使用类" class="headerlink" title="使用类"></a>使用类</h1><p>C++类特性丰富、复杂、功能强大。</p>
-<h2 id="11-1-运算符重载"><a href="#11-1-运算符重载" class="headerlink" title="11.1 运算符重载"></a>11.1 运算符重载</h2>
-        
-          <a class="article-more-a" href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/11/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第十章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/">C++ Primer Plus 第十章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-08T12:48:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="对象和类"><a href="#对象和类" class="headerlink" title="对象和类"></a>对象和类</h1><p>面向对象特性（OOP）1.抽象 2.封装和数据隐藏 3.多态 4.继承 5.代码的可重用性</p>
-<p>采用OOP方法时，首先从用户的角度考虑对象—描述对象所需的数据以及描述用户与数据交互所需的操作。</p>
-        
-          <a class="article-more-a" href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/C++Primer%20Plus%20%E7%AC%AC%E5%8D%81%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第九章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/">C++ Primer Plus 第九章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-06T11:28:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="内存模型和名称空间"><a href="#内存模型和名称空间" class="headerlink" title="内存模型和名称空间"></a>内存模型和名称空间</h1>
-        
-          <a class="article-more-a" href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/06/C++Primer%20Plus%20%E7%AC%AC%E4%B9%9D%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-想见你" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/">想见你</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T12:27:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div id="aplayer-JqydvinC" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="157276" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
-
-<p>所以暂时将你眼睛闭了起来~</p>
-        
-          <a class="article-more-a" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/%E6%83%B3%E8%A7%81%E4%BD%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第八章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/">C++ Primer Plus 第八章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:11:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数探幽"><a href="#函数探幽" class="headerlink" title="函数探幽"></a>函数探幽</h1><p>函数特性：内联函数、按引用传递变量、默认的参数值、函数重载（多态）以及模板函数。</p>
-        
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AB%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第七章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/">C++ Primer Plus 第七章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:32:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="函数-——-C-的编程模块"><a href="#函数-——-C-的编程模块" class="headerlink" title="函数 —— C++的编程模块"></a>函数 —— C++的编程模块</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E4%B8%83%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C++Primer Plus 第六章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/">C++ Primer Plus 第六章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-04T08:13:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="6-1分支语句和逻辑运算符"><a href="#6-1分支语句和逻辑运算符" class="headerlink" title="6.1分支语句和逻辑运算符"></a>6.1分支语句和逻辑运算符</h1>
-        
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/C++Primer%20Plus%20%E7%AC%AC%E5%85%AD%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -947,8 +538,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
