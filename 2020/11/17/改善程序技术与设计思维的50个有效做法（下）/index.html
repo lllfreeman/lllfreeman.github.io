@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/11 | Blog-lllfreeman</title>
+  <title>改善程序技术与设计思维的50个有效做法（下） | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/archives/2020/11/index.html">
+  <meta name="description" content="类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一需要担心“传回handles”这档子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改善程序技术与设计思维的50个有效做法（下）">
+<meta property="og:url" content="http://yoursite.com/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一需要担心“传回handles”这档子">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/01.jpg">
+<meta property="article:published_time" content="2020-11-17T12:27:48.000Z">
+<meta property="article:modified_time" content="2020-11-18T14:19:32.184Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
   
@@ -151,35 +158,286 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-改善程序技术与设计思维的50个有效做法（下）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      改善程序技术与设计思维的50个有效做法（下）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
+
+        
+        <a href="/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-11-17T12:27:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/">改善程序技术与设计思维的50个有效做法（下）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="类与函数之实现"><a href="#类与函数之实现" class="headerlink" title="类与函数之实现"></a>类与函数之实现</h1><h2 id="条款29-：避免传回内部数据的handles"><a href="#条款29-：避免传回内部数据的handles" class="headerlink" title="条款29 ：避免传回内部数据的handles"></a>条款29 ：避免传回内部数据的handles</h2><p>指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。</p>
+<p>const member functions并不是唯一需要担心“传回handles”这档子事的函数。即使是non-const member functions，也必须面对这个事实：handle的有效性将它所对应的那个对象终了时一并期满。这可能会比client所预期的还快，尤其是当此对象是一个由编译器产生的暂时对象时。</p>
+<a id="more"></a>
+<p>因此，const member functions传回handles是不好的行为，因为它违反了抽象性。甚至对non-const member functions而言，传回handles也会导致麻烦，特别是当涉及暂时对象时，Handles可能变成空悬的，就像指针一样。而正如你努力避免所谓的dangling pointer一样，你也应该尽力避免所谓的dangling handles。</p>
+<p>还是一样，没有理由太过绝对化。我们不太可能在一个稍微优点复杂的程序中挑出所有可能的dangling pointers，我们也不太可能消除所有可能的dangling handles。不过，尽管如此，如果你尽可能避免传回handles（除非有绝对必要），你的程序会受益。</p>
+<h2 id="条款30-：避免写出member-functions，传回一个non-const-pointer或reference并以之指向较低存取层级的members"><a href="#条款30-：避免写出member-functions，传回一个non-const-pointer或reference并以之指向较低存取层级的members" class="headerlink" title="条款30 ：避免写出member functions，传回一个non-const pointer或reference并以之指向较低存取层级的members"></a>条款30 ：避免写出member functions，传回一个non-const pointer或reference并以之指向较低存取层级的members</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Address</span>&#123;</span>...&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Address&amp; <span class="title">personAddress</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> address;&#125;</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Address address;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>member function personAddress会将Person object内含的Address object提供给调用者，但或许是为了效率着想，传回值以by reference方式而非by value方式传递。不幸的是，这个member function使得“person::address成为private”的目标受到了挫败。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Person <span class="title">scott</span><span class="params">(...)</span></span>;</span><br><span class="line">Address&amp; addr = scott.personAddress();</span><br></pre></td></tr></table></figure>
+<p>现在全局对象addr成为了scott.address的另一个名称，你可以利用它来任意读写scott.address。因此，scott.address不再是private,它变成了public,而这类存取层级的晋升,乃因member function personAddress之故。<br>reference不是唯一需要关心的对象，指针也可以玩这场游戏。然而，面对指针，你必须担心的不只是data members，还有member functions。因为函数可能传回一个pointer to member function。</p>
+<p>尽管如此，或许有一天你得面对这样一种形势：为了达到效率上的规范，你必须写个member function，传回一个reference或pointer，指向一个较低存取层级的member。在此同时，你又不想牺牲private和protected所提供的存取保护。这种情况下你可以传回一个pointer或reference，指向一个const object，于是同时达成两个目标。</p>
+<h2 id="条款31-：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”"><a href="#条款31-：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”" class="headerlink" title="条款31 ：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”"></a>条款31 ：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”</h2><p>考虑第一种情况：“传回一个reference，指向一个local对象”。这里的问题是，local就是local，它们是区域性的，这意味着当它们被定义时就构造完成，当它们离开scope时就被析构。至于它们的scope，就是它们所在的那个函数。当函数返回时，控制权退离函数，所以此函数的local对象会被自动析构。如果你传回一个reference，指向函数中的一个local对象，则那个local对象在函数调用者重新获得控制权之前就已经被析构掉了。</p>
+<p>当调用new而不使用local对象时，这种做法的确解决了local对象离开scope的会被析构的问题。但却导入了一个新问题。为了避免你的软件发生内存泄露，你一定得将delete实施于每一个以new获得的指针身上。问题是谁该为此函数内的new调用相应的delete呢？</p>
+<h2 id="条款32-：尽可能延缓变量定义式的出现"><a href="#条款32-：尽可能延缓变量定义式的出现" class="headerlink" title="条款32 ：尽可能延缓变量定义式的出现"></a>条款32 ：尽可能延缓变量定义式的出现</h2><p>亦即需要时才定义之</p>
+<p>还记得吗，如果你定义一个变量，其型别有一个constructor或destructor，那么当控制权到达这个变量定义式时，你便得承受构造成本；当这个变量离开其scope时，你便得承受析构成本。意思是即使一个不曾被使用的变量，仍需耗费成本。这种情况应该尽可能避免。</p>
+<p>你不只应该延缓变量的定义，直到非得使用该变量的前一刻为止，甚至应该尝试延缓这份定义，直到能够给予它初值引数为止。如果这样，不仅可以避免构造（析构）非必要的对象，还可以避免无意义的default constructions。</p>
+<p>只要延缓变量的定义，你便可以改善程序的效率，增加程序的清晰度，降低变量意义的说明需求。看来似乎是该对那些“一开始出现”的变量定义说”拜拜”的时候了。</p>
+<h2 id="条款33-：明智地运用inlining"><a href="#条款33-：明智地运用inlining" class="headerlink" title="条款33 ：明智地运用inlining"></a>条款33 ：明智地运用inlining</h2><p>inline函数背后的整个观念是，将“对此函数的每一个调用行动”都以函数代码取代之。这么做会增加你的目标代码的大小。</p>
+<p>inline与register一样，只是对编译器的提示、建议，并不是一个强制命令。</p>
+<p>当编译器拒绝将函数inline时，理所当然，函数将与其他函数的调用动作相同。</p>
+<p>首先，我们经常把inline函数定义也放在头文件中，这样多个编译单元可以包含该头文件并获得其中的inline函数定义。而对于非inline函数，若将定义放在头文件中，头文件被包含多次时则包含多份该函数的定义，在连接时发生错误。</p>
+<p>若编译器拒绝将函数inline时，其定义在头文件中，然而其在被调用时视作非inline函数，则在连接时会出现错误。为此，旧规则规定，在未被inlined成功时，视作将此函数声明为static处理。此时，每个包含该函数的文件都有一个该函数的static副本。这将增加程序代码的体积。而新规则则只会生成一份函数副本。</p>
+<p>同时，对一个成功inlined的函数进行取地址时，旧规则同样对每个编译单元都需要生成一个static副本，而新规则则只会生成一个。</p>
+<p>对于构造函数、析构函数，其包含调用数据成员的构造函数与析构函数，只是这些代码由编译器来完成。</p>
+<p>另外，对于inline函数，当改动函数时，所有用的该函数的程序都必须重新编译。而对于非inline函数则只需要重新连接即可（甚至采用动态连接库可以不知不觉地实现）。通常，含有static对象的函数避免被声明为inline。</p>
+<p>最后，inline函数出错难以定位。无法设置断点、next等方式。</p>
+<p>总之，不要随意使用inline，除非那些非常普通简洁的函数，以及那些程序中占重要效率地位的函数。</p>
+<h2 id="条款34-：将文件之间的编译依赖关系降至最低"><a href="#条款34-：将文件之间的编译依赖关系降至最低" class="headerlink" title="条款34 ：将文件之间的编译依赖关系降至最低"></a>条款34 ：将文件之间的编译依赖关系降至最低</h2><p>假如你在修改程序，只是修改了某个class的接口的实现，而且修改的是private部分。之后，你编译时，发现好多文件都被重新编译了。这种问题的发生，在于没有把“将接口从实现中分离”。</p>
+<p>分离的关键在于“声明的依存性”替换了“定义的依存性”，这正是编译依存性最小化的本质：现实中，让头文件尽可能自我满足，万一做不到，则让它与其他文件内的声明（不是定义）相依。其他都源于以下设计策略：</p>
+<ul>
+<li><p>如果使用object references或object pointers可以完成任务，就不要使用object。因为，使用references或pointers只需要一个声明，而定义objects需要使用该类型的定义。</p>
+</li>
+<li><p>如果可以，尽量以class声明式替换class定义式。但是，当声明函数使用某个class时，即使是by value方式传递该类型参数/返回值，都不需要class定义。但是在使用这些函数时，这些classes在调用函数前一定要先曝光。客户终究是要知道classes的定义式，但是这样做的意义在于：将提供class定义式（通过#include完成）的义务，从函数声明所在头文件，转移到函数调用的客户文件。</p>
+</li>
+<li><p>为声明式和定义式提供两个不同的头文件。程序中，不应该让客户给出前置声明，程序作者一般提供两个头文件，一个用于声明式，一个用于定义式。在C++标准库的头文件中, &lt; iosfwd&gt; 内含iostream各组件的声明式，其对应定义分布在不同文件件，包括&lt; sstream&gt;,&lt; streambuf&gt;,&lt; fstream&gt;,&lt; iostream&gt;。</p>
+</li>
+</ul>
+<p>因此，避免大量依赖性编译的解决方案就是：在头文件中用class声明外来类，用指针或引用代替变量的声明；在cpp文件中包含外来类的头文件。</p>
+<h1 id="继承关系与面向对象设计"><a href="#继承关系与面向对象设计" class="headerlink" title="继承关系与面向对象设计"></a>继承关系与面向对象设计</h1><h2 id="条款35-：确定你的public-inheritance，模塑出“is-a”的关系"><a href="#条款35-：确定你的public-inheritance，模塑出“is-a”的关系" class="headerlink" title="条款35 ：确定你的public inheritance，模塑出“is a”的关系"></a>条款35 ：确定你的public inheritance，模塑出“is a”的关系</h2><p>以C++完成面向对象程序设计，最重要的一个规则是：public inheritance（公开继承）意味着“是一种（isa）”的关系。</p>
+<p>如果你令class D以public形式继承了class B，你便是告诉C++编译器说，每一个型别为D的对象同时也是一个型别为B的对象，反之并不成立。你的意思是B比D表现出更一般化的概念，而D比B表现出更特殊化的概念。你主张“B对象派的上用场的任何地方，D对象也一样可以派上用场”，因为每一个D对象都“是一种”B对象，反之如果你需要一个D对象，B对象无法效劳。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span>...&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span> <span class="keyword">public</span> Person &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<p>根据生活经验我们知道，每个“学生”都是“人”，但并非每个“人”都是“学生”。这便是上述继承体系所主张的意义。</p>
+<p>在C++领域中，任何函数如果期望获得一个型别为Person的引数，都可以接收一个Student对象而无任何异议。这个论点只有对public inheritance 才成立。</p>
+<h2 id="条款36-：区分接口继承和实现继承"><a href="#条款36-：区分接口继承和实现继承" class="headerlink" title="条款36 ：区分接口继承和实现继承"></a>条款36 ：区分接口继承和实现继承</h2><p>最明确而直接易懂的概念（也就是public inheritance）已经出现，但是再靠经一些，你会发现它们分为两类：函数接口的继承和函数实现的继承。这两种继承的差异，很像书本导读所讨论的函数声明与函数定义之间的差异。</p>
+<p>身为一个class设计者，有时候你会希望derived class只继承member function的接口；有时候你又会希望derived class同时继承member function的接口和实现，并能够以你所提供的实现代码来改写（override）它们；有时候你又会希望derived classes同时继承member function的接口和实现，并且不允许它们被改写（override）。</p>
+<ul>
+<li>Member function的接口总是会被继承。public inheritance意味着“是一种（isa）”，所以任何事情只要对base class而言为真，就一定对其derived classes为真。因此，如果某个函数可施行于某个class上头，一定也可施行于其subclasses上头。  </li>
+<li>声明一个纯虚拟函数的目的是为了让derived classes只继承其接口。  </li>
+<li>声明一般（非纯）虚拟函数的目的，是为了让derived classes继承该函数的接口和缺省行为。  </li>
+<li>声明非虚拟函数的目的是为了令derived classes继承函数的接口及其实现。</li>
+</ul>
+<p>书上提倡用纯虚函数去替代虚函数，因为虚函数提供了一个默认的实现，如果派生类的想要的行为与这个虚函数不一致，而又恰好忘记去覆盖虚函数，就会出现问题。但纯虚函数不会，因为它从语法上限定派生类必须要去实现它，否则将无法定义派生类的对象。</p>
+<p>同时，因为纯虚函数也是可以有默认实现的（但是它从语法上强调派生类必须重定义之，否则不能定义对象），所以完全可以替换虚函数。</p>
+<p>普通函数所代表的意义是不变性凌驾与特异性，所以它绝不该在派生类中被重新定义。</p>
+<p>在设计类成员函数时，一般既不要将所有函数都声明为non-virtual（普通函数），这会使得没有余裕空间进行特化工作；也一般不要将所有函数都声明为virtual（虚函数或纯虚函数），因为一般会有一些成员函数是基类就可以决定下来的，而被所有派生类所共用的。这个设计法则并不绝对，要视实际情况来定。</p>
+<h2 id="条款37-：绝对不要重新定义继承而来的非虚拟函数"><a href="#条款37-：绝对不要重新定义继承而来的非虚拟函数" class="headerlink" title="条款37 ：绝对不要重新定义继承而来的非虚拟函数"></a>条款37 ：绝对不要重新定义继承而来的非虚拟函数</h2><p>我们可以从两个角度来看这一主题：理论的角度和实务的角度。让我们从实务的角度开始：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">mf</span><span class="params">()</span></span>; <span class="comment">//注意mf为非虚拟函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span> <span class="keyword">public</span> B &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<p>虽然目前我们对B，D和mf一无所知，但面对一个型别为D的对象x：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D x; <span class="comment">//x是一个D对象</span></span><br></pre></td></tr></table></figure>
+<p>如果以下行为：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B *pB = &amp;x; <span class="comment">//获得指针，指向x</span></span><br><span class="line">pB-&gt;mf(); <span class="comment">//经由指针调用mf</span></span><br></pre></td></tr></table></figure>
+<p>异于以下行为：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D *pD = &amp;x; <span class="comment">//获得指针，指向x</span></span><br><span class="line">pD-&gt;mf(); <span class="comment">//经由指针调用mf</span></span><br></pre></td></tr></table></figure>
+<p>如果mf是个非虚拟函数，而D定义有它自己的版本，那么：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span> <span class="keyword">public</span> B</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">mf</span><span class="params">()</span></span>;<span class="comment">//遮掩了B::mf;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">pB-&gt;mf(); <span class="comment">//调用B::mf</span></span><br><span class="line">pD-&gt;mf(); <span class="comment">//调用D::mf</span></span><br></pre></td></tr></table></figure>
+<p>造成这一两面行为的原因是，非虚拟函数如B::mf和D::mf都是静态绑定。意思是由于pB的型别是pointer-to-B，通过pB调用的非虚拟函数总是B所定义的版本，纵使pB指向一个型别为“B所派生之class”的对象。</p>
+<p>结论是，如果你撰写class D并重新定义继承自class B的非虚拟函数mf，D对象很有可能展现出精神分裂的行径。更明确地说，当mf被调用时，任何一个D对象都可能表现出B或D的行为；决定因素并不在对象本身，而在于“指向该对象之指针”当初的声明型别。Reference也会展现和指针一样难以理解的行径。</p>
+<p>从理论层面来说：所谓public inheritance意味着是一种（isa）的关系。  </p>
+<ul>
+<li>适用于B对象的每一件事，也适用于D对象，因为每个D对象都是一种B对象；  </li>
+<li>B的subclasses一定会继承mf的接口和实现，因为mf是B的非虚拟函数。</li>
+</ul>
+<p>不论哪一种观点，结论都相同：无论什么情况下都不应该重新定义一个继承而来的非虚拟函数。</p>
+<h2 id="条款38-：绝对不要重新定义继承而来的缺省参数值"><a href="#条款38-：绝对不要重新定义继承而来的缺省参数值" class="headerlink" title="条款38 ：绝对不要重新定义继承而来的缺省参数值"></a>条款38 ：绝对不要重新定义继承而来的缺省参数值</h2><p>让我们一开始就将讨论范围简化。缺省参数只能存在于函数之中，而你只能够继承两种函数：虚拟函数和非虚拟函数。因此，重新定义一个缺省参数值的办法就是重新定义一个继承而来的函数，然而重新定义一个继承而来的非虚拟函数永远是错误的行为，所以我们可以安全地将讨论局限于“继承一个带有缺省参数值的虚拟函数”。</p>
+<p>再这种情况下，本条款的理由就非常直接而明确了：虚拟函数系动态绑定（dynamically bound），而缺省参数值却是静态绑定(statically bound)。</p>
+<p>对象的静态型别，是程序声明它时所采用的型别。</p>
+<p>对象的动态型别系指“对象目前所代表的型别”。一如其名称所示，可以在程序执行过程中改变。</p>
+<p>虚拟函数系动态绑定而来，意思是这一类特殊函数之所以被调用，系取决于对象的动态型别。</p>
+<p>当你考虑带有缺省参数值的虚拟函数时，问题来了，因为就如上面所说，虚拟函数是动态绑定的，而缺省参数值却是静态绑定的。意思是你可能会在调用一个定义于derived class内的虚拟函数的同时，却使用base class为它所指定的缺省参数值。</p>
+<h2 id="条款39-：避免在继承体系中做向下转型（case-down）动作"><a href="#条款39-：避免在继承体系中做向下转型（case-down）动作" class="headerlink" title="条款39 ：避免在继承体系中做向下转型（case down）动作"></a>条款39 ：避免在继承体系中做向下转型（case down）动作</h2><p>将从一个“base class指针”转为一个“derived class指针”的动作称为down case（向下转型），因为你是从继承体系的上方移到下方。</p>
+<p>在继承体系中，public继承是一种is a 的关系，所以所有父类能够完成的动作，讲道理都是能被子类所替换的，所以在c++中，向上转型是安全的，即子类能够代替父类完成相应的工作。由此也可以推出，向下转型存在着一定的风险，所以这边用到了一个dynamic_cast的转型动作，当你确信该父类指针确实指向子类对象时，可以采用此类型转换，但此篇文章的主题为——避免向下转型动作，下面便介绍两种避免向下转型的方法：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person(<span class="built_in">string</span> name) :name(name) &#123;&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BankAccount</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">virtual</span> ~BankAccount() &#123;&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span> </span>= <span class="number">0</span>;<span class="comment">//存款</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span> </span>= <span class="number">0</span>;<span class="comment">//取款</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span> </span>= <span class="number">0</span>;<span class="comment">//余额</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//带有利息类型的储金账户  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SavingsAccount</span> :</span><span class="keyword">public</span> BankAccount</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	SavingsAccount(<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; ptr) :m_ptr(ptr) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//存款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"存入"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//取款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"取出"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span><span class="comment">//余额</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">creditInterest</span><span class="params">()</span><span class="comment">//利息</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		interest = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">return</span> interest;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; m_ptr;</span><br><span class="line">	<span class="keyword">int</span> interest;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//带利息的支票账户</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CheckingAccount</span> :</span><span class="keyword">public</span> BankAccount</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	CheckingAccount(<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; ptr) :m_ptr(ptr) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//存款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"存入"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//取款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"取出"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span><span class="comment">//余额</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">creditInterest</span><span class="params">()</span><span class="comment">//利息</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		interest = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">return</span> interest;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; m_ptr;</span><br><span class="line">	<span class="keyword">int</span> interest;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在此我定义了四个类 其中一个person类用于构造BankAccount的派生类。一个基类加上两个派生类。下面看客户端的调用方法。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MyFunc1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; p_peo = make_shared&lt;Person&gt;(<span class="string">"whj"</span>);</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;BankAccount&gt; <span class="title">p_bank</span><span class="params">(<span class="keyword">new</span> SavingsAccount(p_peo))</span></span>;</span><br><span class="line">	<span class="comment">//p_bank-&gt;creditInterest();//无法调用，因为creditInterest不是一个虚函数</span></span><br><span class="line">	SavingsAccount* temp_p = <span class="keyword">dynamic_cast</span>&lt;SavingsAccount*&gt;(p_bank.get());<span class="comment">//dynamic_cast安全的向下转型动作，若型别一致，传回一个该类型，否则传回nulltpr</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; temp_p-&gt;creditInterest();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，想要调用派生类的creditInterest()必须将基类指针向下转型才可以实现，但是这个向下转型的动作需要客户端手动指定类型。由此我们可以很容易想到，为什么需要有这个转型动作，是由于creditInterest()在基类中没体现，若它是一个纯虚函数，则可以在客户端中通过基类指针调用，这样即解决了向下转型的问题，又可以使得多态得以实现，无需客户端判断具体对象。这就是第一种避免向下转型的方法.</p>
+<p>但是此方法需要将已经封装好的基类进行修改，违背了开闭原则，而且基类BankAccount的派生类分为有利息的账户和无利息的账户，在基类中声明creditInterest()意味着非利息账户也必须重写此方法（解决办法是在无利息的子类中将其实现为一个空的函数，或者直接在基类中选择将其定义为一个空的函数体而不是纯虚函数），对于有代码洁癖的人来说这实在不是一个好方法。</p>
+<p>下面提供第二种避免向下转型的方法，通过一个派生自BankAccount的抽象类InterestAccount ，在它的内部加上所有拥有利息的账户的接口virtual int creditInterest() = 0。如此便可避免强迫在原本的基类中实现本不该有的接口。<br>代码如下  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterestAccount</span> :</span><span class="keyword">public</span> BankAccount</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span> </span>= <span class="number">0</span>;<span class="comment">//存款</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span> </span>= <span class="number">0</span>;<span class="comment">//取款</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span> </span>= <span class="number">0</span>;<span class="comment">//余额</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">creditInterest</span><span class="params">()</span> </span>= <span class="number">0</span>;<span class="comment">//利息</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//储金账户，继承自InterestAccount</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SavingsAccount2</span> :</span><span class="keyword">public</span> InterestAccount</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	SavingsAccount2(<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; ptr) :m_ptr(ptr) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//存款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"存入"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//取款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"取出"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span><span class="comment">//余额</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">creditInterest</span><span class="params">()</span><span class="comment">//利息</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		interest = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">return</span> interest;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; m_ptr;</span><br><span class="line">	<span class="keyword">int</span> interest;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//支票账户，继承自InterestAccount</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CheckingAccount2</span> :</span><span class="keyword">public</span> InterestAccount</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	CheckingAccount2(<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; ptr) :m_ptr(ptr) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeDeposit</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//存款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"存入"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">makeWithdrawal</span><span class="params">(<span class="keyword">int</span> amount)</span><span class="comment">//取款</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"取出"</span> &lt;&lt; amount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">balance</span><span class="params">()</span><span class="comment">//余额</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">creditInterest</span><span class="params">()</span><span class="comment">//利息</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		interest = <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">return</span> interest;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;Person&gt; m_ptr;</span><br><span class="line">	<span class="keyword">int</span> interest;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>当然，可能存在某种情况，比如你不能修改BankAcount类，或者你甚至不能继承它（继承一个类需要有它的具体实现细节）此时就只能考虑使用向下转型了，但即便如此，也应该避免使用static_cast,而是使用安全向下转型的dynamic_cast动作。</p>
+<h2 id="条款40-：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系"><a href="#条款40-：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系" class="headerlink" title="条款40 ：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系"></a>条款40 ：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系</h2><p>所谓layering，是以一个class为本，建立另一个class，并令所谓layering class（外层）内含所谓layered class（内层）的对象作为data member。例如：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Address</span> &#123;</span>...&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhoneNumber</span> &#123;</span>...&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">string</span> name;</span><br><span class="line">	Address address;</span><br><span class="line">	PhoneNumber voiceNumber;</span><br><span class="line">	PhoneNumber faxNumber;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>此例之中，我们说Person class是铺陈（layered）在string，Address，PhoneNumber之上，因为它内含那些型别的data members。</p>
+<p>public inheritance（公开继承）意味着“是一种（isa）”。对比地，layering意味着“有一个（has-a）”或根据某物实现(is-implemented-in-terms-of).</p>
+<p>当你使用layering技术来模塑两个classes之间的关系时，你便是在那些classes之间产生了一个编译依存关系。</p>
+<h2 id="条款41-：区分inheritance和templates"><a href="#条款41-：区分inheritance和templates" class="headerlink" title="条款41 ：区分inheritance和templates"></a>条款41 ：区分inheritance和templates</h2><ul>
+<li>template应该用来产生一群classes，其中对象型别不会影响class的函数行为。  </li>
+<li>inheritance应该用于一群classes身上，其中对象型别会影响class的函数行为。</li>
+</ul>
+<p>将这两点融入内在思想中，你便可以掌握inheritance和templates之间正确的选择之道。</p>
+<h2 id="条款42-：明智地运用private-inheritance（私有继承）"><a href="#条款42-：明智地运用private-inheritance（私有继承）" class="headerlink" title="条款42 ：明智地运用private inheritance（私有继承）"></a>条款42 ：明智地运用private inheritance（私有继承）</h2><p>如果class之间的继承关系是private，编译器通常不会自动将一个derived class object转换为一个base class object。这和public inheritance的情况相反。</p>
+<p>第二条规则是，由private base class继承而来的所有members，在derived class中都会变成private属性，纵使它们在base class中原本是protected或public属性。</p>
+<p>private inheritance意味着“根据某物实现”。如果你让class D以private方式继承class B，这么做的原因是，你想采用已经撰写于class B内的某些程序代码，而不是因为B和D的对象有任何概念关系存在。所以private inheritance纯粹只是一种实现上的技术，与观念无涉。private inheritance意味着只有实现部分被继承；接口部分应略去。如果D以private方式继承B，意思是D对象根据B对象实现而得，再没有其他意思了。</p>
+<p>和layering技术一样，根据private inheritance而完成的实现代码，可避免程序代码重复，因为型别安全（type-safe）的interface classes，其内除了以inline方式调用底层的函数之外，一无长物。</p>
+<p>唯有通过继承，才得以取用protected members，唯有通过继承，才允许虚拟函数被重新定义。由于虚拟函数和protected members的存在，当我们欲表现classes之间“根据某物实现”这种关系时，有时候private inheritance是唯一具有实用价值的做法，一旦private inheritance成为你所能支配的实现技术中最适当的一个，你就不应该害怕使用它。然而在此同时我仍要强调，通常layering是最受喜爱的技术，所以你应该尽可能运用它。</p>
+<h2 id="条款43-：明智地运用多继承（multiple-inheritance，MI）"><a href="#条款43-：明智地运用多继承（multiple-inheritance，MI）" class="headerlink" title="条款43 ：明智地运用多继承（multiple inheritance，MI）"></a>条款43 ：明智地运用多继承（multiple inheritance，MI）</h2><p>C++的多继承有一个毋庸置疑的事实就是：它打开了潘多拉的盒子，释放出一大堆单继承之中并不存在的复杂性。其中最根本的一个复杂性就是模棱两可。如果derived class从一个“以上”的base classes继承了同一个member名称，那么对该名称的任何取用行为都会造成模棱两可的问题；你必须明白说出你要的是哪个member。</p>
+<ul>
+<li>多继承比单继承复杂，引入了歧义的问题，以及虚继承的必要性；</li>
+<li>虚继承在大小、速度、初始化/赋值的复杂性上有不小的代价，当虚基类中没有数据时还是比较合适的；</li>
+<li>多继承有时也是有用的。典型的场景便是：public继承自一些接口类，private继承自那些实现相关的类。</li>
+</ul>
+<p>多继承遇到的首要问题便是父类名称冲突时调用的歧义。如：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">func</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span> <span class="keyword">public</span> A, <span class="keyword">public</span> B&#123; ... &#125;;</span><br><span class="line"></span><br><span class="line">C c;</span><br><span class="line">c.func();           <span class="comment">// 歧义！</span></span><br></pre></td></tr></table></figure>
+<p>虽然B::func是私有的，但仍然会编译错。这是由C++的重载函数调用的解析规则决定的， 首先找到参数最匹配的函数，然后再检查可见性。上述例子中并未找到最匹配的函数，所以抛出了编译错误。 为了解决歧义，你必须这样调用：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.A::func();</span><br></pre></td></tr></table></figure>
+<p><strong>多继承菱形</strong><br>当多继承的父类拥有更高的继承层级时，可能产生更复杂的问题比如多继承菱形（deadly MI diamond）。如图：<br><img src="/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/01.jpg" alt></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputFile</span>:</span> <span class="keyword">public</span> File&#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OutputFile</span>:</span> <span class="keyword">public</span> File&#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IOFile</span>:</span> <span class="keyword">public</span> InputFile, <span class="keyword">public</span> OutputFile&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样的层级在C++标准库中也存在，例如basic_ios, basic_istream, basic_ostream, basic_iostream。</p>
+<p>IOFile的两个父类都继承自File，那么File的属性（比如filename）应该在IOFile中保存一份还是两份呢？ 这是取决于应用场景的，就File::filename来讲显然我们希望它只保存一份，但在其他情形下可能需要保存两份数据。 C++还是一贯的采取了自己的风格：都支持！默认是保存两份数据的方式。如果你希望只存储一份，可以用virtual继承：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputFile</span>:</span> <span class="keyword">virtual</span> <span class="keyword">public</span> File&#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OutputFile</span>:</span> <span class="keyword">virtual</span> <span class="keyword">public</span> File&#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IOFile</span>:</span> <span class="keyword">public</span> InputFile, <span class="keyword">public</span> OutputFile&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>可能多数情况下我们都是希望virtual的方式来继承。但总是用virtual也是不合适的，它有代价：  </p>
+<ul>
+<li>虚继承类的对象会更大一些；</li>
+<li>虚继承类的成员访问会更慢一些；</li>
+<li>虚继承类的初始化更反直觉一些。继承层级的最底层（most derived class）负责虚基类的初始化，而且负责整个继承链上所有虚基类的初始化。</li>
+</ul>
+<p>基于这些复杂性，Scott Meyers对于多继承的建议是：  </p>
+<ul>
+<li>如果能不使用多继承，就不用他；</li>
+<li>如果一定要多继承，尽量不在里面放数据，也就避免了虚基类初始化的问题。</li>
+</ul>
+<p><strong>接口类</strong><br>这样的一个不包含数据的虚基类和Java或者C#提供的Interface有很多共同之处，这样的类在C++中称为接口类。一个Person的接口类是这样的：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IPerson</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~IPerson();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">name</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">birthDate</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>由于客户无法创建抽象类的对象，所以必须以指针或引用的方式使用IPerson。 需要创建实例时客户会调用一些工厂方法，比如：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">shared_ptr</span>&lt;IPerson&gt; <span class="title">makePerson</span><span class="params">(DatabaseID personIdentifier)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>同时继承接口类与实现类</strong><br>在Java中一个典型的类会拥有这样的继承关系：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="title">extends</span> <span class="title">B</span> <span class="title">implements</span> <span class="title">IC</span>, <span class="title">ID</span>&#123;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>继承B通常意味着实现继承，继承IC和ID通常意味着接口继承。在C++中没有接口的概念，但我们有接口类！ 于是这时就可以多继承：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPerson</span>:</span> <span class="keyword">public</span> IPerson, <span class="keyword">private</span> PersonInfo&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>PersonInfo是私有继承，因为Person是借助PersonInfo实现的。 条款39提到对象组合是比private继承更好的实现继承方式。 但如果我们希望在CPerson中重写PersonInfo的虚函数，那么就只能使用上述的private继承了（这时就是一个合理的多继承场景）。</p>
+<p>现在来设想一个需要重写虚函数的场景： 比如PersonInfo里面有一个print函数来输出name, address, phone。但它们之间的分隔符被设计为可被子类定制的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersonInfo</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> d = delimiter();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;name&lt;&lt;d&lt;&lt;address&lt;&lt;d&lt;&lt;phone;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">char</span> <span class="title">delimiter</span><span class="params">()</span> <span class="keyword">const</span></span>&#123; <span class="keyword">return</span> <span class="string">','</span>; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>CPerson通过private继承复用PersonInfo的实现后便可以重写delimiter函数了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CPerson</span>:</span> <span class="keyword">public</span> IPerson, <span class="keyword">private</span> PersonInfo&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">char</span> <span class="title">delimiter</span><span class="params">()</span> <span class="keyword">const</span></span>&#123; <span class="keyword">return</span> <span class="string">':'</span>; &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至此完成了一个合理的有用的多继承（MI）的例子。</p>
+<p><strong>总结</strong></p>
+<p>我们应当将多继承视为面向对象设计工具箱中一个有用的工具。相比于单继承它会更加难以理解， 如果有一个等价的单继承设计我们还是应该采用单继承。但有时多继承确实提供了清晰的、可维护的、合理的方式来解决问题。 此时我们便应该理智地使用它。</p>
+<ul>
+<li>多继承比单继承复杂，引入了歧义的问题，以及虚继承的必要性；</li>
+<li>虚继承在大小、速度、初始化/赋值的复杂性上有不小的代价，当虚基类中没有数据时还是比较合适的；</li>
+<li>多继承有时也是有用的。典型的场景便是：public继承自一些接口类，private继承自那些实现相关的类。</li>
+</ul>
+<h2 id="条款44-：说出你的意思并了解你所说的每一句话"><a href="#条款44-：说出你的意思并了解你所说的每一句话" class="headerlink" title="条款44 ：说出你的意思并了解你所说的每一句话"></a>条款44 ：说出你的意思并了解你所说的每一句话</h2><p>“说出你的意思”只是战斗的一半而已。另一半就是要“了解你所说的每一句话”，这两点的重要性不相上下。例如，如果你贸然便将member functions声明为非虚拟，而没有认识到这么做就是在subclasses身上设了枷锁，那么你的行为便是不负责任又不道德。声明一个非虚拟member function的意思是，这个函数的不变性凌驾于其变异性之上。</p>
+<p>public inheritance和isa之间的对等关系，以及nonvirtual member functions和“不变性凌驾于变异性之上”之间的对等关系，只是“C++语言结构”与“C++设计观念”之间众多映照实例中的两个。以下摘列最重要的一些观念映对。 </p>
+<ul>
+<li>共同的base class意味着共同的特性。如果class D1和class D2都声明class B为base，D1和D2便从B手中继承了共同的data members和共同的member functions。</li>
+<li>Public inheritance（公开继承）意味着“是一种（isa）”。如果class D以public方式继承class B，每个D对象便也是一个B对象，反之则不成立。</li>
+<li>Private inheritance（私有继承）意味着“根据某物实现(is-implemented-in-terms-of)”。如果class D以private方式继承了class B，D对象便是根据B对象实现；B对象和D对象之间并没有任何概念上的关系。</li>
+<li>Layering意味着“有一个（has-a）”或“根据某物实现(is-implemented-in-terms-of)”。如果class A内含一个型别为B的data member，那么A对象之中便有一个型别B的成分，或说A对象系根据B对象实现。</li>
+</ul>
+<p>只有当牵涉到public inheritance（公开继承）时，以下数点才成立:  </p>
+<ul>
+<li>纯虚拟函数意味着：只有其函数接口会被继承。如果class C声明了一个纯虚拟函数mf，则C的subclasses必须继承mf的接口，而C的具象subclasses必须提供自己的实现代码。</li>
+<li>一般(非纯)虚拟函数意味着：函数的接口及缺省实现代码都会被继承。如果class C声明了一个一般(非纯)虚拟函数mf，C的subclasses必须继承mf的接口，它们也可以继承mf的缺省实现代码。</li>
+<li>非虚拟函数意味着：此函数的接口和其实现代码都会被继承。如果class C声明了一个非虚拟函数mf，C的subclasses必须同时继承mf的接口和实现代码。事实上可以说，mf为C定义了一个“不变性凌驾于变异性之上”的性质。</li>
+</ul>
+<h1 id="杂项讨论"><a href="#杂项讨论" class="headerlink" title="杂项讨论"></a>杂项讨论</h1><h2 id="条款45-：清楚知道C-（编译器）默默为我们完成和调用哪些函数"><a href="#条款45-：清楚知道C-（编译器）默默为我们完成和调用哪些函数" class="headerlink" title="条款45 ：清楚知道C++（编译器）默默为我们完成和调用哪些函数"></a>条款45 ：清楚知道C++（编译器）默默为我们完成和调用哪些函数</h2><p>对于一个空类，编译器可能默默生成下面四个函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A() &#123;...&#125;</span><br><span class="line">    A(<span class="keyword">const</span> A&amp; rhs) &#123;...&#125;</span><br><span class="line">    ~A() &#123;...&#125;</span><br><span class="line">    A&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> A&amp; rhs) &#123;...&#125;</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只有在这些函数被需要、被调用时，编译器才会默认生成：构造、拷贝构造、析构、拷贝赋值这四个函数。</li>
+<li>默认生成的构造、析构函数被用来调用“隐藏”的代码，如基类的构造、析构函数</li>
+<li>默认析构函数是 non-virtual，除非继承自父类的 virtual 析构函数</li>
+<li>当存在构造函数时，编译器不会再自动生成无参默认构造函数</li>
+<li>编译器的默认 copy 构造函数，会把每一个 non-static 成员变量拷贝到目标对象</li>
+</ul>
+<p>当情况不合适时，编译器拒绝生成默认函数，如下列情况：</p>
+<ul>
+<li>当含有 reference 成员变量</li>
+<li>当含有 const 成员变量</li>
+<li>当基类 copy assignment 函数为 private 时。因为默认生成的 copy assignment 函数想调用基类的 copy assignment 函数而不得。</li>
+</ul>
+<h2 id="条款46-：宁愿编译和连接时出错，也不要执行时才错"><a href="#条款46-：宁愿编译和连接时出错，也不要执行时才错" class="headerlink" title="条款46 ：宁愿编译和连接时出错，也不要执行时才错"></a>条款46 ：宁愿编译和连接时出错，也不要执行时才错</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Month</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">const</span> Month <span class="title">Jan</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">const</span> Month <span class="title">Feb</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">2</span>; &#125;</span><br><span class="line">	...</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">const</span> Month <span class="title">Dec</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">12</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">asInt</span><span class="params">()</span> <span class="keyword">const</span> </span></span><br><span class="line"><span class="function">	</span>&#123; <span class="keyword">return</span> monthNumber; &#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Month(<span class="keyword">int</span> number): monthNumber(number) &#123;&#125;</span><br><span class="line">	Month(<span class="keyword">const</span> Month&amp; rhs);</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> monthNumber;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Date(<span class="keyword">int</span> day, <span class="keyword">const</span> Month&amp; month, <span class="keyword">int</span> year);</span><br><span class="line">	...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个设计结合了数个概念。  </p>
+<ul>
+<li>第一:Month构造函数私有,可以阻止clients产生新的月份. </li>
+<li>第二:每个Month object都是const,所以它们不可能被修改。</li>
+<li>第三:获得Month object的唯一途径调用函数,不用担心Month object没有被初始化.</li>
+</ul>
+<p>这个例子以”编译期检验”取代了”执行期检验”</p>
+<p>消除所有的执行时期检验是不切实际的,尽管如此,将执行时期的检验移到编译期或连接期,还是一个值得的目标。</p>
+<h2 id="条款47-：使用non-local-static-objects之前先确定它已有初值"><a href="#条款47-：使用non-local-static-objects之前先确定它已有初值" class="headerlink" title="条款47 ：使用non-local static objects之前先确定它已有初值"></a>条款47 ：使用non-local static objects之前先确定它已有初值</h2><p>当一个编译单元内某对象的初始化动作，与另一个编译单元内某对象的值相依，而后者也需要初始化。<br>可能导致第一个对象没有初值。 </p>
+<p>解决的办法：Singleton pattern。<br>将每一个non－local static object转到一个专属函数中，接下来令函数传回一个reference，指向内含的那个static object。这样，客户不再直接取用static object，而是改调用函数。</p>
+<p>依据：C++明确指出函数中的static对象的初始化时机：在函数调用期间第一次遇到对象的定义时。</p>
+<p>这样做的另一个好处：如果从未调用带有非本地静态对象的函数，那么绝不会付出对象的构造和析构成本。</p>
+<p>例：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">FileSystem&amp; <span class="title">theFileSystem</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> FileSystem tfs;</span><br><span class="line">	<span class="keyword">return</span> tfs;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>客户端几乎完全不变，只不过它们现在调用theFileSystem()，而不是直接取用theFileSystem。 </p>
+<p>这项技术之所以有效，是因为它为你的对象带来了一个合理的初始化次序。如果你要求对象A一定得在对象B之前先初始化，而你又让A的初始化动作取决于B是否已被初始化，你便有麻烦了。坦白地说，这是你自找的。</p>
+<h2 id="条款48-：不要对编译器的警告信息视而不见"><a href="#条款48-：不要对编译器的警告信息视而不见" class="headerlink" title="条款48 ：不要对编译器的警告信息视而不见"></a>条款48 ：不要对编译器的警告信息视而不见</h2><p>下面是每个人有时会犯的错误：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span> <span class="keyword">public</span> B</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>作者的想法是以D::f重新定义虚拟函数B::f,但其中有个错误：B的f（）是个const member function，而在D之中它并未被声明为const。某个编译器会给一个这样的警告信息：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warning: D::f() <span class="function">hides <span class="keyword">virtual</span> <span class="title">B::f</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>编译器企图告诉你的是B所声明的f并未在D中被重新声明，它被完全遮蔽住了！如果忽略这个警告，几乎和可以确定会导致错误的程序行为。</p>
+<p>说到警告信息，请记住，警告信息天生就和编译器相依相靠，所以轻率地仰赖编译器为你找出程序错误，绝不是什么好主意。编译器的用途基本上是为你将C++代码转换为可执行代码，不是作为你的安全网。</p>
+<h2 id="条款49-：尽量让自己熟悉C-标准程序库"><a href="#条款49-：尽量让自己熟悉C-标准程序库" class="headerlink" title="条款49 ：尽量让自己熟悉C++标准程序库"></a>条款49 ：尽量让自己熟悉C++标准程序库</h2><p>标准库的每一样东西几乎都在namespace std中，然而世界上有无可计数的C++程序代码依赖那些已经使用多年的“准“标准程序库，例如声明于&lt; iostream.h&gt;,&lt; limits.h&gt;等文件中的功能。 </p>
+<p>解决方法，设计新的头文件名，给披上std外衣的各个组件使用。  </p>
+<ul>
+<li>将原有的c++头文件中的.h扩展拿掉，于是&lt; iostream.h&gt;变为&lt; iostream&gt;。</li>
+<li>C头文件采用相同办法，并在最前面加上一个字母c。于是&lt; stdio.h&gt;变为&lt; cstdio&gt; </li>
+</ul>
+<p>关于标准程序库，必须知道的事情：几乎其中每一样东西都是template。</p>
+<p>如：cin的型别：basic_istream<char> string的型别：basic_string<char>一份完整的声明：  </char></char></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span>&#123;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>&gt; <span class="title">struct</span> <span class="title">char_traits</span>;</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; <span class="title">class</span> <span class="title">allocator</span>;</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>, <span class="title">class</span> <span class="title">traits</span> = <span class="title">char_traits</span>&lt;charT&gt;, <span class="title">class</span> <span class="title">Allocator</span> = <span class="title">allocator</span>&lt;charT&gt; &gt; <span class="title">class</span> <span class="title">basic_string</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> basic_string&lt;<span class="keyword">char</span>&gt; <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C++标准库的主要组件：  </p>
+<ul>
+<li>C标准函数库</li>
+<li>iostreams</li>
+<li>strings</li>
+<li>Containers</li>
+<li>Algorithms</li>
+<li>国际化支持。</li>
+<li>数值处理</li>
+<li>诊断功能。 </li>
+</ul>
+<p>STL是标准程序库中最革命的部分。<br>原因：STL并不真正是个软件，而是一组公约。STL组件都是遵循这些公约下的产物。 </p>
+<h2 id="条款50-：加强自己对C-的了解"><a href="#条款50-：加强自己对C-的了解" class="headerlink" title="条款50 ：加强自己对C++的了解"></a>条款50 ：加强自己对C++的了解</h2><p>C++涵盖的东西很多：有C，有overloading（重载）、有object-oriented（面向对象）、有template，有exception、有namespace。这么一大堆素材，有时候让人喘不过气来。你该如何面对这堆东西？</p>
+<p>一旦了解造成C++这番面貌的原动力（亦即这个语言的设计目标），面对这些东西就不会太困难。最主要的几个设计目标是：  </p>
+<ul>
+<li>与C兼容。</li>
+<li>高效率。</li>
+<li>与传统工具和开发环境兼容。</li>
+<li>解决真正问题的能力。</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,57 +449,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-11-14T01:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">改善程序技术与设计思维的50个有效做法（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/">改善程序技术与设计思维的50个有效做法（上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类与函数之实现"><span class="toc-number">1.</span> <span class="toc-text">类与函数之实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款29-：避免传回内部数据的handles"><span class="toc-number">1.1.</span> <span class="toc-text">条款29 ：避免传回内部数据的handles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款30-：避免写出member-functions，传回一个non-const-pointer或reference并以之指向较低存取层级的members"><span class="toc-number">1.2.</span> <span class="toc-text">条款30 ：避免写出member functions，传回一个non-const pointer或reference并以之指向较低存取层级的members</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款31-：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”"><span class="toc-number">1.3.</span> <span class="toc-text">条款31 ：千万不要传回“函数内local对象的reference”或“函数内以new获得的指针所指的对象”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款32-：尽可能延缓变量定义式的出现"><span class="toc-number">1.4.</span> <span class="toc-text">条款32 ：尽可能延缓变量定义式的出现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款33-：明智地运用inlining"><span class="toc-number">1.5.</span> <span class="toc-text">条款33 ：明智地运用inlining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款34-：将文件之间的编译依赖关系降至最低"><span class="toc-number">1.6.</span> <span class="toc-text">条款34 ：将文件之间的编译依赖关系降至最低</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承关系与面向对象设计"><span class="toc-number">2.</span> <span class="toc-text">继承关系与面向对象设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款35-：确定你的public-inheritance，模塑出“is-a”的关系"><span class="toc-number">2.1.</span> <span class="toc-text">条款35 ：确定你的public inheritance，模塑出“is a”的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款36-：区分接口继承和实现继承"><span class="toc-number">2.2.</span> <span class="toc-text">条款36 ：区分接口继承和实现继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款37-：绝对不要重新定义继承而来的非虚拟函数"><span class="toc-number">2.3.</span> <span class="toc-text">条款37 ：绝对不要重新定义继承而来的非虚拟函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款38-：绝对不要重新定义继承而来的缺省参数值"><span class="toc-number">2.4.</span> <span class="toc-text">条款38 ：绝对不要重新定义继承而来的缺省参数值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款39-：避免在继承体系中做向下转型（case-down）动作"><span class="toc-number">2.5.</span> <span class="toc-text">条款39 ：避免在继承体系中做向下转型（case down）动作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款40-：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系"><span class="toc-number">2.6.</span> <span class="toc-text">条款40 ：通过layering技术来模塑has-a或is-implemented-in-terms-of（根据某物实现）的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款41-：区分inheritance和templates"><span class="toc-number">2.7.</span> <span class="toc-text">条款41 ：区分inheritance和templates</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款42-：明智地运用private-inheritance（私有继承）"><span class="toc-number">2.8.</span> <span class="toc-text">条款42 ：明智地运用private inheritance（私有继承）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款43-：明智地运用多继承（multiple-inheritance，MI）"><span class="toc-number">2.9.</span> <span class="toc-text">条款43 ：明智地运用多继承（multiple inheritance，MI）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款44-：说出你的意思并了解你所说的每一句话"><span class="toc-number">2.10.</span> <span class="toc-text">条款44 ：说出你的意思并了解你所说的每一句话</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项讨论"><span class="toc-number">3.</span> <span class="toc-text">杂项讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款45-：清楚知道C-（编译器）默默为我们完成和调用哪些函数"><span class="toc-number">3.1.</span> <span class="toc-text">条款45 ：清楚知道C++（编译器）默默为我们完成和调用哪些函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款46-：宁愿编译和连接时出错，也不要执行时才错"><span class="toc-number">3.2.</span> <span class="toc-text">条款46 ：宁愿编译和连接时出错，也不要执行时才错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款47-：使用non-local-static-objects之前先确定它已有初值"><span class="toc-number">3.3.</span> <span class="toc-text">条款47 ：使用non-local static objects之前先确定它已有初值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款48-：不要对编译器的警告信息视而不见"><span class="toc-number">3.4.</span> <span class="toc-text">条款48 ：不要对编译器的警告信息视而不见</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款49-：尽量让自己熟悉C-标准程序库"><span class="toc-number">3.5.</span> <span class="toc-text">条款49 ：尽量让自己熟悉C++标准程序库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款50-：加强自己对C-的了解"><span class="toc-number">3.6.</span> <span class="toc-text">条款50 ：加强自己对C++的了解</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -264,8 +584,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
