@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Blog-lllfreeman</title>
+  <title>35个改善编程与设计的有效方法（上） | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog-lllfreeman">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="More Effective C++学习笔记 基础议题基础议题。是的，pointers（指针）、references（引用）、casts（类型转换）、arrays（数组）、constructors（构造函数）———再没有比这些更基础的议题了。几乎最简单的C++程序也会用到其中大部分特性，而许多程序会用到上述所有特性。 条款1 ：仔细区别pointers和referencesPointers和ref">
+<meta property="og:type" content="article">
+<meta property="og:title" content="35个改善编程与设计的有效方法（上）">
+<meta property="og:url" content="http://yoursite.com/2020/11/19/35%E4%B8%AA%E6%94%B9%E5%96%84%E7%BC%96%E7%A8%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
+<meta property="og:description" content="More Effective C++学习笔记 基础议题基础议题。是的，pointers（指针）、references（引用）、casts（类型转换）、arrays（数组）、constructors（构造函数）———再没有比这些更基础的议题了。几乎最简单的C++程序也会用到其中大部分特性，而许多程序会用到上述所有特性。 条款1 ：仔细区别pointers和referencesPointers和ref">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-19T13:36:37.000Z">
+<meta property="article:modified_time" content="2020-11-21T08:59:18.213Z">
 <meta property="article:author" content="lllfreeman">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog-lllfreeman" type="application/atom+xml">
@@ -151,33 +156,290 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-使用RAID与LVM磁盘阵列技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-35个改善编程与设计的有效方法（上）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/">使用RAID与LVM磁盘阵列技术</a>
+    <h1 class="article-title" itemprop="name">
+      35个改善编程与设计的有效方法（上）
     </h1>
   
 
         
-        <a href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2020-06-30T05:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
+        <a href="/2020/11/19/35%E4%B8%AA%E6%94%B9%E5%96%84%E7%BC%96%E7%A8%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-11-19T13:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="RAID（独立冗余磁盘阵列）"><a href="#RAID（独立冗余磁盘阵列）" class="headerlink" title="RAID（独立冗余磁盘阵列）"></a>RAID（独立冗余磁盘阵列）</h1><p>RAID技术通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据切割成多个区段后分别存放在各个不同的物理硬盘设备上，然后利用分散读写技术来提升磁盘阵列整体的性能，同时把多个重要数据的副本同步到不同的物理硬盘设备上，从而起到了非常好的数据冗余备份效果。<br>RAID不仅降低了硬盘设备损坏后丢失数据的几率，还提升了硬盘设备的读写速度。</p>
-        
-          <a class="article-more-a" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/#more">more >></a>
-        
+        <p><strong>More Effective C++学习笔记</strong></p>
+<h1 id="基础议题"><a href="#基础议题" class="headerlink" title="基础议题"></a>基础议题</h1><p>基础议题。是的，pointers（指针）、references（引用）、casts（类型转换）、arrays（数组）、constructors（构造函数）———再没有比这些更基础的议题了。几乎最简单的C++程序也会用到其中大部分特性，而许多程序会用到上述所有特性。</p>
+<h2 id="条款1-：仔细区别pointers和references"><a href="#条款1-：仔细区别pointers和references" class="headerlink" title="条款1 ：仔细区别pointers和references"></a>条款1 ：仔细区别pointers和references</h2><p>Pointers和references看起来很不一样(pointers使用“*”和“-&gt;”操作符，reference则使用“.”)，但它们似乎做类似的事情。不论pointers或是references都使你得间接参考其他对象。</p>
+<a id="more"></a>
+<p>首先你必须认知一点，没有所谓的null reference。一个reference必须总代表某个对象。所以如果你有一个变量，其目的是用来指向(代表)另一个对象，但是也有可能它不指向（代表）任何对象，那么你应该使用pointer，因为你可以将pointer设为null。换个角度看，如果这个变量总是必须代表一个对象，也就是说如果你的设计并不允许这个变量为null，那么你应该使用reference。</p>
+<p>由于reference一定得代表某个对象，C++因此要求reference必须有初值。但是pointer没有这样的限制。</p>
+<p>没有所谓的null reference这个事实意味使用reference可能会比使用pointers更富效率。这是因为使用reference之前不需要测试其有效性。</p>
+<p>Pointers和references之间的另一个重要差异就是，pointers可以被重新赋值，指向另一个对象，reference却总是代表（指向）它最初获得的那个对象。</p>
+<p>一般而言，当你需要考虑“不指向任何对象”的可能性时，或是考虑“在不同时间指向不同对象”的能力时，你就应该采用pointer。前一种情况你可以将pointer设为null，后一种情况你可以改变pointer所指对象。而当你确定”总是会代表某个对象”，而且“一旦代表了该对象就不能够再改变”，那么你应该选用reference。</p>
+<p>因此，让我们做下总结：当你知道你需要指向某个东西，而且绝不会改变指向其他东西，或是当你实现一个操作符而其语法需求无法由pointers达成，你就应该选择references。任何其他时候，请采用pointers。</p>
+<h2 id="条款2-：最好使用C-转型操作符"><a href="#条款2-：最好使用C-转型操作符" class="headerlink" title="条款2 ：最好使用C++转型操作符"></a>条款2 ：最好使用C++转型操作符</h2><p>为解决C旧式转型的缺点，C++导入4个新的转型操作符：static_cast,const_cast,dynamic_cast和reinterpret_cast.对大部分使用目的而言，面对这些操作符你唯一需要知道的便是，过去习惯的写码形式：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(type) expression</span><br></pre></td></tr></table></figure>
+<p>现在应该改为这样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static_cast</span>&lt;type&gt;(expression)</span><br></pre></td></tr></table></figure>
+
+<p>static_cast基本上拥有与C旧式转型相同的威力与意义，以及相同的限制。例如，你不能够利用static_cast将一个struct转型为int，或将一个double转型为pointer；这些都是C旧式转型动作原本就不可能完成的任务。static_cast甚至不能够移除表达式的常量性(constness)，因为有一个新式转型操作符const_cast专司其职。</p>
+<p>const_cast用来该表表达式中的常量性（constness）或变异性(volatileness).使用const_cast，便是对人类(以及编译器)强调，通过这个转型操作符，你唯一打算改变的是某物的常量性或变异性。这项意愿将由编译器贯彻执行。如果你将const_cast应用于上述以外的用途，那么转型动作会被拒绝。</p>
+<p>第二个特殊化的转型操作符是dynamic_cast，用来执行继承体系中“安全的向下转型或跨系转型动作”。也就是说你可以利用dynamic_cast，将“指向base class objects的pointers或referens”转型为“指向derived（或sibling base）class bojects的pointers或references”，并得知转型是否成功。如果转型失败，会以一个null指针（当转型对象是指针）或一个exception（当转型对象是reference）表现出来。</p>
+<p>dynamic_cast只能用来协助你巡航于继承体系之中。它无法应用在缺乏虚函数的类型身上，也不能改变类型的常量性。</p>
+<p>最后一个转型操作符是reinterpret_cast。这个操作符的转换结果几乎总是与编译平台息息相关。所以reinterpret_cast不具移植性。reinterpret_cast的最常用用途是转换“函数指针”类型。</p>
+<p>函数指针的转型动作，并不具移植性，某些情况下这样的转型可能会导致不正确的结果，所以你应该尽量避免将函数指针转型。</p>
+<h2 id="条款3-：绝对不要以多态（polymorphically）方式处理数组"><a href="#条款3-：绝对不要以多态（polymorphically）方式处理数组" class="headerlink" title="条款3 ：绝对不要以多态（polymorphically）方式处理数组"></a>条款3 ：绝对不要以多态（polymorphically）方式处理数组</h2><p>继承的最重要性质之一就是：你可以通过“指向base class objects”的pointers或reference，来操作derived class objects。如此的pointers和references，我们说其行为是多态的（polymorphically）——犹如它们有多重类型似的。C++也允许你通过base class的pointers和reference来操纵“derived class objects所形成的数组”。但这一点也不值得沾沾自喜，因为它几乎绝不会如你所预期般地运作。</p>
+<p>举个例子，假设你有一个class BST及一个继承自BST的class BalancedBST：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span> &#123;</span>...&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BalancedBST</span>:</span> <span class="keyword">public</span> BST &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<p>现在考虑有个函数，用来打印BSTs数组中的每一个BST的内容：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printBSTArray</span><span class="params">(ostream&amp; s,<span class="keyword">const</span> BST <span class="built_in">array</span>[],<span class="keyword">int</span> numElements)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numElements;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        s&lt;&lt;<span class="built_in">array</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你将一个由BST对象组成的数组传给此函数，没问题：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BST BSTArray[<span class="number">10</span>];</span><br><span class="line">...</span><br><span class="line">printBSTArray(<span class="built_in">cout</span>,BSTArray,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>然而如果你将一个BalancedBST对象所组成的数组交给printBSTArray函数，会发生什么事：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BalancedBST bBSTArray[<span class="number">10</span>];</span><br><span class="line">...</span><br><span class="line">printBSTArray(<span class="built_in">cout</span>,bBSTArray,<span class="number">10</span>); <span class="comment">//可以正常运行吗？</span></span><br></pre></td></tr></table></figure>
+<p>如果你交给printBSTArray函数一个由BalancedBST对象组成的数组，你的编译器就会被误导。这种情况下它仍然假设数组中每一元素的大小是BST的大小，但其实每一元素的大小是BalancedBST的大小。由于derived classes通常比其base classes有更多的data members，所以derived class objects通常比其base class objects来得大。因此，我们可以合理地预期一个BalancedBST object比一个BST object大。如果是这样，编译器为printBSTArray函数所产生的指针算术表达式，对于BalancedBST objects所组成的数组而言就是错误的。至于会发生什么结果，不可预期。</p>
+<p>如果你尝试通过一个base class 指针，删除一个由derived class objects组成的数组，那么上述问题还会以另一种不同面貌出现。</p>
+<p>C++语言规范中说，通过base class指针删除一个由derived classes objects构成的数组，其结果未定义。我们知道所谓的未定义的意思就是：执行之后会产生苦恼。简单地说，多态（polymorphism）和指针算术不能混用。数组对象几乎总是会涉及指针的算术运算，所以数组和多态不要混用。</p>
+<p>如果你避免让一个具体类继承自另一个具体类，你就不太能够犯“以多态方式来处理数组”的错误。</p>
+<h2 id="条款4-：非必要不提供default-constructor"><a href="#条款4-：非必要不提供default-constructor" class="headerlink" title="条款4 ：非必要不提供default constructor"></a>条款4 ：非必要不提供default constructor</h2><p>所谓default constructor（也就是说不给任何自变量就可调用者）是C++一种“无中生有”的方式Constructors用来将对象初始化，所以default constructor的意思就是在没有任何外来信息的情况将对象初始化。</p>
+<p>在一个完美的世界中，凡可以“合理地从无到有生成对象”的classes，都应该内含default constructor，而“必须有某些外来信息才能生成对象”的classes，则不必拥有default constructor。但我们的世界毕竟不是完美的世界，所以我们必须纳入其他考虑。更明确的说，如果class缺乏一个default constructor，当你使用这个class时便会有某些限制。</p>
+<p>Classes如果缺乏default constructor，带来的第一个缺点是：在产生数组的时候。一般而言没有任何办法可以为数组中的对象指定constructor自变量。有三个方法可以侧面解决这个束缚：  </p>
+<ul>
+<li>第一个方法是使用non-heap数组，在数组初始化时为对象指定参数。  </li>
+<li>更一般化的做法是使用“指针数组”而非“对象数组”。此法有两个缺点，第一，你必须记得将此数组所指的所有对象删除；第二，你需要的内存总量比较大。  </li>
+</ul>
+<p>Classes如果缺乏default constructor，带来的第二个去点是：它们将不适用于许多template-based container classes。对那些template而言，被实例化的“目标类型”必须得有一个default constructor。这是一个普通的共同需求，因为在那些templates内几乎总是会产生一个以“template类型参数”作为类型而架构起来的数组。</p>
+<p>最后一个考虑点和virtual base classes有关。virtual base classes如果缺乏default constructors，与之合作将是一种刑罚。因为virtual base classes constructors的自变量必须由欲产生的对象的派生层次最深的class 提供。于是，一个缺乏default constructor的virtual base class，要求其所有的derived classes都必须知道、了解其意义，并且提供virtual base class的constructors自变量。derived classes的设计者即不期望也不欣赏这样的要求。</p>
+<p>添加无意义的default constructors，也会影响classes的效率。如果member functions必须测试字段是否真的被初始化了，其调用者必须为测试行为付出时间代价，并为测试代码付出空间代价，因为可执行文件和程序库都变大了。万一测试结果为否定，对应的处理程序又需要一些空间代价。 如果class constructors可以确保对象的所有字段都会被正确地初始化，上述所有成本便可以免除。所以，如果default constructors无法提供这些保证，那么最好避免让default constructor出现。虽然这可能会对classes的使用方式带来某些限制，但同时也带来一种保证：当你真的使用了这样的classes，可以预期它们所产生的对象会被完全地初始化，实现上亦富有效率。</p>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><h2 id="条款5-：对定制的“类型转换函数”保持警觉"><a href="#条款5-：对定制的“类型转换函数”保持警觉" class="headerlink" title="条款5 ：对定制的“类型转换函数”保持警觉"></a>条款5 ：对定制的“类型转换函数”保持警觉</h2><p>C++允许编译器在不同类型之间执行隐式转换（implicit conversions）。</p>
+<p>C++还存在更令人害怕的转型（我指的是可能遗失信息的那种），包括将int转换为short，以及将double（或其他东西）转换为char。</p>
+<p>你对这类转型无能为力，因为它们是语言提供的。然而当你自己的类型登场，你便有了更多的控制能力，因为你可以选择是否提供某些函数，供编译器拿来作为隐式类型转换之用。</p>
+<p>两种函数允许编译器执行这样的转换：单自变量constructors和隐式类型转换操作符。所谓单自变量constructors是指能够以单一自变量成功调用的constructors。如此的constructors可能声明拥有单一参数，也可能声明拥有多个参数，并且除了第一参数之外都有默认值。下面是两个例子:  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Name</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Name(<span class="keyword">const</span> <span class="built_in">string</span>&amp; s); <span class="comment">//可以把string转换为Name</span></span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Rational(<span class="keyword">int</span> numerator = <span class="number">0</span>,<span class="keyword">int</span> denominator = <span class="number">1</span>); <span class="comment">//可以把int转换为Rational</span></span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>所谓隐式类型转换操作符，是一个拥有奇怪名称的member function：关键词operator之后加上一个类型名称。你不能为此函数指定返回值类型，因为其返回值类型基本上已经表现于函数名称上。例如，为了让Rational objects能够被隐式转换为doubles，你可能定义class Rational如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="title">double</span><span class="params">()</span> <span class="keyword">const</span></span>; <span class="comment">//将Rational转换为double。</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>为什么最好不要提供任何类型转换函数。<br>根本问题在于，在你从未打算也未预期的情况下，此类函数可能会被调用，而其结果可能是不正确、不直观的程序行为，很难调试。</p>
+<p>让我们先处理隐式类型转换操作符。假设你有一个class用来表现分数。你希望像内建类型一样地输出Rational objects内容：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Rational <span class="title">r</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; r;</span><br></pre></td></tr></table></figure>
+<p>更进一步假设你忘了为Rational写一个operator&lt;&lt;,那么你或许会认为上述打印动作不会成功，因为没有适当的operator&lt;&lt;可以调用。但本例中你的编译器发现，只要调用Rational::operator double，将r隐式转换为double，调用动作便能成功。于是上述代码将r以浮点数而非分数的形式输出。这虽然不至于造成什么灾难，却显示了隐式类型转换操作符的缺点：它们的出现可能导致错误（非预期）的函数被调用。</p>
+<p>解决办法就是以功能对等的另一个函数取代类型转换操作符。如此的member function必须被明确调用。</p>
+<p>通过单自变量constructors完成的隐式转换，较难消除。举个例子，考虑一个针对数组结构而编写的class template。这些数组允许用户指定索引值的上限和下限：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Array</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Array(<span class="keyword">int</span> lowBound,<span class="keyword">int</span> highBound);</span><br><span class="line">    Array(<span class="keyword">int</span> size);</span><br><span class="line"></span><br><span class="line">    T&amp; <span class="keyword">operator</span>[](<span class="keyword">int</span> index);</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上述class的第一个constructor允许clients指定某个范围的数组索引，例如10-20.身为一个双自变量constructor，此函数没有资格成为类型转换函数。第二个constructor允许用户只指定数组的元素个数，便可以定义出Array objects。它可以被用来作为一个类型转换函数，结果导致无尽苦恼。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> ==(<span class="keyword">const</span> Array&lt;<span class="keyword">int</span>&gt;&amp; lhs,<span class="keyword">const</span> Array&lt;<span class="keyword">int</span>&gt;&amp; rhs);</span><br><span class="line">Array&lt;<span class="keyword">int</span>&gt;a(<span class="number">10</span>);</span><br><span class="line">Array&lt;<span class="keyword">int</span>&gt;b(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">if</span>(a == b[i]); <span class="comment">//?</span></span><br></pre></td></tr></table></figure>
+<p>编译器看到一个operator ==函数调用，夹带着类型为Array&lt; int&gt;的自变量a和类型为int的自变量b[i]，虽然没有这样的operator ==函数可被调用，但是编译器却注意到，只要调用Array&lt; int&gt;constructor（需要一个int作为自变量），它就可以将int转为Array&lt; int&gt;object。</p>
+<p>解决方法是使用C++特性：关键词explicit。这个特性之所以被导入，就是为了解决隐式类型转换带来的问题。其用法十分直接易懂，只要将constructors什么为explicit，编译器便不能因隐式类型转换的需要而调用它们。不过显示类型转换仍是被允许的。</p>
+<p>另一个解决方法是使用proxy classes：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Array</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ArraySize</span></span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        ArraySize(<span class="keyword">int</span> numElements): theSize(numElements) &#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> theSize;&#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> theSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Array(<span class="keyword">int</span> lowBound,<span class="keyword">int</span> highBound);</span><br><span class="line">    Array(ArraySize size);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>类似ArraySize这样的classes，往往被称为proxy classes，因为它的每一个对象都是为了其他对象而存在的，好像其他对象的代理人（proxy）一般。ArraySize对象只是“用来指定Array大小”的整数替身而已。Proxy objects让你得以超越外观形式（本例为隐式类型转换），进而控制你的软件行为，是很值得学习的一项技术。</p>
+<p>允许编译器执行隐式类型转换，害处将多过好处。所以不要提供转换函数，除非你确定你需要它们。</p>
+<h2 id="条款6-：区别increment-decrement操作符的前置（prefix）和后置（postfix）形式"><a href="#条款6-：区别increment-decrement操作符的前置（prefix）和后置（postfix）形式" class="headerlink" title="条款6 ：区别increment/decrement操作符的前置（prefix）和后置（postfix）形式"></a>条款6 ：区别increment/decrement操作符的前置（prefix）和后置（postfix）形式</h2><p>C++允许++和–操作符的两种形式（前置式和后置式）拥有重载能力。</p>
+<p>这时候出现了一个语法上的问题：重载函数是以其参数类型来区分彼此的，然而不论increment或decrement操作符的前置式或后置式，都没有参数。为了填平这个语言学上的漏洞，只好让后置式有一个int自变量，并且在它被调用时，编译器默默地为该int指定一个0之：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UPInt</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    UPInt&amp; <span class="keyword">operator</span>++(); <span class="comment">//前置式++</span></span><br><span class="line">    <span class="keyword">const</span> UPInt <span class="keyword">operator</span>++(<span class="keyword">int</span>); <span class="comment">//后置式++</span></span><br><span class="line"></span><br><span class="line">    UPInt&amp; <span class="keyword">operator</span>--(); <span class="comment">//前置式--</span></span><br><span class="line">    <span class="keyword">const</span> UPInt <span class="keyword">operator</span>--(<span class="keyword">int</span>); <span class="comment">//后置式--</span></span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>重要的是，那些操作符的前置式和后置式返回不同的类型，前置式返回一个reference，后置式返回一个const对象。</p>
+<p>从C的时带回忆起，你或许还记得所谓increment操作符的前置式意义“increment and fetch” （累加然后取出），后置式意义“fetch and increment” (取出然后累加)。这两个词值得记下来，因为它们几乎成为前置式和后置式increment操作符应该如何实现的正式规范：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前置式：累加然后取出</span></span><br><span class="line">UPInt&amp; UPInt::<span class="keyword">operator</span>++()</span><br><span class="line">&#123;</span><br><span class="line">    *<span class="keyword">this</span> += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后置式：取出然后累加</span></span><br><span class="line"><span class="keyword">const</span> UPInt UPInt::<span class="keyword">operator</span>++(<span class="keyword">int</span>)</span><br><span class="line">&#123;</span><br><span class="line">    UPInt oldValue = *<span class="keyword">this</span>; </span><br><span class="line">    ++(*<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">return</span> oldValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意后置式操作符并未动用其参数。是的，其参数的唯一目的只是为了区别前置式和后置式而已。</p>
+<p>为什么后置式increment操作符必须返回一个对象（代表旧值），原因很清楚。但是为什么是个const对象呢？想象一下，如果不这样，以下动作是合法的：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPInt i;</span><br><span class="line">i++++; <span class="comment">//实施后置式操作符两次</span></span><br></pre></td></tr></table></figure>
+<p>这和一下动作相同：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i.<span class="keyword">operator</span>++(<span class="number">0</span>).<span class="keyword">operator</span>++(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<p>这就拨云见日了：operator++的第二个调用动作施行于第一个调用动作的返回对象身上。</p>
+<p>两个理由使我们不欢迎这样的情况。第一，它和内建类型的行为不一致。我们知道，ints并不允许连续两次使用后置式increment操作符。<br>第二个理由是，即使能够施行后置式increment操作符，其行为也非你所预期。一如上述所示，第二个operator++所改变的对象是第一个operator++返回的对象，而不是原对象。</p>
+<p>单以效率因素而言，UPInt的用户应该喜欢前置式increment多过喜欢后置式increment，除非他们真的需要后置式increment的行为。让我们把话说清楚，处理用户定制类型时，应该尽可能使用前置式increment，因为它天生体质较佳。</p>
+<h2 id="条款7-：千万不要重载-amp-amp-，-和，操作符"><a href="#条款7-：千万不要重载-amp-amp-，-和，操作符" class="headerlink" title="条款7 ：千万不要重载&amp;&amp;，||和，操作符"></a>条款7 ：千万不要重载&amp;&amp;，||和，操作符</h2><p>和C一样，C++对于“真假表达式”采用所谓的“骤死式”评估方式。意思是一旦该表达式的真假值确定，即使表达式中还有部分尚未检验，整个评估工作仍告结束。</p>
+<p>“函数调用”语义和所谓的“骤死式”语义有两个重大的区别。第一，当函数调用动作被执行，所有参数值都必须评估完成，所以当我们调用用户定制类型量身定做的operator&amp;&amp;和operator||时，两个参数都已评估完成。换句话说没有什么骤死式语义。第二，C++语言规范并未明确定义函数调用动作中各参数的评估顺序，所以没办法知道表达式1和表达式2哪个会先被评估。这与骤死式评估法形成一个明确的对比，后者总是由左向右评估其自变量。</p>
+<p>所以，如果你将&amp;&amp;和||重载，就没有办法提供程序员预期的某种行为模式。所以请不要重载&amp;&amp;或||。</p>
+<p>逗号（，）操作符用来构成表达式。C++有一些规则用来定义&amp;&amp;和||面对内建类型的行为，C++也同样有一些规则用来定义逗号操作符面对内建类型的行为。表达式如果内含逗号，那么逗号左侧会被先评估，然后逗号的右侧再被评估；最后，整个逗号表达式的结果以逗号右侧的值为代表。</p>
+<p>如果你把操作符写成一个non-member function，你绝对无法保证左侧表达式一定比右侧表达式更早被评估，因为两个表达式都被当作函数调用时的自变量，传递给该操作符函数，而你无法控制一个函数的自变量评估顺序。所以non-member做法不可行。</p>
+<p>唯一剩下的可能将操作符写成一个member function。即便这样做你仍然不能保证逗号操作符的左操作数会被先评估，因为编译器并不强迫做这样的事情。因此你无法“不但将逗号操作符重载，并保证其行为像它应该有的那样”。所以不要轻率地将他们重载。</p>
+<h2 id="条款8-：了解各种不同意义的new和delete"><a href="#条款8-：了解各种不同意义的new和delete" class="headerlink" title="条款8 ：了解各种不同意义的new和delete"></a>条款8 ：了解各种不同意义的new和delete</h2><p>当你写出这样代码：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> *ps = <span class="keyword">new</span> <span class="built_in">string</span>(<span class="string">"Memory Management"</span>);</span><br></pre></td></tr></table></figure>
+<p>你所使用的new是所谓的new operator。这个操作符是由语言内建的，就像sizeof那样，不能被改变意义，总是做相同的事情。它的动作分为两方面。第一，它分配足够的内存，用来放置某类型的对象。以上例而言，它分配足够放置一个string对象的内存。第二，它调用一个constructor，为刚才分配的内存中的那个对象设定初值。new operator总是做这两件事情，无论如何你不能够改变其行为。</p>
+<p>你能够改变的是用来容纳对象的那块内存的分配行为。new operator调用某个函数，执行必要的内存分配动作，你可以重写或重载那个函数，改变其行为。这个函数的名称叫做operator new。</p>
+<p>函数operator new通常声明如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>其返回值是void*。此函数返回一个指针，指向一块原始的、未设定初值的内存。函数中的size_t参数表示需要分配多少内存。你可以将operator new重载，加上额外的参数，但第一参数的类型必须总是size_t。</p>
+<p>和malloc一样，operator new的唯一任务就是分配内存。取得operator new返回的内存并将之转换为一个对象，是new operator的责任。</p>
+<p>为什么如果你想要做出一个heap-base object，一定得使用new operator：你无法直接调用“对象初始化所必须的constructor”。</p>
+<p><strong>Placement new</strong><br>有时候你真的会想直接调用一个constructor。针对一个已存在的对象调用其constructor并无意义，因为constructor用来将对象初始化，而对象只能被初始化一次。但是偶尔你会有一些分配好的原始内存，你需要在上面构建对象。有一个特殊版本的operator new，称为placement new，允许你这么做。</p>
+<p>下面示范如何使用placement new：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Widge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Widge(<span class="keyword">int</span> widgetSize);</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">Widge * <span class="title">constructWidgeInBuffer</span><span class="params">(<span class="keyword">void</span> *buffer,<span class="keyword">int</span> widgetSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span>(buffer)Widget(widgetSize);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此函数返回指针，指向一个Widget object，它被构造于传递给此函数的一块内存缓冲区上。</p>
+<p>在constructWidgetInBuffer函数内部，唯一一个表达式是：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span>(buffer)Widget(widgetSize)</span><br></pre></td></tr></table></figure>
+<p>这只是new operator的用法之一，其中指定一个额外自变量（buffer）作为new operator“隐式调用operator new”时所用。于是，被调用的operator new除了接收“一定得有的size_t自变量”之外，还接受了一个void*参数，指向一块内存，准备用来接受构造好的对象。这样的operator new就是所谓的placement new，看起来像这样：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> * <span class="keyword">operator</span> <span class="title">new</span><span class="params">(<span class="keyword">size_t</span>,<span class="keyword">void</span> *location)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> location;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在placement new的情况下，调用者已经知道指向内存的指针了，因为调用者知道对象应该放在哪里。因此placement new唯一需要做的就是将它获得的指针再返回。</p>
+<p>如果你希望将对象产生于heap，请使用new operator。它不但分配内存而且为该对象调用一个constructor；如果你只是打算分配内存，请调用operator new，那就没有任何constructor会被调用；如果你打算再heap objects产生时自己决定内存分配方式，请写一个自己的operator new，并使用new operator，它将会自动调用你所写的operator new；如果你打算在已分配（并拥有指针）的内存中构造对象，请使用placement new。</p>
+<p><strong>删除（Deletion）与内存释放（Deallocation）</strong><br>为了避免资源泄露，每一个动态分配行为都必须匹配一个相应但相反的释放动作。函数operator delete对于内建的delete operator，就好像operator new对于new operator一样。</p>
+<p>如果你只打算处理原始的、未设定初值的内存，应该完全回避new operator和delete operator，改调用operator new取得内存并以operator delete归还给系统。</p>
+<p>如果你使用placement new，在某块内存中产生对象，你应该避免对那块内存使用delete operator。因为delete operator会调用operator delete来释放内存，但是该内存内含的对象最初并非是由operator new分配得来的。</p>
+<p><strong>数组（Arrays）</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> *ps =<span class="keyword">new</span> <span class="built_in">string</span>[<span class="number">10</span>]; <span class="comment">//分配一个对象数组</span></span><br></pre></td></tr></table></figure>
+<p>上述使用的new仍然是那个new operator ，但是由于诞生的是数组，所以new operator的行为与先前产生单一对象的情况略有不同。是的，内存不再以operator new分配，而是由其”数组版”兄弟，一个名为operator new[]的函数负责分配（通常被称为“array new”）。和operator new一样，operator newp[]也可以被重载，这使得你得夺取数组的内存分配权，就像你可以控制单一对象的内存分配一样。</p>
+<p>“数组版”与“单一对象版”的不同是，它所调用的constructor数量。数组版new operator必须针对数组中的每个对象调用一个constructor；同样道理，当delete operator 被用于数组，它会针对数组中的每个元素调用其destructor，然后再调用operator delete[]释放内存。</p>
+<p>就好像你可以重载operator delete一样，你也可以重载operator delete[]。</p>
+<p>new operator和delete operator都是内建操作符，无法为你所控制，但是他们调用的内存分配/释放函数则不然。当你想要定制new operator和delete operator的行为，记住，你其实无法真正办到。你可以修改它们完成任务的方式，至于它们的任务，已经被语言规范固定死了。</p>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="条款9-：利用destructors避免泄露资源"><a href="#条款9-：利用destructors避免泄露资源" class="headerlink" title="条款9 ：利用destructors避免泄露资源"></a>条款9 ：利用destructors避免泄露资源</h2><p>假设存在如下的类声明：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ALA</span>&#123;</span>            <span class="comment">//abstract base class</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">proccessAdoption</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Puppy</span>:</span> <span class="keyword">public</span> ALA&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">processAdoption</span><span class="params">()</span></span>;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Kitte</span>:</span> <span class="keyword">public</span> ALA&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">processAdopiton</span><span class="params">()</span></span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">ALA* <span class="title">readALA</span><span class="params">(istream&amp; s)</span></span>;                  <span class="comment">// 从输入流读取单个对象</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processAdoptions</span><span class="params">(istream&amp; dataSource)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(dataSources)&#123;                    <span class="comment">// 不断读入数据</span></span><br><span class="line">        ALA *pa = readALA(dataSource);     <span class="comment">// 取出一个</span></span><br><span class="line">        pa-&gt;processAdoption();             <span class="comment">// 调用对应类的处理函数</span></span><br><span class="line">        <span class="keyword">delete</span> pa;                         <span class="comment">// 删除readALA返回的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果pa-&gt;processAdoption()抛出了异常，那么这个异常就会传播到processAdoptions的调用端，这就意味这pa不会被删除，就出现了资源泄漏的情况了；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processAdoptions</span><span class="params">(istream&amp; dataSource)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(dataSource)&#123;</span><br><span class="line">        ALA *pa = readALA(dataSource);</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            pa-&gt;processAdoption();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(...)&#123;            <span class="comment">// 捕捉所有的异常</span></span><br><span class="line">            <span class="keyword">delete</span> pa;         <span class="comment">// 当异常被抛出时，回收内存，避免资源泄漏</span></span><br><span class="line">            <span class="keyword">throw</span>;             <span class="comment">// 将异常传播传播给调用端</span></span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">delete</span> pa;         <span class="comment">//正常情况下，避免资源泄漏</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是这导致代码维护和撰写起来十分麻烦，所以，解决办法是，以一个“类似指针的对象”（智能指针）取代指针pa，当类似指针的对象被（自动）销毁时，可以令其析构函数调用delete；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">auto_ptr</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">auto_ptr</span>(T *p = <span class="number">0</span>): ptr(p) &#123; &#125;</span><br><span class="line">    ~<span class="built_in">auto_ptr</span>()&#123; <span class="keyword">delete</span> ptr; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *ptr;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">processAdopotions</span><span class="params">(istream&amp; dataSource)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(dataSource)&#123;</span><br><span class="line">        <span class="function"><span class="built_in">auto_ptr</span>&lt;ALA&gt; <span class="title">pa</span><span class="params">(readALA(dataSource))</span></span>;</span><br><span class="line">        pa-&gt;processAdoption();</span><br><span class="line">    &#125;                <span class="comment">//每次循环结束，pa会自动调用析构函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一言以蔽之，以对象管理资源。把资源封装在对象内，通常可以在exception出现时避免泄露资源。</p>
+<h2 id="条款10-：在constructors内阻止资源泄露（resource-leak）"><a href="#条款10-：在constructors内阻止资源泄露（resource-leak）" class="headerlink" title="条款10 ：在constructors内阻止资源泄露（resource leak）"></a>条款10 ：在constructors内阻止资源泄露（resource leak）</h2><p>“C++ 只会析构已完成的对象”，“面对未完成的对象，C++ 拒绝调用其析构函数”，因为对于一个尚未构造完成的对象，构造函数不知道对象已经被构造到何种程度，也就无法析构。当然，并非不能采取某种机制使对象的数据成员附带某种指示，“指示constructor进行到何种程度，那么destructor就可以检查这些数据并(或许能够)理解应该如何应对。但这种机制无疑会降低constructor的效率，，处于效率与程序行为的取舍，C++ 并没有使用这种机制。所以说，”C++ 不自动清理那些’构造期间跑出exception‘的对象“。</p>
+<p>当在构造函数中抛出异常的时候，由于对象尚未构造完全，因此并不会调用其析构函数，问题是此时如果对象已经被部分构造，那么我们应当保证被部分构造的内容适当地析构。</p>
+<p>考虑这样一个类：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp; number,<span class="keyword">const</span> <span class="built_in">string</span>&amp;a,<span class="keyword">const</span> <span class="built_in">string</span>&amp; b):num(number),ptr_a(<span class="number">0</span>),ptr_b(<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (a != <span class="string">""</span>)</span><br><span class="line">            ptr_a = <span class="keyword">new</span> <span class="built_in">string</span>(a);</span><br><span class="line">        <span class="keyword">if</span> (b != <span class="string">""</span>)</span><br><span class="line">        ptr_b = <span class="keyword">new</span> <span class="built_in">string</span>(b);</span><br><span class="line">    &#125;</span><br><span class="line">    ~A()&#123; <span class="keyword">delete</span> ptr_a; <span class="keyword">delete</span> ptr_b; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">string</span>* ptr_a;</span><br><span class="line">    <span class="built_in">string</span>* ptr_b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果A的构造函数中在为ptr_b所指向的对象分配内存的时候抛出一个异常，正如上面所说，编译器不会调用A的析构函数，那么释放ptr_a所指向的内存的任务就落到了程序员身上，可以将构造函数改写为以下形式来适当的释放ptr_a所指向的内存：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp;  number,<span class="keyword">const</span> <span class="built_in">string</span>&amp;a,<span class="keyword">const</span> <span class="built_in">string</span>&amp; b):num(number),ptr_a(<span class="number">0</span>),ptr_b(<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (a != <span class="string">""</span>)</span><br><span class="line">                ptr_a = <span class="keyword">new</span> <span class="built_in">string</span>(a);</span><br><span class="line">            <span class="keyword">if</span> (b != <span class="string">""</span>)</span><br><span class="line">                ptr_b = <span class="keyword">new</span> <span class="built_in">string</span>(b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(...)&#123;</span><br><span class="line">            <span class="keyword">delete</span> ptr_a; <span class="comment">//可以直接delete，因为delete一个空指针不会有影响</span></span><br><span class="line">            <span class="keyword">delete</span> ptr_b; <span class="comment">//同上</span></span><br><span class="line">            <span class="keyword">throw</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ~A()&#123; <span class="keyword">delete</span> ptr_a; <span class="keyword">delete</span> ptr_b; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">string</span>* ptr_a;</span><br><span class="line">    <span class="built_in">string</span>* ptr_b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>不需要担心A类的non-pointer data members(指的是num),data member会在A的构造函数内代码执行之前就被初始化好(因为使用了初始化列表)，一旦A类型对象被销毁，这些data member会像已经被构造好的对象一样被自动销毁。</p>
+<p>你可以发现catch语句块内的动作与A类的析构函数动作相同， 因此可以把他们放入一个辅助函数内，如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp;  number,<span class="keyword">const</span> <span class="built_in">string</span>&amp;a,<span class="keyword">const</span> <span class="built_in">string</span>&amp; b):num(number),ptr_a(<span class="number">0</span>),ptr_b(<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (a != <span class="string">""</span>)</span><br><span class="line">                ptr_a = <span class="keyword">new</span> <span class="built_in">string</span>(a);</span><br><span class="line">            <span class="keyword">if</span> (b != <span class="string">""</span>)</span><br><span class="line">                ptr_b = <span class="keyword">new</span> <span class="built_in">string</span>(b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(...)&#123;</span><br><span class="line">            cleanup();</span><br><span class="line">            <span class="keyword">throw</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ~A()&#123; cleanup(); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cleanup</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">delete</span> ptr_a;</span><br><span class="line">        <span class="keyword">delete</span> ptr_b;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">string</span>* ptr_a;</span><br><span class="line">    <span class="built_in">string</span>* ptr_b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>以上代码可以比较好的解决构造函数内抛出异常时对象的析构问题，但是如果A类的ptr_a和ptr_b被声明为const，则需要另外一番考虑(此时必须在初始化列表内初始化ptr_a和ptr_b，const指针一旦初始化，不能被修改)，A的构造函数像以下这样定义：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp;  number,<span class="keyword">const</span> <span class="built_in">string</span>&amp;a,<span class="keyword">const</span> <span class="built_in">string</span>&amp; b):num(number),ptr_a(a != <span class="string">""</span>?<span class="keyword">new</span> <span class="built_in">string</span>(a):<span class="number">0</span>),ptr_b(b!=<span class="string">""</span>?<span class="keyword">new</span> <span class="built_in">string</span>(b):<span class="number">0</span>)&#123;&#125;</span><br><span class="line">   </span><br><span class="line">    ~A()&#123;  </span><br><span class="line">        <span class="keyword">delete</span> ptr_a;</span><br><span class="line">        <span class="keyword">delete</span> ptr_b;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">string</span>* <span class="keyword">const</span> ptr_a;<span class="comment">//const指针</span></span><br><span class="line">    <span class="built_in">string</span>* <span class="keyword">const</span> ptr_b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>但是很明显又会产生成员的析构问题，遗憾的是我们无法在初始化列表中使用try/catch语句来处理异常，因为try/catch是语句，而初始化列表只接受表达式(或函数,其实可以把表达式看成的调用)，这也是为什么代码里使用？：代替if语句。一个解决办法正如括号内所说，使用函数代替？：，在函数内完成异常处理的工作，代码如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp;  number, <span class="keyword">const</span> <span class="built_in">string</span>&amp;a, <span class="keyword">const</span> <span class="built_in">string</span>&amp; b):num(number), ptr_a(initStringa(a)), ptr_b(initStringb(b))&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    ~A()&#123; cleanup(); &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cleanup</span><span class="params">()</span></span>&#123; <span class="keyword">delete</span> ptr_a; <span class="keyword">delete</span> ptr_b; &#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span>* <span class="title">initStringa</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; a)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (a != <span class="string">""</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">string</span>(a);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="comment">//ptr_a首先被初始化，所以即使失败也不需要担心内存泄露问题，所以不需要处理exceptioon</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span>* <span class="title">initStringb</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (b != <span class="string">""</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">string</span>(b);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (...)&#123;</span><br><span class="line">            <span class="keyword">delete</span> ptr_a;</span><br><span class="line">            <span class="keyword">throw</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">//ptr_b第二个被初始化，如果它在被初始化的过程中有异常抛出，它必须保证将ptr_a所指资源释放掉</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="built_in">string</span>* <span class="keyword">const</span> ptr_a;</span><br><span class="line">    <span class="built_in">string</span>* <span class="keyword">const</span> ptr_b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>到这里解决方法已经比较完美了，但还是有缺点，那就是构造函数的任务被分散在各个函数当中，造成我们维护上的困扰。</p>
+<p>一个更好的办法是，接受条款9的忠告，使用标准库类模板auto_ptr，将ptr_a封装在auto_ptr之中，如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    A(<span class="keyword">const</span> <span class="keyword">int</span>&amp;  number, <span class="keyword">const</span> <span class="built_in">string</span>&amp;a, <span class="keyword">const</span> <span class="built_in">string</span>&amp; b) :num(number), ptr_a(a != <span class="string">""</span> ? <span class="keyword">new</span> <span class="built_in">string</span>(a) : <span class="number">0</span>), ptr_b(b != <span class="string">""</span> ? <span class="keyword">new</span> <span class="built_in">string</span>(b) : <span class="number">0</span>)&#123;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt; ptr_a;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">auto_ptr</span>&lt;<span class="built_in">string</span>&gt; ptr_b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//在此设计中，如果ptr_b在构造过程中有任何异常，由于ptr_a已经是构造好的对象，在运行其析构函数时，所指内存会被自动释放，此外，由于ptr_a和ptr_b如今都是对象，当当其”宿主“(A类对象)被销毁时，它们说所指内存也会被自动释放</span></span><br></pre></td></tr></table></figure>
+<p>auto_ptr类模板的使用可以在不增加代码量的情况下完美处理构造函数抛出异常的问题，auto_ptr类模板的设计目的正在于当指向动态分配的内存的指针本身停止活动(被销毁)时，所指内存被释放掉。</p>
+<p>结论是：如果你以auto_ptr对象来取代pointer class members，你便对你的constructors做了强化工事，免除了“exceptions出现时发生资源泄露”的危机，不再需要在destructor内亲自动手释放资源，并允许const member pointers得以和non-const member pointers有着一样优雅的处理方式。</p>
+<h2 id="条款11-：禁止异常（exceptions）流出destructors之外"><a href="#条款11-：禁止异常（exceptions）流出destructors之外" class="headerlink" title="条款11 ：禁止异常（exceptions）流出destructors之外"></a>条款11 ：禁止异常（exceptions）流出destructors之外</h2><p>两种情况下destructor会被调用：</p>
+<ul>
+<li>当对象在正常状态下被销毁，也就是当它离开它的生存空间或是被明确地删除。</li>
+<li>当对象被异常处理机制销毁，也就是异常传播过程中的栈展开机制过程中(异常向上传递)。</li>
+</ul>
+<p>为什么需要禁止异常流出destructors？</p>
+<ul>
+<li><p>防止terminate函数被调用导致进程退出。如果在析构函数中不捕获异常，它会被传播到调用点。如果同时这个析构函数本身就是由于其他某个异常而被调用的，terminate函数便会被调用。也即是说，不能在因为异常而调用析构函数的内部再次抛出异常，他会导致terminate函数被调用。</p>
+</li>
+<li><p>如果异常从析构函数内抛出，而没有在当地捕获，这个析构函数便是执行不全。如果析构函数执行不全，就使没有完成它应该完成的每一件事情。</p>
+</li>
+</ul>
+<p>所以，禁止异常流出析构函数的好处有二：</p>
+<ul>
+<li>它可以避免terminate函数在异常传播过程的栈展开机制过程中被调用。</li>
+<li>它协助确保析构函数完成其应该完成的所有事情。</li>
+</ul>
+<h2 id="条款12-：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异"><a href="#条款12-：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异" class="headerlink" title="条款12 ：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异"></a>条款12 ：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异</h2><p>函数参数和exception的传递方式有三种：by value，by reference，by pointer。然而视你所传递的是参数或exception，发生的事情完全不同。</p>
+<p>原因：当你调用一个函数，控制权最终会回到调用端（除非函数失败以至于无法返回），但当你抛出一个exception，控制权不会再回到抛出端。</p>
+<p>有这样的一个函数，参数类型是Widget，并抛出一个Widget类型的异常：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一个函数，从流中读值到Widget中</span></span><br><span class="line">istream <span class="keyword">operator</span> &gt;&gt;(istream&amp; is,Widget&amp; w);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">passAndThrowWidget</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Widget localWidget;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; localWidget;</span><br><span class="line">	<span class="keyword">throw</span> localWidget;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当传递localWidget到函数operator&gt;&gt;里，不用进行拷贝操，而是把operator&gt;&gt;内的引用类型变量w指向了localWidget，任何对w的操作实际都实施到localWidget本身上。这与抛出localWidget异常有很大不同。不论通过传递值捕获异常还是通过 引用捕获（不能通过指针捕获这个异常，因为类型不匹配）都将进行localWidget的拷贝操作，也就是说传递到catch子句中的localWidget是拷贝。必须这么做，因为当localWidget离开生存空间后，其析构函数将被调用。如果localWidget本身传递给catch子句，这个子句接收到的时候被析构了的Widget，一个Widget的“尸体”。这是无法使用的。因此C++规定要求被作为异常抛出的对象必须被复制。</p>
+<p>即时被抛出的对象不会被释放，也会进行拷贝操作。例如passAndThrowWidget函数生命localWidget为静态量（static）：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">passAndThrowWidget</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> Widget localWidget;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; localWidget;</span><br><span class="line">	<span class="keyword">throw</span> localWidget;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当抛出异常仍将复制出localWidget的一个拷贝。这表示即使通过引用来捕获异常，也不能在catch中修改localWidget；仅仅能修改localWidget的拷贝。参数传递和抛出异常第二个差异：抛出异常运行速度比参数传递慢。</p>
+<p>当异常对象被拷贝时，拷贝操作由拷贝构造函数完成。该拷贝构造函数是静态类型的所对应的拷贝构造函数，而不是动态类型对应的拷贝构造函数。例如：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Widget</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpecialWidget</span>:</span><span class="keyword">public</span> Widget&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">passAndThrowWidget</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SpecialWidget localSpecialWidget;</span><br><span class="line">	...</span><br><span class="line">	Widget&amp; rw = localSpecialWidget;	<span class="comment">//rw引用了localSpecialWidget，</span></span><br><span class="line">	thread rw;							<span class="comment">//它抛出的异常是Widget</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里抛出的异常是Widget，即使rw引用了SpecialWidget，因为rw的静态类型是Widget。</p>
+<p>异常类型其对象的拷贝，这影响你如何在catch块中再抛出异常，比如下面的两个catch块：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(Widget&amp; w)</span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">throw</span>;		<span class="comment">//捕获异常重新抛出</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">catch</span>(Widget&amp; w)</span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">throw</span> w;   <span class="comment">//捕获异常传递的是拷贝</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一个catch重新抛出的当前异常，无论它是什么类型，如果w一开始是SpecialWidget，传递的还是SpecialWidget。</p>
+<p>第二个catch重新抛出异常的拷贝，类型总是Widget。</p>
+<p><strong>异常生成的拷贝是一个临时对象。</strong><br>如下有三种捕获Widget异常的的catch子句，异常是作为passAndThrowWidget抛出的：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(Widget w);</span><br><span class="line"><span class="keyword">catch</span>(Widget&amp; w);</span><br><span class="line"><span class="keyword">catch</span>(<span class="keyword">const</span> Widget w);</span><br></pre></td></tr></table></figure>
+<p>当第一个语句时候，会建立两个被抛出对象的拷贝，一个是所有异常的都必须建立的临时对象，第二个是把临时对象拷贝w中。（两次拷贝）</p>
+<p>第二、第三语句的时候，只会建立临时对象。。</p>
+<p>当抛出一个异常时，系统构造的被抛出对象的拷贝数比相同的对象作为参数传递给函数的构造的的拷贝数要多一次。</p>
+<p>函数调用或抛出异常或抛出异常者与被调用者或异常捕获者之间的类型匹配的过程不同。</p>
+<p>比如标准数学库的sqrt函数：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">double</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>我们能这样计算一个整数的平方根：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i ;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">double</span> sqrOfi = <span class="built_in">sqrt</span>(i);</span><br></pre></td></tr></table></figure>
+<p>C++允许把int到double隐式转换，所以i被悄悄变为double，并且其返回值也是double，一般来说catch子句匹配异常类型时不会进行这样的转换：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> value)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(someFunction())</span><br><span class="line">			<span class="keyword">throw</span> value;	<span class="comment">//抛出的是int</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">catch</span>(<span class="keyword">double</span> d)	 <span class="comment">//只能处理double的异常</span></span><br><span class="line">	&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述只能捕获double类型异常，而抛出的是int类型的异常，因此要捕获int类型的必须使用int类型或者int&amp;类型参数的catch子句。</p>
+<p>不过在catch子句进行异常匹配可以进行两种转换。第一种就是继承类和基类之类的转换，一个用来捕获基类的catch子句也可以用来处理派生类类型的异常。</p>
+<p>这种派生类和基类间的异常类型转换可以用于数值、引用以及指针上面。</p>
+<p>第二种允许从一个类型化指针转换成无类型指针，所以带有const void*的catch子句可以捕获任何类型的指针类型异常：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span>(<span class="keyword">const</span> <span class="keyword">void</span>*); <span class="comment">//捕获任何指针类型的异常</span></span><br></pre></td></tr></table></figure>
+<p>传递参数和传递异常最后一个区别点：catch子句匹配顺序总是取决于它们在程序中出现的顺序。因此一个派生类异常可能被处理其基类异常的catch子句捕获，即使同时存在有可能直接处理该派生类异常的catch子句，与相对应的try。例如：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(logic_error&amp; ex)		<span class="comment">//这个讲捕获所有的logic_error异常</span></span><br><span class="line">&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(invalid_argument&amp; ex) <span class="comment">//这个块永远捕获被执行，invalid_argument</span></span><br><span class="line">&#123;							<span class="comment">//是logic_error子类</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>与上面这种行为相反的，当你调用一个虚函数，被调用的函数位于与发生函数调用的对象的动态类型最相近的类里。即：虚函数采用最优法，而异常处理采用最先法。</p>
+<p>所以上述代码应该先捕获invalid_argument，再捕获logic_error。</p>
+<p>我们可以说，“传递对象到函数去，或是以对象调用虚函数”和“将对象抛出成为一个exception”之间，有3个主要的差异。第一，exception objects总是会被复制，如果以by value方式捕捉，它们甚至被复制两次。至于传递给函数参数的对象则不一定得复制。第二，“被抛出成为exception”的对象，其被允许的类型转换动作，比”被传递到参数去”的对象少。第三，catch子句以其”出现于源代码的顺序”被编译器检验对比，其中第一个匹配成功者便执行；而当我们以某对象调用一个虚函数，被选中执行的是那个“与对象类型最吻合”的函数，不论它是不是源代码所列的第一个。</p>
+<h2 id="条款13-：以by-reference方式捕捉exceptions"><a href="#条款13-：以by-reference方式捕捉exceptions" class="headerlink" title="条款13 ：以by reference方式捕捉exceptions"></a>条款13 ：以by reference方式捕捉exceptions</h2><p>catch语句的参数有三种方式：by pointer，by value，by reference。</p>
+<p>首先考虑，by pointer。这意味着抛出端必须抛出一个对象的地址。那么问题来了：</p>
+<p>如果这个对象分配在栈上，离开作用域，对象销毁，catch语句中指针指向一堆垃圾。</p>
+<p>因此，这个对象不能分配在栈上，也就是说，离开了作用域对象仍然存在，没有销毁。那就只能是static对象，或者是heap对象。那么问题又来了，在catch语句的客户端，客户到底要不要执行delete呢？客户不知道这个对象是static还是heap对象。如果执行delete，而抛出端的对象是static，对不是在heap上分配的对象，执行delete，导致未定义行为。如果不执行delete，而抛出端的对象是heap对象，导致资源泄漏。因此，这种方式不可行。</p>
+<p>另外，这与语言本身的惯例有矛盾。因为标准的异常bad_alloc，bad_cast，bad_typeid，bad_exception都是抛出对象，而不是对象指针。</p>
+<p>因此，catch语句使用by pointer不可行。</p>
+<p>考虑by value。我们知道从抛出异常到catch语句，之间必定有一个临时对象。如果catch语句是by value，导致临时对象再一次copy构造，而且，如果抛出子类对象，catch父类对象，将造成对象切割。在catch语句中，失去多态行为。</p>
+<p>因此，catch语句使用by value，一是效率差，二是造成对象切割。不可行。</p>
+<p>使用by reference很好地解决了上面的问题，只需要加上一个&amp;。避开了对象是否删除的问题，减少了copy构造次数，避免了对象切割。因此，catch异常使用by reference。</p>
+<h2 id="条款14-：明智运用exception-specifications"><a href="#条款14-：明智运用exception-specifications" class="headerlink" title="条款14 ：明智运用exception specifications"></a>条款14 ：明智运用exception specifications</h2><p>Exception specifications作为函数声明的一部分,用于指出(并不能限制)函数可能会抛出的异常函数.C++规定,一个拥有exception specification的函数指针只能被赋予一个有着相同或更为局限的exception specification的函数地址,因而编译器要保证”在函数指针传递之际检验exception specifications”.</p>
+<p>当函数抛出exception specification未列出的异常时,程序会调用标准库terminate函数,terminate函数又调用abort函数终止程序。局部变量不会获得销毁的机会。这种情况很容易发生(C++明定编译器必须允许”调用某个函数而该函数可能违反调用端函数本身的exception specification”)：当函数调用一个exception specification限制程度低于自身的函数时：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">f1</span><span class="params">()</span></span>;<span class="comment">//可以抛出任何东西</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">()</span> <span class="title">throw</span><span class="params">(<span class="keyword">int</span>)</span></span>;<span class="comment">//只抛出类型为int的exception</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f2</span><span class="params">()</span> <span class="title">throw</span><span class="params">(<span class="keyword">int</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    f1();<span class="comment">//合法，甚至即使f1可能抛出一个exception，而该exception违反了f2的exception specification</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 通常需要采用以下策略防止”非预期expection”的出现:</p>
+<ul>
+<li>对于带类型参数的函数模板,要尽量避免使用exception specifications。因为不同类型对于相同行为的定义不同，抛出的异常也就不同。因而函数模板很难或不可能确定它具现化的函数实体所可能抛出的异常.</li>
+<li>“如果A函数内调用了B函数,而B函数无exception specifications,那么A函数本身也不要设定exception specifications”.这个比较容易实现,但有一种情况容易被忽略:使用回调(callback)函数时.</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span><span class="params">(*CallBackPtr)</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">void</span>*)</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBack</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBack(CallBackPtr(fPtr), <span class="keyword">void</span>*dataToPassBack) :func(fPtr), data(dataToPassBack)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">makeCallBack</span><span class="params">(<span class="keyword">int</span> eventXLocation, <span class="keyword">int</span> eventYLocation)</span><span class="keyword">const</span> <span class="title">throw</span><span class="params">()</span><span class="comment">//该函数调用exception specification限制程度低于自身的函数func</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        func(eventXLocation, eventYLocation,data);<span class="comment">//func的调用，有可能违反exception specification，因为没有办法知道func可能抛出什么以异常</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    CallBackPtr func;<span class="comment">//CallBack发生时所要调用的函数</span></span><br><span class="line">    <span class="keyword">void</span> *data;<span class="comment">//用来传给CallBack函数的数据</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上述代码makeCallBack函数,仍会出现”函数调用一个exception specification限制程度低于自身的函数”的问题。</p>
+<p>解决方法就是将  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span><span class="params">(*CallBackPtr)</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">void</span>*)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>改为:  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span><span class="params">(*CallBackPtr)</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">void</span>*)</span> <span class="title">throw</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>正如上面所提,对于以下代码编译器会阻止并报错：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">callBackFunc1</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">void</span>*)</span></span>;</span><br><span class="line"><span class="keyword">void</span> *callBackData;</span><br><span class="line">...</span><br><span class="line"><span class="function">CallBack <span class="title">c1</span><span class="params">(callBackFunc1,callBackData)</span></span>;<span class="comment">//callBackFunc1可能会抛出异常，不能将callBackFunc1赋值给func(调用构造函数时)</span></span><br></pre></td></tr></table></figure>
+<p>（一个拥有exception specification的函数指针只能被赋予一个有着相同或更为局限的exception specification的函数地址）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">callBackFunc2</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>,<span class="keyword">void</span>*)</span> <span class="title">throw</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">void</span> *callBackData;</span><br><span class="line">...</span><br><span class="line"><span class="function">CallBack <span class="title">c2</span><span class="params">(callBackFunc2,callBackData)</span></span>;<span class="comment">//可以</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>处理”系统可能抛出的异常”.例如内存分配失败时抛出的bad_alloc异常(由operator new和operator new[]抛出).</li>
+</ul>
+<p>除了以上预防未预期exception的方法之外,还有一种方法可以处理未预期exception:自行指定当未预期的exception抛出时所调用的函数(而不是采用默认的terminate函数),通过调用set_unexpected函数加以设定：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnexpectedException</span>&#123;</span>&#125;;<span class="comment">//所有非预期的exception objects都将被取代为此类的objects</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">convertUnexcepted</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> UnexpectedException();<span class="comment">//若抛出非预期exception，便调用此函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_unexcepted(convertUnexcepted);<span class="comment">//以convertUnexcepted取代默认的unexcepted函数</span></span><br></pre></td></tr></table></figure>
+<p>这样一切非预期的异常都会导致convertUnexcepted被调用，即非预期的exception被新的、类型为UnexpectedException的exception取代。</p>
+<p>如果非预期函数的替代者重新抛出当前的exception,该exception会被标准类型bad_exception取而代之”.因此,如果用以上方式实现unexpected_handler,那么只要每一个exception specification都含有bad_exception,就再也不用担心非预期的exception导致程序终止执行：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">convertUnexpected</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">throw</span>();<span class="comment">//抛出的是bad_exception（重新抛出当前异常）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Exception specification对于”函数希望抛出什么样的exception”提供了说明,并且对于抛出exception specification中未指定行为的情况提供了默认行为.但它也有其缺点:编译器只对它们做局部性检验导致很容易违反,可能会更上层的exception函数处理未预期的exception等.对于exception specification的使用需要明智使用。</p>
+<h2 id="条款15-：了解异常处理-exception-handling-的成本"><a href="#条款15-：了解异常处理-exception-handling-的成本" class="headerlink" title="条款15 ：了解异常处理(exception handling)的成本"></a>条款15 ：了解异常处理(exception handling)的成本</h2><ul>
+<li>为了在运行期处理异常，程序必须做大量额外的工作。比如，即使抛出异常，也必须保证离开作用域的栈上对象执行析构方法。因此，必须记录try语句的进入点和离开点，记录catch语句能够处理的异常等。这就意味着，程序目标码变大，执行速度慢。</li>
+<li>即使从未使用任何异常处理，还是必须要付出最低代价，付出一些空间，放置某些数据结构，付出一些时间，保持数据结构的正确性。</li>
+<li>即使自己的程序没有使用throw，try，catch语句，使用的其他程序库可能有异常处理，因此也要付出代价。</li>
+<li>对于try语句，没有异常抛出的情况下，代码膨胀5%-10%，速度也下降这个数。</li>
+<li>如果抛出异常，影响很大，速度可能会比正常情况下慢3个数量级。但是，抛出异常是罕见的，因此可以接受。这也就意味着，在相对正常的情况下，不要抛出异常。</li>
+<li>考虑到异常对效率的影响，因此，在非用不可的情况下，才使用try语句。在确实是个异常的情况下，才抛出异常。</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -188,7 +450,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -197,16 +459,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/30/%E4%BD%BF%E7%94%A8RAID%E4%B8%8ELVM%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97%E6%8A%80%E6%9C%AF/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src=" //api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://lllfreeman.github.io/2020/11/19/35%E4%B8%AA%E6%94%B9%E5%96%84%E7%BC%96%E7%A8%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">改善程序技术与设计思维的50个有效做法（下）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -221,710 +542,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-储存结构与磁盘划分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/">储存结构与磁盘划分</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-06-28T09:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一切从“-”开始"><a href="#一切从“-”开始" class="headerlink" title="一切从“/”开始"></a>一切从“/”开始</h1><p>在Linux系统中，目录，字符设备、块设备、套接字、打印机等都被抽象成了文件。“Linux系统中一切皆文件”。</p>
-<p>Linux系统中的一切文件都是从“根（/）”目录开始的，并按照文件系统层次化标准（FHS）采用树形结构来存放文件，以及定义了常见目录的用途。<br>Linux系统中的文件和目录名称是严格区分大小写的。例如，root、rOOt、Root、rooT均代表不同的目录，并且文件名称中不得包含斜杆（/）。<br><img src="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/01.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/%E5%82%A8%E5%AD%98%E7%BB%93%E6%9E%84%E4%B8%8E%E7%A3%81%E7%9B%98%E5%88%92%E5%88%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础议题"><span class="toc-number">1.</span> <span class="toc-text">基础议题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款1-：仔细区别pointers和references"><span class="toc-number">1.1.</span> <span class="toc-text">条款1 ：仔细区别pointers和references</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款2-：最好使用C-转型操作符"><span class="toc-number">1.2.</span> <span class="toc-text">条款2 ：最好使用C++转型操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款3-：绝对不要以多态（polymorphically）方式处理数组"><span class="toc-number">1.3.</span> <span class="toc-text">条款3 ：绝对不要以多态（polymorphically）方式处理数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款4-：非必要不提供default-constructor"><span class="toc-number">1.4.</span> <span class="toc-text">条款4 ：非必要不提供default constructor</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作符"><span class="toc-number">2.</span> <span class="toc-text">操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款5-：对定制的“类型转换函数”保持警觉"><span class="toc-number">2.1.</span> <span class="toc-text">条款5 ：对定制的“类型转换函数”保持警觉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款6-：区别increment-decrement操作符的前置（prefix）和后置（postfix）形式"><span class="toc-number">2.2.</span> <span class="toc-text">条款6 ：区别increment&#x2F;decrement操作符的前置（prefix）和后置（postfix）形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款7-：千万不要重载-amp-amp-，-和，操作符"><span class="toc-number">2.3.</span> <span class="toc-text">条款7 ：千万不要重载&amp;&amp;，||和，操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款8-：了解各种不同意义的new和delete"><span class="toc-number">2.4.</span> <span class="toc-text">条款8 ：了解各种不同意义的new和delete</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常"><span class="toc-number">3.</span> <span class="toc-text">异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#条款9-：利用destructors避免泄露资源"><span class="toc-number">3.1.</span> <span class="toc-text">条款9 ：利用destructors避免泄露资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款10-：在constructors内阻止资源泄露（resource-leak）"><span class="toc-number">3.2.</span> <span class="toc-text">条款10 ：在constructors内阻止资源泄露（resource leak）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款11-：禁止异常（exceptions）流出destructors之外"><span class="toc-number">3.3.</span> <span class="toc-text">条款11 ：禁止异常（exceptions）流出destructors之外</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款12-：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异"><span class="toc-number">3.4.</span> <span class="toc-text">条款12 ：了解“抛出一个exception”与“传递一个参数”或“调用一个虚函数”之间的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款13-：以by-reference方式捕捉exceptions"><span class="toc-number">3.5.</span> <span class="toc-text">条款13 ：以by reference方式捕捉exceptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款14-：明智运用exception-specifications"><span class="toc-number">3.6.</span> <span class="toc-text">条款14 ：明智运用exception specifications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条款15-：了解异常处理-exception-handling-的成本"><span class="toc-number">3.7.</span> <span class="toc-text">条款15 ：了解异常处理(exception handling)的成本</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-用户身份与文件权限" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">用户身份与文件权限</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" class="archive-article-date">
-  	<time datetime="2020-06-13T07:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="用户身份与文件权限"><a href="#用户身份与文件权限" class="headerlink" title="用户身份与文件权限"></a>用户身份与文件权限</h1><h2 id="用户身份与能力"><a href="#用户身份与能力" class="headerlink" title="用户身份与能力"></a>用户身份与能力</h2><p>在Linux系统中，UID就相当于我们的身份证号码一样具有唯一性，因此可以通过UID值来判断用户身份。在RHEL 7系统中，用户身份有下面这些。<br>1.管理员UID为0：系统的管理员用户。<br>2.系统用户UID为1~999：Linux系统为了避免因某个服务程序出现漏洞而被黑客提权至整个服务器，默认服务程序会有独立的系统用户负责运行，进而有效控制被破坏的范围。<br>3.普通用户UID从1000开始：是由管理员创建的用于日常工作的用户。</p>
-<p>需要注意的是，UID是不能冲突的，而且管理员创建的普通用户的UID默认是从1000开始的（即使前面有闲置的号码）。</p>
-        
-          <a class="article-more-a" href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/13/%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vim编辑器与Shell命令脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/">Vim编辑器与Shell命令脚本</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  	<time datetime="2020-06-08T14:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Vim编辑器与Shell命令脚本"><a href="#Vim编辑器与Shell命令脚本" class="headerlink" title="Vim编辑器与Shell命令脚本"></a>Vim编辑器与Shell命令脚本</h1><h2 id="Vim文本编辑器"><a href="#Vim文本编辑器" class="headerlink" title="Vim文本编辑器"></a>Vim文本编辑器</h2><p>Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。</p>
-<p>命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。<br>输入模式：正常的文本录入。<br>末行模式：保存或退出文档，以及设置编辑环境。</p>
-<p>每次运行Vim编辑器时，默认进入命令模式。在Vim中，无法直接从输入模式切换到末行模式。</p>
-        
-          <a class="article-more-a" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/08/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8EShell%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-管道符、重定向与环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">管道符、重定向与环境变量</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2020-06-08T12:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="管道符、重定向与环境变量"><a href="#管道符、重定向与环境变量" class="headerlink" title="管道符、重定向与环境变量"></a>管道符、重定向与环境变量</h1><p>文件读写操作有关的重定向技术的5种模式——标准覆盖输出重定向、标准追加输出重定向、错误覆盖输出重定向、错误追加输出重定向以及输入重定向。</p>
-<h2 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h2><p>输入重定向是指把文件导入到命令中，而输出重定向则是指把原本要输出到屏幕的数据信息写入到文件中。</p>
-<p>标准输入重定向（STDIN，文件描述符为0）：默认从键盘输入，也可以从其他文件或命令中输入。<br>标准输出重定向（STDOUT，文件描述符为1）：默认输出到屏幕。<br>错误输出重定向（STDERR，文件描述符为2）：默认输出到屏幕。</p>
-        
-          <a class="article-more-a" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/08/%E7%AE%A1%E9%81%93%E7%AC%A6%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E4%B8%8E%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-新手必须掌握的Linux命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linux%E5%91%BD%E4%BB%A4/">新手必须掌握的Linux命令</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linux%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-06-04T08:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="新手必须掌握的Linux命令"><a href="#新手必须掌握的Linux命令" class="headerlink" title="新手必须掌握的Linux命令"></a>新手必须掌握的Linux命令</h1><h2 id="强大好用的Shell"><a href="#强大好用的Shell" class="headerlink" title="强大好用的Shell"></a>强大好用的Shell</h2><p>通常来讲，计算机硬件是由运算器、控制器、储存器、输入/输出设备等共同组成的。而让各种硬件设备各司其职且又能协同运行的东西就是系统内核。Linux系统的内核负责完成对硬件资源的分配、调度等管理任务。</p>
-<p>Shell是一个命令行工具，Shell（也称为终端或壳）充当的是人与内核（硬件）之间的翻译官，用户把一些命令“告诉”终端，它就会调用相应的程序服务去完成某些工作。</p>
-        
-          <a class="article-more-a" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linux%E5%91%BD%E4%BB%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/04/%E6%96%B0%E6%89%8B%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84Linux%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/20/%E6%8E%92%E5%BA%8F/">排序</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/20/%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-05-20T08:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="排序的基本概念与分类"><a href="#排序的基本概念与分类" class="headerlink" title="排序的基本概念与分类"></a>排序的基本概念与分类</h2><p>假设含有n个记录的序列为{r1,r2,…,rn},其相应的关键字分别为{k1,k2,…,kn}，需确定1，2，…,n的一种排列p1,p2,…pn，使其相应的关键字满足kp1&lt;=kp2&lt;=……&lt;=kpn非递减（或非递增关系），即使得序列成为一个按关键字有序的序列{rp1,rp2,…rpn}，这样的操作就称为排序。<br>我们在排序问题中，通常将数据元素称为记录。排序的依据是关键字之间的大小关系，那么，对同一个记录集合，针对不同的关键字进行排序，可以得到不同的序列。</p>
-        
-          <a class="article-more-a" href="/2020/05/20/%E6%8E%92%E5%BA%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/20/%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-查找" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/17/%E6%9F%A5%E6%89%BE/">查找</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/17/%E6%9F%A5%E6%89%BE/" class="archive-article-date">
-  	<time datetime="2020-05-17T02:49:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><h2 id="查找概论"><a href="#查找概论" class="headerlink" title="查找概论"></a>查找概论</h2><p>查找表是由同一类型的数据元素（或记录）构成的集合。<br>关键字是数据元素中某个数据项的值。<br>若此关键字可以唯一地标识一个记录，则称此关键字为主关键字。<br>那么对于哪些可以标识多个数据元素（或记录）的关键字，我们称为次关键字。  </p>
-<p>查找就是根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。  </p>
-        
-          <a class="article-more-a" href="/2020/05/17/%E6%9F%A5%E6%89%BE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/17/%E6%9F%A5%E6%89%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">迪杰斯特拉(Dijkstra)算法和弗洛伊德(Floyd)算法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T07:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在网图和非网图中，最短路径的含义是不同的。由于非网图它没有边上的权值，所谓的最短路径，其实就是指两顶点之间经过的边数最少的路径；而对于网图来说，最短路径，是指两顶点之间经过的边上的权值之和最少的路径，并且我们称路径上的第一个顶点是源点，最后一个顶点是终点。<br>两种比较经典的求最短路径的算法————迪杰斯特拉算法和弗洛伊德算法。</p>
-        
-          <a class="article-more-a" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89(Dijkstra)%E7%AE%97%E6%B3%95%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7(Floyd)%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">普里姆(Prim)算法和克鲁斯卡尔(Kruskal)算法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T01:36:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>找连通图的最小生成树，经典的有两种算法，普里姆算法和克鲁斯卡尔算法。我们就分别来介绍一下。</strong></p>
-<h1 id="普里姆-Prim-算法"><a href="#普里姆-Prim-算法" class="headerlink" title="普里姆(Prim)算法"></a>普里姆(Prim)算法</h1><p>假设N=（V，{E}）是连通网，TE是N上最小生成树中边的集合。算法从U={u0}(Uo∈V)，TE={}开始。重复执行下述操作：在所有u∈U，v∈V-U的边（u，v）∈E中找一条代价最小的边（u0，v0）并入集合TE，同时v0并入U，直至U=V为止。此时TE中必有n-1条边，则T=（V，{TE}）为N的最小生成树。</p>
-        
-          <a class="article-more-a" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/%E6%99%AE%E9%87%8C%E5%A7%86(Prim)%E7%AE%97%E6%B3%95%E5%92%8C%E5%85%8B%E9%B2%81%E6%96%AF%E5%8D%A1%E5%B0%94(Kruskal)%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -947,8 +590,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

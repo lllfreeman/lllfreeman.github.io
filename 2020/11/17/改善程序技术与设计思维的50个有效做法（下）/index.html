@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>改善程序技术与设计思维的50个有效做法（下） | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一需要担心“传回handles”这档子">
+  <meta name="description" content="Effective C++学习笔记 类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="改善程序技术与设计思维的50个有效做法（下）">
 <meta property="og:url" content="http://yoursite.com/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一需要担心“传回handles”这档子">
+<meta property="og:description" content="Effective C++学习笔记 类与函数之实现条款29 ：避免传回内部数据的handles指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。 const member functions并不是唯一">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/11/17/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/01.jpg">
 <meta property="article:published_time" content="2020-11-17T12:27:48.000Z">
-<meta property="article:modified_time" content="2020-11-18T14:19:32.184Z">
+<meta property="article:modified_time" content="2020-11-19T13:34:14.455Z">
 <meta property="article:author" content="lllfreeman">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -178,7 +178,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="类与函数之实现"><a href="#类与函数之实现" class="headerlink" title="类与函数之实现"></a>类与函数之实现</h1><h2 id="条款29-：避免传回内部数据的handles"><a href="#条款29-：避免传回内部数据的handles" class="headerlink" title="条款29 ：避免传回内部数据的handles"></a>条款29 ：避免传回内部数据的handles</h2><p>指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。</p>
+        <p><strong>Effective C++学习笔记</strong></p>
+<h1 id="类与函数之实现"><a href="#类与函数之实现" class="headerlink" title="类与函数之实现"></a>类与函数之实现</h1><h2 id="条款29-：避免传回内部数据的handles"><a href="#条款29-：避免传回内部数据的handles" class="headerlink" title="条款29 ：避免传回内部数据的handles"></a>条款29 ：避免传回内部数据的handles</h2><p>指针并不是“传回内部资料handle”的唯一途径，references也很容易被误用。当函数传回一个“handle”时，而此handle所代表的信息应该不可被函数调用者所见，这个handle给了调用者无限制取用“私有字段data所指母标之物”的权利。</p>
 <p>const member functions并不是唯一需要担心“传回handles”这档子事的函数。即使是non-const member functions，也必须面对这个事实：handle的有效性将它所对应的那个对象终了时一并期满。这可能会比client所预期的还快，尤其是当此对象是一个由编译器产生的暂时对象时。</p>
 <a id="more"></a>
 <p>因此，const member functions传回handles是不好的行为，因为它违反了抽象性。甚至对non-const member functions而言，传回handles也会导致麻烦，特别是当涉及暂时对象时，Handles可能变成空悬的，就像指针一样。而正如你努力避免所谓的dangling pointer一样，你也应该尽力避免所谓的dangling handles。</p>
@@ -512,6 +513,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/11/19/35%E4%B8%AA%E6%94%B9%E5%96%84%E7%BC%96%E7%A8%8B%E4%B8%8E%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          35个改善编程与设计的有效方法（上）
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">

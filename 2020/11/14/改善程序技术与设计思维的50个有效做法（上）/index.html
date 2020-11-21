@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>改善程序技术与设计思维的50个有效做法（上） | Blog-lllfreeman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inline函数，也可以获得宏带来的高效率以">
+  <meta name="description" content="Effective C++学习笔记 改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inli">
 <meta property="og:type" content="article">
 <meta property="og:title" content="改善程序技术与设计思维的50个有效做法（上）">
 <meta property="og:url" content="http://yoursite.com/2020/11/14/%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%8A%80%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E7%9A%8450%E4%B8%AA%E6%9C%89%E6%95%88%E5%81%9A%E6%B3%95%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
 <meta property="og:site_name" content="Blog-lllfreeman">
-<meta property="og:description" content="改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inline函数，也可以获得宏带来的高效率以">
+<meta property="og:description" content="Effective C++学习笔记 改变旧有的C习惯条款1 : 尽量以const和inline取代 #define这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。 使用inli">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-14T01:55:16.000Z">
-<meta property="article:modified_time" content="2020-11-16T13:59:08.903Z">
+<meta property="article:modified_time" content="2020-11-19T13:33:56.612Z">
 <meta property="article:author" content="lllfreeman">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="改变旧有的C习惯"><a href="#改变旧有的C习惯" class="headerlink" title="改变旧有的C习惯"></a>改变旧有的C习惯</h1><h2 id="条款1-尽量以const和inline取代-define"><a href="#条款1-尽量以const和inline取代-define" class="headerlink" title="条款1 : 尽量以const和inline取代 #define"></a>条款1 : 尽量以const和inline取代 #define</h2><p>这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。</p>
+        <p><strong>Effective C++学习笔记</strong></p>
+<h1 id="改变旧有的C习惯"><a href="#改变旧有的C习惯" class="headerlink" title="改变旧有的C习惯"></a>改变旧有的C习惯</h1><h2 id="条款1-尽量以const和inline取代-define"><a href="#条款1-尽量以const和inline取代-define" class="headerlink" title="条款1 : 尽量以const和inline取代 #define"></a>条款1 : 尽量以const和inline取代 #define</h2><p>这个标题如果改为“尽量以编译器（compiler）取代预处理器（preprocessor）或许更好。”const常量与#define宏定义常量的区别：const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。</p>
 <p>使用inline函数，也可以获得宏带来的高效率以及函数带来的可预期行为和引数型别检验：  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;<span class="keyword">return</span> a&gt;b?a:b&#125;;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
